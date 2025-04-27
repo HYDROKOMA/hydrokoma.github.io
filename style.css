@@ -1,59 +1,55 @@
-/* Reset stylów domyślnych */
-* {
+/* Styl dla całej strony */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Ustawienia podstawowe */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f7f9fc;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
-}
-
-/* Nagłówek */
+/* Styl nagłówka z tłem */
 header {
-    background: #0077cc;
+    position: relative;
+    height: 90vh;
+    background-image: url('https://www.pkt.pl/media/article/134978/sta%C5%82e-%C5%9Bciany-szczelne-w-konstrukcjach-gara%C5%BCy-podziemnych.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Lekka warstwa przyciemnienia dla tekstu */
+header .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* ciemna przezroczystość */
     color: white;
-    padding: 40px 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styl sekcji o firmie */
+.about {
+    padding: 60px 20px;
     text-align: center;
-    border-radius: 8px;
-    margin-bottom: 40px;
 }
 
-header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2em;
-}
-
-/* Sekcje */
-section {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-section h2 {
-    color: #0077cc;
+.about h2 {
     margin-bottom: 20px;
+    font-size: 2em;
 }
 
-/* Stopka */
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Styl stopki */
 footer {
+    background-color: #333;
+    color: white;
     text-align: center;
-    padding: 20px;
+    padding: 20px 0;
     font-size: 0.9em;
-    color: #777;
 }
