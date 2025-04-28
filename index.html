@@ -20,6 +20,7 @@
       background-color: #1f2a44;
       padding: 10px 20px;
       flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     nav img {
@@ -52,10 +53,12 @@
       color: #ddd;
     }
 
+    /* Hero Image */
     .hero-image {
       width: 100%;
       height: auto;
-      margin-top: 0;
+      object-fit: cover;
+      max-height: 500px;
       display: block;
     }
 
@@ -166,7 +169,7 @@
       color: #1f2a44;
     }
 
-    /* Responsywność */
+    /* RESPONSYWNOŚĆ */
     @media (max-width: 768px) {
       nav {
         justify-content: center;
@@ -175,13 +178,31 @@
         margin-bottom: 10px;
       }
       nav ul {
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+      .hero-image {
+        max-height: 300px;
       }
       .partners-slider {
         animation-duration: 30s;
       }
       .map-container {
         height: 300px;
+      }
+      main {
+        padding: 30px 15px;
+      }
+      section h2 {
+        font-size: 1.7em;
+      }
+      section p, section ul {
+        font-size: 1em;
       }
     }
 
@@ -190,9 +211,21 @@
         font-size: 1.2em;
         padding: 8px;
       }
+      .hero-image {
+        max-height: 250px;
+      }
       .partners-slider img {
-        height: 60px;
-        margin: 0 20px;
+        height: 50px;
+        margin: 0 15px;
+      }
+      main {
+        padding: 20px 10px;
+      }
+      section h2 {
+        font-size: 1.5em;
+      }
+      section p, section ul {
+        font-size: 0.95em;
       }
     }
   </style>
@@ -261,7 +294,7 @@
       <img src="images/partner3.png" alt="Partner 3">
       <img src="images/partner4.png" alt="Partner 4">
       <img src="images/partner5.png" alt="Partner 5">
-      <img src="images/https://github.com/HYDROKOMA/hydrokoma.github.io/blob/a7eaec574fdbd82d394a4665357aa0ae5048e623/Murapol.png" alt="Murapol">
+      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Murapol.png" alt="Murapol">
     </div>
   </section>
 </main>
