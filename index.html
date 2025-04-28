@@ -4,6 +4,47 @@
     <meta charset="UTF-8">
     <title>Hydrokoma - hydroizolacje </title>
     <style>
+            
+    #services {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.service-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  color: #2c3e50;
+}
+
+.service-card p {
+  font-size: 0.95em;
+  color: #555;
+}
         #cookie-consent {
             position: fixed;
             bottom: 0;
@@ -322,47 +363,6 @@
   </div>
 </section>
 
-    
-    #services {
-  padding: 40px 20px;
-  background-color: #f5f5f5;
-  text-align: center;
-}
-
-#services h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.service-card {
-  background-color: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.service-card h3 {
-  margin-bottom: 15px;
-  font-size: 1.2em;
-  color: #2c3e50;
-}
-
-.service-card p {
-  font-size: 0.95em;
-  color: #555;
-}
 
   <section id="projects">
     <h2>Realizacje</h2>
