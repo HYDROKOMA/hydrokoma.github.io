@@ -9,26 +9,30 @@
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
+      background-color: #fff;
       scroll-behavior: smooth;
-      background-color: #ffffff; /* białe tło */
     }
 
-    /* Pasek nawigacji */
     nav {
+      background-color: #333;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #ffffff;
-      border-bottom: 1px solid #ccc;
-      padding: 10px 50px;
+      padding: 0 20px;
+      border-bottom: 2px solid #ccc;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    nav .logo img {
-      max-width: 120px;
-      height: auto;
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 20px;
     }
 
     nav ul {
@@ -39,31 +43,30 @@
     }
 
     nav ul li {
-      margin-left: 30px;
+      margin: 0 15px;
     }
 
     nav ul li a {
+      color: white;
       text-decoration: none;
-      color: #333;
-      font-weight: bold;
       font-size: 1em;
-      padding: 8px 12px;
-      transition: color 0.3s;
+      padding: 20px 0;
+      display: block;
     }
 
     nav ul li a:hover {
-      color: #0056b3;
+      color: #ddd;
     }
 
     header {
       text-align: center;
+      padding: 20px;
     }
 
     .hero-image {
       width: 100%;
       height: auto;
       display: block;
-      object-fit: cover;
     }
 
     section {
@@ -96,34 +99,40 @@
       margin-top: 20px;
     }
 
-    /* Pasek partnerów */
     .partners {
+      background-color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .partners h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .partner-logos {
       overflow: hidden;
-      white-space: nowrap;
-      background-color: #f0f0f0;
-      padding: 20px 0;
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
+      position: relative;
+      width: 100%;
+      height: 100px;
     }
 
-    .partners .logos {
-      display: inline-block;
-      animation: scroll 20s linear infinite;
+    .logo-track {
+      display: flex;
+      width: calc(300%);
+      animation: scroll 30s linear infinite;
     }
 
-    .partners .logos img {
-      height: 60px;
+    .logo-track img {
+      height: 80px;
       margin: 0 30px;
-      vertical-align: middle;
+      object-fit: contain;
     }
 
     @keyframes scroll {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     footer {
@@ -166,19 +175,22 @@
 </nav>
 
 <header>
-  <img class="hero-image" src="https://i.ibb.co/cck6csCQ/PHOTO-2025-03-04-14-32-38.jpg" alt="Budowa - Hydrokoma">
+  <!-- Opcjonalny dodatkowy nagłówek -->
 </header>
+
+<!-- Hero Image -->
+<img class="hero-image" src="https://i.ibb.co/cck6csCQ/PHOTO-2025-03-04-14-32-38.jpg" alt="Budowa - Hydrokoma">
 
 <main>
   <section id="about">
     <h2>O nas</h2>
     <p>Hydrokoma działa na rynku od 2021 roku. Specjalizujemy się w technologii hydroizolacji konstrukcji budowlanych.
-       Współpracujemy z wieloma klientami i posiadamy bogate doświadczenie w branży.</p>
+    Współpracujemy z wieloma klientami i posiadamy bogate doświadczenie w branży.</p>
   </section>
 
   <section id="services">
     <h2>Usługi</h2>
-    <p>Wykonujemy kompleksowe hydroizolacje budynków mieszkalnych, przemysłowych oraz użyteczności publicznej. 
+    <p>Wykonujemy kompleksowe hydroizolacje budynków mieszkalnych, przemysłowych oraz użyteczności publicznej.
     Stosujemy najnowsze technologie i sprawdzone rozwiązania.</p>
   </section>
 
@@ -203,16 +215,19 @@
     </div>
   </section>
 
-  <!-- Pasek partnerów -->
-  <div class="partners">
-    <div class="logos">
-      <img src="https://via.placeholder.com/150x60?text=Partner+1" alt="Partner 1">
-      <img src="https://via.placeholder.com/150x60?text=Partner+2" alt="Partner 2">
-      <img src="https://via.placeholder.com/150x60?text=Partner+3" alt="Partner 3">
-      <img src="https://via.placeholder.com/150x60?text=Partner+4" alt="Partner 4">
-      <img src="https://via.placeholder.com/150x60?text=Partner+5" alt="Partner 5">
+  <section class="partners">
+    <h2>Nasi partnerzy</h2>
+    <div class="partner-logos">
+      <div class="logo-track">
+        <img src="https://i.ibb.co/9N9G7kP/Murapol.png" alt="Murapol Logo">
+        <img src="https://via.placeholder.com/150x80?text=Partner+2" alt="Partner 2">
+        <img src="https://via.placeholder.com/150x80?text=Partner+3" alt="Partner 3">
+        <img src="https://i.ibb.co/9N9G7kP/Murapol.png" alt="Murapol Logo">
+        <img src="https://via.placeholder.com/150x80?text=Partner+2" alt="Partner 2">
+        <img src="https://via.placeholder.com/150x80?text=Partner+3" alt="Partner 3">
+      </div>
     </div>
-  </div>
+  </section>
 
 </main>
 
