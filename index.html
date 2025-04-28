@@ -1,6 +1,69 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <meta charset="UTF-8">
+    <title>Strona z akceptacją cookies</title>
+    <style>
+        #cookie-consent {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #222;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            display: none;
+            z-index: 1000;
+        }
+        #cookie-consent button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        #cookie-consent button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Treść strony -->
+<h1>Cenimy prywatność użytkowników </h1>
+
+
+<!-- Formatka cookie -->
+<div id="cookie-consent">
+    Używamy plików cookie, aby poprawić jakość przeglądania, wyświetlać reklamy lub treści dostosowane do indywidualnych potrzeb użytkowników oraz analizować ruch na stronie. Kliknięcie przycisku „Akceptuj wszystkie” oznacza zgodę na wykorzystywanie przez nas plików cookie.
+    <button onclick="acceptCookies()">Akceptuję</button>
+</div>
+
+<script>
+    function acceptCookies() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-consent').style.display = 'none';
+    }
+
+    window.onload = function() {
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-consent').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hydrokoma - Hydroizolacje</title>
