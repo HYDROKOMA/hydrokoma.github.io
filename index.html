@@ -5,19 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hydrokoma - Hydroizolacje</title>
   <style>
+    :root {
+      --primary-color: #1a237e; /* Granat */
+      --secondary-color: #607d8b; /* Szary */
+      --light-color: #f4f4f4;
+      --text-color: #333;
+    }
+
     body, html {
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Helvetica Neue', 'Arial', sans-serif;
       scroll-behavior: smooth;
+      background-color: var(--light-color);
+      color: var(--text-color);
     }
 
     nav {
-      background-color: #333;
+      background-color: var(--primary-color);
       position: sticky;
       top: 0;
       width: 100%;
       z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     nav ul {
@@ -29,69 +39,118 @@
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 0 20px;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
-      padding: 15px 0;
+      padding: 18px 0;
       display: block;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
     }
 
     nav ul li a:hover {
-      color: #ddd;
+      color: var(--secondary-color);
     }
 
     header {
-      height: auto;
-      background-color: #000;
+      background-color: var(--primary-color);
       text-align: center;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      font-size: 3em;
-      padding: 20px;
+      padding: 30px 20px;
+    }
+
+    header img {
+      max-width: 250px;
+      height: auto;
     }
 
     .hero-image {
       width: 100%;
       display: block;
       height: auto;
+      object-fit: cover;
     }
 
     section {
-      padding: 60px 20px;
+      padding: 70px 20px;
       text-align: center;
     }
 
     section h2 {
       margin-bottom: 20px;
-      font-size: 2em;
+      font-size: 2.5em;
+      color: var(--primary-color);
     }
 
     section p {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
-      font-size: 1.1em;
-      line-height: 1.6;
+      font-size: 1.2em;
+      line-height: 1.7;
     }
 
     .contact {
-      background-color: #f9f9f9;
-      padding: 40px 20px;
+      background-color: var(--secondary-color);
+      color: white;
+    }
+
+    .contact p {
+      font-size: 1.1em;
     }
 
     .map-container {
       width: 100%;
       height: 400px;
       margin-top: 20px;
+      border: none;
+    }
+
+    .partners {
+      background-color: var(--light-color);
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .partners h2 {
+      color: var(--primary-color);
+      margin-bottom: 30px;
+    }
+
+    .partner-slider {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .partner-track {
+      display: flex;
+      width: calc(200px * 10); /* dostosuj przy więcej logach */
+      animation: scroll 30s linear infinite;
+    }
+
+    .partner-track img {
+      height: 80px;
+      margin: 0 30px;
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+    }
+
+    .partner-track img:hover {
+      filter: grayscale(0%);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     footer {
-      background-color: #333;
+      background-color: var(--primary-color);
       color: white;
       text-align: center;
-      padding: 20px 0;
+      padding: 25px 0;
       font-size: 0.9em;
     }
 
@@ -100,20 +159,42 @@
     }
 
     .bottom-menu a {
-      color: #ccc;
+      color: #bbb;
       margin: 0 10px;
       text-decoration: none;
-      font-size: 0.8em;
+      font-size: 0.85em;
     }
 
     .bottom-menu a:hover {
       text-decoration: underline;
+      color: white;
+    }
+
+    /* Responsywność */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      section {
+        padding: 40px 15px;
+      }
+      section h2 {
+        font-size: 2em;
+      }
+      .partner-track img {
+        height: 60px;
+        margin: 0 15px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- MENU -->
 <nav>
   <ul>
     <li><a href="#about">O nas</a></li>
@@ -123,30 +204,36 @@
   </ul>
 </nav>
 
+<!-- LOGO -->
 <header>
-  Hydrokoma
+  <img src="https://i.ibb.co/s9zvfh2/LOGO-HYDROKOMA.png" alt="Hydrokoma Logo">
 </header>
 
-<!-- Hero Image -->
+<!-- ZDJĘCIE BUDOWY -->
 <img class="hero-image" src="https://i.ibb.co/cck6csCQ/PHOTO-2025-03-04-14-32-38.jpg" alt="Budowa - Hydrokoma">
 
 <main>
+
+  <!-- O NAS -->
   <section id="about">
     <h2>O nas</h2>
     <p>Hydrokoma działa na rynku od 2021 roku. Specjalizujemy się w technologii hydroizolacji konstrukcji budowlanych.
-       Współpracujemy z wieloma klientami i posiadamy bogate doświadczenie w branży.</p>
+       Współpracujemy z wieloma klientami i posiadamy bogate doświadczenie w branży budowlanej.</p>
   </section>
 
+  <!-- USŁUGI -->
   <section id="services">
     <h2>Usługi</h2>
-    <p>Wykonujemy kompleksowe hydroizolacje budynków mieszkalnych, przemysłowych oraz użyteczności publicznej. Stosujemy najnowsze technologie i sprawdzone rozwiązania.</p>
+    <p>Wykonujemy kompleksowe hydroizolacje budynków mieszkalnych, przemysłowych oraz użyteczności publicznej. Stosujemy nowoczesne technologie i wysokiej jakości materiały, gwarantując pełną szczelność konstrukcji.</p>
   </section>
 
+  <!-- REALIZACJE -->
   <section id="projects">
     <h2>Realizacje</h2>
-    <p>Nasze projekty to gwarancja jakości i profesjonalizmu. Realizujemy inwestycje na terenie całej Polski.</p>
+    <p>Nasze realizacje obejmują setki inwestycji w całej Polsce. Dzięki doświadczeniu i pasji zawsze dostarczamy najwyższej jakości rozwiązania hydroizolacyjne.</p>
   </section>
 
+  <!-- KONTAKT -->
   <section id="contact" class="contact">
     <h2>Kontakt</h2>
     <p>Email: kontakt@hydrokoma.pl<br>Telefon: +48 123 456 789<br>Adres: ul. Porzeczkowa 16, 40-750 Katowice</p>
@@ -162,8 +249,25 @@
       </iframe>
     </div>
   </section>
+
+  <!-- PARTNERZY -->
+  <section class="partners">
+    <h2>Nasi partnerzy</h2>
+    <div class="partner-slider">
+      <div class="partner-track">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Logo_Test.png" alt="Partner 1">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Flat_tick_icon.svg" alt="Partner 2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Check_green_icon.svg" alt="Partner 3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Icon-checkmark.svg" alt="Partner 4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Logo_Test.png" alt="Partner 5">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Flat_tick_icon.svg" alt="Partner 6">
+      </div>
+    </div>
+  </section>
+
 </main>
 
+<!-- STOPKA -->
 <footer>
   <p>© 2025 Hydrokoma - Wszystkie prawa zastrzeżone</p>
   <div class="bottom-menu">
