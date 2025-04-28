@@ -53,3 +53,27 @@ footer {
     padding: 20px 0;
     font-size: 0.9em;
 }
+<style>
+  /* ... reszta stylu pozostaje bez zmian ... */
+
+  header {
+    background-color: white; /* zamiast granatu */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+  }
+
+  header img {
+    max-width: 200px;
+    height: auto;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    background-color: white; /* białe tło pod zdjęciem */
+  }
+</style>
