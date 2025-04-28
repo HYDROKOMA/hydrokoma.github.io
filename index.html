@@ -55,6 +55,18 @@
       display: block;
     }
 
+    /* Dynamiczne slogany */
+    .slogan-banner {
+      background-color: #1f2a44;
+      color: #ffcc00;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 1.5em;
+      font-weight: bold;
+      transition: opacity 1s ease-in-out;
+      min-height: 70px;
+    }
+
     main {
       padding: 40px 20px;
       text-align: center;
@@ -127,16 +139,6 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* Pasek reklamowy */
-    .promo-banner {
-      background-color: #ffcc00;
-      text-align: center;
-      padding: 10px;
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #1f2a44;
-    }
-
     /* Stopka */
     footer {
       background-color: #1f2a44;
@@ -179,9 +181,9 @@
     }
 
     @media (max-width: 480px) {
-      .promo-banner {
+      .slogan-banner {
         font-size: 1.2em;
-        padding: 8px;
+        padding: 10px;
       }
       .partners-slider img {
         height: 60px;
@@ -211,9 +213,9 @@
 <!-- Hero Image -->
 <img class="hero-image" src="https://i.ibb.co/wZyRWch8/IMG-9257.jpg" alt="Budowa - Hydrokoma">
 
-<!-- Pasek promocyjny -->
-<div class="promo-banner">
-  Profesjonalne hydroizolacje od 2021 roku!
+<!-- Dynamiczne slogany -->
+<div class="slogan-banner" id="sloganBanner">
+  Profesjonalne podejście
 </div>
 
 <main>
@@ -273,6 +275,29 @@
     <a href="#">Polityka prywatności</a>
   </div>
 </footer>
+
+<!-- JavaScript do zmiany sloganów -->
+<script>
+  const slogans = [
+    "Profesjonalne podejście",
+    "Wsparcie ekspertów",
+    "Terminowe wykonanie prac",
+    "Szybkie ofertowanie",
+    "Skuteczność",
+    "Odpowiedni dobór materiałów i techniki"
+  ];
+  let index = 0;
+  const sloganBanner = document.getElementById('sloganBanner');
+
+  setInterval(() => {
+    index = (index + 1) % slogans.length;
+    sloganBanner.style.opacity = 0;
+    setTimeout(() => {
+      sloganBanner.textContent = slogans[index];
+      sloganBanner.style.opacity = 1;
+    }, 500);
+  }, 3000);
+</script>
 
 </body>
 </html>
