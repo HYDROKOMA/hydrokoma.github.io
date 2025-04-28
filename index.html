@@ -19,12 +19,12 @@
       align-items: center;
       background-color: #1f2a44;
       padding: 10px 20px;
-      border-bottom: 2px solid #ccc;
+      flex-wrap: wrap;
     }
 
     nav img {
       height: 50px;
-      margin-right: 30px;
+      margin-right: 20px;
     }
 
     nav ul {
@@ -32,19 +32,20 @@
       margin: 0;
       padding: 0;
       display: flex;
-      flex: 1;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 0;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
-      padding: 15px 0;
-      display: block;
+      padding: 10px 5px;
       font-weight: bold;
+      display: block;
     }
 
     nav ul li a:hover {
@@ -53,9 +54,9 @@
 
     .hero-image {
       width: 100%;
-      display: block;
       height: auto;
       margin-top: 0;
+      display: block;
     }
 
     main {
@@ -73,12 +74,21 @@
       color: #1f2a44;
     }
 
-    section p {
+    section p, section ul {
       max-width: 800px;
       margin: 0 auto;
       font-size: 1.1em;
       line-height: 1.6;
       color: #333;
+      text-align: left;
+    }
+
+    section ul {
+      padding-left: 20px;
+    }
+
+    section ul li {
+      margin-bottom: 10px;
     }
 
     .contact {
@@ -96,17 +106,20 @@
       background-color: #1f2a44;
       color: white;
       text-align: center;
-      padding: 20px 0;
+      padding: 20px 10px;
       font-size: 0.9em;
     }
 
     .bottom-menu {
       margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
     .bottom-menu a {
       color: #ccc;
-      margin: 0 10px;
       text-decoration: none;
       font-size: 0.8em;
     }
@@ -129,14 +142,13 @@
     .partners-slider {
       display: flex;
       overflow: hidden;
-      white-space: nowrap;
       animation: scroll 20s linear infinite;
       align-items: center;
     }
 
     .partners-slider img {
       height: 80px;
-      margin: 0 40px;
+      margin: 0 30px;
     }
 
     @keyframes scroll {
@@ -152,6 +164,36 @@
       font-size: 1.5em;
       font-weight: bold;
       color: #1f2a44;
+    }
+
+    /* Responsywność */
+    @media (max-width: 768px) {
+      nav {
+        justify-content: center;
+      }
+      nav img {
+        margin-bottom: 10px;
+      }
+      nav ul {
+        justify-content: center;
+      }
+      .partners-slider {
+        animation-duration: 30s;
+      }
+      .map-container {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .promo-banner {
+        font-size: 1.2em;
+        padding: 8px;
+      }
+      .partners-slider img {
+        height: 60px;
+        margin: 0 20px;
+      }
     }
   </style>
 </head>
@@ -179,24 +221,20 @@
 <main>
   <section id="about">
     <h2>O nas</h2>
-    <p>Hydrokoma to firma, która od 2021 roku specjalizuje się w technologii hydroizolacji budowlanych. Naszą misją jest zapewnienie kompleksowej ochrony konstrukcji budowlanych przed wodą i wilgocią, co przyczynia się do długowieczności i bezpieczeństwa budynków.
-
-Dzięki nowoczesnym rozwiązaniom i zastosowaniu najlepszych technologii, jesteśmy w stanie dostarczać usługi na najwyższym poziomie. Nasza firma współpracuje zarówno z klientami indywidualnymi, jak i dużymi firmami, realizując projekty na terenie całej Polski.
-
-Zespół Hydrokoma to wykwalifikowani specjaliści, którzy nieustannie poszerzają swoją wiedzę, aby sprostać coraz bardziej wymagającym projektom. Zawsze stawiamy na precyzję, rzetelność oraz terminowość, a każdy projekt traktujemy indywidualnie, dbając o jego zgodność z oczekiwaniami klienta.
-
-Nasze doświadczenie, profesjonalizm i pasja do tego, co robimy, sprawiają, że Hydrokoma to zaufany partner w dziedzinie hydroizolacji.</p>
+    <p>Hydrokoma to firma, która od 2021 roku specjalizuje się w technologii hydroizolacji budowlanych. Naszą misją jest zapewnienie kompleksowej ochrony konstrukcji budowlanych przed wodą i wilgocią, co przyczynia się do długowieczności i bezpieczeństwa budynków.</p>
   </section>
 
   <section id="services">
     <h2>Usługi</h2>
-    <p>Hydroizolacja budynków – zabezpieczanie ścian, fundamentów i dachów przed wilgocią.<br>
-    Izolacje przeciwwilgociowe – ochrona przed wodą gruntową i wilgocią kapilarną.<br>
-    Izolacje przeciwwodne – zabezpieczanie przed wodami gruntowymi.<br>
-    Izolacje dachów – zabezpieczanie dachów płaskich i skośnych przed przeciekaniem.<br>
-    Renowacja i naprawa istniejących hydroizolacji – usuwanie uszkodzeń i przywracanie szczelności.<br>
-    Projektowanie hydroizolacji – tworzenie indywidualnych rozwiązań dopasowanych do potrzeb klienta.<br>
-    Wprowadzanie poprawek do istniejących hydroizolacji – modyfikowanie i ulepszanie istniejących systemów izolacyjnych.</p>
+    <ul>
+      <li>Hydroizolacja budynków – zabezpieczanie ścian, fundamentów i dachów przed wilgocią.</li>
+      <li>Izolacje przeciwwilgociowe – ochrona przed wodą gruntową i wilgocią kapilarną.</li>
+      <li>Izolacje przeciwwodne – zabezpieczanie przed wodami gruntowymi.</li>
+      <li>Izolacje dachów – zabezpieczanie dachów płaskich i skośnych przed przeciekaniem.</li>
+      <li>Renowacja i naprawa istniejących hydroizolacji – usuwanie uszkodzeń i przywracanie szczelności.</li>
+      <li>Projektowanie hydroizolacji – tworzenie indywidualnych rozwiązań dopasowanych do potrzeb klienta.</li>
+      <li>Wprowadzanie poprawek do istniejących hydroizolacji – modyfikowanie i ulepszanie istniejących systemów.</li>
+    </ul>
   </section>
 
   <section id="projects">
@@ -223,12 +261,12 @@ Nasze doświadczenie, profesjonalizm i pasja do tego, co robimy, sprawiają, że
   <section class="partners-section">
     <h2>Nasi partnerzy</h2>
     <div class="partners-slider">
-      <img src="https://i.ibb.co/5M7s5XG/partner1.png" alt="Partner 1">
-      <img src="https://i.ibb.co/Y8s9MNz/partner2.png" alt="Partner 2">
-      <img src="https://i.ibb.co/3ypfL4d/partner3.png" alt="Partner 3">
-      <img src="https://i.ibb.co/gvVmMTW/partner4.png" alt="Partner 4">
-      <img src="https://i.ibb.co/bFc3J4J/partner5.png" alt="Partner 5">
-      <img src="Murapol.png" alt="Partner 1">
+      <img src="images/partner1.png" alt="Partner 1">
+      <img src="images/partner2.png" alt="Partner 2">
+      <img src="images/partner3.png" alt="Partner 3">
+      <img src="images/partner4.png" alt="Partner 4">
+      <img src="images/partner5.png" alt="Partner 5">
+      <img src="images/murapol.png" alt="Murapol">
     </div>
   </section>
 </main>
