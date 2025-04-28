@@ -9,37 +9,30 @@
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #fff;
       scroll-behavior: smooth;
+      background-color: #fff;
     }
 
+    /* Pasek nawigacji */
     nav {
-      background-color: #333;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
+      background-color: #1f2a44;
+      padding: 10px 20px;
       border-bottom: 2px solid #ccc;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
+    nav img {
       height: 50px;
-      margin-right: 20px;
+      margin-right: 30px;
     }
 
     nav ul {
       list-style: none;
-      display: flex;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex: 1;
     }
 
     nav ul li {
@@ -49,35 +42,35 @@
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-size: 1em;
-      padding: 20px 0;
+      padding: 15px 0;
       display: block;
+      font-weight: bold;
     }
 
     nav ul li a:hover {
       color: #ddd;
     }
 
-    header {
-      text-align: center;
-      padding: 20px;
-    }
-
     .hero-image {
       width: 100%;
-      height: auto;
       display: block;
+      height: auto;
+      margin-top: 0;
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
     }
 
     section {
-      padding: 60px 20px;
-      text-align: center;
+      margin-bottom: 60px;
     }
 
     section h2 {
       margin-bottom: 20px;
       font-size: 2em;
-      color: #333;
+      color: #1f2a44;
     }
 
     section p {
@@ -85,7 +78,7 @@
       margin: 0 auto;
       font-size: 1.1em;
       line-height: 1.6;
-      color: #555;
+      color: #333;
     }
 
     .contact {
@@ -99,44 +92,8 @@
       margin-top: 20px;
     }
 
-    .partners {
-      background-color: #fff;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .partners h2 {
-      font-size: 2em;
-      margin-bottom: 30px;
-      color: #333;
-    }
-
-    .partner-logos {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      height: 100px;
-    }
-
-    .logo-track {
-      display: flex;
-      width: calc(300%);
-      animation: scroll 30s linear infinite;
-    }
-
-    .logo-track img {
-      height: 80px;
-      margin: 0 30px;
-      object-fit: contain;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
     footer {
-      background-color: #333;
+      background-color: #1f2a44;
       color: white;
       text-align: center;
       padding: 20px 0;
@@ -157,15 +114,42 @@
     .bottom-menu a:hover {
       text-decoration: underline;
     }
+
+    /* Pasek partnerów */
+    .partners-section {
+      margin: 60px 0;
+      text-align: center;
+    }
+
+    .partners-section h2 {
+      color: #1f2a44;
+      margin-bottom: 20px;
+    }
+
+    .partners-slider {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: scroll 20s linear infinite;
+      align-items: center;
+    }
+
+    .partners-slider img {
+      height: 80px;
+      margin: 0 40px;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
   </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="logo">
-    <img src="https://i.ibb.co/DfTDJNtf/logo-black.jpg" alt="Hydrokoma Logo">
-  </div>
+  <img src="https://i.ibb.co/62f48yp/2d9ed097-394a-4231-856f-4514f3dac83b.jpg" alt="Hydrokoma Logo">
   <ul>
     <li><a href="#about">O nas</a></li>
     <li><a href="#services">Usługi</a></li>
@@ -174,10 +158,6 @@
   </ul>
 </nav>
 
-<header>
-  <!-- Opcjonalny dodatkowy nagłówek -->
-</header>
-
 <!-- Hero Image -->
 <img class="hero-image" src="https://i.ibb.co/cck6csCQ/PHOTO-2025-03-04-14-32-38.jpg" alt="Budowa - Hydrokoma">
 
@@ -185,13 +165,12 @@
   <section id="about">
     <h2>O nas</h2>
     <p>Hydrokoma działa na rynku od 2021 roku. Specjalizujemy się w technologii hydroizolacji konstrukcji budowlanych.
-    Współpracujemy z wieloma klientami i posiadamy bogate doświadczenie w branży.</p>
+       Współpracujemy z wieloma klientami i posiadamy bogate doświadczenie w branży.</p>
   </section>
 
   <section id="services">
     <h2>Usługi</h2>
-    <p>Wykonujemy kompleksowe hydroizolacje budynków mieszkalnych, przemysłowych oraz użyteczności publicznej.
-    Stosujemy najnowsze technologie i sprawdzone rozwiązania.</p>
+    <p>Wykonujemy kompleksowe hydroizolacje budynków mieszkalnych, przemysłowych oraz użyteczności publicznej. Stosujemy najnowsze technologie i sprawdzone rozwiązania.</p>
   </section>
 
   <section id="projects">
@@ -215,20 +194,17 @@
     </div>
   </section>
 
-  <section class="partners">
+  <section class="partners-section">
     <h2>Nasi partnerzy</h2>
-    <div class="partner-logos">
-      <div class="logo-track">
-        <img src="https://i.ibb.co/9N9G7kP/Murapol.png" alt="Murapol Logo">
-        <img src="https://via.placeholder.com/150x80?text=Partner+2" alt="Partner 2">
-        <img src="https://via.placeholder.com/150x80?text=Partner+3" alt="Partner 3">
-        <img src="https://i.ibb.co/9N9G7kP/Murapol.png" alt="Murapol Logo">
-        <img src="https://via.placeholder.com/150x80?text=Partner+2" alt="Partner 2">
-        <img src="https://via.placeholder.com/150x80?text=Partner+3" alt="Partner 3">
-      </div>
+    <div class="partners-slider">
+      <img src="https://i.ibb.co/5M7s5XG/partner1.png" alt="Partner 1">
+      <img src="https://i.ibb.co/Y8s9MNz/partner2.png" alt="Partner 2">
+      <img src="https://i.ibb.co/3ypfL4d/partner3.png" alt="Partner 3">
+      <img src="https://i.ibb.co/gvVmMTW/partner4.png" alt="Partner 4">
+      <img src="https://i.ibb.co/bFc3J4J/partner5.png" alt="Partner 5">
+      <img src="https://i.ibb.co/vQT9M8n/Murapol.jpeg" alt="Murapol">
     </div>
   </section>
-
 </main>
 
 <footer>
