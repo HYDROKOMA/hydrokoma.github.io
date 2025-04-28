@@ -17,9 +17,9 @@
     nav {
       display: flex;
       align-items: center;
-      background-color: #000000;
-      padding: 10px 30px;
       justify-content: space-between;
+      background-color: #000;
+      padding: 10px 20px;
       flex-wrap: wrap;
     }
 
@@ -29,10 +29,10 @@
 
     .nav-right ul {
       list-style: none;
+      display: flex;
       margin: 0;
       padding: 0;
-      display: flex;
-      gap: 25px;
+      gap: 20px;
     }
 
     .nav-right ul li a {
@@ -40,8 +40,8 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 1.1em;
-      display: block;
       padding: 10px 5px;
+      display: block;
     }
 
     .nav-right ul li a:hover {
@@ -52,7 +52,6 @@
     .hero-image {
       width: 100%;
       height: auto;
-      margin-top: 0;
       display: block;
     }
 
@@ -99,6 +98,46 @@
       margin-top: 20px;
     }
 
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Pasek partnerów */
+    .partners-section {
+      margin: 60px 0;
+      text-align: center;
+    }
+
+    .partners-slider {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      animation: scroll 20s linear infinite;
+    }
+
+    .partners-slider img {
+      height: 80px;
+      margin: 0 30px;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Pasek reklamowy */
+    .promo-banner {
+      background-color: #ffcc00;
+      text-align: center;
+      padding: 10px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #1f2a44;
+    }
+
+    /* Stopka */
     footer {
       background-color: #1f2a44;
       color: white;
@@ -125,55 +164,11 @@
       text-decoration: underline;
     }
 
-    /* Pasek partnerów */
-    .partners-section {
-      margin: 60px 0;
-      text-align: center;
-    }
-
-    .partners-section h2 {
-      color: #1f2a44;
-      margin-bottom: 20px;
-    }
-
-    .partners-slider {
-      display: flex;
-      overflow: hidden;
-      animation: scroll 20s linear infinite;
-      align-items: center;
-    }
-
-    .partners-slider img {
-      height: 80px;
-      margin: 0 30px;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    /* Pasek reklamowy */
-    .promo-banner {
-      background-color: #ffcc00;
-      text-align: center;
-      padding: 10px;
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #1f2a44;
-    }
-
     /* Responsywność */
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
       .nav-right ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        margin-top: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
       }
       .partners-slider {
         animation-duration: 30s;
@@ -216,7 +211,11 @@
 <!-- Hero Image -->
 <img class="hero-image" src="https://i.ibb.co/wZyRWch8/IMG-9257.jpg" alt="Budowa - Hydrokoma">
 
-<!-- Główna treść -->
+<!-- Pasek promocyjny -->
+<div class="promo-banner">
+  Profesjonalne hydroizolacje od 2021 roku!
+</div>
+
 <main>
 
   <section id="about">
@@ -246,11 +245,34 @@
     <h2>Kontakt</h2>
     <p>Email: kontakt@hydrokoma.pl<br>Telefon: +48 123 456 789<br>Adres: ul. Porzeczkowa 16, 40-750 Katowice</p>
     <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.232574051153!2d18.979192976823984!3d50.2257798715345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce6f7b6b4f65%3A0xf4a7f5aeb0db1f8b!2sPorzeczkowa%2016%2C%2040-750%20Katowice!5e0!3m2!1spl!2spl!4v1714323674321!5m2!1spl!2spl"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrer
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.232574051153!2d18.979192976823984!3d50.2257798715345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce6f7b6b4f65%3A0xf4a7f5aeb0db1f8b!2sPorzeczkowa%2016%2C%2040-750%20Katowice!5e0!3m2!1spl!2spl!4v1714323674321!5m2!1spl!2spl" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <section class="partners-section">
+    <h2>Nasi partnerzy</h2>
+    <div class="partners-slider">
+      <img src="images/partner1.png" alt="Partner 1">
+      <img src="images/partner2.png" alt="Partner 2">
+      <img src="images/partner3.png" alt="Partner 3">
+      <img src="images/partner4.png" alt="Partner 4">
+      <img src="images/partner5.png" alt="Partner 5">
+    </div>
+  </section>
+
+</main>
+
+<!-- Stopka -->
+<footer>
+  <p>© 2025 Hydrokoma - Wszystkie prawa zastrzeżone</p>
+  <div class="bottom-menu">
+    <a href="#about">O nas</a> |
+    <a href="#services">Usługi</a> |
+    <a href="#projects">Realizacje</a> |
+    <a href="#contact">Kontakt</a> |
+    <a href="#">Polityka prywatności</a>
+  </div>
+</footer>
+
+</body>
+</html>
