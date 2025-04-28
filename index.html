@@ -17,39 +17,34 @@
     nav {
       display: flex;
       align-items: center;
-      background-color: #000000; /* Czarny kolor */
-      padding: 10px 20px;
-      flex-wrap: wrap;
+      background-color: #000000;
+      padding: 10px 30px;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
 
-    nav img {
-      height: 50px;
-      margin-right: 20px;
+    .nav-left img {
+      height: 80px;
     }
 
-    nav ul {
+    .nav-right ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+      gap: 25px;
     }
 
-    nav ul li {
-      margin: 0;
-    }
-
-    nav ul li a {
+    .nav-right ul li a {
       color: white;
       text-decoration: none;
-      padding: 10px 5px;
       font-weight: bold;
+      font-size: 1.1em;
       display: block;
+      padding: 10px 5px;
     }
 
-    nav ul li a:hover {
+    .nav-right ul li a:hover {
       color: #ddd;
     }
 
@@ -57,8 +52,7 @@
     .hero-image {
       width: 100%;
       height: auto;
-      object-fit: cover;
-      max-height: 500px;
+      margin-top: 0;
       display: block;
     }
 
@@ -159,6 +153,7 @@
       100% { transform: translateX(-100%); }
     }
 
+    /* Pasek reklamowy */
     .promo-banner {
       background-color: #ffcc00;
       text-align: center;
@@ -171,37 +166,20 @@
     /* Responsywność */
     @media (max-width: 768px) {
       nav {
-        justify-content: center;
-      }
-      nav img {
-        margin-bottom: 10px;
-      }
-      nav ul {
         flex-direction: column;
         align-items: center;
-        width: 100%;
       }
-      nav ul li {
-        width: 100%;
-        text-align: center;
-      }
-      .hero-image {
-        max-height: 300px;
+      .nav-right ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
       }
       .partners-slider {
         animation-duration: 30s;
       }
       .map-container {
         height: 300px;
-      }
-      main {
-        padding: 30px 15px;
-      }
-      section h2 {
-        font-size: 1.7em;
-      }
-      section p, section ul {
-        font-size: 1em;
       }
     }
 
@@ -210,21 +188,9 @@
         font-size: 1.2em;
         padding: 8px;
       }
-      .hero-image {
-        max-height: 250px;
-      }
       .partners-slider img {
-        height: 50px;
-        margin: 0 15px;
-      }
-      main {
-        padding: 20px 10px;
-      }
-      section h2 {
-        font-size: 1.5em;
-      }
-      section p, section ul {
-        font-size: 0.95em;
+        height: 60px;
+        margin: 0 20px;
       }
     }
   </style>
@@ -232,15 +198,19 @@
 
 <body>
 
-<!-- Nawigacja -->
+<!-- Pasek nawigacji -->
 <nav>
-  <img src="https://i.ibb.co/Z1chSVPx/2d9ed097-394a-4231-856f-4514f3dac83b.jpg" alt="Hydrokoma Logo">
-  <ul>
-    <li><a href="#about">O nas</a></li>
-    <li><a href="#services">Usługi</a></li>
-    <li><a href="#projects">Realizacje</a></li>
-    <li><a href="#contact">Kontakt</a></li>
-  </ul>
+  <div class="nav-left">
+    <img src="https://i.ibb.co/Z1chSVPx/2d9ed097-394a-4231-856f-4514f3dac83b.jpg" alt="Hydrokoma Logo">
+  </div>
+  <div class="nav-right">
+    <ul>
+      <li><a href="#about">O nas</a></li>
+      <li><a href="#services">Usługi</a></li>
+      <li><a href="#projects">Realizacje</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- Hero Image -->
@@ -248,6 +218,7 @@
 
 <!-- Główna treść -->
 <main>
+
   <section id="about">
     <h2>O nas</h2>
     <p>Hydrokoma to firma, która od 2021 roku specjalizuje się w technologii hydroizolacji budowlanych. Naszą misją jest zapewnienie kompleksowej ochrony konstrukcji budowlanych przed wodą i wilgocią, co przyczynia się do długowieczności i bezpieczeństwa budynków.</p>
@@ -282,35 +253,4 @@
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </section>
-
-  <section class="partners-section">
-    <h2>Nasi partnerzy</h2>
-    <div class="partners-slider">
-      <img src="images/partner1.png" alt="Partner 1">
-      <img src="images/partner2.png" alt="Partner 2">
-      <img src="images/partner3.png" alt="Partner 3">
-      <img src="images/partner4.png" alt="Partner 4">
-      <img src="images/partner5.png" alt="Partner 5">
-      <img src="https://github.com/HYDROKOMA/hydrokoma.github.io/blob/a7eaec574fdbd82d394a4665357aa0ae5048e623/Murapol.png" alt="Murapol">
-    </div>
-  </section>
-</main>
-
-<!-- Stopka -->
-<footer>
-  <p>© 2025 Hydrokoma - Wszystkie prawa zastrzeżone</p>
-  <div class="bottom-menu">
-    <a href="#about">O nas</a> |
-    <a href="#services">Usługi</a> |
-    <a href="#projects">Realizacje</a> |
-    <a href="#contact">Kontakt</a> |
-    <a href="#">Polityka prywatności</a>
-  </div>
-</footer>
-
-</body>
-</html>
+        referrer
