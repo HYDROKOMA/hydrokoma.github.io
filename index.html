@@ -44,19 +44,19 @@
     }
 
     header {
-      height: 90vh;
-      background-image: url('https://i.ibb.co/cck6csCQ/PHOTO-2025-03-04-14-32-38.jpg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
+      height: auto;
       background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       text-align: center;
       color: white;
       text-shadow: 2px 2px 4px #000;
       font-size: 3em;
+      padding: 20px;
+    }
+
+    .hero-image {
+      width: 100%;
+      display: block;
+      height: auto;
     }
 
     section {
@@ -84,6 +84,7 @@
     .map-container {
       width: 100%;
       height: 400px;
+      margin-top: 20px;
     }
 
     footer {
@@ -126,10 +127,13 @@
   Hydrokoma
 </header>
 
+<!-- Hero Image -->
+<img class="hero-image" src="https://i.ibb.co/cck6csCQ/PHOTO-2025-03-04-14-32-38.jpg" alt="Budowa - Hydrokoma">
+
 <main>
   <section id="about">
     <h2>O nas</h2>
-    <p>Hydrokoma działa na rynku od 2021 roku. Specjalizujemy się w technologii hydroizolacji konstrukcji budowlanych. 
+    <p>Hydrokoma działa na rynku od 2021 roku. Specjalizujemy się w technologii hydroizolacji konstrukcji budowlanych.
        Współpracujemy z wieloma klientami i posiadamy bogate doświadczenie w branży.</p>
   </section>
 
@@ -145,9 +149,17 @@
 
   <section id="contact" class="contact">
     <h2>Kontakt</h2>
-    <p>Email: kontakt@hydrokoma.pl<br>Telefon: +48 123 456 789<br>Adres: ul. Przykładowa 1, 00-000 Warszawa</p>
+    <p>Email: kontakt@hydrokoma.pl<br>Telefon: +48 123 456 789<br>Adres: ul. Porzeczkowa 16, 40-750 Katowice</p>
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.232574051153!2d18.979192976823984!3d50.2257798715345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce6f7b6b4f65%3A0xf4a7f5aeb0db1f8b!2sPorzeczkowa%2016%2C%2040-750%20Katowice!5e0!3m2!1spl!2spl!4v1714323674321!5m2!1spl!2spl"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </section>
 </main>
