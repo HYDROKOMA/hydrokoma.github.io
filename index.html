@@ -10,9 +10,43 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
         }
 
-        /* Styl nagłówka z tłem */
+        /* Styl nawigacji */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 10px 20px;
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Styl nagłówka */
         header {
             position: relative;
             height: 90vh;
@@ -20,38 +54,77 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        /* Lekka warstwa przyciemnienia dla tekstu */
         header .overlay {
-            background-color: rgba(0, 0, 0, 0.5); /* ciemna przezroczystość */
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
-            height: 100%;
+            padding: 20px;
             width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 20px;
         }
 
-        /* Styl sekcji o firmie */
-        .about {
-            padding: 60px 20px;
+        /* Sekcje */
+        section {
+            padding: 80px 20px;
             text-align: center;
         }
 
-        .about h2 {
+        section h2 {
             margin-bottom: 20px;
             font-size: 2em;
         }
 
-        .about p {
+        section p, section ul {
             max-width: 800px;
             margin: 0 auto;
             font-size: 1.1em;
             line-height: 1.6;
+        }
+
+        /* Styl formularza */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Styl mapy */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
         }
 
         /* Styl stopki */
@@ -62,9 +135,24 @@
             padding: 20px 0;
             font-size: 0.9em;
         }
+
+        /* Dostosowanie nagłówka nawigacji */
+        header {
+            padding-top: 60px;
+        }
     </style>
 </head>
 <body>
+
+<nav>
+    <ul>
+        <li><a href="#uslugi">Usługi</a></li>
+        <li><a href="#realizacje">Realizacje</a></li>
+        <li><a href="#kontakt">Dane kontaktowe</a></li>
+        <li><a href="#formularz">Formularz kontaktowy</a></li>
+        <li><a href="#mapa">Mapa</a></li>
+    </ul>
+</nav>
 
 <header>
     <div class="overlay">
@@ -74,11 +162,54 @@
 </header>
 
 <main>
-    <section class="about">
+
+    <section class="about" id="o-firmie">
         <h2>O firmie</h2>
         <p>Hydrokoma działa na rynku od 2021 roku. Specjalizujemy się w technologii hydroizolacji konstrukcji budowlanych. 
            Współpracujemy z wieloma klientami i posiadamy bogate doświadczenie.</p>
     </section>
+
+    <section id="uslugi">
+        <h2>Nasze usługi</h2>
+        <ul>
+            <li>Hydroizolacja fundamentów</li>
+            <li>Izolacje tarasów i balkonów</li>
+            <li>Uszczelnienia piwnic i garaży podziemnych</li>
+            <li>Renowacja i naprawa izolacji</li>
+        </ul>
+    </section>
+
+    <section id="realizacje">
+        <h2>Nasze realizacje</h2>
+        <p>Pracujemy zarówno dla klientów indywidualnych, jak i dużych inwestycji budowlanych. Zdjęcia wkrótce!</p>
+    </section>
+
+    <section id="kontakt">
+        <h2>Dane kontaktowe</h2>
+        <p>Telefon: +48 123 456 789<br>
+           E-mail: kontakt@hydrokoma.pl<br>
+           Adres: ul. Przykładowa 1, 00-000 Warszawa</p>
+    </section>
+
+    <section id="formularz">
+        <h2>Formularz kontaktowy</h2>
+        <form>
+            <input type="text" name="name" placeholder="Twoje imię" required>
+            <input type="email" name="email" placeholder="Twój e-mail" required>
+            <textarea name="message" rows="5" placeholder="Twoja wiadomość" required></textarea>
+            <button type="submit">Wyślij</button>
+        </form>
+    </section>
+
+    <section id="mapa">
+        <h2>Nasza lokalizacja</h2>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.155670789191!2d21.012228315795696!3d52.22967567975751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669e18dc01%3A0x6f6a0decb918f0a3!2sWarszawa!5e0!3m2!1spl!2spl!4v1616161616161!5m2!1spl!2spl"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
 </main>
 
 <footer>
