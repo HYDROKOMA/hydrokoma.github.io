@@ -14,79 +14,61 @@
 
     /* Menu główne */
     nav {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(51, 51, 51, 0.9);
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-    }
-
-    nav ul {
-      margin: 0;
-      padding: 10px 20px;
-      list-style: none;
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
     }
-
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
     nav ul li {
-      margin-left: 20px;
+      margin: 0 20px;
     }
-
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      padding: 8px 12px;
+      padding: 15px;
+      display: block;
+      font-size: 1em;
     }
-
     nav ul li a:hover {
       background-color: #555;
-      border-radius: 4px;
+      border-radius: 5px;
     }
 
-    /* Nagłówek - Parallax */
-    header {
+    /* Parallax efekt */
+    .parallax {
+      background-image: url('https://i.ibb.co/cck6csCQ/PHOTO-2025-03-04-14-32-38.jpg');
       height: 90vh;
-      background-image: url('https://i.ibb.co/mS8cM93/budowa-hydrokoma.jpg');
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       display: flex;
-      align-items: center;
       justify-content: center;
-      text-align: center;
+      align-items: center;
       color: white;
-      position: relative;
-      margin-top: 60px; /* menu */
+      text-shadow: 2px 2px 4px #000;
+      font-size: 3em;
+      text-align: center;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: -1;
-    }
-
-    .overlay {
-      padding: 20px;
-    }
-
+    /* Sekcje */
     section {
       padding: 80px 20px;
       text-align: center;
     }
-
     section h2 {
-      font-size: 2em;
       margin-bottom: 20px;
+      font-size: 2em;
     }
-
     section p {
       max-width: 800px;
       margin: 0 auto;
@@ -94,37 +76,31 @@
       line-height: 1.6;
     }
 
+    /* Formularz kontaktowy */
     form {
       max-width: 600px;
-      margin: 30px auto;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
+      gap: 15px;
     }
-
-    form input, form textarea {
-      margin: 10px 0;
+    input, textarea {
       padding: 10px;
       font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-
-    form button {
+    button {
       padding: 10px;
       background-color: #333;
       color: white;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
       font-size: 1em;
     }
-
-    form button:hover {
+    button:hover {
       background-color: #555;
-    }
-
-    iframe {
-      margin-top: 20px;
-      width: 100%;
-      height: 300px;
-      border: none;
     }
 
     /* Stopka */
@@ -132,24 +108,26 @@
       background-color: #333;
       color: white;
       text-align: center;
-      padding: 20px 10px;
+      padding: 30px 20px;
       font-size: 0.9em;
     }
-
-    .footer-nav {
+    .footer-menu {
       margin-top: 10px;
     }
-
-    .footer-nav a {
+    .footer-menu a {
       color: #ccc;
-      text-decoration: none;
       margin: 0 10px;
-      font-size: 0.9em;
+      text-decoration: none;
+    }
+    .footer-menu a:hover {
+      text-decoration: underline;
     }
 
-    .footer-nav a:hover {
-      text-decoration: underline;
-      color: white;
+    /* Mapa */
+    .mapa {
+      margin: 40px auto;
+      max-width: 800px;
+      height: 400px;
     }
   </style>
 </head>
@@ -162,72 +140,65 @@
     <li><a href="#uslugi">Usługi</a></li>
     <li><a href="#realizacje">Realizacje</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#formularz">Formularz</a></li>
   </ul>
 </nav>
 
-<header>
-  <div class="overlay">
-    <h1>Hydrokoma</h1>
-    <p>Hydroizolacje budowlane | Od 2021 roku</p>
-  </div>
-</header>
+<div class="parallax">
+  Hydrokoma
+</div>
 
 <main>
 
   <section id="onas">
     <h2>O nas</h2>
-    <p>Firma Hydrokoma została założona w 2021 roku z pasji do technologii hydroizolacji budowlanych. Naszym celem jest skuteczna ochrona budynków przed wodą i wilgocią.</p>
+    <p>Hydrokoma działa na rynku od 2021 roku. Specjalizujemy się w technologii hydroizolacji konstrukcji budowlanych. Współpracujemy z klientami indywidualnymi oraz firmami budowlanymi. Jakość i doświadczenie to nasze atuty.</p>
   </section>
 
   <section id="uslugi">
-    <h2>Nasze usługi</h2>
-    <p>Oferujemy kompleksowe zabezpieczenia hydroizolacyjne dla fundamentów, dachów, tarasów oraz parkingów podziemnych.</p>
+    <h2>Usługi</h2>
+    <p>Oferujemy profesjonalne wykonanie hydroizolacji fundamentów, tarasów, dachów oraz uszczelnienia konstrukcji żelbetowych. Wykorzystujemy tylko sprawdzone technologie i materiały renomowanych producentów.</p>
   </section>
 
   <section id="realizacje">
     <h2>Realizacje</h2>
-    <p>Realizujemy projekty na terenie całej Polski dla klientów indywidualnych i firm budowlanych. Sprawdź nasze wybrane realizacje!</p>
+    <p>Zrealizowaliśmy setki inwestycji na terenie całej Polski — od domów jednorodzinnych po duże obiekty przemysłowe i mieszkaniowe. Nasze realizacje to najlepsza wizytówka naszych usług.</p>
   </section>
 
   <section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Masz pytania? Zapraszamy do kontaktu!</p>
-    <p>Telefon: +48 123 456 789</p>
-    <p>E-mail: kontakt@hydrokoma.pl</p>
+    <h2>Dane kontaktowe</h2>
+    <p>Telefon: <strong>+48 600 123 456</strong><br>
+    E-mail: <strong>kontakt@hydrokoma.pl</strong><br>
+    Adres: <strong>ul. Budowlana 12, 00-001 Warszawa</strong></p>
+  </section>
 
-    <h3>Formularz kontaktowy</h3>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Imię i nazwisko" required>
-      <input type="email" name="email" placeholder="Adres e-mail" required>
-      <textarea name="message" placeholder="Wiadomość" rows="5" required></textarea>
+  <section id="formularz">
+    <h2>Formularz kontaktowy</h2>
+    <form>
+      <input type="text" placeholder="Imię i nazwisko" required>
+      <input type="email" placeholder="Adres e-mail" required>
+      <textarea rows="5" placeholder="Twoja wiadomość" required></textarea>
       <button type="submit">Wyślij</button>
     </form>
-
-    <h3>Nasza lokalizacja</h3>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.8246093728126!2d16.920302415666748!3d52.40637497979105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470445bbeb04b1b7%3A0xb9275a8f5e9ab0b1!2sPozna%C5%84!5e0!3m2!1spl!2spl!4v1678454100141!5m2!1spl!2spl"
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
   </section>
+
+  <div class="mapa">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.162132373995!2d21.0122283!3d52.2296756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc6699b74d0b%3A0xc6d45b0d2745078e!2sWarszawa!5e0!3m2!1spl!2spl!4v1616340540545!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 
 </main>
 
 <footer>
   <p>© 2025 Hydrokoma - Wszystkie prawa zastrzeżone</p>
-  <div class="footer-nav">
+  <div class="footer-menu">
     <a href="#onas">O nas</a> |
     <a href="#uslugi">Usługi</a> |
     <a href="#realizacje">Realizacje</a> |
     <a href="#kontakt">Kontakt</a> |
+    <a href="#formularz">Formularz</a> |
     <a href="#polityka">Polityka prywatności</a>
   </div>
 </footer>
-
-<!-- Sekcja Polityka Prywatności -->
-<section id="polityka" style="background:#f9f9f9; padding:60px 20px; text-align:center;">
-  <h2>Polityka prywatności</h2>
-  <p>Szanujemy Twoją prywatność. Twoje dane osobowe są przetwarzane wyłącznie w celu kontaktu i realizacji usług, zgodnie z obowiązującymi przepisami RODO.</p>
-</section>
 
 </body>
 </html>
