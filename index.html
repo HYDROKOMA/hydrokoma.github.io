@@ -22,6 +22,7 @@
   gap: 20px;
 }
 
+        
 .service-card {
   background-color: white;
   padding: 25px;
@@ -155,27 +156,6 @@
       display: block;
     }
 
-      
- /*realizacje */
-      .realizacje-carousel {
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  gap: 20px;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
-  scroll-behavior: smooth;
-  scrollbar-width: thin; /* Firefox */
-}
-
-.realizacje-carousel::-webkit-scrollbar {
-  height: 8px;
-}
-
-.realizacje-carousel::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 4px;
-}
 
       
     
@@ -227,6 +207,48 @@
       margin-bottom: 10px;
     }
 
+      
+    .realizacje-carousel {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .realizacja {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .realizacja:hover {
+      transform: scale(1.02);
+    }
+
+    .realizacja img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .realizacja p {
+      padding: 15px;
+      font-size: 0.95em;
+    }
+
+    .realizacja.more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #1f2a44;
+      text-align: center;
+      font-size: 1em;
+      padding: 20px;
+    }
+
+      
     .contact {
       background-color: #f9f9f9;
       padding: 40px 20px;
@@ -398,24 +420,29 @@
 </section>
     
   <section id="projects">
-    <h2>Realizacje</h2>
-    <p>Nasze projekty to gwarancja jakości i profesjonalizmu. Realizujemy inwestycje na terenie całej Polski. Niebawem ukażą się w tej sekcji zdjęcia z naszymi realizacjami.</p>
-  </section>
-<div class="realizacja">
-        <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja1.jpg" alt="Realizacja 1">
-        <p><strong>Osiedle Zielone Tarasy – Katowice</strong><br>Izolacja fundamentów i garaży podziemnych – 1200 m².</p>
-      </div>
-      <div class="realizacja">
-        <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja2.jpg" alt="Realizacja 2">
-        <p><strong>Centrum Handlowe – Bielsko-Biała</strong><br>Iniekcja żywicami w części podziemnej – 800 m².</p>
-      </div>
-      <div class="realizacja">
-        <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja3.jpg" alt="Realizacja 3">
-        <p><strong>Zakład produkcyjny – Zabrze</strong><br>Uszczelnianie zbiorników żelbetowych – 950 m².</p>
-      </div>
+  <h2>Realizacje</h2>
+  <div class="realizacje-carousel">
+    <div class="realizacja highlighted">
+      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja4.jpg" alt="Realizacja 4">
+      <p><strong>Basen miejski – Ruda Śląska</strong><br>Renowacja hydroizolacji niecki basenowej – 1400 m².</p>
     </div>
-    <a class="more-projects" href="realizacje.html">→ Więcej realizacji</a>
-  </section>
+    <div class="realizacja">
+      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja1.jpg" alt="Realizacja 1">
+      <p><strong>Osiedle Zielone Tarasy – Katowice</strong><br>Izolacja fundamentów i garaży podziemnych – 1200 m².</p>
+    </div>
+    <div class="realizacja">
+      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja2.jpg" alt="Realizacja 2">
+      <p><strong>Centrum Handlowe – Bielsko-Biała</strong><br>Iniekcja żywicami w części podziemnej – 800 m².</p>
+    </div>
+    <div class="realizacja">
+      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja3.jpg" alt="Realizacja 3">
+      <p><strong>Zakład produkcyjny – Zabrze</strong><br>Uszczelnianie zbiorników żelbetowych – 950 m².</p>
+    </div>
+    <div class="realizacja more">
+      <a href="realizacje.html">Dowiedz się o pozostałych realizacjach →</a>
+    </div>
+  </div>
+</section>
 
   <section id="contact" class="contact">
     <h2>Kontakt</h2>
