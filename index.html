@@ -155,6 +155,45 @@
       display: block;
     }
 
+      .hero-header {
+  position: relative;
+  height: 100vh;
+  background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9257.JPG') no-repeat center center/cover;
+}
+
+.hero-overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.45); /* ciemna nakładka */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+.nav-logo img {
+  height: 80px;
+}
+
+
     /* Dynamiczne slogany */
    .slogan-banner {
   background-color: #1f2a44;
@@ -313,9 +352,24 @@
     </ul>
   </div>
 </nav>
-
-<!-- Hero Image -->
-<img class="hero-image" src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9257.JPG" alt="Budowa - Hydrokoma">
+<header class="hero-header">
+  <div class="hero-overlay">
+    <nav class="hero-nav">
+      <div class="nav-links">
+        <a href="#about">O nas</a>
+        <a href="#services">Usługi</a>
+        <a href="#projects">Realizacje</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+      <div class="nav-logo">
+        <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/2d9ed097-394a-4231-856f-4514f3dac83b.JPG?raw=true" alt="Hydrokoma Logo">
+      </div>
+    </nav>
+    <div class="slogan-banner" id="sloganBanner">
+      Profesjonalne podejście
+    </div>
+  </div>
+</header>
 
 <!-- Dynamiczne slogany -->
 <div class="slogan-banner" id="sloganBanner">
