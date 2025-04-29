@@ -1,106 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Hydrokoma - hydroizolacje </title>
-    <style>
-            
-    #services {
-  padding: 40px 20px;
-  background-color: #f5f5f5;
-  text-align: center;
-}
-
-#services h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.service-card {
-  background-color: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.service-card h3 {
-  margin-bottom: 15px;
-  font-size: 1.2em;
-  color: #2c3e50;
-}
-
-.service-card p {
-  font-size: 0.95em;
-  color: #555;
-}
-        #cookie-consent {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: #222;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-            display: none;
-            z-index: 1000;
-        }
-        #cookie-consent button {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-left: 15px;
-            cursor: pointer;
-        }
-        #cookie-consent button:hover {
-            background: #45a049;
-        }
-    </style>
-</head>
-<body>
-
-<!-- Formatka cookie -->
-<div id="cookie-consent">
-    Używamy plików cookie, aby poprawić jakość przeglądania, wyświetlać reklamy lub treści dostosowane do indywidualnych potrzeb użytkowników oraz analizować ruch na stronie. Kliknięcie przycisku „Akceptuj wszystkie” oznacza zgodę na wykorzystywanie przez nas plików cookie.
-    <button onclick="acceptCookies()">Akceptuję</button>
-</div>
-
-<script>
-    function acceptCookies() {
-        localStorage.setItem('cookiesAccepted', 'true');
-        document.getElementById('cookie-consent').style.display = 'none';
-    }
-
-    window.onload = function() {
-        if (!localStorage.getItem('cookiesAccepted')) {
-            document.getElementById('cookie-consent').style.display = 'block';
-        }
-    }
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="pl">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hydrokoma - Hydroizolacje</title>
@@ -110,26 +10,34 @@
       padding: 0;
       font-family: 'Arial', sans-serif;
       scroll-behavior: smooth;
-      background-color: #fff;
     }
 
-    /* Pasek nawigacji */
+    header {
+      position: relative;
+      background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9257.JPG') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+    }
+
     nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      background-color: #000;
-      padding: 10px 20px;
-      flex-wrap: wrap;
+      align-items: center;
+      padding: 20px;
+      z-index: 2;
     }
 
     .nav-left img {
-      height: 120px;
+      height: 100px;
     }
 
     .nav-right ul {
-      list-style: none;
       display: flex;
+      list-style: none;
       margin: 0;
       padding: 0;
       gap: 20px;
@@ -139,68 +47,49 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1em;
-      padding: 10px 5px;
-      display: block;
+      font-size: 1em;
     }
 
     .nav-right ul li a:hover {
-      color: #ddd;
+      text-decoration: underline;
     }
 
-    /* Hero Image */
-    .hero-image {
+    .slogan-banner {
+      position: absolute;
+      bottom: 0;
+      left: 0;
       width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Dynamiczne slogany */
-   .slogan-banner {
-  background-color: #1f2a44;
-  color: #ffcc00;
-  text-align: center;
-  padding: 15px 10px;
-  font-size: 1.5em;
-  font-weight: bold;
-  transition: opacity 1s ease-in-out;
-  min-height: 70px;
-  display: flex;
-  justify-content: center; /* Wyśrodkowanie poziome */
-  align-items: center; /* Wyśrodkowanie pionowe */
-  text-align: center; /* Wyśrodkowanie tekstu w poziomie */
+      background: rgba(0, 0, 0, 0.7);
+      color: #ffcc00;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.8em;
+      font-weight: bold;
     }
 
     main {
       padding: 40px 20px;
-      text-align: center;
     }
 
     section {
       margin-bottom: 60px;
     }
 
-    section h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-      color: #1f2a44;
+    #services {
+      background-color: #f5f5f5;
     }
 
-    section p, section ul {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1em;
-      line-height: 1.6;
-      color: #333;
-      text-align: left;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    section ul {
-      padding-left: 20px;
-    }
-
-    section ul li {
-      margin-bottom: 10px;
+    .service-card {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .contact {
@@ -214,36 +103,6 @@
       margin-top: 20px;
     }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* Pasek partnerów */
-    .partners-section {
-      margin: 60px 0;
-      text-align: center;
-    }
-
-    .partners-slider {
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      animation: scroll 20s linear infinite;
-    }
-
-    .partners-slider img {
-      height: 40px;
-      margin: 0 30px;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    /* Stopka */
     footer {
       background-color: #1f2a44;
       color: white;
@@ -270,108 +129,59 @@
       text-decoration: underline;
     }
 
-    /* Responsywność */
     @media (max-width: 768px) {
       .nav-right ul {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .partners-slider {
-        animation-duration: 30s;
-      }
-      .map-container {
-        height: 300px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .slogan-banner {
-        font-size: 1.2em;
+        flex-direction: column;
+        background: rgba(0,0,0,0.8);
         padding: 10px;
-      }
-      .partners-slider img {
-        height: 60px;
-        margin: 0 20px;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        border-radius: 8px;
       }
     }
   </style>
 </head>
-
 <body>
 
-<!-- Pasek nawigacji -->
-<nav>
-  <div class="nav-left">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/2d9ed097-394a-4231-856f-4514f3dac83b.JPG?raw=true" alt="Hydrokoma Logo">
-  </div>
-  <div class="nav-right">
-    <ul>
-      <li><a href="#about">O nas</a></li>
-      <li><a href="#services">Usługi</a></li>
-      <li><a href="#projects">Realizacje</a></li>
-      <li><a href="#contact">Kontakt</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- Hero Image -->
-<img class="hero-image" src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9257.JPG" alt="Budowa - Hydrokoma">
-
-<!-- Dynamiczne slogany -->
-<div class="slogan-banner" id="sloganBanner">
-  Profesjonalne podejście
-</div>
+<header>
+  <nav>
+    <div class="nav-left">
+      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/2d9ed097-394a-4231-856f-4514f3dac83b.JPG?raw=true" alt="Hydrokoma Logo">
+    </div>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#about">O nas</a></li>
+        <li><a href="#services">Usługi</a></li>
+        <li><a href="#projects">Realizacje</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="slogan-banner" id="sloganBanner">Profesjonalne podejście</div>
+</header>
 
 <main>
-
-    <section id="about" style="background-color: #f5f5f5; padding: 40px 20px;">
-  <h2>O nas</h2>
-  <div style="max-width: 900px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: left;">
+  <section id="about">
+    <h2>O nas</h2>
     <p><strong>Hydrokoma</strong> to firma specjalizująca się w nowoczesnych technologiach <strong>hydroizolacji budowlanych</strong>. Działamy od wielu lat zapewniając naszym klientom skuteczną ochronę przed wodą i wilgocią.</p>
     <p>Realizujemy zarówno duże inwestycje przemysłowe, jak i indywidualne projekty dla klientów prywatnych. Stawiamy na <strong>profesjonalizm, terminowość</strong> oraz <strong>indywidualne podejście</strong> do każdego zlecenia.</p>
     <p>Naszą siłą są doświadczeni fachowcy, sprawdzone materiały i nowoczesny sprzęt, które razem gwarantują <strong>trwałość i skuteczność</strong> wykonywanych prac.</p>
-    <p><strong>Jeśli chcesz dowiedzieć się więcej o naszej ofercie — <a href="#contact" style="color: #1f2a44;">skontaktuj się z nami</a>.</strong></p>
-  </div>
-</section>
+  </section>
 
-<section id="services">
-  <h2>Nasze Usługi</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <h3>Hydroizolacja budynków</h3>
-      <p>Zabezpieczanie ścian i fundamentów. Kompleksowa izolacja podziemnych części budowli z taśmami PVC.</p>
+  <section id="services">
+    <h2>Nasze Usługi</h2>
+    <div class="services-grid">
+      <div class="service-card"><h3>Hydroizolacja budynków</h3><p>Zabezpieczanie ścian i fundamentów. Kompleksowa izolacja podziemnych części budowli z taśmami PVC.</p></div>
+      <div class="service-card"><h3>Izolacja powłokowa</h3><p>Skuteczne zabezpieczenie powierzchni przed wilgocią i wodą opadową.</p></div>
+      <div class="service-card"><h3>Renowacja hydroizolacji</h3><p>Usuwanie uszkodzeń i przywracanie szczelności istniejących systemów.</p></div>
+      <div class="service-card"><h3>Iniekcje żywicami</h3><p>Precyzyjne uszczelnianie z użyciem agregatu ciśnieniowego.</p></div>
+      <div class="service-card"><h3>Uszczelnienia szybów</h3><p>Skuteczne zabezpieczenie podszybia szachtów windowych.</p></div>
+      <div class="service-card"><h3>Zbiorniki przemysłowe</h3><p>Uszczelnianie obiektów żelbetowych i zbiorników przemysłowych.</p></div>
+      <div class="service-card"><h3>Projektowanie hydroizolacji</h3><p>Tworzenie indywidualnych projektów dostosowanych do potrzeb klienta.</p></div>
+      <div class="service-card"><h3>Modernizacja projektów</h3><p>Wprowadzanie poprawek i ulepszanie istniejących systemów hydroizolacji.</p></div>
     </div>
-    <div class="service-card">
-      <h3>Izolacja powłokowa</h3>
-      <p>Skuteczne zabezpieczenie powierzchni przed wilgocią i wodą opadową.</p>
-    </div>
-    <div class="service-card">
-      <h3>Renowacja hydroizolacji</h3>
-      <p>Usuwanie uszkodzeń i przywracanie szczelności istniejących systemów.</p>
-    </div>
-    <div class="service-card">
-      <h3>Iniekcje żywicami</h3>
-      <p>Precyzyjne uszczelnianie z użyciem agregatu ciśnieniowego.</p>
-    </div>
-    <div class="service-card">
-      <h3>Uszczelnienia szybów</h3>
-      <p>Skuteczne zabezpieczenie podszybia szachtów windowych.</p>
-    </div>
-    <div class="service-card">
-      <h3>Zbiorniki przemysłowe</h3>
-      <p>Uszczelnianie obiektów żelbetowych i zbiorników przemysłowych.</p>
-    </div>
-    <div class="service-card">
-      <h3>Projektowanie hydroizolacji</h3>
-      <p>Tworzenie indywidualnych projektów dostosowanych do potrzeb klienta.</p>
-    </div>
-    <div class="service-card">
-      <h3>Modernizacja projektów</h3>
-      <p>Wprowadzanie poprawek i ulepszanie istniejących systemów hydroizolacji.</p>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <section id="projects">
     <h2>Realizacje</h2>
@@ -385,20 +195,8 @@
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.232574051153!2d18.979192976823984!3d50.2257798715345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce6f7b6b4f65%3A0xf4a7f5aeb0db1f8b!2sPorzeczkowa%2016%2C%2040-750%20Katowice!5e0!3m2!1spl!2spl!4v1714323674321!5m2!1spl!2spl" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
-
-  <section class="partners-section">
-    <h2>Nasi partnerzy</h2>
-    <div class="partners-slider">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Murapol.png?raw=true" alt="Partner 1">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Tknowa.png?raw=true" alt="Partner 3">
-      <img src="images/partner4.png" alt="Partner 4">
-      <img src="images/partner5.png" alt="Partner 5">
-    </div>
-  </section>
-
 </main>
 
-<!-- Stopka -->
 <footer>
   <p>© 2025 Hydrokoma - Wszystkie prawa zastrzeżone</p>
   <div class="bottom-menu">
@@ -410,7 +208,6 @@
   </div>
 </footer>
 
-<!-- JavaScript do zmiany sloganów -->
 <script>
   const slogans = [
     "Profesjonalne podejście",
