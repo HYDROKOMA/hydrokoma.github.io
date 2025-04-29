@@ -155,23 +155,28 @@
       display: block;
     }
 
-      /*realizacje */
+      
+ /*realizacje */
       .realizacje-carousel {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   gap: 20px;
   scroll-snap-type: x mandatory;
   padding-bottom: 10px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin; /* Firefox */
 }
 
-.realizacja {
-  flex: 0 0 300px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  scroll-snap-align: start;
-  overflow: hidden;
+.realizacje-carousel::-webkit-scrollbar {
+  height: 8px;
 }
+
+.realizacje-carousel::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
       
     
     /* Dynamiczne slogany */
