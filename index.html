@@ -21,7 +21,59 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+.service-card {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex-direction: row;
+}
 
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.service-card img {
+  width: 40%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.service-content {
+  padding: 20px;
+  text-align: left;
+  width: 60%;
+}
+
+.service-content h3 {
+  margin-top: 0;
+  font-size: 1.3em;
+  color: #1f2a44;
+}
+
+.service-content p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .service-card {
+    flex-direction: column;
+  }
+
+  .service-card img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .service-content {
+    width: 100%;
+  }
+}
         
 .service-card {
   background-color: white;
@@ -384,37 +436,38 @@ nav {
 <section id="services">
   <h2>Nasze Usługi</h2>
   <div class="services-grid">
-    <div class="service-card">
+  <div class="service-card">
+    <img src="images/usluga1.jpg" alt="Hydroizolacja budynków">
+    <div class="service-content">
       <h3>Hydroizolacja budynków</h3>
       <p>Zabezpieczanie ścian i fundamentów. Kompleksowa izolacja podziemnych części budowli z taśmami PVC.</p>
     </div>
-    <div class="service-card">
+  </div>
+
+  <div class="service-card">
+    <img src="images/usluga2.jpg" alt="Izolacja powłokowa">
+    <div class="service-content">
       <h3>Izolacja powłokowa</h3>
       <p>Skuteczne zabezpieczenie powierzchni przed wilgocią i wodą opadową.</p>
     </div>
-    <div class="service-card">
+  </div>
+
+  <div class="service-card">
+    <img src="images/usluga3.jpg" alt="Renowacja hydroizolacji">
+    <div class="service-content">
       <h3>Renowacja hydroizolacji</h3>
       <p>Usuwanie uszkodzeń i przywracanie szczelności istniejących systemów.</p>
     </div>
-    <div class="service-card">
+  </div>
+
+  <div class="service-card">
+    <img src="images/usluga4.jpg" alt="Iniekcje żywicami">
+    <div class="service-content">
       <h3>Iniekcje żywicami</h3>
       <p>Precyzyjne uszczelnianie z użyciem agregatu ciśnieniowego. Naprawa rys i pęknięć metodą iniekcji.</p>
     </div>
-    <div class="service-card">
-      <h3>Uszczelnienia </h3>
-      <p>Skuteczne zabezpieczanie podszybia szachtów windowych.
-      <p>Uszczelnianie obiektów żelbetowych i zbiorników przemysłowych.</p>
-    </div>
-    <div class="service-card">
-      <h3>Projektowanie hydroizolacji</h3>
-      <p>Tworzenie indywidualnych projektów dostosowanych do potrzeb klienta.</p>
-    </div>
-    <div class="service-card">
-      <h3>Modernizacja projektów</h3>
-      <p>Wprowadzanie poprawek i ulepszanie istniejących systemów hydroizolacji.</p>
-    </div>
   </div>
-</section>
+</div>
     
   <section id="projects">
   <h2>Realizacje</h2>
