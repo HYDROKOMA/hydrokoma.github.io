@@ -279,12 +279,12 @@ nav {
       overflow: hidden;
       animation: scroll 20s linear infinite;
     }
-
-    .partners-slider img {
-      height: 40px;
-      margin: 0 30px;
-    }
-
+.partners-slider img {
+  height: 60px; /* Ustaw konkretną wysokość */
+  width: auto;  /* Zachowaj proporcje */
+  object-fit: contain; /* Dobrze dopasowuje loga bez zniekształceń */
+  margin: 0 30px;
+}
     @keyframes scroll {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
