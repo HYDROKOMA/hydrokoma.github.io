@@ -1,553 +1,77 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Hydrokoma - hydroizolacje </title>
-    <style>
-            
-    #services {
-  padding: 40px 20px;
-  background-color: #f5f5f5;
-  text-align: center;
-}
-
-#services h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-.service-card {
-  display: flex;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  flex-direction: row;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.service-card img {
-  width: 40%;
-  object-fit: cover;
-  height: 100%;
-}
-
-.service-content {
-  padding: 20px;
-  text-align: left;
-  width: 60%;
-}
-
-.service-content h3 {
-  margin-top: 0;
-  font-size: 1.3em;
-  color: #1f2a44;
-}
-
-.service-content p {
-  font-size: 1em;
-  color: #555;
-}
-
-/* Responsywność */
-@media (max-width: 768px) {
-  .service-card {
-    flex-direction: column;
-  }
-
-  .service-card img {
-    width: 100%;
-    height: 200px;
-  }
-
-  .service-content {
-    width: 100%;
-  }
-}
-        
-.service-card {
-  background-color: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.service-card h3 {
-  margin-bottom: 15px;
-  font-size: 1.2em;
-  color: #2c3e50;
-}
-
-.service-card p {
-  font-size: 0.95em;
-  color: #555;
-}
-        #cookie-consent {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: #222;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-            display: none;
-            z-index: 1000;
-        }
-        #cookie-consent button {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-left: 15px;
-            cursor: pointer;
-        }
-        #cookie-consent button:hover {
-            background: #45a049;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hydrokoma – Hydroizolacje budowlane</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Formatka cookie -->
-<div id="cookie-consent">
-    Używamy plików cookie, aby poprawić jakość przeglądania, wyświetlać reklamy lub treści dostosowane do indywidualnych potrzeb użytkowników oraz analizować ruch na stronie. Kliknięcie przycisku „Akceptuj wszystkie” oznacza zgodę na wykorzystywanie przez nas plików cookie.
-    <button onclick="acceptCookies()">Akceptuję</button>
-</div>
+  <!-- Nagłówek -->
+  <header class="hero">
+    <div class="overlay">
+      <h1>HYDROKOMA</h1>
+      <p>BEZPIECZEŃSTWO TWOJEJ BUDOWY</p>
+      <a href="#kontakt" class="btn">SKONTAKTUJ SIĘ Z NAMI</a>
+    </div>
+  </header>
 
-<script>
-    function acceptCookies() {
-        localStorage.setItem('cookiesAccepted', 'true');
-        document.getElementById('cookie-consent').style.display = 'none';
-    }
+  <!-- O nas -->
+  <section class="about">
+    <div class="container">
+      <img src="tuba.jpg" alt="Hydroizolacja" />
+      <div class="text">
+        <h2>O nas</h2>
+        <p>Hydrokoma to firma specjalizująca się w nowoczesnych technologiach hydroizolacji budowlanych... (tu pełny tekst)</p>
+      </div>
+    </div>
+  </section>
 
-    window.onload = function() {
-        if (!localStorage.getItem('cookiesAccepted')) {
-            document.getElementById('cookie-consent').style.display = 'block';
-        }
-    }
-</script>
+  <!-- Usługi -->
+  <section class="services">
+    <h2>Nasze usługi</h2>
+    <div class="service-list">
+      <div class="service">
+        <img src="usluga1.jpg" alt="Hydroizolacja" />
+        <h3>Hydroizolacja budynków</h3>
+        <p>Looking ahead and using foresight...</p>
+        <a href="#">Learn more</a>
+      </div>
+      <div class="service">
+        <img src="usluga2.jpg" alt="Izolacja" />
+        <h3>Izolacja powłokowa</h3>
+        <p>Analyzing data to create a sustainable...</p>
+        <a href="#">Learn more</a>
+      </div>
+      <div class="service">
+        <img src="usluga3.jpg" alt="Renowacja" />
+        <h3>Renowacja hydroizolacji</h3>
+        <p>Collaborating with stakeholders...</p>
+        <a href="#">Learn more</a>
+      </div>
+    </div>
+  </section>
 
-</body>
-</html>
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hydrokoma - Hydroizolacje</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      scroll-behavior: smooth;
-      background-color: #fff;
-    }
-
-    /* Pasek nawigacji */
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #000;
-  padding: 10px 20px;
-  flex-wrap: wrap;
-}
-    
-
-    .nav-left img {
-      height: 120px;
-    }
-
-    .nav-right ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-      gap: 20px;
-    }
-
-    .nav-right ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1em;
-      padding: 10px 5px;
-      display: block;
-    }
-
-    .nav-right ul li a:hover {
-      color: #ddd;
-    }
-
-    /* Hero Image */
-    .hero-image {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-
-      
-    
-    /* Dynamiczne slogany */
-.slogan-banner {
-  background-color: #000; /* czarne tło */
-  color: #fff; /* biały tekst */
-  text-align: center;
-  padding: 15px 10px;
-  font-size: 1.5em;
-  font-weight: bold;
-  transition: opacity 1s ease-in-out;
-  min-height: 70px;
-  display: flex;
-  justify-content: center; /* Wyśrodkowanie poziome */
-  align-items: center; /* Wyśrodkowanie pionowe */
-  text-align: center; /* Wyśrodkowanie tekstu w poziomie */
-    }
-
-    main {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    section {
-      margin-bottom: 60px;
-    }
-
-    section h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-      color: #1f2a44;
-    }
-
-    section p, section ul {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1em;
-      line-height: 1.6;
-      color: #333;
-      text-align: left;
-    }
-
-    section ul {
-      padding-left: 20px;
-    }
-
-    section ul li {
-      margin-bottom: 10px;
-    }
-
-      
-    .realizacje-carousel {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .realizacja {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .realizacja:hover {
-      transform: scale(1.02);
-    }
-
-    .realizacja img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .realizacja p {
-      padding: 15px;
-      font-size: 0.95em;
-    }
-
-    .realizacja.more {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      color: #1f2a44;
-      text-align: center;
-      font-size: 1em;
-      padding: 20px;
-    }
-
-      
-    .contact {
-      background-color: #f9f9f9;
-      padding: 40px 20px;
-    }
-
-    .map-container {
-      width: 100%;
-      height: 400px;
-      margin-top: 20px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* Pasek partnerów */
-    .partners-section {
-      margin: 60px 0;
-      text-align: center;
-    }
-
-    .partners-slider {
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      animation: scroll 20s linear infinite;
-    }
-.partners-slider img {
-  height: 60px; /* Ustaw konkretną wysokość */
-  width: auto;  /* Zachowaj proporcje */
-  object-fit: contain; /* Dobrze dopasowuje loga bez zniekształceń */
-  margin: 0 30px;
-}
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    /* Stopka */
-    footer {
-      background-color: #1f2a44;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9em;
-    }
-
-    .bottom-menu {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .bottom-menu a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 0.8em;
-    }
-
-    .bottom-menu a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsywność */
-    @media (max-width: 768px) {
-      .nav-right ul {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .partners-slider {
-        animation-duration: 30s;
-      }
-      .map-container {
-        height: 300px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .slogan-banner {
-        font-size: 1.2em;
-        padding: 10px;
-      }
-      .partners-slider img {
-        height: 60px;
-        margin: 0 20px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- Pasek nawigacji -->
-<nav>
-  <div class="nav-left">
-  </div>
-  <div class="nav-right">
+  <!-- Realizacje -->
+  <section class="realizacje">
+    <h2>Nasze realizacje</h2>
     <ul>
-      <li><a href="#about">O nas</a></li>
-      <li><a href="#services">Usługi</a></li>
-      <li><a href="#projects">Realizacje</a></li>
-      <li><a href="#contact">Kontakt</a></li>
+      <li><strong>Osiedle Zielone Tarasy – Katowice</strong></li>
+      <li><strong>Salem Court Industries</strong></li>
     </ul>
-  </div>
-</nav>
-
-<!-- Hero Image -->
-<img class="hero-image" src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9284.png" alt="Budowa - Hydrokoma">
-
-<!-- Dynamiczne slogany -->
-<div class="slogan-banner" id="sloganBanner">
-  Profesjonalne podejście
-</div>
-
-
-<main>
-
-    <section id="about" style="background-color: #f5f5f5; padding: 40px 20px;">
-  <h2>O nas</h2>
-  <div style="max-width: 900px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: left;">
-    <p><strong>Hydrokoma</strong> to firma specjalizująca się w nowoczesnych technologiach <strong>hydroizolacji budowlanych</strong>. Działamy od wielu lat zapewniając naszym klientom skuteczną ochronę przed wodą i wilgocią.</p>
-    <p>Realizujemy zarówno duże inwestycje przemysłowe, jak i indywidualne projekty dla klientów prywatnych. Stawiamy na <strong>profesjonalizm, terminowość</strong> oraz <strong>indywidualne podejście</strong> do każdego zlecenia.</p>
-    <p>Naszą siłą są doświadczeni fachowcy, sprawdzone materiały i nowoczesny sprzęt, które razem gwarantują <strong>trwałość i skuteczność</strong> wykonywanych prac.</p>
-    <p><strong>Jeśli chcesz dowiedzieć się więcej o naszej ofercie — <a href="#contact" style="color: #1f2a44;">skontaktuj się z nami</a>.</strong></p>
-  </div>
-</section>
-
-<section id="services">
-  <h2>Nasze Usługi</h2>
-  <div class="services-grid">
-  <div class="service-card">
-    <img src="images/usluga1.jpg" alt="Hydroizolacja budynków">
-    <div class="service-content">
-      <h3>Hydroizolacja budynków</h3>
-      <p>Zabezpieczanie ścian i fundamentów. Kompleksowa izolacja podziemnych części budowli z taśmami PVC.</p>
-    </div>
-  </div>
-
-  <div class="service-card">
-    <img src="images/usluga2.jpg" alt="Izolacja powłokowa">
-    <div class="service-content">
-      <h3>Izolacja powłokowa</h3>
-      <p>Skuteczne zabezpieczenie powierzchni przed wilgocią i wodą opadową.</p>
-    </div>
-  </div>
-
-  <div class="service-card">
-    <img src="images/usluga3.jpg" alt="Renowacja hydroizolacji">
-    <div class="service-content">
-      <h3>Renowacja hydroizolacji</h3>
-      <p>Usuwanie uszkodzeń i przywracanie szczelności istniejących systemów.</p>
-    </div>
-  </div>
-
-  <div class="service-card">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9288.jpeg?raw=true" alt="Iniekcje żywicami">
-    <div class="service-contenty">
-      <h3>Iniekcje żywicami</h3>
-      <p>Precyzyjne uszczelnianie z użyciem agregatu ciśnieniowego. Naprawa rys i pęknięć metodą iniekcji.</p>
-    </div>
-  </div>
-</div>
-    
-  <section id="projects">
-  <h2>Realizacje</h2>
-  <div class="realizacje-carousel">
-    <div class="realizacja highlighted">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja1.jpg" alt="Realizacja 4">
-      <p><strong>Osiedle Fit - Tychy </strong><br>Hydroizolacja fundamentów - xxxx m2.</p>
-    </div>
-    <div class="realizacja">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja4.jpg" alt="Realizacja 1">
-      <p><strong>Osiedle Zielone Tarasy – Katowice</strong><br>Izolacja fundamentów i garaży podziemnych – 1200 m².</p>
-    </div>
-    <div class="realizacja">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja2.jpg" alt="Realizacja 2">
-      <p><strong>Bielsko-Biała</strong><br>Iniekcja żywicami w części podziemnej – 800 m².</p>
-    </div>
-    <div class="realizacja">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja3.jpg" alt="Realizacja 3">
-      <p><strong>Zakład produkcyjny – Zabrze</strong><br>Uszczelnianie zbiorników żelbetowych – 950 m².</p>
-    </div>
-    <div class="realizacja more">
-      <a href="realizacje.html"> zobacz również →</a>
-    </div>
-  </div>
-</section>
-
-  <section id="contact" class="contact">
-    <h2>Kontakt</h2>
-    <p>Email: biuro@hydrokoma.pl<br>Telefon: +48 512 308 538 <br>Adres: ul. Porzeczkowa 16, 40-750 Katowice</p>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.232574051153!2d18.979192976823984!3d50.2257798715345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce6f7b6b4f65%3A0xf4a7f5aeb0db1f8b!2sPorzeczkowa%2016%2C%2040-750%20Katowice!5e0!3m2!1spl!2spl!4v1714323674321!5m2!1spl!2spl" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
   </section>
 
-  <section class="partners-section">
-    <h2>Nasi partnerzy</h2>
-    <div class="partners-slider">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Murapol.png?raw=true" alt="Partner 1">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Tknowa.png?raw=true" alt="Partner 3">
-      <img src="images/partner4.png" alt="Partner 4">
-      <img src="images/partner5.png" alt="Partner 5">
+  <!-- Kontakt -->
+  <section class="kontakt" id="kontakt">
+    <h2>Współpracuj z nami</h2>
+    <img src="kontakt.jpg" alt="Współpraca" />
+    <div class="dane">
+      <p><strong>Numer telefonu:</strong> (123) 456-7890</p>
+      <p><strong>Email:</strong> hello@reallygreatsite.com</p>
+      <p><strong>Adres:</strong> 123 Anywhere St, Any City</p>
     </div>
   </section>
-
-</main>
-
-<!-- Stopka -->
-<footer>
-  <p>© 2025 Hydrokoma - Wszystkie prawa zastrzeżone</p>
-  <div class="bottom-menu">
-    <a href="#about">O nas</a> |
-    <a href="#services">Usługi</a> |
-    <a href="#projects">Realizacje</a> |
-    <a href="#contact">Kontakt</a> |
-    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
-  </div>
-</footer>
-
-<!-- JavaScript do zmiany sloganów -->
-<script>
-  const slogans = [
-    "Profesjonalne podejście",
-    "Wsparcie ekspertów",
-    "Terminowe wykonanie prac",
-    "Szybkie ofertowanie",
-    "Skuteczność",
-    "Odpowiedni dobór materiałów i techniki"
-  ];
-  let index = 0;
-  const sloganBanner = document.getElementById('sloganBanner');
-
-  setInterval(() => {
-    index = (index + 1) % slogans.length;
-    sloganBanner.style.opacity = 0;
-    setTimeout(() => {
-      sloganBanner.textContent = slogans[index];
-      sloganBanner.style.opacity = 1;
-    }, 500);
-  }, 3000);
-</script>
 
 </body>
 </html>
