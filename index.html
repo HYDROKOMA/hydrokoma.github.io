@@ -342,15 +342,59 @@
   </section>
 
   <!-- Realizacje -->
-  <section id="projects">
-    <h2>Realizacje</h2>
-    <div class="realizacje-carousel">
-      <div class="realizacja"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja1.jpg" alt=""><p><strong>Osiedle Fit – Tychy</strong><br>Hydroizolacja fundamentów</p></div>
-      <div class="realizacja"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja4.jpg" alt=""><p><strong>Zielone Tarasy – Katowice</strong><br>Izolacja fundamentów – 1200 m²</p></div>
-      <div class="realizacja"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja2.jpg" alt=""><p><strong>Bielsko-Biała</strong><br>Iniekcja żywicami – 800 m²</p></div>
-      <div class="realizacja"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/realizacja3.jpg" alt=""><p><strong>Zabrze</strong><br>Uszczelnianie zbiorników – 950 m²</p></div>
-      <div class="realizacja more"><a href="realizacje.html">zobacz więcej →</a></div>
+<!-- SEKCJA: NASZE REALIZACJE -->
+<section id="realizacje" style="padding: 60px 20px; background-color: #f9f9f9;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+    
+    <!-- Obrazek po lewej -->
+    <div style="flex: 1 1 400px; min-width: 300px;">
+      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Nasze realizacje.png" alt="Nasze realizacje" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
     </div>
+
+    <!-- Teksty po prawej -->
+    <div style="flex: 1 1 400px; min-width: 300px;">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #003366;">Nasze realizacje</h2>
+      <ul style="list-style: none; padding: 0; margin: 0 0 30px 0;">
+        <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
+          <span style="position: absolute; left: 0; top: 3px; width: 8px; height: 8px; background-color: #007BFF; border-radius: 50%;"></span>
+          Uszczelnienie dachu płaskiego w Gdańsku
+        </li>
+        <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
+          <span style="position: absolute; left: 0; top: 3px; width: 8px; height: 8px; background-color: #007BFF; border-radius: 50%;"></span>
+          Izolacja fundamentów budynku wielorodzinnego
+        </li>
+        <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
+          <span style="position: absolute; left: 0; top: 3px; width: 8px; height: 8px; background-color: #007BFF; border-radius: 50%;"></span>
+          Hydroizolacja tarasu i balkonu w Sopocie
+        </li>
+      </ul>
+      <a href="realizacje.html" style="display: inline-block; padding: 12px 24px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 6px; transition: background-color 0.3s;">
+        Zobacz więcej realizacji
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RESPONSYWNOŚĆ -->
+<style>
+  @media (max-width: 768px) {
+    #realizacje h2 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    #realizacje ul {
+      padding-left: 0;
+    }
+    #realizacje ul li {
+      font-size: 0.95rem;
+    }
+    #realizacje a {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+</style>
   </section>
 
   <!-- Kontakt -->
