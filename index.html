@@ -89,20 +89,6 @@
       height: auto;
     }
 
-    .slogan-banner {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 15px 10px;
-      font-size: 1.5em;
-      font-weight: bold;
-      transition: opacity 2s ease-in-out;
-      min-height: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
     section {
       padding: 40px 20px;
       margin-bottom: 60px;
@@ -314,9 +300,6 @@
 <!-- Hero Image -->
 <img class="hero-image" src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Head.png" alt="Budowa - Hydrokoma" />
 
-<!-- Slogan -->
-<div class="slogan-banner" id="sloganBanner">Profesjonalne podejście</div>
-
 <main>
   <!-- O nas -->
   <section id="about">
@@ -411,26 +394,6 @@
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("show");
   }
-
-  // Slogany
-  const slogans = [
-    "Profesjonalne podejście",
-    "Wsparcie ekspertów",
-    "Terminowe wykonanie prac",
-    "Szybkie ofertowanie",
-    "Skuteczność",
-    "Odpowiedni dobór materiałów i technik"
-  ];
-  let index = 0;
-  setInterval(() => {
-    const banner = document.getElementById("sloganBanner");
-    index = (index + 1) % slogans.length;
-    banner.style.opacity = 0;
-    setTimeout(() => {
-      banner.textContent = slogans[index];
-      banner.style.opacity = 1;
-    }, 500);
-  }, 3000);
 
   // Cookies
   function acceptCookies() {
