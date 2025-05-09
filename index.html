@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -13,7 +14,6 @@
       background-color: #fff;
     }
 
-    /* Pasek nawigacji */
     nav {
       display: flex;
       align-items: center;
@@ -87,6 +87,10 @@
     .hero-image {
       width: 100%;
       height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+      margin-bottom: -4px; /* kluczowa poprawka */
     }
 
     section {
@@ -101,7 +105,6 @@
       margin-bottom: 30px;
     }
 
-    /* Sekcja O nas */
     #about {
       background-color: #000;
     }
@@ -110,11 +113,10 @@
       max-width: 900px;
       margin: 0 auto;
       background: black;
-      padding: 0;
+      padding: 30px;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
+    
     /* Usługi */
     .services-grid {
       display: grid;
