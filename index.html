@@ -2,6 +2,8 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
+  <script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"></script>
+<script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="xGbFSASzq65QFm" async></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hydrokoma - Hydroizolacje</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -216,31 +218,7 @@
 
     .bottom-menu a:hover {
       text-decoration: underline;
-    }
-
-    #cookie-consent {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: #222;
-      color: #fff;
-      padding: 15px;
-      text-align: center;
-      display: none;
-      z-index: 1000;
-    }
-
-    #cookie-consent button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin-left: 15px;
-      cursor: pointer;
-    }
-
-    #cookie-consent button:hover {
-      background: #45a049;
+  
     }
   </style>
 </head>
@@ -357,26 +335,11 @@
   </div>
 </footer>
 
-<div id="cookie-consent">
-  Używamy plików cookie, aby poprawić jakość przeglądania. Kliknij „Akceptuję”, aby wyrazić zgodę.
-  <button onclick="acceptCookies()">Akceptuję</button>
-</div>
 
 <script>
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("show");
-  }
-
-  function acceptCookies() {
-    localStorage.setItem("cookiesAccepted", "true");
-    document.getElementById("cookie-consent").style.display = "none";
-  }
-
-  window.onload = () => {
-    if (!localStorage.getItem("cookiesAccepted")) {
-      document.getElementById("cookie-consent").style.display = "block";
-    }
-  };
+  
 </script>
 
 </body>
