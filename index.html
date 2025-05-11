@@ -89,36 +89,57 @@
       border-radius: 10px;
       color: white;
     }
+    section#services {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9496.jpeg') no-repeat center center / cover;
+      padding: 80px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    section#services h2 {
+      font-size: 36px;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
+
     .service-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease;
     }
-    .service-card:hover { transform: translateY(-5px); }
-    .service-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+
+    .service-card:hover {
+      transform: translateY(-8px);
     }
-    .service-content {
-      padding: 20px;
-      text-align: left;
-    }
-    .service-content h3 {
-      margin: 0 0 10px;
+
+    .service-icon {
+      font-size: 50px;
+      margin-bottom: 20px;
       color: #1f2a44;
     }
-    .service-content p {
-      color: #555;
+
+    .service-content h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #1f2a44;
     }
-        .partners-slider {
+
+    .service-content p {
+      font-size: 16px;
+      color: #333;
+
+            .partners-slider {
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -200,39 +221,33 @@
 </nav>
 
 <img class="hero-image" src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Head.png" alt="Budowa - Hydrokoma" />
-
+  
   <section id="services">
     <h2>Oferta</h2>
     <div class="services-grid">
       <div class="service-card">
-        <img src="images/usluga1.jpg" alt="Hydroizolacja budynków" />
+        <div class="service-icon">🏠</div>
         <div class="service-content">
-          <h3>Hydroizolacja budynków</h3>
-          <p>Zabezpieczanie ścian i fundamentów, taśmy PVC.</p>
+          <h3>Hydroizolacje dachów</h3>
+          <p>Oferujemy profesjonalne systemy hydroizolacji dachów.</p>
         </div>
       </div>
       <div class="service-card">
-        <img src="images/usluga2.jpg" alt="Izolacja powłokowa" />
+        <div class="service-icon">🧱</div>
         <div class="service-content">
-          <h3>Izolacja powłokowa</h3>
-          <p>Powłoki chroniące przed wodą i wilgocią.</p>
+          <h3>Izolacje fundamentów</h3>
+          <p>Wykonujemy izolacje przeciwwilgociowe fundamentów.</p>
         </div>
       </div>
       <div class="service-card">
-        <img src="images/usluga3.jpg" alt="Renowacja hydroizolacji" />
+        <div class="service-icon">🏛️</div>
         <div class="service-content">
-          <h3>Renowacja hydroizolacji</h3>
-          <p>Naprawa istniejących izolacji.</p>
-        </div>
-      </div>
-      <div class="service-card">
-        <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9288.jpeg" alt="Iniekcje żywicami" />
-        <div class="service-content">
-          <h3>Iniekcje żywicami</h3>
-          <p>Naprawa rys i pęknięć przez iniekcję.</p>
+          <h3>Renowacje balkonów</h3>
+          <p>Zajmujemy się kompleksową renowacją balkonów.</p>
         </div>
       </div>
     </div>
+  </section>
 <main>
     <section id="about" style="background-color: #000; padding: 60px 20px;">
   <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
