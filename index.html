@@ -2,21 +2,22 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
+  <script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"></script>
+<script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="xGbFSASzq65QFm" async></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hydrokoma - Hydroizolacje</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="https://tarteaucitron.io/load.js?domain=https://hydrokoma.github.io&lang=pl" async></script>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body, html {
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
       scroll-behavior: smooth;
       background-color: #fff;
-      overflow-x: hidden;
+  overflow-x: hidden;
+}
     }
+
     nav {
       display: flex;
       align-items: center;
@@ -24,7 +25,9 @@
       background-color: #000;
       padding: 10px 20px;
     }
+
     .nav-left img { height: 100px; }
+
     .nav-right ul {
       list-style: none;
       display: flex;
@@ -32,6 +35,7 @@
       margin: 0;
       padding: 0;
     }
+
     .nav-right ul li a {
       color: white;
       text-decoration: none;
@@ -40,18 +44,21 @@
       padding: 10px 5px;
       display: block;
     }
+
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
-      margin-left: auto;
+     margin-left: auto;
     }
+
     .menu-toggle span {
       background-color: white;
       height: 3px;
       width: 25px;
       margin: 4px 0;
     }
+
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
       .nav-right ul {
@@ -66,24 +73,29 @@
         border-top: 1px solid #333;
       }
     }
+
     .hero-image {
       width: 100%;
       height: auto;
       display: block;
     }
+
     section {
       padding: 40px 20px;
     }
+
     section h2 {
       font-size: 2.2em;
       color: #1f2a44;
       text-align: center;
       margin-bottom: 30px;
     }
+
     #about {
       background-color: #000;
       padding: 60px 20px;
     }
+
     #about div {
       max-width: 1200px;
       margin: 0 auto;
@@ -93,6 +105,7 @@
       gap: 40px;
       color: white;
     }
+
     section#services {
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
         url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9496.jpeg') no-repeat center center / cover;
@@ -100,11 +113,13 @@
       color: white;
       text-align: center;
     }
+
     section#services h2 {
       font-size: 36px;
       margin-bottom: 50px;
       text-transform: none;
     }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -112,6 +127,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .service-card {
       background: rgba(255, 255, 255, 1);
       padding: 30px 20px;
@@ -120,37 +136,45 @@
       transition: transform 0.3s ease;
       color: white;
     }
+
     .service-card:hover {
       transform: translateY(-8px);
     }
+
     .service-icon {
       font-size: 50px;
       margin-bottom: 20px;
       color: #1f2a44;
     }
+
     .service-content h3 {
       font-size: 22px;
       margin-bottom: 10px;
       color: #1f2a44;
     }
+
     .service-content p {
       font-size: 16px;
       color: #333;
     }
+
     #projects {
       background-color: #000;
       padding: 60px 20px;
     }
+
     .partners-section {
       background-color: #fff;
       padding: 60px 20px;
     }
+
     .partners-section h2 {
       text-align: center;
       font-size: 2em;
       margin-bottom: 30px;
       color: #1f2a44;
     }
+
     .partners-slider {
       display: flex;
       align-items: center;
@@ -160,15 +184,18 @@
       justify-content: center;
       flex-wrap: nowrap;
     }
+
     .partners-slider img {
       height: 60px;
       object-fit: contain;
       flex-shrink: 0;
     }
+
     @keyframes scroll {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
+
     footer {
       background-color: #1f2a44;
       color: white;
@@ -176,6 +203,7 @@
       padding: 20px 10px;
       font-size: 0.9em;
     }
+
     .bottom-menu {
       margin-top: 10px;
       display: flex;
@@ -183,13 +211,16 @@
       flex-wrap: wrap;
       gap: 10px;
     }
+
     .bottom-menu a {
       color: #ccc;
       font-size: 0.8em;
       text-decoration: none;
     }
+
     .bottom-menu a:hover {
       text-decoration: underline;
+  
     }
   </style>
 </head>
@@ -212,18 +243,19 @@
   </div>
 </nav>
 
-<img class="hero-image" src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Hydrokoma%20-%20hydroizolacje%20budowlane.png" alt="Budowa - Hydrokoma" />
+<img class="hero-image" src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Hydrokoma - hydroizolacje budowlane.png" alt="Budowa - Hydrokoma" />
 
 <section id="about">
-  <div style="flex: 1; color: white;">
-    <h2 style="color: white;">O nas</h2>
-    <p>
-      Tworzymy hydroizolacje, które wytrzymują próbę czasu.
-      Lubimy konkret, dlatego zawsze mówimy wprost, co robimy i ile to kosztuje.
-      Wierzymy, że porządna robota obroni się sama.
-      <br><br>
-      Zapoznaj się z naszą ofertą i <a href="#contact" style="color: navy;">skontaktuj się z nami</a>
-    </p>
+    <div style="flex: 1; color: white;">
+      <h2 style="color: white;">O nas</h2>
+      <p>
+        Tworzymy hydroizolacje, które wytrzymują próbę czasu.
+        Lubimy konkret, dlatego zawsze mówimy wprost, co robimy i ile to kosztuje.
+        Wierzymy, że porządna robota obroni się sama.
+        <br><br>
+        Zapoznaj się z naszą ofertą i <a href="#contact" style="color: navy;">skontaktuj się z nami</a>
+      </p>
+    </div>
   </div>
 </section>
 
@@ -257,7 +289,7 @@
 <section id="projects">
   <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px;">
     <div style="flex: 1 1 400px; min-width: 300px;">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Nasze%20realizacje%20foto.png" alt="Nasze realizacje" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Nasze realizacje foto.png" alt="Nasze realizacje" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
     </div>
     <div style="flex: 1 1 400px;">
       <div style="background-color: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
@@ -301,23 +333,11 @@
   </div>
 </footer>
 
+
 <script>
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("show");
-  }
-
-  tarteaucitron.init({
-    privacyUrl: "/polityka-prywatnosci.html",
-    orientation: "bottom",
-    showAlertSmall: false,
-    cookieslist: true,
-    adblocker: false,
-    AcceptAllCta: true,
-    highPrivacy: true,
-    handleBrowserDNTRequest: false,
-    removeCredit: true,
-    moreInfoLink: true
-  });
+  
 </script>
 
 </body>
