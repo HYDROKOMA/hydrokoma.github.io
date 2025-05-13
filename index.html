@@ -11,7 +11,6 @@
     * {
       box-sizing: border-box;
     }
-
     body, html {
       margin: 0;
       padding: 0;
@@ -20,7 +19,6 @@
       background-color: #fff;
       overflow-x: hidden;
     }
-
     nav {
       display: flex;
       align-items: center;
@@ -28,9 +26,7 @@
       background-color: #000;
       padding: 10px 20px;
     }
-
     .nav-left img { height: 100px; }
-
     .nav-right ul {
       list-style: none;
       display: flex;
@@ -38,7 +34,6 @@
       margin: 0;
       padding: 0;
     }
-
     .nav-right ul li a {
       color: white;
       text-decoration: none;
@@ -47,21 +42,18 @@
       padding: 10px 5px;
       display: block;
     }
-
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
       margin-left: auto;
     }
-
     .menu-toggle span {
       background-color: white;
       height: 3px;
       width: 25px;
       margin: 4px 0;
     }
-
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
       .nav-right ul {
@@ -76,29 +68,24 @@
         border-top: 1px solid #333;
       }
     }
-
     .hero-image {
       width: 100%;
       height: auto;
       display: block;
     }
-
     section {
       padding: 40px 20px;
     }
-
     section h2 {
       font-size: 2.2em;
       color: #1f2a44;
       text-align: center;
       margin-bottom: 30px;
     }
-
     #about {
       background-color: #000;
       padding: 60px 20px;
     }
-
     #about div {
       max-width: 1200px;
       margin: 0 auto;
@@ -108,7 +95,6 @@
       gap: 40px;
       color: white;
     }
-
     section#services {
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
         url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9496.jpeg') no-repeat center center / cover;
@@ -116,13 +102,11 @@
       color: white;
       text-align: center;
     }
-
     section#services h2 {
       font-size: 36px;
       margin-bottom: 50px;
       text-transform: none;
     }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -130,7 +114,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .service-card {
       background: rgba(255, 255, 255, 1);
       padding: 30px 20px;
@@ -139,45 +122,37 @@
       transition: transform 0.3s ease;
       color: white;
     }
-
     .service-card:hover {
       transform: translateY(-8px);
     }
-
     .service-icon {
       font-size: 50px;
       margin-bottom: 20px;
       color: #1f2a44;
     }
-
     .service-content h3 {
       font-size: 22px;
       margin-bottom: 10px;
       color: #1f2a44;
     }
-
     .service-content p {
       font-size: 16px;
       color: #333;
     }
-
     #projects {
       background-color: #000;
       padding: 60px 20px;
     }
-
     .partners-section {
       background-color: #fff;
       padding: 60px 20px;
     }
-
     .partners-section h2 {
       text-align: center;
       font-size: 2em;
       margin-bottom: 30px;
       color: #1f2a44;
     }
-
     .partners-slider {
       display: flex;
       align-items: center;
@@ -187,18 +162,15 @@
       justify-content: center;
       flex-wrap: nowrap;
     }
-
     .partners-slider img {
       height: 60px;
       object-fit: contain;
       flex-shrink: 0;
     }
-
     @keyframes scroll {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-
     footer {
       background-color: #000000;
       color: white;
@@ -206,7 +178,6 @@
       padding: 20px 10px;
       font-size: 0.9em;
     }
-
     .bottom-menu {
       margin-top: 10px;
       display: flex;
@@ -214,21 +185,13 @@
       flex-wrap: wrap;
       gap: 10px;
     }
-
     .bottom-menu a {
       color: #ccc;
       font-size: 0.8em;
       text-decoration: none;
     }
-
     .bottom-menu a:hover {
       text-decoration: underline;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
     }
   </style>
 </head>
@@ -267,7 +230,7 @@
 </section>
 
 <section id="services">
-    <h2 style="text-align: center; color: white;">Oferta</h2>
+  <h2 style="text-align: center; color: white;">Oferta</h2>
   <div class="services-grid">
     <div class="service-card">
       <div class="service-icon">🏠</div>
@@ -314,74 +277,55 @@
     </div>
   </div>
 </section>
-  
-<section id="contact">
-  <section style="padding: 60px 20px; font-family: 'Segoe UI', sans-serif; background-color: #444;">
-    <div class="container" style="text-align: center;">
-      <h2 style="font-size: 36px; margin-bottom: 40px; color: #fff;">Współpracuj z nami</h2>
-
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg" alt="Współpraca" style="width: 100%; max-width: 450px; border-radius: 30px; margin-bottom: 50px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-
-      <div style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        max-width: 1000px;
-        margin: 0 auto;
-        text-align: left;
-      ">
-        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-          <h3 style="font-size: 18px; margin-bottom: 10px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Dane kontaktowe</h3>
-          <p style="margin: 0; line-height: 1.6;">
-            Hydrokoma sp. z o.o.<br>
-            ul. Porzeczkowa 16<br>
-            40-750 Katowice<br>
-            NIP 9542836314<br>
-            KRS 0000951919<br>
-            REGON 521187558
-          </p>
-        </div>
-
-        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-          <h3 style="font-size: 18px; margin-bottom: 10px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Numer telefonu</h3>
-          <p style="margin: 0; line-height: 1.6;">+48 512 308 538</p>
-        </div>
-
-        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-          <h3 style="font-size: 18px; margin-bottom: 10px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Adres email</h3>
-          <p style="margin: 0; line-height: 1.6;">biuro@hydrokoma.com</p>
-        </div>
+<section id="contact" style="background-color: #1f2a44; color: white; padding: 0;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 60px 20px;">
+    <h2 style="text-align: center; color: white;">Kontakt</h2>
+    <p style="text-align: center;">Masz pytania? Skontaktuj się z nami!</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 30px;">
+      <div style="min-width: 280px;">
+        <h3>Dane kontaktowe</h3>
+        <p><strong>Hydrokoma</strong></p>
+        <p>Email: <a href="mailto:kontakt@hydrokoma.pl" style="color: #ffc107;">kontakt@hydrokoma.pl</a></p>
+        <p>Telefon: <a href="tel:+48123456789" style="color: #ffc107;">+48 123 456 789</a></p>
+        <p>Adres: ul. Przykładowa 1, 80-000 Gdańsk</p>
+      </div>
+      <div style="min-width: 280px;">
+        <h3>Formularz</h3>
+        <form>
+          <input type="text" placeholder="Imię i nazwisko" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+          <input type="email" placeholder="Adres e-mail" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+          <textarea placeholder="Twoja wiadomość" rows="4" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></textarea>
+          <button type="submit" style="background-color: #ffc107; color: #1f2a44; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold;">Wyślij</button>
+        </form>
       </div>
     </div>
-  </section>
-</section>
-  
-<section class="partners-section">
-  <h2>Partnerzy</h2>
-  <div class="partners-slider">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Murapol.png" alt="Murapol">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Tknowa.png" alt="TKnowa">
-    <img src="images/partner4.png" alt="Partner 4">
-    <img src="images/partner5.png" alt="Partner 5">
   </div>
 </section>
 
+<div class="partners-section">
+  <h2>Partnerzy</h2>
+  <div class="partners-slider">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/BASF-Logo_bw.svg/2560px-BASF-Logo_bw.svg.png" alt="BASF" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Sika_Logo.svg/2560px-Sika_Logo.svg.png" alt="Sika" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Mapei_logo.svg/2560px-Mapei_logo.svg.png" alt="Mapei" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Knauf_logo.svg/2560px-Knauf_logo.svg.png" alt="Knauf" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Wienerberger_Logo.svg/2560px-Wienerberger_Logo.svg.png" alt="Wienerberger" />
+  </div>
+</div>
+
 <footer>
-  <div class="container">
-    <p>© 2025 Hydrokoma - Wszystkie prawa zastrzeżone</p>
-    <div class="bottom-menu">
-      <a href="#about">O nas</a> |
-      <a href="#services">Usługi</a> |
-      <a href="#projects">Realizacje</a> |
-      <a href="#contact">Kontakt</a> |
-      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
-    </div>
+  <p>&copy; 2025 Hydrokoma. Wszelkie prawa zastrzeżone.</p>
+  <div class="bottom-menu">
+    <a href="#about">O nas</a> |
+    <a href="#services">Usługi</a> |
+    <a href="#projects">Realizacje</a> |
+    <a href="#contact">Kontakt</a>
   </div>
 </footer>
 
 <script>
   function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
+    document.getElementById('menu').classList.toggle('show');
   }
 </script>
 
