@@ -224,6 +224,12 @@
     .bottom-menu a:hover {
       text-decoration: underline;
     }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
   </style>
 </head>
 <body>
@@ -310,56 +316,44 @@
 </section>
   
 <section id="contact">
-<section style="padding: 60px 20px; font-family: 'Segoe UI', sans-serif; background-color: #444; text-align: center;">
-  <h2 style="font-size: 36px; margin-bottom: 40px; color: #fff;">Współpracuj z nami</h2>
+  <section style="padding: 60px 20px; font-family: 'Segoe UI', sans-serif; background-color: #444;">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-size: 36px; margin-bottom: 40px; color: #fff;">Współpracuj z nami</h2>
 
-  <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg" alt="Współpraca" style="width: 100%; max-width: 450px; border-radius: 30px; margin-bottom: 50px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg" alt="Współpraca" style="width: 100%; max-width: 450px; border-radius: 30px; margin-bottom: 50px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
 
-  <div style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: left;
-  ">
-    <div style="
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    ">
-      <h3 style="font-size: 18px; margin-bottom: 10px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Dane kontaktowe</h3>
-      <p style="margin: 0; line-height: 1.6;">
-        Hydrokoma sp. z o.o.<br>
-        ul. Porzeczkowa 16<br>
-        40-750 Katowice<br>
-        NIP 9542836314<br>
-        KRS 0000951919<br>
-        REGON 521187558
-      </p>
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: left;
+      ">
+        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+          <h3 style="font-size: 18px; margin-bottom: 10px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Dane kontaktowe</h3>
+          <p style="margin: 0; line-height: 1.6;">
+            Hydrokoma sp. z o.o.<br>
+            ul. Porzeczkowa 16<br>
+            40-750 Katowice<br>
+            NIP 9542836314<br>
+            KRS 0000951919<br>
+            REGON 521187558
+          </p>
+        </div>
+
+        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+          <h3 style="font-size: 18px; margin-bottom: 10px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Numer telefonu</h3>
+          <p style="margin: 0; line-height: 1.6;">+48 512 308 538</p>
+        </div>
+
+        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+          <h3 style="font-size: 18px; margin-bottom: 10px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Adres email</h3>
+          <p style="margin: 0; line-height: 1.6;">biuro@hydrokoma.com</p>
+        </div>
+      </div>
     </div>
-
-    <div style="
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    ">
-      <h3 style="font-size: 18px; margin-bottom: 10px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Numer telefonu</h3>
-      <p style="margin: 0; line-height: 1.6;">+48 512 308 538</p>
-    </div>
-
-    <div style="
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    ">
-      <h3 style="font-size: 18px; margin-bottom: 10px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Adres email</h3>
-      <p style="margin: 0; line-height: 1.6;">biuro@hydrokoma.com</p>
-    </div>
-  </div>
+  </section>
 </section>
   
 <section class="partners-section">
@@ -373,13 +367,15 @@
 </section>
 
 <footer>
-  <p>© 2025 Hydrokoma - Wszystkie prawa zastrzeżone</p>
-  <div class="bottom-menu">
-    <a href="#about">O nas</a> |
-    <a href="#services">Usługi</a> |
-    <a href="#projects">Realizacje</a> |
-    <a href="#contact">Kontakt</a> |
-    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+  <div class="container">
+    <p>© 2025 Hydrokoma - Wszystkie prawa zastrzeżone</p>
+    <div class="bottom-menu">
+      <a href="#about">O nas</a> |
+      <a href="#services">Usługi</a> |
+      <a href="#projects">Realizacje</a> |
+      <a href="#contact">Kontakt</a> |
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+    </div>
   </div>
 </footer>
 
