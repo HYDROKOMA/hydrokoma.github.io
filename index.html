@@ -7,21 +7,21 @@
   <script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"></script>
   <script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="xGbFSASzq65QFm" async></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     * {
       box-sizing: border-box;
     }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #fff;
+      scroll-behavior: smooth;
       overflow-x: hidden;
+      background-color: #111;
     }
+
     nav {
       display: flex;
       align-items: center;
@@ -32,9 +32,11 @@
       top: 0;
       z-index: 1000;
     }
+
     .nav-left img {
-      height: 100px;
+      height: 90px;
     }
+
     .nav-right ul {
       list-style: none;
       display: flex;
@@ -42,6 +44,7 @@
       margin: 0;
       padding: 0;
     }
+
     .nav-right ul li a {
       color: white;
       text-decoration: none;
@@ -50,31 +53,37 @@
       padding: 10px 5px;
       display: block;
     }
+
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
       margin-left: auto;
     }
+
     .menu-toggle span {
       background-color: white;
       height: 3px;
       width: 25px;
       margin: 4px 0;
     }
+
     @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
       }
+
       .nav-right ul {
         flex-direction: column;
         width: 100%;
         display: none;
         background-color: #000;
       }
+
       .nav-right ul.show {
         display: flex;
       }
+
       .nav-right ul li {
         text-align: center;
         border-top: 1px solid #333;
@@ -92,147 +101,19 @@
     }
 
     section h2 {
-      font-size: 2.5em;
-      color: #1f2a44;
+      font-size: 2.4em;
+      color: #fff;
       text-align: center;
       margin-bottom: 40px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
     }
 
-    #about {
-      background-color: #000;
-      color: white;
-    }
-
-    #about div {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-
-    #services {
-      background-color: #000;
-      color: white;
-      text-align: center;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .service-card {
-      background: rgba(255, 255, 255, 1);
-      padding: 30px 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-      transition: transform 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .service-icon {
-      font-size: 50px;
-      margin-bottom: 20px;
-      color: #1f2a44;
-    }
-
-    .service-content h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-      color: #1f2a44;
-    }
-
-    .service-content p {
-      font-size: 16px;
-      color: #333;
-    }
-
-    #projects {
-      background-color: #000;
-      color: white;
-      background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-
-    .partners-section {
-      background-color: #000;
-    }
-
-    .partners-slider {
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      animation: scroll 20s linear infinite;
-      gap: 40px;
-      justify-content: center;
-      flex-wrap: nowrap;
-    }
-
-    .partners-slider img {
-      height: 60px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    footer {
-      background-color: #000;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9em;
-    }
-
-    .bottom-menu {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .bottom-menu a {
-      color: #ccc;
-      font-size: 0.8em;
-      text-decoration: none;
-    }
-
-    .bottom-menu a:hover {
-      text-decoration: underline;
-    }
-
-    #toTopBtn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      display: none;
-      z-index: 999;
-      background-color: #000;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-    }
-    #toTopBtn:hover {
-      background-color: #444;
+    section h2.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -254,41 +135,39 @@
     </ul>
   </div>
 </nav>
-
 <img class="hero-image" src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Hydrokoma%20-%20hydroizolacje%20budowlane.png" alt="Budowa - Hydrokoma" />
 
-<section id="about" data-aos="fade-up">
-  <div>
-    <h2 style="color:white;">O nas</h2>
+<section id="about" style="background-color: #1a1a1a; color: white; padding: 60px 20px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h2 class="aos" style="text-align: center; color: white;">O nas</h2>
     <p>
       Tworzymy hydroizolacje, które wytrzymują próbę czasu.
       Lubimy konkret, dlatego zawsze mówimy wprost, co robimy i ile to kosztuje.
       Wierzymy, że porządna robota obroni się sama.
       <br><br>
-      Zapoznaj się z naszą ofertą i <a href="#contact" style="color: navy;">skontaktuj się z nami</a>
+      Zapoznaj się z naszą ofertą i <a href="#contact" style="color: #00bcd4;">skontaktuj się z nami</a>
     </p>
   </div>
 </section>
-
-<section id="services">
-  <h2 data-aos="fade-up">Oferta</h2>
+<section id="services" style="background-color: #111; color: white; padding: 80px 20px; text-align: center;">
+  <h2 class="aos" data-aos="fade-up">Oferta</h2>
   <div class="services-grid">
-    <div class="service-card" data-aos="fade-right">
-      <div class="service-icon"><i class="fas fa-house"></i></div>
+    <div class="service-card aos" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-icon">🏠</div>
       <div class="service-content">
         <h3>Hydroizolacje dachów</h3>
         <p>Oferujemy profesjonalne systemy hydroizolacji dachów.</p>
       </div>
     </div>
-    <div class="service-card" data-aos="fade-up">
-      <div class="service-icon"><i class="fas fa-bricks"></i></div>
+    <div class="service-card aos" data-aos="fade-up" data-aos-delay="200">
+      <div class="service-icon">🧱</div>
       <div class="service-content">
         <h3>Izolacje fundamentów</h3>
         <p>Wykonujemy izolacje przeciwwilgociowe fundamentów.</p>
       </div>
     </div>
-    <div class="service-card" data-aos="fade-left">
-      <div class="service-icon"><i class="fas fa-building-columns"></i></div>
+    <div class="service-card aos" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-icon">🏛️</div>
       <div class="service-content">
         <h3>Renowacje balkonów</h3>
         <p>Zajmujemy się kompleksową renowacją balkonów.</p>
@@ -296,32 +175,12 @@
     </div>
   </div>
 </section>
-
-<section id="projects" data-aos="fade-up">
-  <h2>Realizacje</h2>
-  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
-    <div style="flex: 1 1 400px; min-width: 300px;"></div>
-    <div style="flex: 1 1 400px;">
-      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-        <p style="margin: 0; color: #fff;">Uszczelnienie dachu płaskiego w Gdańsku</p>
-      </div>
-      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-        <p style="margin: 0; color: #fff;">Izolacja fundamentów budynku wielorodzinnego</p>
-      </div>
-      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
-        <p style="margin: 0; color: #fff;">Hydroizolacja tarasu i balkonu w Sopocie</p>
-      </div>
-      <a href="realizacje.html" style="display: inline-block; padding: 12px 24px; background-color: #fff; color: #000; text-decoration: none; border-radius: 6px;">Zobacz więcej realizacji</a>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2 data-aos="fade-up">Współpracuj z nami</h2>
+<section style="padding: 60px 20px; background-color: #222; text-align: center;" id="contact">
+  <h2 style="font-size: 36px; margin-bottom: 40px; color: #fff;">Współpracuj z nami</h2>
   <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg" alt="Współpraca" style="width: 100%; max-width: 450px; border-radius: 30px; margin-bottom: 50px;">
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
-    <div style="background: white; padding: 25px; border-radius: 15px;">
-      <h3>Dane kontaktowe</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; text-align: left;">
+    <div style="background: #333; padding: 25px; border-radius: 15px; color: white;">
+      <h3 style="font-size: 18px; margin-bottom: 10px;">Dane kontaktowe</h3>
       <p>
         Hydrokoma sp. z o.o.<br>
         ul. Porzeczkowa 16<br>
@@ -331,60 +190,43 @@
         REGON 521187558
       </p>
     </div>
-    <div style="background: white; padding: 25px; border-radius: 15px;">
-      <h3>Numer telefonu</h3>
+    <div style="background: #333; padding: 25px; border-radius: 15px; color: white;">
+      <h3 style="font-size: 18px; margin-bottom: 10px;">Numer telefonu</h3>
       <p>+48 512 308 538</p>
     </div>
-    <div style="background: white; padding: 25px; border-radius: 15px;">
-      <h3>Adres email</h3>
+    <div style="background: #333; padding: 25px; border-radius: 15px; color: white;">
+      <h3 style="font-size: 18px; margin-bottom: 10px;">Adres email</h3>
       <p>biuro@hydrokoma.com</p>
     </div>
   </div>
 </section>
-
-<section class="partners-section">
-  <h2 data-aos="fade-up" style="color: white;">Partnerzy</h2>
-  <div class="partners-slider">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner1.png" alt="Partner 1">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner2.png" alt="Partner 2">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner3.png" alt="Partner 3">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner4.png" alt="Partner 4">
+<section class="partners-section" style="background-color: #000; padding: 60px 20px;">
+  <h2 style="text-align: center; font-size: 2em; margin-bottom: 30px; color: #fff;">Partnerzy</h2>
+  <div class="partners-slider" style="display: flex; align-items: center; overflow: hidden; animation: scroll 20s linear infinite; gap: 40px; justify-content: center; flex-wrap: nowrap;">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner1.png" alt="Partner 1" style="height: 60px; object-fit: contain; flex-shrink: 0;">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner2.png" alt="Partner 2" style="height: 60px; object-fit: contain; flex-shrink: 0;">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner3.png" alt="Partner 3" style="height: 60px; object-fit: contain; flex-shrink: 0;">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner4.png" alt="Partner 4" style="height: 60px; object-fit: contain; flex-shrink: 0;">
   </div>
 </section>
-
-<footer>
-  <p>© 2025 Hydrokoma. Wszystkie prawa zastrzeżone.</p>
-  <div class="bottom-menu">
-    <a href="#about">O nas</a>
-    <a href="#services">Usługi</a>
-    <a href="#projects">Realizacje</a>
-    <a href="#contact">Kontakt</a>
-  </div>
+<footer style="background-color: #111; color: #bbb; padding: 30px 20px; text-align: center;">
+  <p style="margin: 0;">© 2023 Hydrokoma sp. z o.o. Wszystkie prawa zastrzeżone.</p>
 </footer>
-
-<button onclick="topFunction()" id="toTopBtn" title="Do góry"><i class="fas fa-chevron-up"></i></button>
-
 <script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
-  }
+  // Hamburger menu toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
 
-  const toTopBtn = document.getElementById("toTopBtn");
-  window.onscroll = function () {
-    toTopBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
-  };
-
-  function topFunction() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true,
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
   });
-</script>
 
-</body>
-</html>
+  // Zamknięcie menu po kliknięciu w link (na mobile)
+  document.querySelectorAll('.nav-link').forEach(link => 
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    })
+  );
+</script>
