@@ -13,8 +13,10 @@
     * {
       box-sizing: border-box;
     }
-    html {
+      html {
       scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: hidden;
     }
     body {
       margin: 0;
@@ -31,9 +33,11 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      overflow-x: hidden;
     }
-    .nav-left img {
+      .nav-left img {
       height: 100px;
+      max-width: 100%
     }
     .nav-right ul {
       list-style: none;
@@ -81,14 +85,16 @@
       }
     }
 
-    .hero-image {
+     .hero-image {
       width: 100%;
       height: auto;
       display: block;
+      max-width: 100%;
     }
 
     section {
       padding: 60px 20px;
+      overflow-x: hidden;
     }
 
     section h2 {
