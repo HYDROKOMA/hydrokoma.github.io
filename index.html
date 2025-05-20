@@ -13,13 +13,14 @@
     * {
       box-sizing: border-box;
     }
-    html, body {
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
       margin: 0;
-      padding: 0;
-      overflow-x: hidden;
       font-family: 'Roboto', sans-serif;
       background-color: #fff;
-      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
     nav {
       display: flex;
@@ -162,17 +163,88 @@
       background-attachment: fixed;
     }
 
-    @media (max-width: 768px) {
-      body {
-        padding: 0;
-      }
-      nav {
-        padding: 10px 15px;
-      }
-      section {
-        padding: 60px 15px;
-      }
+    .partners-section {
+      background-color: #000;
     }
+
+    .partners-slider {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      animation: scroll 20s linear infinite;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    .partners-slider img {
+      height: 60px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9em;
+    }
+
+    .bottom-menu {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .bottom-menu a {
+      color: #ccc;
+      font-size: 0.8em;
+      text-decoration: none;
+    }
+
+    .bottom-menu a:hover {
+      text-decoration: underline;
+    }
+
+    #toTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      z-index: 999;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    #toTopBtn:hover {
+      background-color: #444;
+    }
+    @media (max-width: 768px) {
+  body {
+    padding: 0 15px;
+  }
+  nav {
+    padding: 10px 15px;
+  }
+  section {
+    padding: 60px 15px;
+  }
+}
   </style>
 </head>
 <body>
@@ -254,6 +326,7 @@
     </div>
   </div>
 </section>
+
 <section id="contact">
   <h2 data-aos="fade-up">Współpracuj z nami</h2>
   <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg" alt="Współpraca" style="width: 100%; max-width: 450px; border-radius: 30px; margin-bottom: 50px;">
@@ -316,7 +389,6 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
-
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
@@ -324,3 +396,6 @@
     once: true,
   });
 </script>
+
+</body>
+</html>
