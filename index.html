@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ Na mojej stronie Hydrokoma udoskonal graficzne przejścia między sekcjami, mogą to być strzałki wtopione w jedną górną sekcję czy inne. Zmień ten nagłówki na białe w każdej sekcji. Kontakt i dane zrób w jakiejś nowoczesnej formie. Tekst, sekcje, animacje, menu zostaw bez zmian. Obecny kod strony <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
@@ -10,12 +10,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background-color: black;
+      yoverflow-x: hidden;
     }
     nav {
       display: flex;
@@ -26,6 +33,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      overflow-x: hidden;
     }
     .nav-left img {
       height: 100px;
@@ -82,224 +90,311 @@
       display: block;
       max-width: 100%;
     }
-        .section {
+    section {
       padding: 60px 20px;
+      overflow-x: hidden;
+    }
+    section h2 {
+      font-size: 2.5em;
+      color: #1f2a44;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    #about {
+      background-color: #000;
+      color: white;
+    }
+    #about div {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    #services {
+      background-color: #000;
+      color: white;
       text-align: center;
     }
-    .section h2 {
-      color: white;
-      margin-bottom: 40px;
-      font-size: 2.5em;
-    }
-    .services, .projects {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .service, .project {
-      background-color: #1a1a1a;
-      color: white;
-      padding: 20px;
-      width: 300px;
-      border-radius: 10px;
+
+    .service-card {
+      background: rgba(255, 255, 255, 1);
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
       transition: transform 0.3s ease;
     }
-    .service:hover, .project:hover {
-      transform: scale(1.05);
+
+    .service-card:hover {
+      transform: translateY(-8px);
     }
-    .projects-section {
-      background: url('realizacje-bg.jpg') no-repeat center center/cover;
+
+    .service-icon {
+      font-size: 50px;
+      margin-bottom: 20px;
+      color: #1f2a44;
     }
-    .contact-section {
-      background-color: #111;
+
+    .service-content h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #1f2a44;
+    }
+
+    .service-content p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    #projects {
+      background-color: #000;
       color: white;
+      background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
-    .contact-info {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.1em;
+
+    .partners-section {
+      background-color: black;
     }
-    .partners {
-      background-color: #222;
-      padding: 40px 20px;
-    }
-    .partners h2 {
-      color: white;
-      margin-bottom: 30px;
-    }
-    .partners-logos {
+
+    .partners-slider {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
+      overflow: hidden;
+      animation: scroll 20s linear infinite;
+      gap: 40px;
       justify-content: center;
-      gap: 30px;
+      flex-wrap: nowrap;
     }
-    .partners-logos img {
+
+    .partners-slider img {
       height: 60px;
+      object-fit: contain;
+      flex-shrink: 0;
     }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
     footer {
       background-color: #000;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 20px 10px;
       font-size: 0.9em;
     }
-    .section-divider {
-      width: 100%;
-      height: 50px;
-      background: url('divider-arrow.svg') no-repeat center;
-      background-size: contain;
-    }
-  </style>
-</head>
-<body>
 
-  <nav>
-    <div class="nav-left">
-      <img src="logo.png" alt="Hydrokoma logo" />
-    </div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-    <div class="nav-right">
-      <ul id="nav-menu">
-        <li><a href="#onas">O nas</a></li>
-        <li><a href="#uslugi">
-                background-color: #0a0a0a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-    .cookie-banner {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.9);
-      color: white;
-      padding: 10px 20px;
+    .bottom-menu {
+      margin-top: 10px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-    .cookie-banner button {
-      background: #04c2c9;
-      border: none;
+
+    .bottom-menu a {
+      color: #ccc;
+      font-size: 0.8em;
+      text-decoration: none;
+    }
+
+    .bottom-menu a:hover {
+      text-decoration: underline;
+    }
+
+    #toTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      z-index: 999;
+      background-color: #000;
       color: white;
-      padding: 10px 15px;
-      border-radius: 5px;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
       cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    #toTopBtn:hover {
+      background-color: #444;
     }
     @media (max-width: 768px) {
-      nav .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #111;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-      }
-      nav .menu.active {
-        display: flex;
-      }
-      .hamburger {
-        display: flex;
-      }
-    }
+  body {
+    padding: 0 15px;
+  }
+  nav {
+    padding: 10px 15px;
+  }
+  section {
+    padding: 60px 15px;
+  }
+}
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <img src="logo.png" alt="Hydrokoma Logo">
-      <ul class="menu">
-        <li><a href="#onas">O nas</a></li>
-        <li><a href="#uslugi">Usługi</a></li>
-        <li><a href="#realizacje">Realizacje</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h1>Profesjonalne hydroizolacje</h1>
-    <p>Zabezpiecz swój budynek z Hydrokoma</p>
-  </section>
-
-  <section class="section" id="onas">
-    <h2>O nas</h2>
-    <p class="contact-info">
-      Hydrokoma to firma specjalizująca się w profesjonalnych hydroizolacjach. Działamy na rynku od wielu lat, oferując kompleksowe usługi zabezpieczania budynków przed wilgocią.
-    </p>
-  </section>
-
-  <section class="section" id="uslugi">
-    <h2>Usługi</h2>
-    <div class="services">
-      <div class="service">Izolacje fundamentów</div>
-      <div class="service">Hydroizolacje tarasów i balkonów</div>
-      <div class="service">Uszczelnianie przecieków</div>
-    </div>
-  </section>
-
-  <section class="section projects-section" id="realizacje">
-    <h2>Realizacje</h2>
-    <div class="projects">
-      <div class="project">Projekt 1</div>
-      <div class="project">Projekt 2</div>
-      <div class="project">Projekt 3</div>
-    </div>
-  </section>
-
-  <section class="section contact-section" id="kontakt">
-    <h2>Kontakt</h2>
-    <div class="contact-info">
-      <p>Telefon: 123 456 789</p>
-      <p>Email: kontakt@hydrokoma.pl</p>
-      <p>Adres: ul. Przykładowa 1, 00-000 Miasto</p>
-    </div>
-  </section>
-
-  <section class="partners">
-    <h2>Partnerzy</h2>
-    <div class="partners-logos">
-      <img src="partner1.png" alt="Partner 1">
-      <img src="partner2.png" alt="Partner 2">
-      <img src="partner3.png" alt="Partner 3">
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Hydrokoma. Wszelkie prawa zastrzeżone.
-  </footer>
-
-  <div class="cookie-banner" id="cookieBanner">
-    <span>Ta strona używa plików cookies, aby zapewnić najlepszą jakość usług.</span>
-    <button onclick="acceptCookies()">Rozumiem</button>
+<nav>
+  <div class="nav-left">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/2d9ed097-394a-4231-856f-4514f3dac83b.JPG" alt="Hydrokoma Logo">
   </div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="nav-right">
+    <ul id="menu">
+      <li><a href="#about">O nas</a></li>
+      <li><a href="#services">Usługi</a></li>
+      <li><a href="#projects">Realizacje</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <script>
-    function toggleMenu() {
-      document.querySelector('.menu').classList.toggle('active');
-    }
+<img class="hero-image" src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Hydrokoma%20-%20hydroizolacje%20budowlane.png" alt="Budowa - Hydrokoma" />
 
-    function acceptCookies() {
-      document.getElementById('cookieBanner').style.display = 'none';
-      localStorage.setItem('cookiesAccepted', 'true');
-    }
+<section id="about" data-aos="fade-up">
+  <div>
+    <h2 style="color:white;">O nas</h2>
+    <p>
+      Tworzymy hydroizolacje, które wytrzymują próbę czasu.
+      Lubimy konkret, dlatego zawsze mówimy wprost, co robimy i ile to kosztuje.
+      Wierzymy, że porządna robota obroni się sama.
+      <br><br>
+      Zapoznaj się z naszą ofertą i <a href="#contact" style="color: navy;">skontaktuj się z nami</a>
+    </p>
+  </div>
+</section>
 
-    window.onload = function () {
-      if (localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookieBanner').style.display = 'none';
-      }
-    }
-  </script>
+<section id="services">
+  <h2 data-aos="fade-up">Oferta</h2>
+  <div class="services-grid">
+    <div class="service-card" data-aos="fade-right">
+      <div class="service-icon"><i class="fas fa-house"></i></div>
+      <div class="service-content">
+        <h3>Hydroizolacje dachów</h3>
+        <p>Oferujemy profesjonalne systemy hydroizolacji dachów.</p>
+      </div>
+    </div>
+    <div class="service-card" data-aos="fade-up">
+      <div class="service-icon"><i class="fas fa-bricks"></i></div>
+      <div class="service-content">
+        <h3>Izolacje fundamentów</h3>
+        <p>Wykonujemy izolacje przeciwwilgociowe fundamentów.</p>
+      </div>
+    </div>
+    <div class="service-card" data-aos="fade-left">
+      <div class="service-icon"><i class="fas fa-building-columns"></i></div>
+      <div class="service-content">
+        <h3>Renowacje balkonów</h3>
+        <p>Zajmujemy się kompleksową renowacją balkonów.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" data-aos="fade-up">
+  <h2>Realizacje</h2>
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
+    <div style="flex: 1 1 400px; min-width: 300px;"></div>
+    <div style="flex: 1 1 400px;">
+      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <p style="margin: 0; color: #fff;">Uszczelnienie dachu płaskiego w Gdańsku</p>
+      </div>
+      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <p style="margin: 0; color: #fff;">Izolacja fundamentów budynku wielorodzinnego</p>
+      </div>
+      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+        <p style="margin: 0; color: #fff;">Hydroizolacja tarasu i balkonu w Sopocie</p>
+      </div>
+      <a href="realizacje.html" style="display: inline-block; padding: 12px 24px; background-color: #fff; color: #000; text-decoration: none; border-radius: 6px;">Zobacz więcej realizacji</a>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <h2 data-aos="fade-up">Współpracuj z nami</h2>
+  <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg" alt="Współpraca" style="width: 100%; max-width: 450px; border-radius: 30px; margin-bottom: 50px;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
+    <div style="background: black;color: white;padding: 25px; border-radius:  <h3">Dane kontaktowe</h3>
+      <p>
+        Hydrokoma sp. z o.o.<br>
+        ul. Porzeczkowa 16<br>
+        40-750 Katowice<br>
+        NIP 9542836314<br>
+        KRS 0000951919<br>
+        REGON 521187558
+      </p>
+    </div>
+    <div style="background: black;  color: white;padding: 25px; border-radius: 15px;">
+      <h3>Numer telefonu</h3>
+      <p>+48 512 308 538</p>
+    </div>
+    <div style="background: black; color: white; padding: 25px; border-radius: 15px;">
+      <h3>Adres email</h3>
+      <p>biuro@hydrokoma.com</p>
+    </div>
+  </div>
+</section>
+<section class="partners-section">
+  <h2 data-aos="fade-up" style="color: white;">Partnerzy</h2>
+  <div class="partners-slider">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner1.png" alt="Partner 1">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner2.png" alt="Partner 2">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner3.png" alt="Partner 3">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner4.png" alt="Partner 4">
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Hydrokoma. Wszystkie prawa zastrzeżone.</p>
+  <div class="bottom-menu">
+    <a href="#about">O nas</a>
+    <a href="#services">Usługi</a>
+    <a href="#projects">Realizacje</a>
+    <a href="#contact">Kontakt</a>
+  </div>
+</footer>
+
+<button onclick="topFunction()" id="toTopBtn" title="Do góry"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+
+  const toTopBtn = document.getElementById("toTopBtn");
+  window.onscroll = function () {
+    toTopBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+  };
+
+  function topFunction() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
 </body>
 </html>
