@@ -206,63 +206,61 @@
   .realizacja {
     min-width: 30%;
   }
+
+.realizacja {
+  min-width: 22%;
 }
 
-@media (min-width: 1024px) {
-  .realizacja {
-    min-width: 22%;
-  }
+.partners-section {
+  background-color: black;
+}
 
-    .partners-section {
-      background-color: black;
-    }
+.partners-slider {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  animation: scroll 20s linear infinite;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
 
-    .partners-slider {
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      animation: scroll 20s linear infinite;
-      gap: 40px;
-      justify-content: center;
-      flex-wrap: nowrap;
-    }
+.partners-slider img {
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
-    .partners-slider img {
-      height: 60px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
 
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
+footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9em;
+}
 
-    footer {
-      background-color: #000;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9em;
-    }
+.bottom-menu {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-    .bottom-menu {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+.bottom-menu a {
+  color: #ccc;
+  font-size: 0.8em;
+  text-decoration: none;
+}
 
-    .bottom-menu a {
-      color: #ccc;
-      font-size: 0.8em;
-      text-decoration: none;
-    }
-
-    .bottom-menu a:hover {
-      text-decoration: underline;
-    }
+.bottom-menu a:hover {
+  text-decoration: underline;
+}
 
     #toTopBtn {
       position: fixed;
@@ -294,7 +292,6 @@
   section {
     padding: 60px 15px;
   }
-}
   </style>
 </head>
 <body>
