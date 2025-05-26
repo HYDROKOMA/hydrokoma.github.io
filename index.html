@@ -9,9 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <!-- Slick CSS -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" data-usercentrics="Marketing"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" data-usercentrics="Marketing"/>
   <style>
     * {
       box-sizing: border-box;
@@ -166,104 +163,65 @@
       color: #333;
     }
 
- .realizacje-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 20px;
-  padding: 20px 0;
-  -webkit-overflow-scrolling: touch;
-}
+    #projects {
+      background-color: #000;
+      color: white;
+      background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
 
-.realizacja {
-  flex: 0 0 auto;
-  scroll-snap-align: center;
-  background-color: #2a2a2a;
-  border-radius: 10px;
-  padding: 10px;
-  min-width: 280px;
-  max-width: 90vw;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
+    .partners-section {
+      background-color: black;
+    }
 
-.realizacja img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-}
+    .partners-slider {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      animation: scroll 20s linear infinite;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
 
-.realizacja h3 {
-  margin-top: 10px;
-  font-size: 18px;
-  color: white;
-}
+    .partners-slider img {
+      height: 60px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
 
-/* RESPONSYWNOŚĆ */
-@media (min-width: 480px) {
-  .realizacja {
-    min-width: 45%;
-  }
-@media (min-width: 768px) {
-  .realizacja {
-    min-width: 30%;
-  }
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
 
-.realizacja {
-  min-width: 22%;
-}
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9em;
+    }
 
-.partners-section {
-  background-color: black;
-}
+    .bottom-menu {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.partners-slider {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  animation: scroll 20s linear infinite;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
+    .bottom-menu a {
+      color: #ccc;
+      font-size: 0.8em;
+      text-decoration: none;
+    }
 
-.partners-slider img {
-  height: 60px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-@keyframes scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-footer {
-  background-color: #000;
-  color: white;
-  text-align: center;
-  padding: 20px 10px;
-  font-size: 0.9em;
-}
-
-.bottom-menu {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.bottom-menu a {
-  color: #ccc;
-  font-size: 0.8em;
-  text-decoration: none;
-}
-
-.bottom-menu a:hover {
-  text-decoration: underline;
-}
+    .bottom-menu a:hover {
+      text-decoration: underline;
+    }
 
     #toTopBtn {
       position: fixed;
@@ -295,6 +253,7 @@ footer {
   section {
     padding: 60px 15px;
   }
+}
   </style>
 </head>
 <body>
@@ -363,26 +322,22 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
     </div>
   </div>
 </section>
-  <section id="realizacje" style="background-color: #1c1c1c; color: white; padding: 60px 20px;">
-  <h2 class="section-title" data-aos="fade-up">Realizacje</h2>
-  <div class="realizacje-container">
-    <div class="realizacja">
-      <img src="img/realizacja1.jpg" alt="Realizacja 1">
-      <h3>Projekt 1</h3>
+<section id="projects" data-aos="fade-up">
+  <h2>Realizacje</h2>
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
+    <div style="flex: 1 1 400px; min-width: 300px;"></div>
+    <div style="flex: 1 1 400px;">
+      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <p style="margin: 0; color: #fff;">Uszczelnienie dachu płaskiego w Gdańsku</p>
+      </div>
+      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <p style="margin: 0; color: #fff;">Izolacja fundamentów budynku wielorodzinnego</p>
+      </div>
+      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+        <p style="margin: 0; color: #fff;">Hydroizolacja tarasu i balkonu w Sopocie</p>
+      </div>
+      <a href="realizacje.html" style="display: inline-block; padding: 12px 24px; background-color: #fff; color: #000; text-decoration: none; border-radius: 6px;">Zobacz więcej realizacji</a>
     </div>
-    <div class="realizacja">
-      <img src="img/realizacja2.jpg" alt="Realizacja 2">
-      <h3>Projekt 2</h3>
-    </div>
-    <div class="realizacja">
-      <img src="img/realizacja3.jpg" alt="Realizacja 3">
-      <h3>Projekt 3</h3>
-    </div>
-    <div class="realizacja">
-      <img src="img/realizacja4.jpg" alt="Realizacja 4">
-      <h3>Projekt 4</h3>
-    </div>
-    <!-- Dodaj więcej realizacji wg potrzeb -->
   </div>
 </section>
 <section id="contact">
@@ -410,22 +365,25 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
     </div>
   </div>
 </section>
-  <!-- Partnerzy -->
-  <section id="partnerzy" style="background-color: #222;">
-    <h2 data-aos="fade-up">Partnerzy</h2>
-    <div class="partnerzy-slider" data-aos="fade-up" data-aos-delay="200">
-      <div><img src="logo1.png" alt="Partner 1"></div>
-      <div><img src="logo2.png" alt="Partner 2"></div>
-      <div><img src="logo3.png" alt="Partner 3"></div>
-      <div><img src="logo4.png" alt="Partner 4"></div>
-    </div>
-  </section>
+<section class="partners-section">
+  <h2 data-aos="fade-up" style="color: white;">Partnerzy</h2>
+  <div class="partners-slider">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner1.png" alt="Partner 1">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner2.png" alt="Partner 2">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner3.png" alt="Partner 3">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner4.png" alt="Partner 4">
+  </div>
+</section>
 
-  <!-- Stopka -->
-  <footer class="stopka" data-aos="fade-up">
-    <p>&copy; 2025 Hydrokoma. Wszelkie prawa zastrzeżone.</p>
-    <p>Kontakt: biuro@hydrokoma.pl | Tel: 123 456 789</p>
-  </footer>
+<footer>
+  <p>© 2025 Hydrokoma. Wszystkie prawa zastrzeżone.</p>
+  <div class="bottom-menu">
+    <a href="#about">O nas</a>
+    <a href="#services">Usługi</a>
+    <a href="#projects">Realizacje</a>
+    <a href="#contact">Kontakt</a>
+  </div>
+</footer>
 
 <button onclick="topFunction()" id="toTopBtn" title="Do góry"><i class="fas fa-chevron-up"></i></button>
 
@@ -443,36 +401,11 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
-
-<!-- Skrypty z kontrolą Usercentrics, wstawione osobno i poprawnie -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" data-usercentrics="Marketing"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" data-usercentrics="Marketing"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
 <script>
-  // Inicjalizacja AOS
-  AOS.init();
-
-  // Inicjalizacja Slick slider (jeśli masz slider partnerów)
-  $(document).ready(function(){
-    $('.partnerzy-slider').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      arrows: false,
-      dots: false,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: { slidesToShow: 2 }
-        },
-        {
-          breakpoint: 480,
-          settings: { slidesToShow: 1 }
-        }
-      ]
-    });
+  AOS.init({
+    duration: 1000,
+    once: true,
   });
 </script>
 <!-- Modal -->
