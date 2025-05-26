@@ -9,6 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Slick CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" data-usercentrics="Marketing"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" data-usercentrics="Marketing"/>
   <style>
     * {
       box-sizing: border-box;
@@ -407,25 +410,22 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
     </div>
   </div>
 </section>
-<section class="partners-section">
-  <h2 data-aos="fade-up" style="color: white;">Partnerzy</h2>
-  <div class="partners-slider">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner1.png" alt="Partner 1">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner2.png" alt="Partner 2">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner3.png" alt="Partner 3">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/partner4.png" alt="Partner 4">
-  </div>
-</section>
+  <!-- Partnerzy -->
+  <section id="partnerzy" style="background-color: #222;">
+    <h2 data-aos="fade-up">Partnerzy</h2>
+    <div class="partnerzy-slider" data-aos="fade-up" data-aos-delay="200">
+      <div><img src="logo1.png" alt="Partner 1"></div>
+      <div><img src="logo2.png" alt="Partner 2"></div>
+      <div><img src="logo3.png" alt="Partner 3"></div>
+      <div><img src="logo4.png" alt="Partner 4"></div>
+    </div>
+  </section>
 
-<footer>
-  <p>© 2025 Hydrokoma. Wszystkie prawa zastrzeżone.</p>
-  <div class="bottom-menu">
-    <a href="#about">O nas</a>
-    <a href="#services">Usługi</a>
-    <a href="#projects">Realizacje</a>
-    <a href="#contact">Kontakt</a>
-  </div>
-</footer>
+  <!-- Stopka -->
+  <footer class="stopka" data-aos="fade-up">
+    <p>&copy; 2025 Hydrokoma. Wszelkie prawa zastrzeżone.</p>
+    <p>Kontakt: biuro@hydrokoma.pl | Tel: 123 456 789</p>
+  </footer>
 
 <button onclick="topFunction()" id="toTopBtn" title="Do góry"><i class="fas fa-chevron-up"></i></button>
 
@@ -441,15 +441,52 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
 
   function topFunction() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true,
-  });
-</script>
+  }  <!-- Skrypty z kontrolą Usercentrics -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" data-usercentrics="Marketing"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" data-usercentrics="Marketing"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js" data-usercentrics="Marketing"></script>
+
+  <script>
+    window.addEventListener('UC_UI_INITIALIZED', function () {
+      const consentedMarketing = window?.UC_UI?.getServicesBaseInfo()?.some(service =>
+        service.category === 'Marketing' && service.consent.status === true
+      );
+
+      if (consentedMarketing) {
+        // AOS init
+        if (typeof AOS !== 'undefined') {
+          AOS.init();
+        }
+
+        // Slick init
+        if (typeof $ !== 'undefined' && typeof $.fn.slick !== 'undefined') {
+          $('.partnerzy-slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+            responsive: [
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 2
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1
+                }
+              }
+            ]
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>
 <!-- Modal -->
 <div id="modal" style="
   position: fixed;
