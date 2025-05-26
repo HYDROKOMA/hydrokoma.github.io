@@ -163,14 +163,55 @@
       color: #333;
     }
 
-    #projects {
-      background-color: #000;
-      color: white;
-      background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
+ .realizacje-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.realizacja {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 280px;
+  max-width: 90vw;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.realizacja img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.realizacja h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: white;
+}
+
+/* RESPONSYWNOŚĆ */
+@media (min-width: 480px) {
+  .realizacja {
+    min-width: 45%;
+  }
+@media (min-width: 768px) {
+  .realizacja {
+    min-width: 30%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .realizacja {
+    min-width: 22%;
+  }
 
     .partners-section {
       background-color: black;
@@ -322,22 +363,26 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
     </div>
   </div>
 </section>
-<section id="projects" data-aos="fade-up">
-  <h2>Realizacje</h2>
-  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
-    <div style="flex: 1 1 400px; min-width: 300px;"></div>
-    <div style="flex: 1 1 400px;">
-      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-        <p style="margin: 0; color: #fff;">Uszczelnienie dachu płaskiego w Gdańsku</p>
-      </div>
-      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-        <p style="margin: 0; color: #fff;">Izolacja fundamentów budynku wielorodzinnego</p>
-      </div>
-      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
-        <p style="margin: 0; color: #fff;">Hydroizolacja tarasu i balkonu w Sopocie</p>
-      </div>
-      <a href="realizacje.html" style="display: inline-block; padding: 12px 24px; background-color: #fff; color: #000; text-decoration: none; border-radius: 6px;">Zobacz więcej realizacji</a>
+  <section id="realizacje" style="background-color: #1c1c1c; color: white; padding: 60px 20px;">
+  <h2 class="section-title" data-aos="fade-up">Realizacje</h2>
+  <div class="realizacje-container">
+    <div class="realizacja">
+      <img src="img/realizacja1.jpg" alt="Realizacja 1">
+      <h3>Projekt 1</h3>
     </div>
+    <div class="realizacja">
+      <img src="img/realizacja2.jpg" alt="Realizacja 2">
+      <h3>Projekt 2</h3>
+    </div>
+    <div class="realizacja">
+      <img src="img/realizacja3.jpg" alt="Realizacja 3">
+      <h3>Projekt 3</h3>
+    </div>
+    <div class="realizacja">
+      <img src="img/realizacja4.jpg" alt="Realizacja 4">
+      <h3>Projekt 4</h3>
+    </div>
+    <!-- Dodaj więcej realizacji wg potrzeb -->
   </div>
 </section>
 <section id="contact">
