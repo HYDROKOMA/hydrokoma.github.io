@@ -441,52 +441,40 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
 
   function topFunction() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }  <!-- Skrypty z kontrolą Usercentrics -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" data-usercentrics="Marketing"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" data-usercentrics="Marketing"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js" data-usercentrics="Marketing"></script>
+  }
+</script>
 
-  <script>
-    window.addEventListener('UC_UI_INITIALIZED', function () {
-      const consentedMarketing = window?.UC_UI?.getServicesBaseInfo()?.some(service =>
-        service.category === 'Marketing' && service.consent.status === true
-      );
+<!-- Skrypty z kontrolą Usercentrics, wstawione osobno i poprawnie -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" data-usercentrics="Marketing"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" data-usercentrics="Marketing"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-      if (consentedMarketing) {
-        // AOS init
-        if (typeof AOS !== 'undefined') {
-          AOS.init();
+<script>
+  // Inicjalizacja AOS
+  AOS.init();
+
+  // Inicjalizacja Slick slider (jeśli masz slider partnerów)
+  $(document).ready(function(){
+    $('.partnerzy-slider').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false,
+      dots: false,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: { slidesToShow: 2 }
+        },
+        {
+          breakpoint: 480,
+          settings: { slidesToShow: 1 }
         }
-
-        // Slick init
-        if (typeof $ !== 'undefined' && typeof $.fn.slick !== 'undefined') {
-          $('.partnerzy-slider').slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            arrows: false,
-            responsive: [
-              {
-                breakpoint: 768,
-                settings: {
-                  slidesToShow: 2
-                }
-              },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 1
-                }
-              }
-            ]
-          });
-        }
-      }
+      ]
     });
-  </script>
-</body>
-</html>
+  });
+</script>
 <!-- Modal -->
 <div id="modal" style="
   position: fixed;
