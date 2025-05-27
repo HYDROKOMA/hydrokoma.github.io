@@ -163,56 +163,48 @@
       color: #333;
     }
 
-  #projekty {
-  background-color: black;
-  padding: 60px 20px;
-  color: #fff;
-  text-align: center;
+    .map-container {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+    }
+    .map-image {
+      width: 100%;
+      display: block;
+    }
+    .marker {
+      position: absolute;
+      background: #d62828;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      border: 2px solid white;
+      box-shadow: 0 0 6px rgba(214,40,40,0.8);
+      transform: translate(-50%, -50%);
+    }
+    .label {
+      position: absolute;
+      background: rgba(255,255,255,0.9);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: bold;
+      white-space: nowrap;
+      transform: translate(-50%, 0);
+    }
+    svg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    line {
+      stroke: #0077b6;
+      stroke-width: 3;
+      marker-end: url(#arrowhead);
+    
 }
-
-.projekty-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.projekty-scroll {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 20px 0;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.projekt {
-  flex: 0 0 auto;
-  width: 250px;
-  background-color: #222;
-  border-radius: 8px;
-  padding: 10px;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
-}
-
-.projekt img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.projekt p {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #ccc;
-}
-
-/* Responsywność */
-@media (max-width: 600px) {
-  .projekt {
-    width: 200px;
-  }
-}
-
     .partners-section {
       background-color: black;
     }
@@ -362,27 +354,36 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
       </div>
     </div>
   </div>
-  
-<section id="projekty">
-  <div class="projekty-container">
-    <h2 class="white-heading" data-aos="fade-up">Realizacje</h2>
-    <div class="projekty-scroll">
-      <div class="projekt">
-        <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9772.jpeg" alt="Izolacja fundamentów – Kraków">
-        <p>Izolacja fundamentów – Kraków</p>
-      </div>
-      <div class="projekt">
-        <img src="https://raw.githubusercontent.com/karolinamarekwia/hydrokoma/main/images/realizacje/realizacja2.jpg" alt="Hydroizolacja dachu – Katowice">
-        <p>Hydroizolacja dachu – Katowice</p>
-      </div>
-      <div class="projekt">
-        <img src="https://raw.githubusercontent.com/karolinamarekwia/hydrokoma/main/images/realizacje/realizacja3.jpg" alt="Naprawa tarasu – Wrocław">
-        <p>Naprawa tarasu – Wrocław</p>
-      </div>
-      <!-- Dodaj więcej kafelków poniżej -->
-    </div>
+  <section id="realizacje">
+  <h2>Realizacje</h2>
+  <!-- inne treści realizacji -->
+
+  <!-- tutaj wklejamy mapę -->
+  <div class="map-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Silesia_location_map_PL.svg" alt="Mapa Śląska" class="map-image" />
+
+    <div class="marker" style="top: 70%; left: 30%;" title="Osiedle Fit, Tychy"></div>
+    <div class="label" style="top: 72%; left: 30%;">Osiedle Fit, Tychy</div>
+
+    <div class="marker" style="top: 45%; left: 50%;" title="Helimed, Katowice"></div>
+    <div class="label" style="top: 47%; left: 50%;">Helimed, Katowice</div>
+
+    <div class="marker" style="top: 48%; left: 52%;" title="Okam 3 Stawy, Katowice"></div>
+    <div class="label" style="top: 50%; left: 52%;">Okam 3 Stawy, Katowice</div>
+
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L6,2 L0,4 Z" fill="#0077b6" />
+        </marker>
+      </defs>
+      <line x1="50" y1="50" x2="30" y2="70" />
+      <line x1="50" y1="50" x2="50" y2="45" />
+      <line x1="50" y1="50" x2="52" y2="48" />
+    </svg>
   </div>
 </section>
+
 <section id="contact">
   <h2 data-aos="fade-up">Współpracuj z nami</h2>
   <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg" alt="Współpraca" style="width: 100%; max-width: 450px; border-radius: 30px; margin-bottom: 50px;">
