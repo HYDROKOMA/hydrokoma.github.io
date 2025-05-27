@@ -163,14 +163,55 @@
       color: #333;
     }
 
-    #projects {
-      background-color: #000;
-      color: white;
-      background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
+  #projekty {
+  background-color: #111;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.projekty-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projekty-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.projekt {
+  flex: 0 0 auto;
+  width: 250px;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 10px;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+.projekt img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.projekt p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Responsywność */
+@media (max-width: 600px) {
+  .projekt {
+    width: 200px;
+  }
+}
 
     .partners-section {
       background-color: black;
@@ -321,22 +362,23 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
       </div>
     </div>
   </div>
-</section>
-<section id="projects" data-aos="fade-up">
-  <h2>Realizacje</h2>
-  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
-    <div style="flex: 1 1 400px; min-width: 300px;"></div>
-    <div style="flex: 1 1 400px;">
-      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-        <p style="margin: 0; color: #fff;">Uszczelnienie dachu płaskiego w Gdańsku</p>
+<section id="projekty">
+  <div class="projekty-container">
+    <h2 class="white-heading" data-aos="fade-up">Realizacje</h2>
+    <div class="projekty-scroll">
+      <div class="projekt">
+        <img src="https://raw.githubusercontent.com/karolinamarekwia/hydrokoma/main/images/realizacje/realizacja1.jpg" alt="Izolacja fundamentów – Kraków">
+        <p>Izolacja fundamentów – Kraków</p>
       </div>
-      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-        <p style="margin: 0; color: #fff;">Izolacja fundamentów budynku wielorodzinnego</p>
+      <div class="projekt">
+        <img src="https://raw.githubusercontent.com/karolinamarekwia/hydrokoma/main/images/realizacje/realizacja2.jpg" alt="Hydroizolacja dachu – Katowice">
+        <p>Hydroizolacja dachu – Katowice</p>
       </div>
-      <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
-        <p style="margin: 0; color: #fff;">Hydroizolacja tarasu i balkonu w Sopocie</p>
+      <div class="projekt">
+        <img src="https://raw.githubusercontent.com/karolinamarekwia/hydrokoma/main/images/realizacje/realizacja3.jpg" alt="Naprawa tarasu – Wrocław">
+        <p>Naprawa tarasu – Wrocław</p>
       </div>
-      <a href="realizacje.html" style="display: inline-block; padding: 12px 24px; background-color: #fff; color: #000; text-decoration: none; border-radius: 6px;">Zobacz więcej realizacji</a>
+      <!-- Dodaj więcej kafelków poniżej -->
     </div>
   </div>
 </section>
