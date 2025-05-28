@@ -28,6 +28,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      overflow-x: hidden;
     }
     .nav-left img {
       height: 100px;
@@ -86,6 +87,7 @@
     }
     section {
       padding: 60px 20px;
+      overflow-x: hidden;
     }
     section h2 {
       font-size: 2.5em;
@@ -128,20 +130,23 @@
       transition: transform 0.3s ease;
     }
 
-    .service-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 80px;
-      margin-bottom: 15px;
+    .service-card:hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .service-icon img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: contain;
-    }
+     .service-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin-bottom: 15px;
+}
 
+.service-icon img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
     .service-content h3 {
       font-size: 22px;
       margin-bottom: 10px;
@@ -153,54 +158,55 @@
       color: #333;
     }
 
-    #projekty {
-      background-color: black;
-      padding: 60px 20px;
-      color: #fff;
-      text-align: center;
-    }
+  #projekty {
+  background-color: black;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
 
-    .projekty-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.projekty-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .projekty-scroll {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      padding: 20px 0;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
+.projekty-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
 
-    .projekt {
-      flex: 0 0 auto;
-      width: 250px;
-      background-color: #222;
-      border-radius: 8px;
-      padding: 10px;
-      scroll-snap-align: start;
-      transition: transform 0.3s ease;
-    }
+.projekt {
+  flex: 0 0 auto;
+  width: 250px;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 10px;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
 
-    .projekt img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
+.projekt img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
 
-    .projekt p {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #ccc;
-    }
+.projekt p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ccc;
+}
 
-    @media (max-width: 600px) {
-      .projekt {
-        width: 200px;
-      }
-    }
+/* Responsywność */
+@media (max-width: 600px) {
+  .projekt {
+    width: 200px;
+  }
+}
 
     .partners-section {
       background-color: black;
@@ -274,22 +280,20 @@
       background-color: #444;
     }
     @media (max-width: 768px) {
-      body {
-        padding: 0 15px;
-      }
-      nav {
-        padding: 10px 15px;
-      }
-      section {
-        padding: 60px 15px;
-      }
-    }
+  body {
+    padding: 0 15px;
+  }
+  nav {
+    padding: 10px 15px;
+  }
+  section {
+    padding: 60px 15px;
+  }
+}
   </style>
-
-  <!-- Zablokowany CSS AOS -->
-  <link rel="stylesheet" type="text/plain" data-cookie-consent="true" data-href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
+
 <nav>
   <div class="nav-left">
     <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9752.jpeg" alt="Hydrokoma Logo">
@@ -409,15 +413,16 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
   </div>
 </section>
 
-  <footer>
-    <p>&copy; 2025 Hydrokoma. Wszelkie prawa zastrzeżone.</p>
-    <div class="bottom-menu">
-      <a href="#">Polityka prywatności</a>
-      <a href="#">Cookies</a>
-    </div>
-  </footer>
+<footer>
+  <p>© 2025 Hydrokoma. Wszystkie prawa zastrzeżone.</p>
+  <div class="bottom-menu">
+    <a href="#about">O nas</a>
+    <a href="#services">Usługi</a>
+    <a href="#projects">Realizacje</a>
+    <a href="#contact">Kontakt</a>
+  </div>
+</footer>
 
-  <button id="toTopBtn" title="Do góry">&#8679;</button>
 <button onclick="topFunction()" id="toTopBtn" title="Do góry"><i class="fas fa-chevron-up"></i></button>
 
 <script>
@@ -474,42 +479,6 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
 
   closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
-  });
-</script>
-<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: white; padding: 20px; z-index: 9999; text-align: center;">
-  <p style="margin: 0 0 10px;">Ta strona korzysta z plików cookies w celu zapewnienia poprawnego działania oraz analizy ruchu. <a href="#privacy" style="color: #0af;">Dowiedz się więcej</a></p>
-  <button id="accept-cookies" style="padding: 8px 16px; background: #0af; color: white; border: none; cursor: pointer;">Akceptuję</button>
-</div>
-  <script>
-  function loadConsentScripts() {
-    // Skrypty JS
-    document.querySelectorAll('script[type="text/plain"][data-cookie-consent]').forEach(script => {
-      const s = document.createElement('script');
-      s.src = script.getAttribute('data-src');
-      s.defer = true;
-      document.head.appendChild(s);
-    });
-
-    // Style CSS
-    document.querySelectorAll('link[type="text/plain"][data-cookie-consent]').forEach(link => {
-      const l = document.createElement('link');
-      l.rel = 'stylesheet';
-      l.href = link.getAttribute('data-href');
-      document.head.appendChild(l);
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("cookie-consent") === "accepted") {
-      loadConsentScripts();
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    document.getElementById("accept-cookies").addEventListener("click", () => {
-      localStorage.setItem("cookie-consent", "accepted");
-      document.getElementById("cookie-banner").style.display = "none";
-      loadConsentScripts();
-    });
   });
 </script>
 </body>
