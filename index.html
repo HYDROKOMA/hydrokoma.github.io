@@ -289,7 +289,12 @@
   section {
     padding: 60px 15px;
   }
-}
+<!-- Zablokowany CSS AOS -->
+<link rel="stylesheet" type="text/plain" data-cookie-consent="true" data-href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<!-- Zablokowany JS AOS -->
+<script type="text/plain" data-cookie-consent="true" data-src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    }
   </style>
 </head>
 <body>
@@ -479,6 +484,42 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
 
   closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
+  });
+</script>
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: white; padding: 20px; z-index: 9999; text-align: center;">
+  <p style="margin: 0 0 10px;">Ta strona korzysta z plików cookies w celu zapewnienia poprawnego działania oraz analizy ruchu. <a href="#privacy" style="color: #0af;">Dowiedz się więcej</a></p>
+  <button id="accept-cookies" style="padding: 8px 16px; background: #0af; color: white; border: none; cursor: pointer;">Akceptuję</button>
+</div>
+  <script>
+  function loadConsentScripts() {
+    // Skrypty JS
+    document.querySelectorAll('script[type="text/plain"][data-cookie-consent]').forEach(script => {
+      const s = document.createElement('script');
+      s.src = script.getAttribute('data-src');
+      s.defer = true;
+      document.head.appendChild(s);
+    });
+
+    // Style CSS
+    document.querySelectorAll('link[type="text/plain"][data-cookie-consent]').forEach(link => {
+      const l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = link.getAttribute('data-href');
+      document.head.appendChild(l);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("cookie-consent") === "accepted") {
+      loadConsentScripts();
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    document.getElementById("accept-cookies").addEventListener("click", () => {
+      localStorage.setItem("cookie-consent", "accepted");
+      document.getElementById("cookie-banner").style.display = "none";
+      loadConsentScripts();
+    });
   });
 </script>
 </body>
