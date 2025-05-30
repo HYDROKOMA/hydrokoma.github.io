@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-draft="true" data-settings-id="xGbFSASzq65QFm" async></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hydrokoma - Hydroizolacje</title>
@@ -485,5 +484,101 @@ Nasz obszar działalności to izolacje przeciwwodne. Wykonujemy usługi na etapi
     modal.style.display = 'none';
   });
 </script>
+<!-- Baner zgody -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: white; padding: 20px; z-index: 9999; display: none; text-align: center;">
+  <p style="margin-bottom: 10px;">
+    Ta strona korzysta z plików cookies w celach statystycznych i marketingowych. 
+    Szczegóły znajdziesz w naszej <a href="polityka.html" style="color: #4dd0e1;">Polityce prywatności</a>.
+  </p>
+  <button onclick="acceptCookies()" style="margin-right: 10px;">Akceptuj wszystkie</button>
+  <button onclick="rejectCookies()" style="margin-right: 10px;">Odrzuć wszystkie</button>
+  <button onclick="openSettings()">Ustawienia</button>
+</div>
+
+<!-- Panel ustawień cookies -->
+<div id="cookie-settings" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #333; color: white; padding: 20px; z-index: 10000; text-align: center;">
+  <h3>Ustawienia cookies</h3>
+  <form id="cookie-form">
+    <label style="display: block; margin: 5px 0;">
+      <input type="checkbox" name="essential" checked disabled> Niezbędne (zawsze aktywne)
+    </label>
+    <label style="display: block; margin: 5px 0;">
+      <input type="checkbox" name="analytics"> Analityczne (np. Google Analytics)
+    </label>
+    <label style="display: block; margin: 5px 0;">
+      <input type="checkbox" name="marketing"> Marketingowe (np. Facebook Pixel)
+    </label>
+    <br>
+    <button type="submit" style="margin-right: 10px;">Zapisz ustawienia</button>
+    <button type="button" onclick="cancelSettings()">Anuluj</button>
+  </form>
+</div>
+
+<script>
+  // Wyświetlenie banera jeśli brak zgody
+  window.addEventListener("load", () => {
+    const consent = localStorage.getItem("cookieConsent");
+    if (!consent) {
+      document.getElementById("cookie-banner").style.display = "block";
+    } else {
+      const parsed = JSON.parse(consent);
+      if (parsed.analytics) loadAnalytics();
+      if (parsed.marketing) loadMarketing();
+    }
+  });
+
+  // Akceptuj wszystkie
+  function acceptCookies() {
+    localStorage.setItem("cookieConsent", JSON.stringify({ analytics: true, marketing: true }));
+    document.getElementById("cookie-banner").style.display = "none";
+    loadAnalytics();
+    loadMarketing();
+  }
+
+  // Odrzuć wszystkie
+  function rejectCookies() {
+    localStorage.setItem("cookieConsent", JSON.stringify({ analytics: false, marketing: false }));
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+
+  // Pokaż ustawienia
+  function openSettings() {
+    document.getElementById("cookie-banner").style.display = "none";
+    document.getElementById("cookie-settings").style.display = "block";
+  }
+
+  // Anuluj ustawienia
+  function cancelSettings() {
+    document.getElementById("cookie-settings").style.display = "none";
+    document.getElementById("cookie-banner").style.display = "block";
+  }
+
+  // Zapisz ustawienia
+  document.getElementById("cookie-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const analytics = this.analytics.checked;
+    const marketing = this.marketing.checked;
+    localStorage.setItem("cookieConsent", JSON.stringify({ analytics, marketing }));
+    document.getElementById("cookie-settings").style.display = "none";
+    if (analytics) loadAnalytics();
+    if (marketing) loadMarketing();
+  });
+
+  // Przykładowe funkcje ładowania zewnętrznych skryptów
+  function loadAnalytics() {
+    console.log("Załaduj skrypt analityczny tutaj.");
+    // Można dynamicznie dodać skrypt, np.:
+    // let ga = document.createElement('script');
+    // ga.src = "https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-X";
+    // document.head.appendChild(ga);
+  }
+
+  function loadMarketing() {
+    console.log("Załaduj skrypt marketingowy tutaj.");
+    // Można dynamicznie dodać np. Facebook Pixel
+  }
+</script>
+
+  
 </body>
 </html>
