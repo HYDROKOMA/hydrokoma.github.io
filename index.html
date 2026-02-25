@@ -386,7 +386,7 @@ budowy, w razie potrzeby</li>
 
   </section>
   
-<section id="projekty">
+<section id="projects">
   <div class="projekty-container">
     <h2 class="white-heading" data-aos="fade-up">Realizacje</h2>
     <div class="projekty-scroll">
@@ -455,8 +455,12 @@ budowy, w razie potrzeby</li>
 <button onclick="topFunction()" id="toTopBtn" title="Do góry"><i class="fas fa-chevron-up"></i></button>
 
 <script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
+  // NOWOŚĆ: Automatyczne zamykanie menu po kliknięciu w link (dla telefonów)
+  document.querySelectorAll('#menu li a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById("menu").classList.remove("show");
+    });
+  })
   }
 
   const toTopBtn = document.getElementById("toTopBtn");
