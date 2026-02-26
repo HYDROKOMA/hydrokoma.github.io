@@ -8,23 +8,51 @@
   <style>
     body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; margin: 0; padding: 40px 20px; line-height: 1.6; }
     .container { max-width: 800px; margin: 0 auto; }
-    .back-btn { display: inline-block; margin-bottom: 30px; color: #fff; text-decoration: none; font-size: 0.8em; border: 1px solid #444; padding: 10px 20px; border-radius: 4px; transition: 0.3s; }
-    .back-btn:hover { background: #fff; color: #000; }
-    h1 { font-weight: 300; letter-spacing: 2px; margin-bottom: 20px; }
-
-    /* POPRAWIONA SEKCJA ZDJĘCIA */
-    .main-img { 
-      width: 100%; 
-      height: 350px; 
-      background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_2828.jpeg') center/cover no-repeat; 
-      border-radius: 12px; 
+    
+    .back-btn { 
+      display: inline-block; 
       margin-bottom: 30px; 
+      color: #fff; 
+      text-decoration: none; 
+      font-size: 0.8em; 
+      border: 1px solid #444; 
+      padding: 10px 20px; 
+      border-radius: 4px; 
+      transition: 0.3s; 
+    }
+    .back-btn:hover { background: #fff; color: #000; }
+    
+    h1 { font-weight: 300; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+
+    /* POPRAWKA GRAFIKI */
+    .main-img-container {
+      width: 100%;
+      height: 350px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      overflow: hidden;
       border: 1px solid #333;
-      filter: grayscale(100%) brightness(0.6) contrast(1.2); /* Tu jest Twój ciemny ton */
+      background: #111; /* Kolor zastępczy, gdyby obrazek się nie wczytał */
     }
 
-    .tech-card { background: #111; padding: 25px; border-radius: 8px; margin-bottom: 20px; border-left: 3px solid #fff; }
-    h2 { font-weight: 400; color: #fff; margin-top: 0; }
+    .main-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* To sprawi, że obrazek wypełni ramkę bez zniekształceń */
+      filter: grayscale(100%) brightness(0.6) contrast(1.1);
+      display: block;
+    }
+
+    .tech-card { 
+      background: #111; 
+      padding: 25px; 
+      border-radius: 8px; 
+      margin-bottom: 20px; 
+      border-left: 3px solid #fff; 
+    }
+    
+    h2 { font-weight: 400; color: #fff; margin-top: 0; font-size: 1.3em; }
+    p { color: #ccc; }
 
     .next-step-box { 
       margin-top: 60px; 
@@ -33,37 +61,47 @@
       display: flex; 
       justify-content: flex-end; 
     }
+    
     .next-step-link { text-decoration: none; color: #fff; text-align: right; transition: 0.3s; }
     .next-step-link:hover { opacity: 0.7; }
     .next-step-link span { display: block; font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 5px; }
     .next-step-link .title { font-size: 1.4em; font-weight: 300; }
+
+    @media (max-width: 600px) {
+      .main-img-container { height: 200px; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <a href="index.html" class="back-btn">← POWRÓT DO STRONY GŁÓWNEJ</a>
+    
     <h1>Baza Technologii</h1>
-    <div class="main-img"></div>
-    <p>W Hydrokoma dobieramy technologie do specyfiki obiektu. Nie ma jednej metody na każdy wyciek.</p>
+    
+    <div class="main-img-container">
+      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_2828.jpeg" alt="Detale technologiczne Hydrokoma">
+    </div>
+
+    <p style="font-size: 1.1em; margin-bottom: 40px;">W Hydrokoma dobieramy technologie do specyfiki obiektu. Nie stosujemy półśrodków – liczy się trwały efekt i bezpieczeństwo konstrukcji.</p>
     
     <div class="tech-card">
       <h2>Biała Wanna</h2>
-      <p>System konstrukcji szczelnej, gdzie beton pełni rolę izolacji. Kluczowe jest uszczelnienie przerw roboczych i dylatacji systemowymi taśmami oraz wężami iniekcyjnymi.</p>
+      <p>System konstrukcji szczelnej, gdzie sam beton pełni rolę izolacji wodnej. Sukces zależy od precyzyjnego uszczelnienia przerw roboczych, dylatacji oraz przejść szczelnych przy użyciu profesjonalnych taśm i węży iniekcyjnych.</p>
     </div>
 
     <div class="tech-card">
       <h2>Powłoki Bitumiczne (KMB)</h2>
-      <p>Nowoczesne, grubowarstwowe masy uszczelniające, które tworzą elastyczną, bezszwową barierę chroniącą fundamenty przed wodą pod ciśnieniem.</p>
+      <p>Nowoczesne, grubowarstwowe masy polimerowo-bitumiczne. Tworzą elastyczną, mostkującą rysy powłokę, która trwale odcina fundament od naporu wody gruntowej.</p>
     </div>
 
     <div class="tech-card">
       <h2>Iniekcje Strukturalne</h2>
-      <p>Metoda polegająca na wprowadzaniu żywic wewnątrz konstrukcji betonowej, co pozwala na jej całkowite uszczelnienie i wzmocnienie bez odkopów.</p>
+      <p>Zaawansowana metoda naprawcza. Wprowadzamy specjalistyczne żywice wewnątrz struktury betonu, co pozwala na uszczelnienie przecieków bez konieczności kosztownego i uciążliwego odkopywania fundamentów.</p>
     </div>
 
     <div class="next-step-box">
       <a href="wspolpraca.html" class="next-step-link">
-        <span>Zobacz jak działamy</span>
+        <span>Kolejny krok</span>
         <div class="title">Standardy współpracy B2B →</div>
       </a>
     </div>
