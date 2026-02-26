@@ -9,27 +9,35 @@
     body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; margin: 0; padding: 40px 20px; }
     .container { max-width: 800px; margin: 0 auto; }
     .back-btn { display: inline-block; margin-bottom: 30px; color: #fff; text-decoration: none; font-size: 0.8em; border: 1px solid #444; padding: 10px 20px; border-radius: 4px; }
-    .alert { background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333; margin-top: 30px; }
+    .grid-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 30px 0; }
+    .grid-imgs div { height: 250px; border-radius: 8px; border: 1px solid #222; }
+    .alert-box { background: #fff; color: #000; padding: 30px; border-radius: 12px; margin-top: 40px; text-align: center; }
+    .alert-box a { color: #000; font-weight: bold; text-decoration: none; font-size: 1.2em; }
   </style>
 </head>
 <body>
   <div class="container">
     <a href="index.html" class="back-btn">← POWRÓT</a>
-    <h1 style="font-weight: 300;">Centrum Napraw i Serwisu</h1>
-    <p>Specjalizujemy się w naprawach w miejscach, gdzie tradycyjne metody zawiodły.</p>
+    <h1>Centrum Napraw i Iniekcji</h1>
+    <p>Naprawiamy to, co inni skazali na porażkę. Twoja piwnica lub garaż znów będą suche.</p>
     
-    <h3>Typowe problemy, które rozwiązujemy:</h3>
+    <div class="grid-imgs">
+      <div style="background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/0D104641-6ECE-4ED3-8CA0-89C2989FB06F.png') center/cover;"></div>
+      <div style="background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/9BFEAD1F-80CD-47F0-BFCF-B00F2BF57B20.png') center/cover;"></div>
+    </div>
+
+    <h3>Nasze specjalizacje serwisowe:</h3>
     <ul>
-      <li>Przecieki przez dylatacje w garażach podziemnych.</li>
-      <li>Woda wnikająca przez rysy w ścianach fundamentowych.</li>
-      <li>Nieszczelne przejścia instalacyjne (rury, kable).</li>
-      <li>Brak izolacji poziomej (podciąganie kapilarne).</li>
+      <li>Uszczelnianie rys i pęknięć metodą iniekcji ciśnieniowej.</li>
+      <li>Naprawa przeciekających dylatacji i przerw roboczych.</li>
+      <li>Odtwarzanie izolacji pionowej i poziomej bez wykopów.</li>
+      <li>Tamowanie aktywnych wycieków pod dużym ciśnieniem.</li>
     </ul>
 
-    <div class="alert">
-      <strong>Masz awarię?</strong><br>
-      Zadzwoń bezpośrednio: <strong>+48 512 308 538</strong>. <br>
-      Wykonujemy wizje lokalne i ekspertyzy techniczne na miejscu.
+    <div class="alert-box">
+      <h3>POTRZEBNA EKSPERTYZA?</h3>
+      <p>Zadzwoń do naszego inżyniera:</p>
+      <a href="tel:+48512308538">+48 512 308 538</a>
     </div>
   </div>
 </body>
