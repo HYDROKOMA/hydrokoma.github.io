@@ -46,6 +46,21 @@
     .hub-card h3 { font-weight: 300; font-size: 1.4em; margin-bottom: 15px; margin-top: 0; }
     .hub-card p { color: #888; font-size: 0.9em; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
     .hub-link { color: #fff; font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #333; padding-bottom: 5px; align-self: flex-start; }
+   
+    /* Style przycisku i taga dla Realizacji */
+    .project-btn {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%);
+      background: rgba(255, 255, 255, 0.9); color: #000; padding: 12px 25px;
+      font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;
+      border-radius: 4px; opacity: 0; transition: 0.4s ease; z-index: 20; pointer-events: none;
+    }
+    .project-card:hover .project-btn { opacity: 1; transform: translate(-50%, -50%); }
+
+    .view-more-tag {
+      position: absolute; top: 20px; right: 20px; color: #fff; font-size: 0.7em;
+      border: 1px solid rgba(255,255,255,0.3); padding: 5px 10px; border-radius: 20px;
+      z-index: 15; background: rgba(0,0,0,0.4); text-transform: uppercase;
+    }
 
     /* Realizacje */
     .projects-wrapper { display: flex; gap: 20px; overflow-x: auto; padding: 0 20px; scrollbar-width: none; margin-bottom: 40px; }
@@ -136,6 +151,8 @@
   <h2 style="text-align: center; font-weight: 300; margin-bottom: 40px; letter-spacing: 2px;">WYBRANE REALIZACJE</h2>
   <div class="projects-wrapper">
     <a href="realizacja-matecznik.html" class="project-card">
+      <div class="view-more-tag">ZOBACZ <i class="fas fa-arrow-right"></i></div>
+<div class="project-btn">Sprawdź szczegóły</div>
       <div class="project-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9772.jpeg'); animation: slideFade 10s infinite;"></div>
       <div class="project-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/0D104641-6ECE-4ED3-8CA0-89C2989FB06F.png'); animation: slideFade 10s infinite 5s; opacity:0;"></div>
       <div style="position: absolute; bottom: 20px; left: 20px; z-index: 5;">
