@@ -37,13 +37,13 @@
     }
     .nav-right ul li a:hover { color: #fff; }
 
-    /* Hero - Naprawiony na Mobile */
+    /* Hero */
     .hero {
       position: relative;
       width: 100%;
-      height: 60vh;
-      min-height: 400px;
-      background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/') center/cover no-repeat;
+      height: 65vh;
+      min-height: 500px;
+      background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Hydrokoma%20-%20hydroizolacje%20budowlane.png') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -51,13 +51,13 @@
     }
     .hero-overlay {
       position: absolute; top:0; left:0; width:100%; height:100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.4);
     }
 
     /* Kafelki Modułowe */
     .hub-container {
       max-width: 1200px;
-      margin: -60px auto 60px;
+      margin: -80px auto 60px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 20px;
@@ -68,66 +68,58 @@
     .hub-card {
       background: #111; border: 1px solid #222; padding: 35px;
       border-radius: 8px; transition: 0.4s; display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
     }
-    .hub-card:hover { border-color: #444; transform: translateY(-5px); background: #161616; }
-    .hub-card h3 { font-weight: 300; font-size: 1.4em; margin-bottom: 15px; }
+    .hub-card:hover { border-color: #fff; transform: translateY(-5px); background: #161616; }
+    .hub-card h3 { font-weight: 300; font-size: 1.4em; margin-bottom: 15px; margin-top: 0; }
     .hub-card p { color: #888; font-size: 0.9em; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
     .hub-link {
-      color: #fff; text-decoration: none; font-size: 0.75em; font-weight: bold;
+      color: #fff; font-size: 0.75em; font-weight: bold;
       text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #333;
-      padding-bottom: 5px; transition: 0.3s; align-self: flex-start;
+      padding-bottom: 5px; align-self: flex-start;
     }
-    .hub-link:hover { border-color: #fff; }
 
-    /* Karuzela Partnerów - TWOJA WERSJA */
-    .partners-section { padding: 60px 0; background: #000; overflow: hidden; }
+    /* Realizacje */
+    .project-card {
+      flex: 0 0 350px; height: 450px; position: relative; border-radius: 12px; 
+      overflow: hidden; border: 1px solid #222; text-decoration: none; color: #fff;
+    }
+    .project-img-overlay {
+      position: absolute; width:100%; height:100%; background-size: cover; background-position: center;
+      filter: brightness(40%); transition: 0.5s;
+    }
+    .project-card:hover .project-img-overlay { filter: brightness(60%); transform: scale(1.05); }
+
+    /* Karuzela Partnerów */
+    .partners-section { padding: 60px 0; background: #000; overflow: hidden; border-top: 1px solid #111; }
     .partners-slider {
       display: flex; gap: 80px; align-items: center;
       animation: scrollPartner 30s linear infinite;
       width: max-content;
     }
-    .partners-slider img { height: 35px; filter: grayscale(100%) brightness(0.8); transition: 0.3s; }
-    .partners-slider img:hover { filter: grayscale(0%) brightness(1); }
+    .partners-slider img { height: 35px; filter: grayscale(100%) brightness(0.8); }
 
-    @keyframes scrollPartner {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* Przycisk Do Góry */
-    #toTopBtn {
-      position: fixed; bottom: 30px; right: 30px; z-index: 99;
-      background: #fff; color: #000; border: none; width: 45px; height: 45px;
-      border-radius: 50%; cursor: pointer; display: none; transition: 0.3s;
-    }
-
-    /* Stopka */
-    footer { padding: 60px 20px; border-top: 1px solid #111; text-align: center; }
-    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-    .footer-links a { color: #666; text-decoration: none; font-size: 0.8em; }
-    .footer-links a:hover { color: #fff; }
-
-    /* Animacje Realizacji */
-    @keyframes slideFade {
-      0% { opacity: 0; }
-      10% { opacity: 1; }
-      40% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 0; }
-    }
+    @keyframes scrollPartner { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes slideFade { 0%, 100% { opacity: 0; } 10%, 45% { opacity: 1; } 55%, 90% { opacity: 0; } }
 
     /* Cookie Banner */
     #cookie-banner {
-      position: fixed; bottom: 20px; left: 20px; right: 20px;
-      background: #111; border: 1px solid #333; padding: 20px;
-      z-index: 10000; border-radius: 8px; font-size: 0.85em; display: none;
+      position: fixed; bottom: 0; left: 0; width: 100%;
+      background: #0a0a0a; border-top: 1px solid #333; padding: 25px 40px;
+      z-index: 10001; display: none; align-items: center; justify-content: space-between;
     }
+    .cookie-btn { background: #fff; color: #000; border: none; padding: 10px 25px; font-weight: bold; cursor: pointer; border-radius: 4px; }
+
+    #toTopBtn { position: fixed; bottom: 80px; right: 30px; z-index: 99; background: #fff; color: #000; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: none; }
+
+    footer { padding: 60px 20px; border-top: 1px solid #111; text-align: center; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-links a { color: #444; text-decoration: none; font-size: 0.8em; transition: 0.3s; }
+    .footer-links a:hover { color: #fff; }
 
     @media (max-width: 768px) {
-      nav { padding: 10px 20px; }
       .nav-right { display: none; }
-      .hero { height: 50vh; }
-      .hub-container { margin-top: 20px; }
+      #cookie-banner { flex-direction: column; text-align: center; gap: 15px; }
     }
   </style>
 </head>
@@ -135,7 +127,7 @@
 
 <nav>
   <div class="nav-left">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9752.jpeg" alt="Hydrokoma Logo">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9752.jpeg" alt="Logo">
   </div>
   <div class="nav-right">
     <ul>
@@ -150,139 +142,133 @@
 <header class="hero">
   <div class="hero-overlay"></div>
   <div style="position:relative; z-index:2;">
-    <h1 style="font-weight:300; font-size:3.5em; letter-spacing:8px; margin:0;">HYDROKOMA</h1>
-    <p style="color:#aaa; letter-spacing:4px; font-size:0.8em; margin-top:10px; text-transform:uppercase;">Inżynieria Hydroizolacji</p>
+    <h1 style="font-weight:300; font-size:4em; letter-spacing:12px; margin:0;">HYDROKOMA</h1>
+    <p style="color:#fff; letter-spacing:5px; font-size:1em; margin-top:10px; text-transform:uppercase; font-weight: 300;">Inżynieria Hydroizolacji</p>
   </div>
 </header>
 
 <div class="hub-container">
-  <div class="hub-card">
+  <a href="technologie.html" class="hub-card">
     <h3>Baza Technologii</h3>
-    <p>Dowiedz się więcej o systemach białej wanny, iniekcjach żywicznych oraz nowoczesnych powłokach mineralnych.</p>
-    <a href="technologie.html" class="hub-link">Wiedza Techniczna →</a>
-  </div>
-  <div class="hub-card">
+    <p>Systemy białej wanny, iniekcje żywiczne oraz nowoczesne powłoki mineralne.</p>
+    <div class="hub-link">Wiedza Techniczna →</div>
+  </a>
+  <a href="wspolpraca.html" class="hub-card">
     <h3>Dla Inwestora</h3>
-    <p>Kompleksowe doradztwo projektowe i wykonawcze dla deweloperów oraz generalnych wykonawców.</p>
-    <a href="wspolpraca.html" class="hub-link">Oferta B2B →</a>
-  </div>
-  <div class="hub-card">
+    <p>Kompleksowe doradztwo projektowe i wykonawcze dla deweloperów.</p>
+    <div class="hub-link">Oferta B2B →</div>
+  </a>
+  <a href="serwis.html" class="hub-card">
     <h3>Serwis i Naprawy</h3>
-    <p>Skuteczne tamowanie przecieków i naprawa izolacji w obiektach istniejących bez wykopów.</p>
-    <a href="serwis.html" class="hub-link">Zakres Napraw →</a>
-  </div>
+    <p>Skuteczne tamowanie przecieków i naprawa izolacji bez wykopów.</p>
+    <div class="hub-link">Zakres Napraw →</div>
+  </a>
 </div>
 
-<section id="about" style="max-width: 900px; margin: 0 auto; text-align: center; padding: 80px 20px;">
-  <h2 style="font-weight: 300; letter-spacing: 2px;">O FIRMIE</h2>
-  <p style="color: #888; line-height: 1.8; font-size: 1.05em;">
+<section id="about" style="max-width: 850px; margin: 0 auto; text-align: center; padding: 80px 20px;">
+  <h2 style="font-weight: 300; letter-spacing: 3px;">EKSPERCI OD SZCZELNOŚCI</h2>
+  <p style="color: #888; line-height: 1.8; font-size: 1.1em; font-weight: 300;">
     Hydrokoma to specjalistyczna firma inżynieryjna skupiona na ochronie budowli przed działaniem wody. 
-    Działamy tam, gdzie standardowe rozwiązania zawodzą. Nasza kadra to pasjonaci z wieloletnim doświadczeniem w branży hydroizolacji.
+    Działamy tam, gdzie standardowe rozwiązania zawodzą.
   </p>
 </section>
 
-<section id="projekty" style="padding: 60px 0; background: #050505;">
-  <a href="realizacja-matecznik.html" style="text-decoration: none; color: inherit;">
-  <div style="flex: 0 0 320px; height: 400px; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #222; cursor: pointer;">
-    </div>
-</a>
-  <h2 style="text-align: center; font-weight: 300; margin-bottom: 40px;">WYBRANE REALIZACJE</h2>
-  <div style="display: flex; gap: 20px; overflow-x: auto; padding: 0 20px; scrollbar-width: none;">
-    <div style="flex: 0 0 320px; height: 400px; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
-      <div style="position: absolute; width:100%; height:100%; background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9772.jpeg') center/cover; filter: brightness(40%); animation: slideFade 10s infinite;"></div>
-      <div style="position: absolute; width:100%; height:100%; background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/0D104641-6ECE-4ED3-8CA0-89C2989FB06F.png') center/cover; filter: brightness(40%); animation: slideFade 10s infinite 5s; opacity:0;"></div>
-      <div style="position: absolute; bottom: 20px; left: 20px;">
-        <h4 style="margin:0;">Osiedle Matecznik</h4>
-        <p style="color:#777; font-size:0.7em; text-transform:uppercase;">Izolacja fundamentów</p>
+<section id="projekty" style="padding: 80px 0; background: #050505;">
+  <h2 style="text-align: center; font-weight: 300; margin-bottom: 50px; letter-spacing: 2px;">WYBRANE REALIZACJE</h2>
+  <div style="display: flex; gap: 25px; overflow-x: auto; padding: 0 40px; scrollbar-width: none;">
+    
+    <a href="realizacja-matecznik.html" class="project-card">
+      <div class="project-img-overlay" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9772.jpeg'); animation: slideFade 10s infinite;"></div>
+      <div class="project-img-overlay" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/0D104641-6ECE-4ED3-8CA0-89C2989FB06F.png'); animation: slideFade 10s infinite 5s; opacity:0;"></div>
+      <div style="position: absolute; bottom: 30px; left: 30px;">
+        <h4 style="margin:0; font-size: 1.2em;">Osiedle Matecznik</h4>
+        <p style="color:#aaa; font-size:0.75em; text-transform:uppercase;">Izolacja fundamentów</p>
       </div>
-    </div>
-    <div style="flex: 0 0 320px; height: 400px; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
-      <div style="position: absolute; width:100%; height:100%; background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/9BFEAD1F-80CD-47F0-BFCF-B00F2BF57B20.png') center/cover; filter: brightness(40%); animation: slideFade 10s infinite;"></div>
-      <div style="position: absolute; width:100%; height:100%; background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg') center/cover; filter: brightness(40%); animation: slideFade 10s infinite 5s; opacity:0;"></div>
-      <div style="position: absolute; bottom: 20px; left: 20px;">
-        <h4 style="margin:0;">Iniekcje Ciśnieniowe</h4>
-        <p style="color:#777; font-size:0.7em; text-transform:uppercase;">Uszczelnienia strukturalne</p>
+    </a>
+
+    <a href="realizacja-iniekcje.html" class="project-card">
+      <div class="project-img-overlay" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/9BFEAD1F-80CD-47F0-BFCF-B00F2BF57B20.png'); animation: slideFade 10s infinite;"></div>
+      <div class="project-img-overlay" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9522.jpeg'); animation: slideFade 10s infinite 5s; opacity:0;"></div>
+      <div style="position: absolute; bottom: 30px; left: 30px;">
+        <h4 style="margin:0; font-size: 1.2em;">Iniekcje Ciśnieniowe</h4>
+        <p style="color:#aaa; font-size:0.75em; text-transform:uppercase;">Uszczelnienia strukturalne</p>
       </div>
-    </div>
+    </a>
+
   </div>
 </section>
 
 <section id="contact" style="padding: 100px 20px; max-width: 1100px; margin: 0 auto;">
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 80px;">
     <div>
-      <h2 style="text-align: left; font-weight: 300; margin-bottom: 30px;">ZAPYTAJ O WYCENĘ</h2>
-      <p style="font-size: 1.4em; font-weight: 300; margin-bottom: 10px;">+48 512 308 538</p>
+      <h2 style="font-weight: 300; margin-bottom: 30px; letter-spacing: 2px;">ZAPYTAJ O WYCENĘ</h2>
+      <p style="font-size: 1.6em; font-weight: 300; margin-bottom: 5px;">+48 512 308 538</p>
       <p style="color: #666; margin-bottom: 40px;">biuro@hydrokoma.com</p>
-      <p style="font-size: 0.85em; color: #555;">Hydrokoma sp. z o.o.<br>ul. Porzeczkowa 16, 40-750 Katowice</p>
+      <p style="font-size: 0.85em; color: #444;">Hydrokoma sp. z o.o.<br>ul. Porzeczkowa 16, 40-750 Katowice</p>
     </div>
-    <form style="display:flex; flex-direction:column; gap:12px;" action="https://formspree.io/f/TWÓJ_ID" method="POST">
-      <input type="text" name="name" placeholder="Firma / Imię i Nazwisko" required style="padding:15px; background:#111; border:1px solid #222; color:#fff;">
-      <input type="tel" name="phone" placeholder="Telefon kontaktowy" required style="padding:15px; background:#111; border:1px solid #222; color:#fff;">
-      <select name="type" style="padding:15px; background:#111; border:1px solid #222; color:#fff;">
-        <option value="Wycena">Prośba o ofertę</option>
-        <option value="Konsultacja">Doradztwo techniczne</option>
-      </select>
-      <textarea name="msg" rows="4" placeholder="Opis inwestycji..." style="padding:15px; background:#111; border:1px solid #222; color:#fff;"></textarea>
-      <button type="submit" style="padding:18px; background:#fff; color:#000; border:none; font-weight:bold; cursor:pointer;">WYŚLIJ ZAPYTANIE</button>
+    <form class="contact-form" action="https://formspree.io/f/TWÓJ_ID" method="POST" style="display:flex; flex-direction:column; gap:15px;">
+      <input type="text" name="name" placeholder="Imię i Nazwisko / Firma" required style="padding:18px; background:#111; border:1px solid #222; color:#fff;">
+      <input type="tel" name="phone" placeholder="Telefon kontaktowy" required style="padding:18px; background:#111; border:1px solid #222; color:#fff;">
+      <textarea name="msg" rows="5" placeholder="Opis inwestycji / problemu..." required style="padding:18px; background:#111; border:1px solid #222; color:#fff; font-family: inherit;"></textarea>
+      <button type="submit" style="padding:20px; background:#fff; color:#000; border:none; font-weight:bold; cursor:pointer; text-transform: uppercase; letter-spacing: 1px;">Wyślij zapytanie</button>
     </form>
   </div>
 </section>
 
 <section class="partners-section">
   <div class="partners-slider">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/MUR.WA_BIG.png" alt="Dostawca">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/a1fdd290-bf83-4140-9243-afb6e145b466.png" alt="Dostawca">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/9f8935dc-e6d5-4804-a198-5029be30a128.png" alt="Dostawca">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/186cce4b-c802-411c-be76-736c8c926a89.png" alt="Dostawca">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/3c6eb1e0-5e60-41e0-a0d3-403f07153da7.png" alt="Dostawca">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/MUR.WA_BIG.png" alt="Dostawca">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/a1fdd290-bf83-4140-9243-afb6e145b466.png" alt="Dostawca">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/9f8935dc-e6d5-4804-a198-5029be30a128.png" alt="Dostawca">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/186cce4b-c802-411c-be76-736c8c926a89.png" alt="Dostawca">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/3c6eb1e0-5e60-41e0-a0d3-403f07153da7.png" alt="Dostawca">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/MUR.WA_BIG.png" alt="MURWA">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/a1fdd290-bf83-4140-9243-afb6e145b466.png" alt="D2">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/9f8935dc-e6d5-4804-a198-5029be30a128.png" alt="D3">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/186cce4b-c802-411c-be76-736c8c926a89.png" alt="D4">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/3c6eb1e0-5e60-41e0-a0d3-403f07153da7.png" alt="D5">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/MUR.WA_BIG.png" alt="MURWA">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/a1fdd290-bf83-4140-9243-afb6e145b466.png" alt="D2">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/9f8935dc-e6d5-4804-a198-5029be30a128.png" alt="D3">
   </div>
 </section>
 
 <footer>
   <div class="footer-links">
-    <a href="#about">O nas</a>
     <a href="technologie.html">Technologie</a>
     <a href="wspolpraca.html">Współpraca</a>
     <a href="serwis.html">Serwis</a>
     <a href="polityka-prywatnosci.html">Polityka prywatności</a>
-    <a href="polityka-jakosci.html">Polityka jakości</a>
+    <a href="javascript:void(0)" onclick="clearConsent()">Ustawienia Cookies</a>
   </div>
-  <p style="font-size:0.7em; color:#333;">© 2025 Hydrokoma Sp. z o.o. Katowice</p>
+  <p style="font-size:0.7em; color:#222; margin-top: 20px;">© 2025 Hydrokoma Sp. z o.o. | Katowice</p>
 </footer>
+
+<div id="cookie-banner">
+  <div style="color: #ccc; font-size: 0.9em; max-width: 70%;">
+    Używamy plików cookies, aby nasza strona działała poprawnie. Twoja zgoda pozwala nam na anonimową analizę ruchu.
+  </div>
+  <div>
+    <button class="cookie-btn" onclick="acceptCookies()">Akceptuję</button>
+  </div>
+</div>
 
 <button onclick="topFunction()" id="toTopBtn"><i class="fas fa-chevron-up"></i></button>
 
-<div id="cookie-banner">
-  <p>Używamy cookies, aby zapewnić najlepszą jakość strony. <button onclick="acceptCookies()" style="background:#fff; border:none; padding:5px 15px; margin-left:10px; cursor:pointer;">Akceptuję</button></p>
-</div>
-
-<div id="modal-build" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:99999; display:flex; align-items:center; justify-content:center; text-align:center;">
-  <div style="background:#111; padding:50px; border-radius:10px; border:1px solid #333;">
-    <h2 style="font-weight:300; letter-spacing:2px;">STRONA W BUDOWIE</h2>
-    <p style="color:#666; margin-bottom:30px;">Aktualizujemy naszą bazę wiedzy.</p>
-    <button onclick="document.getElementById('modal-build').style.display='none'" style="background:#fff; border:none; padding:12px 40px; font-weight:bold; cursor:pointer;">WEJDŹ NA STRONĘ</button>
-  </div>
-</div>
-
 <script>
-  const topBtn = document.getElementById("toTopBtn");
-  window.onscroll = function() {
-    topBtn.style.display = (window.scrollY > 400) ? "block" : "none";
-  };
-  function topFunction() { window.scrollTo({top: 0, behavior: 'smooth'}); }
-  
   function acceptCookies() {
-    localStorage.setItem("hc_cookie", "y");
+    localStorage.setItem("hc_consent", "y");
     document.getElementById("cookie-banner").style.display = "none";
+    // Tu można dodać start skryptów śledzących
   }
+  
+  function clearConsent() {
+    localStorage.removeItem("hc_consent");
+    location.reload();
+  }
+
   window.onload = () => {
-    if(!localStorage.getItem("hc_cookie")) document.getElementById("cookie-banner").style.display = "block";
+    if(!localStorage.getItem("hc_consent")) document.getElementById("cookie-banner").style.display = "flex";
   }
+
+  const topBtn = document.getElementById("toTopBtn");
+  window.onscroll = function() { topBtn.style.display = (window.scrollY > 400) ? "block" : "none"; };
+  function topFunction() { window.scrollTo({top: 0, behavior: 'smooth'}); }
 </script>
 
 </body>
