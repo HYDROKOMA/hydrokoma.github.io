@@ -11,14 +11,21 @@
     .back-btn { display: inline-block; margin-bottom: 30px; color: #fff; text-decoration: none; font-size: 0.8em; border: 1px solid #444; padding: 10px 20px; border-radius: 4px; transition: 0.3s; }
     .back-btn:hover { background: #fff; color: #000; }
     h1 { font-weight: 300; letter-spacing: 2px; margin-bottom: 20px; }
-   .main-img {
-    filter: grayscale(100%) brightness(0.6) contrast(1.2);
-    border: 1px solid #333;
-}: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/‎IMG_2828.jpeg‎') center/cover; border-radius: 12px; margin-bottom: 30px; border: 1px solid #222; }
+
+    /* POPRAWIONA SEKCJA ZDJĘCIA */
+    .main-img { 
+      width: 100%; 
+      height: 350px; 
+      background: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_2828.jpeg') center/cover no-repeat; 
+      border-radius: 12px; 
+      margin-bottom: 30px; 
+      border: 1px solid #333;
+      filter: grayscale(100%) brightness(0.6) contrast(1.2); /* Tu jest Twój ciemny ton */
+    }
+
     .tech-card { background: #111; padding: 25px; border-radius: 8px; margin-bottom: 20px; border-left: 3px solid #fff; }
     h2 { font-weight: 400; color: #fff; margin-top: 0; }
 
-    /* Sekcja "Następny Krok" - Pętla */
     .next-step-box { 
       margin-top: 60px; 
       padding: 40px 0; 
@@ -26,25 +33,10 @@
       display: flex; 
       justify-content: flex-end; 
     }
-    .next-step-link { 
-      text-decoration: none; 
-      color: #fff; 
-      text-align: right; 
-      transition: 0.3s;
-    }
+    .next-step-link { text-decoration: none; color: #fff; text-align: right; transition: 0.3s; }
     .next-step-link:hover { opacity: 0.7; }
-    .next-step-link span { 
-      display: block; 
-      font-size: 0.7em; 
-      text-transform: uppercase; 
-      letter-spacing: 2px; 
-      color: #666; 
-      margin-bottom: 5px;
-    }
-    .next-step-link .title { 
-      font-size: 1.4em; 
-      font-weight: 300; 
-    }
+    .next-step-link span { display: block; font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 5px; }
+    .next-step-link .title { font-size: 1.4em; font-weight: 300; }
   </style>
 </head>
 <body>
@@ -75,7 +67,6 @@
         <div class="title">Standardy współpracy B2B →</div>
       </a>
     </div>
-
   </div>
 </body>
 </html>
