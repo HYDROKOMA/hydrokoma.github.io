@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realizacja - Osiedle OKAM - Hydrokoma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    
+    /* Baner na samej górze */
+    .construction-banner {
+      background: #ffcc00;
+      color: #000;
+      text-align: center;
+      padding: 12px 10px;
+      font-size: 0.75em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+    }
+
+    .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    
+    .back-btn { 
+      display: inline-block; 
+      margin-bottom: 30px; 
+      color: #fff; 
+      text-decoration: none; 
+      font-size: 0.8em; 
+      border: 1px solid #444; 
+      padding: 10px 20px; 
+      border-radius: 4px; 
+      transition: 0.3s; 
+      text-transform: uppercase;
+    }
+    .back-btn:hover { background: #fff; color: #000; }
+    
+    h1 { font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; margin-top: 0; }
+    .sub-title { color: #666; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8em; margin-bottom: 40px; }
+
+    /* Galeria obrazków */
+    .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 40px; }
+    .gallery img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; border: 1px solid #222; filter: brightness(0.8); transition: 0.4s; }
+    .gallery img:hover { filter: brightness(1); transform: scale(1.02); }
+
+    /* Statystyki */
+    .stats-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 20px; 
+      margin: 40px 0;
+      padding: 30px;
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 12px;
+    }
+    .stat-item { text-align: center; }
+    .stat-value { font-size: 2.2em; font-weight: 700; color: #fff; display: block; }
+    .stat-unit { color: #fff; font-size: 0.5em; margin-left: 5px; vertical-align: middle; }
+    .stat-label { color: #666; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; display: block; }
+    .stat-item i { color: #444; margin-bottom: 10px; font-size: 1.2em; }
+
+    .description { color: #ccc; font-size: 1.1em; margin-bottom: 60px; }
+    
+    @media (max-width: 600px) {
+      .gallery { grid-template-columns: 1fr; }
+      .stat-value { font-size: 1.8em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="construction-banner">
+  <i class="fas fa-tools"></i> STRONA W BUDOWIE <i class="fas fa-tools"></i>
+</div>
+
+<div class="container">
+  <a href="index.html#projekty" class="back-btn">← POWRÓT DO REALIZACJI</a>
+  
+  <h1>Osiedle OKAM | Katowice</h1>
+  <div class="sub-title">Realizacja Systemu Białej Wanny | Rok 2024</div>
+
+  <div class="gallery">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Okam.jpeg" alt="Realizacja 1">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Okam2.jpeg" alt="Realizacja 2">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Okam3.jpeg" alt="Realizacja 3">
+  </div>
+
+  <div class="description">
+    <p>Dla tej inwestycji wykonaliśmy kompleksowe zabezpieczenie części podziemnych w systemie <strong>Białej Wanny</strong>. Zakres prac obejmował uszczelnienie wszystkich przerw roboczych, dylatacji konstrukcyjnych oraz zabezpieczenie szybów windowych przed naporem wód gruntowych przy użyciu technologii iniekcyjnych.</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-item">
+      <i class="fas fa-ruler-combined"></i>
+      <span class="stat-value">x<span class="stat-unit">mb</span></span>
+      <span class="stat-label">Taśm dylatacyjnych</span>
+    </div>
+    <div class="stat-item">
+      <i class="fas fa-fill-drip"></i>
+      <span class="stat-value">x<span class="stat-unit">kg</span></span>
+      <span class="stat-label">Żywic iniekcyjnych</span>
+    </div>
+    <div class="stat-item">
+      <i class="fas fa-layer-group"></i>
+      <span class="stat-value">x<span class="stat-unit">m²</span></span>
+      <span class="stat-label
