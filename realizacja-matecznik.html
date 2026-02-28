@@ -3,26 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Realizacja - Osiedle Matecznik - Hydrokoma</title>
+  <title>Realizacja - Osiedle Mateczniq - Hydrokoma</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; margin: 0; padding: 40px 20px; line-height: 1.6; }
-    .container { max-width: 900px; margin: 0 auto; }
-    .back-btn { display: inline-block; margin-bottom: 30px; color: #fff; text-decoration: none; font-size: 0.8em; border: 1px solid #444; padding: 10px 20px; border-radius: 4px; transition: 0.3s; }
+    body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    
+    /* Baner na samej górze */
+    .construction-banner {
+      background: #ffcc00;
+      color: #000;
+      text-align: center;
+      padding: 12px 10px;
+      font-size: 0.75em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+    }
+
+    .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    
+    .back-btn { 
+      display: inline-block; 
+      margin-bottom: 30px; 
+      color: #fff; 
+      text-decoration: none; 
+      font-size: 0.8em; 
+      border: 1px solid #444; 
+      padding: 10px 20px; 
+      border-radius: 4px; 
+      transition: 0.3s; 
+      text-transform: uppercase;
+    }
     .back-btn:hover { background: #fff; color: #000; }
     
-    h1 { font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+    h1 { font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; margin-top: 0; }
     .sub-title { color: #666; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8em; margin-bottom: 40px; }
 
-    <div class="construction-banner">
-  <i class="fas fa-tools"></i> STRONA W BUDOWIE - PREZENTOWANE DANE SĄ PRZYKŁADOWE <i class="fas fa-tools"></i>
-</div>
-    /* Galeria obrazków statycznych */
+    /* Galeria obrazków */
     .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 40px; }
-    .gallery img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; border: 1px solid #222; filter: brightness(0.8); }
+    .gallery img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; border: 1px solid #222; filter: brightness(0.8); transition: 0.4s; }
+    .gallery img:hover { filter: brightness(1); transform: scale(1.02); }
 
-    /* Statystyki / Osiągnięcia */
+    /* Statystyki */
     .stats-grid { 
       display: grid; 
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
@@ -49,33 +75,25 @@
 </head>
 <body>
 
-  .construction-banner {
-      background: #ffcc00; /* Intensywny żółty, ostrzegawczy */
-      color: #000;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 0.8em;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 2000;
-    }
+<div class="construction-banner">
+  <i class="fas fa-tools"></i> STRONA W BUDOWIE - PREZENTOWANE DANE SĄ PRZYKŁADOWE <i class="fas fa-tools"></i>
+</div>
+
 <div class="container">
-  <a href=""index.html#projekty"" class="back-btn">← POWRÓT DO REALIZACJI</a>
+  <a href="index.html#projekty" class="back-btn">← POWRÓT DO REALIZACJI</a>
   
-  <h1>Osiedle Mateczniq</h1>
-  <div class="sub-title">Kraków | Rok 2024</div>
+  <h1>Osiedle Mateczniq | Kraków</h1>
+  <div class="sub-title">Realizacja Systemu Białej Wanny | Rok 2024</div>
 
   <div class="gallery">
     <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/matecz3.jpeg" alt="Realizacja 1">
     <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/matecz4.jpeg" alt="Realizacja 2">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/matecz.jpg" alt="Realizacja 2">
-     <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/matecz2.jpeg" alt="Realizacja 2">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/matecz.jpg" alt="Realizacja 3">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/matecz2.jpeg" alt="Realizacja 4">
   </div>
 
   <div class="description">
-    <p>Dla tej inwestycji wykonaliśmy kompleksowe zabezpieczenie części podziemnych w systemie Białej Wanny. Zakres prac obejmował uszczelnienie wszystkich przerw roboczych, dylatacji konstrukcyjnych oraz zabezpieczenie szybów windowych przed naporem wód gruntowych.</p>
+    <p>Dla tej inwestycji wykonaliśmy kompleksowe zabezpieczenie części podziemnych w systemie <strong>Białej Wanny</strong>. Zakres prac obejmował uszczelnienie wszystkich przerw roboczych, dylatacji konstrukcyjnych oraz zabezpieczenie szybów windowych przed naporem wód gruntowych przy użyciu technologii iniekcyjnych.</p>
   </div>
 
   <div class="stats-grid">
@@ -92,20 +110,4 @@
     <div class="stat-item">
       <i class="fas fa-layer-group"></i>
       <span class="stat-value">1200<span class="stat-unit">m²</span></span>
-      <span class="stat-label">Powierzchni izolacji</span>
-    </div>
-    <div class="stat-item">
-      <i class="fas fa-check-double"></i>
-      <span class="stat-value">100<span class="stat-unit">%</span></span>
-      <span class="stat-label">Szczelności</span>
-    </div>
-  </div>
-
-  <div style="text-align: center; border-top: 1px solid #222; padding-top: 40px;">
-    <p style="color: #666; font-size: 0.9em;">Chcesz uzyskać podobny efekt na swojej budowie?</p>
-    <a href="index.html#contact" style="color: #fff; text-decoration: none; font-weight: bold; border-bottom: 2px solid #fff;">SKONTAKTUJ SIĘ Z NAMI</a>
-  </div>
-</div>
-
-</body>
-</html>
+      <span class="stat-label
