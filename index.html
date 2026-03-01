@@ -41,7 +41,7 @@
     .hero-content h1 { font-weight: 300; font-size: clamp(2.4em, 8vw, 85px); letter-spacing: clamp(4px, 1.5vw, 15px); margin: 0; text-transform: uppercase; }
     .hero-content p { color: #aaa; letter-spacing: 4px; font-size: 0.8em; margin-top: 15px; text-transform: uppercase; }
 
-    /* 4. KAFELKI GŁÓWNE */
+    /* 4. KAFELKI GŁÓWNE (INDEXY) */
     .hub-container {
       max-width: 1200px; margin: -60px auto 60px; display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 0 20px; position: relative; z-index: 10;
@@ -52,7 +52,17 @@
     .hub-card p { color: #888; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
     .hub-link { color: #fff; font-size: 0.7em; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #333; padding-bottom: 5px; align-self: flex-start; }
 
-    /* 5. REALIZACJE - STYLE DLA PRZYCISKÓW I NAPISÓW */
+    /* 5. SEKCJA O NAS & STATYSTYKI */
+    .about-section { max-width: 1000px; margin: 80px auto; padding: 0 20px; text-align: center; }
+    .about-section h2 { font-weight: 300; letter-spacing: 4px; margin-bottom: 30px; }
+    .about-section p { color: #888; line-height: 1.8; font-size: 1.05em; margin: 0 auto 50px; max-width: 800px; }
+    
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 30px; margin-bottom: 40px; }
+    .stat-box { padding: 20px; border-left: 1px solid #222; }
+    .stat-box h3 { font-size: 2.2em; font-weight: 300; margin: 0; color: #fff; }
+    .stat-box p { font-size: 0.65em; text-transform: uppercase; letter-spacing: 1px; color: #555; margin-top: 10px; }
+
+    /* 6. REALIZACJE */
     .projects-wrapper { display: flex; gap: 20px; overflow-x: auto; padding: 0 20px 40px; scrollbar-width: none; }
     .projects-wrapper::-webkit-scrollbar { display: none; }
     .project-card {
@@ -75,13 +85,13 @@
     }
     .project-card:hover .project-btn { opacity: 1; transform: translate(-50%, -50%); }
 
-    /* 6. KARUZELA PARTNERÓW */
+    /* 7. KARUZELA PARTNERÓW */
     .partners-section { padding: 50px 0; background: #000; overflow: hidden; border-top: 1px solid #111; border-bottom: 1px solid #111; width: 100%; }
     .partners-slider { display: flex; gap: 80px; align-items: center; width: max-content; animation: scrollPartner 30s linear infinite; }
     .partners-slider img { height: 35px; filter: grayscale(100%) brightness(0.7); flex-shrink: 0; }
     @keyframes scrollPartner { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* 7. KONTAKT */
+    /* 8. KONTAKT */
     .contact-section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
     .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
     .contact-form input, .contact-form textarea { padding: 15px; background: #111; border: 1px solid #222; color: #fff; width: 100%; margin-bottom: 10px; font-family: inherit; }
@@ -93,7 +103,7 @@
       .nav-left img { height: 38px; }
       .nav-right ul { gap: 8px; }
       .nav-right ul li a { font-size: 0.62em; letter-spacing: 0; }
-      .project-btn { display: none; } /* Ukrywamy przycisk na środku na mobile dla czytelności */
+      .project-btn { display: none; }
     }
 
     footer { padding: 40px 20px; border-top: 1px solid #111; text-align: center; font-size: 0.8em; color: #444; }
@@ -139,6 +149,33 @@
     <div class="hub-link">Zakres Napraw →</div>
   </a>
 </div>
+
+<section id="about" class="about-section">
+  <h2>EKSPERCI OD SZCZELNOŚCI</h2>
+  <p>
+    Hydrokoma to specjalistyczna firma budowlana, która dostarcza na etapie budowy zaawansowane rozwiązania w zakresie ochrony budynku przed działaniem wody. 
+    Łączymy wieloletnie doświadczenie z nowoczesnymi technologiami iniekcyjnymi, dbając o bezpieczeństwo konstrukcji naszych partnerów.
+  </p>
+  
+  <div class="stats-grid">
+    <div class="stat-box">
+      <h3>150+</h3>
+      <p>Zrealizowanych inwestycji</p>
+    </div>
+    <div class="stat-box">
+      <h3>10k</h3>
+      <p>m² uszczelnionej powierzchni</p>
+    </div>
+    <div class="stat-box">
+      <h3>24h</h3>
+      <p>Czas reakcji serwisu</p>
+    </div>
+    <div class="stat-box">
+      <h3>100%</h3>
+      <p>Skuteczności technologii</p>
+    </div>
+  </div>
+</section>
 
 <section id="projekty" style="background: #050505; padding: 60px 0;">
   <h2 style="text-align: center; font-weight: 300; margin-bottom: 40px; letter-spacing: 2px;">WYBRANE REALIZACJE</h2>
@@ -227,3 +264,4 @@
 
 </body>
 </html>
+ 
