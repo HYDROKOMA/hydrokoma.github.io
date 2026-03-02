@@ -9,21 +9,6 @@
   <style>
     body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; margin: 0; padding: 0; line-height: 1.6; }
     
-    /* Baner na samej górze */
-    .construction-banner {
-      background: #ffcc00;
-      color: #000;
-      text-align: center;
-      padding: 12px 10px;
-      font-size: 0.75em;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      position: sticky;
-      top: 0;
-      z-index: 2000;
-    }
-
     .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
     
     .back-btn { 
@@ -67,17 +52,40 @@
 
     .description { color: #ccc; font-size: 1.1em; margin-bottom: 60px; }
     
+    /* Sekcja następnego projektu */
+    .next-project-section {
+      padding: 80px 20px;
+      text-align: center;
+      background: #050505;
+      border-top: 1px solid #111;
+    }
+    .next-project-btn {
+      display: inline-block;
+      padding: 20px 40px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8em;
+      transition: 0.4s;
+    }
+    .next-project-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    footer { padding: 40px 20px; text-align: center; font-size: 0.8em; color: #444; background: #000; border-top: 1px solid #111; }
+    
     @media (max-width: 600px) {
       .gallery { grid-template-columns: 1fr; }
       .stat-value { font-size: 1.8em; }
+      .next-project-btn { width: 100%; padding: 18px 10px; }
     }
   </style>
 </head>
 <body>
-
-<div class="construction-banner">
-  <i class="fas fa-tools"></i> STRONA W BUDOWIE <i class="fas fa-tools"></i>
-</div>
 
 <div class="container">
   <a href="index.html#projekty" class="back-btn">← POWRÓT DO REALIZACJI</a>
@@ -88,46 +96,66 @@
   <div class="gallery">
     <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Szafirowe main.jpg" alt="Realizacja 1">
     <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice2.jpeg" alt="Realizacja 2">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice3.jpeg" alt="Realizacja 2">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice4.jpeg" alt="Realizacja 2"
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice6.jpeg" alt="Realizacja 2">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice7.jpeg" alt="Realizacja 2">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice8.jpeg" alt="Realizacja 2">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice9.jpeg" alt="Realizacja 2">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice10.jpeg" alt="Realizacja 2">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice11.jpeg" alt="Realizacja 2">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice12.jpeg" alt="Realizacja 2">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice3.jpeg" alt="Realizacja 3">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice4.jpeg" alt="Realizacja 4">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice6.jpeg" alt="Realizacja 5">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice7.jpeg" alt="Realizacja 6">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice8.jpeg" alt="Realizacja 7">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice9.jpeg" alt="Realizacja 8">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice10.jpeg" alt="Realizacja 9">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice11.jpeg" alt="Realizacja 10">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice12.jpeg" alt="Realizacja 11">
   </div>
 
   <div class="description">
     <p>Dla tej inwestycji wykonaliśmy kompleksowe zabezpieczenie części podziemnych w systemie <strong>Białej Wanny</strong>. Zakres prac obejmował uszczelnienie wszystkich przerw roboczych, dylatacji konstrukcyjnych oraz zabezpieczenie szybów windowych przed naporem wód gruntowych.</p>
   </div>
 
-   <div class="stats-grid">
-    <div class="stat-item">
-      <i class="fas fa-ruler-combined"></i>
-      <span class="stat-value">2<span class="stat-unit"></span></span>
-      <span class="stat-label">Budynki</span>
-    </div>
   <div class="stats-grid">
     <div class="stat-item">
-      <i class="fas fa-ruler-combined"></i>
-      <span class="stat-value">6000<span class="stat-unit">m2</span></span>
-      <span class="stat-label">Powierzchni płyty fundamentowej</span>
+      <i class="fas fa-city"></i>
+      <span class="stat-value">2</span>
+      <span class="stat-label">Budynki</span>
     </div>
     <div class="stat-item">
       <i class="fas fa-fill-drip"></i>
+      <span class="stat-value">6000<span class="stat-unit">m2</span></span>
+      <span class="stat-label">Płyty fundamentowej</span>
+    </div>
+    <div class="stat-item">
+      <i class="fas fa-ruler-horizontal"></i>
       <span class="stat-value">280<span class="stat-unit">mb</span></span>
-      <span class="stat-label">Przerw roboczych w płycie fundamentowej</span>
+      <span class="stat-label">Przerw roboczych</span>
     </div>
-      <div class="stat-item">
-      <i class="fas fa-fill-drip"></i>
+    <div class="stat-item">
+      <i class="fas fa-border-all"></i>
       <span class="stat-value">1700<span class="stat-unit">m2</span></span>
-      <span class="stat-label">Powierzchni ścian fundamentowych</span>
+      <span class="stat-label">Ścian fundamentowych</span>
     </div>
-     <div class="stat-item">
-      <i class="fas fa-fill-drip"></i>
+    <div class="stat-item">
+      <i class="fas fa-layer-group"></i>
       <span class="stat-value">1300<span class="stat-unit">m2</span></span>
-      <span class="stat-label">Powierzchni stropu nad garażem</span>
+      <span class="stat-label">Stropu nad garażem</span>
     </div>
+  </div>
+
+  <div style="text-align: center; border-top: 1px solid #222; padding-top: 40px; margin-bottom: 40px;">
+    <p style="color: #666; font-size: 0.9em;">Potrzebujesz fachowej izolacji?</p>
+    <a href="index.html#contact" style="color: #fff; text-decoration: none; font-weight: bold; border-bottom: 2px solid #fff;">KONTAKT Z INŻYNIEREM</a>
+  </div>
+</div>
+
+<section class="next-project-section">
+  <p style="color: #666; font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Następny projekt</p>
+  <a href="realizacja-matecznik.html" class="next-project-btn">
+    Osiedle Mateczniq | Kraków <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+  </a>
+</section>
+
+<footer>
+  <p>© 2025 Hydrokoma Sp. z o.o. | Katowice</p>
+</footer>
+
+</body>
+</html>
    
