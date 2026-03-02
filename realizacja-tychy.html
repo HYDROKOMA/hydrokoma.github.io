@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Realizacja - Osiedle Matecznik - Hydrokoma</title>
+  <title>Realizacja - Osiedle Tychy Fit - Hydrokoma</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
@@ -42,7 +42,31 @@
       .gallery { grid-template-columns: 1fr; }
       .stat-value { font-size: 1.8em; }
     }
-  </style>
+ 
+  .next-project-btn {
+      display: inline-block;
+      padding: 20px 40px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8em;
+      transition: 0.4s;
+    }
+    .next-project-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+    
+    @media (max-width: 480px) {
+      .next-project-btn {
+        width: 100%; /* Na telefonie guzik zajmie całą szerokość */
+        padding: 18px 10px;
+      }
+    }
+     </style>
 </head>
 <body>
 
@@ -66,24 +90,29 @@
   </div>
 
   <div class="description">
-    <p>Dla tej inwestycji wykonaliśmy kompleksowe zabezpieczenie części podziemnych w systemie Białej Wanny. Zakres prac obejmował uszczelnienie wszystkich przerw roboczych, dylatacji konstrukcyjnych oraz zabezpieczenie szybów windowych przed naporem wód gruntowych.</p>
+    <p>Dla tej inwestycji wykonaliśmy kompleksowe zabezpieczenie części podziemnych w systemie Białej Wanny. Zakres prac obejmował uszczelnienie wszystkich przerw roboczych, dylatacji konstrukcyjnych oraz zabezpieczenie szybów windowych przed naporem wód gruntowych. Wykonaliśmy również izolację stropu oraz izolację powłokową pasa zero z zabezpieczenie stolarki okiennej.</p>
   </div>
 
   <div class="stats-grid">
     <div class="stat-item">
       <i class="fas fa-ruler-combined"></i>
-      <span class="stat-value">350<span class="stat-unit">mb</span></span>
-      <span class="stat-label">Taśm dylatacyjnych</span>
+      <span class="stat-value">3000<span class="stat-unit">m2</span></span>
+      <span class="stat-label">Powierzchni płyty fundamentowej</span>
     </div>
     <div class="stat-item">
       <i class="fas fa-fill-drip"></i>
-      <span class="stat-value">120<span class="stat-unit">kg</span></span>
-      <span class="stat-label">Żywic iniekcyjnych</span>
+      <span class="stat-value">2100<span class="stat-unit">m2</span></span>
+      <span class="stat-label">Powierzchni stropu</span>
     </div>
     <div class="stat-item">
       <i class="fas fa-layer-group"></i>
-      <span class="stat-value">1200<span class="stat-unit">m²</span></span>
-      <span class="stat-label">Powierzchni izolacji</span>
+      <span class="stat-value">1000<span class="stat-unit">m²</span></span>
+      <span class="stat-label">Powierzchni ścian fundamentowych</span>
+    </div>
+    <div class="stat-item">
+      <i class="fas fa-layer-group"></i>
+      <span class="stat-value">70<span class="stat-unit">mb</span></span>
+      <span class="stat-label">Powierzchni dylatacji konstrukcyjnej stropu</span>
     </div>
     <div class="stat-item">
       <i class="fas fa-check-double"></i>
@@ -97,6 +126,12 @@
     <a href="index.html#contact" style="color: #fff; text-decoration: none; font-weight: bold; border-bottom: 2px solid #fff;">SKONTAKTUJ SIĘ Z NAMI</a>
   </div>
 </div>
-
+  
+<section style="padding: 60px 20px; text-align: center; background: #000; border-top: 1px solid #111;">
+  <p style="color: #666; font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Następny projekt</p>
+  <a href="realizacje-okam.html" class="next-project-btn">
+    Osiedle OKAM | Katowice <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+  </a>
+</section>
 </body>
 </html>
