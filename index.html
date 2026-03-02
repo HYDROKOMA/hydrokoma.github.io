@@ -7,17 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    /* 1. BLOKADA PŁYWANIA NA BOKI */
+    /* 1. RESET I BAZA */
     * { box-sizing: border-box; }
     html, body { 
-      margin: 0; 
-      padding: 0; 
-      width: 100%; 
-      overflow-x: hidden; 
-      font-family: 'Roboto', sans-serif; 
-      background-color: #000; 
-      color: #fff; 
-      scroll-behavior: smooth;
+      margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
+      font-family: 'Roboto', sans-serif; background-color: #000; color: #fff; scroll-behavior: smooth;
     }
 
     /* 2. NAWIGACJA */
@@ -41,7 +35,7 @@
     .hero-content h1 { font-weight: 300; font-size: clamp(2.4em, 8vw, 85px); letter-spacing: clamp(4px, 1.5vw, 15px); margin: 0; text-transform: uppercase; }
     .hero-content p { color: #aaa; letter-spacing: 4px; font-size: 0.8em; margin-top: 15px; text-transform: uppercase; }
 
-    /* 4. KAFELKI GŁÓWNE (INDEXY) */
+    /* 4. KAFELKI GŁÓWNE */
     .hub-container {
       max-width: 1200px; margin: -60px auto 60px; display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 0 20px; position: relative; z-index: 10;
@@ -52,15 +46,18 @@
     .hub-card p { color: #888; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
     .hub-link { color: #fff; font-size: 0.7em; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #333; padding-bottom: 5px; align-self: flex-start; }
 
-    /* 5. SEKCJA O NAS & STATYSTYKI */
-    .about-section { max-width: 1000px; margin: 80px auto; padding: 0 20px; text-align: center; }
-    .about-section h2 { font-weight: 300; letter-spacing: 4px; margin-bottom: 30px; }
-    .about-section p { color: #888; line-height: 1.8; font-size: 1.05em; margin: 0 auto 50px; max-width: 800px; }
+    /* 5. SEKCJA O NAS - GRAFICZNA ALE SKROMNA */
+    .about-section { max-width: 1000px; margin: 100px auto; padding: 0 20px; position: relative; }
+    .about-content { border-left: 2px solid #fff; padding-left: 40px; text-align: left; margin-bottom: 60px; }
+    .about-section h2 { font-weight: 300; letter-spacing: 6px; margin-bottom: 20px; text-transform: uppercase; font-size: 0.9em; color: #555; }
+    .about-section p { color: #ccc; line-height: 1.8; font-size: 1.1em; }
     
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 30px; margin-bottom: 40px; }
-    .stat-box { padding: 20px; border-left: 1px solid #222; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 30px; }
+    .stat-box { padding: 20px; border-top: 1px solid #111; transition: 0.3s; text-align: center; }
+    .stat-box i { display: block; margin-bottom: 15px; font-size: 1.2em; color: #444; }
     .stat-box h3 { font-size: 2.2em; font-weight: 300; margin: 0; color: #fff; }
     .stat-box p { font-size: 0.65em; text-transform: uppercase; letter-spacing: 1px; color: #555; margin-top: 10px; }
+    .stat-box:hover i { color: #fff; }
 
     /* 6. REALIZACJE */
     .projects-wrapper { display: flex; gap: 20px; overflow-x: auto; padding: 0 20px 40px; scrollbar-width: none; }
@@ -71,22 +68,14 @@
     }
     .project-img { position: absolute; width:100%; height:100%; background-size: cover; background-position: center; filter: brightness(40%); transition: 0.5s; }
     .project-card:hover .project-img { filter: brightness(60%); transform: scale(1.05); }
-
-    .view-more-tag {
-      position: absolute; top: 20px; right: 20px; color: #fff; font-size: 0.7em;
-      border: 1px solid rgba(255,255,255,0.3); padding: 5px 10px; border-radius: 20px;
-      z-index: 15; background: rgba(0,0,0,0.4); text-transform: uppercase;
-    }
     .project-btn {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%);
-      background: rgba(255, 255, 255, 0.9); color: #000; padding: 12px 25px;
-      font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;
-      border-radius: 4px; opacity: 0; transition: 0.4s ease; z-index: 20;
+      background: #fff; color: #000; padding: 12px 25px; font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; opacity: 0; transition: 0.4s ease; z-index: 20;
     }
     .project-card:hover .project-btn { opacity: 1; transform: translate(-50%, -50%); }
 
     /* 7. KARUZELA PARTNERÓW */
-    .partners-section { padding: 50px 0; background: #000; overflow: hidden; border-top: 1px solid #111; border-bottom: 1px solid #111; width: 100%; }
+    .partners-section { padding: 50px 0; background: #000; overflow: hidden; border-top: 1px solid #111; border-bottom: 1px solid #111; }
     .partners-slider { display: flex; gap: 80px; align-items: center; width: max-content; animation: scrollPartner 30s linear infinite; }
     .partners-slider img { height: 35px; filter: grayscale(100%) brightness(0.7); flex-shrink: 0; }
     @keyframes scrollPartner { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -97,17 +86,28 @@
     .contact-form input, .contact-form textarea { padding: 15px; background: #111; border: 1px solid #222; color: #fff; width: 100%; margin-bottom: 10px; font-family: inherit; }
     .contact-form button { padding: 18px; background: #fff; color: #000; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; width: 100%; }
 
-    /* RWD */
-    @media (max-width: 480px) {
-      nav { padding: 10px 10px; }
-      .nav-left img { height: 38px; }
-      .nav-right ul { gap: 8px; }
-      .nav-right ul li a { font-size: 0.62em; letter-spacing: 0; }
-      .project-btn { display: none; }
+    /* 9. STOPKA I CIASTKA */
+    footer { padding: 60px 20px 20px; border-top: 1px solid #111; text-align: center; font-size: 0.75em; color: #444; }
+    .footer-links { margin-bottom: 20px; }
+    .footer-links a { color: #666; text-decoration: none; margin: 0 15px; }
+    .footer-links a:hover { color: #fff; }
+
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; width: 100%; background: #111; border-top: 1px solid #333;
+      padding: 20px; z-index: 9999; display: none; text-align: center; font-size: 0.8em;
+    }
+    #cookie-banner button {
+      background: #fff; color: #000; border: none; padding: 8px 20px; margin-left: 15px;
+      cursor: pointer; font-weight: bold; text-transform: uppercase; font-size: 0.8em;
     }
 
-    footer { padding: 40px 20px; border-top: 1px solid #111; text-align: center; font-size: 0.8em; color: #444; }
-    #toTopBtn { position: fixed; bottom: 20px; right: 20px; z-index: 99; background: #fff; color: #000; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: none; }
+    #toTopBtn { position: fixed; bottom: 80px; right: 20px; z-index: 99; background: #fff; color: #000; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: none; }
+
+    @media (max-width: 480px) {
+      .about-content { padding-left: 20px; }
+      .nav-right ul { gap: 10px; }
+      .nav-right ul li a { font-size: 0.7em; }
+    }
   </style>
 </head>
 <body>
@@ -128,61 +128,68 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>HYDROKOMA</h1>
-    <p>Inżynieria Hydroizolacji</p>
+    <p>Specjalistyczne Hydroizolacje Budowlane</p>
   </div>
 </header>
 
 <div class="hub-container">
   <a href="technologie.html" class="hub-card">
-    <h3>Baza Technologii</h3>
-    <p>Systemy białej wanny, iniekcje żywiczne oraz powłoki mineralne.</p>
-    <div class="hub-link">Wiedza Techniczna →</div>
+    <h3>Nasze technologie</h3>
+    <p>Systemy białej wanny, uszczelnienia przerw roboczych oraz profesjonalne iniekcje.</p>
+    <div class="hub-link">Technologie →</div>
   </a>
   <a href="wspolpraca.html" class="hub-card">
-    <h3>Dla Inwestora</h3>
-    <p>Kompleksowe doradztwo projektowe i wykonawcze dla deweloperów.</p>
-    <div class="hub-link">Oferta B2B →</div>
+    <h3>Współpraca</h3>
+    <p>Zapewniamy wsparcie wykonawcze i serwisowe dla inwestycji budowlanych.</p>
+    <div class="hub-link">Oferta →</div>
   </a>
   <a href="serwis.html" class="hub-card">
     <h3>Serwis i Naprawy</h3>
-    <p>Skuteczne tamowanie przecieków i naprawa izolacji bez wykopów.</p>
-    <div class="hub-link">Zakres Napraw →</div>
+    <p>Naprawa nieszczelności i przeglądy systemów izolacyjnych w gotowych obiektach.</p>
+    <div class="hub-link">Zakres prac →</div>
   </a>
 </div>
 
 <section id="about" class="about-section">
-  <h2>EKSPERCI OD SZCZELNOŚCI</h2>
-  <p>
-    Hydrokoma to specjalistyczna firma budowlana, która dostarcza na etapie budowy zaawansowane rozwiązania w zakresie ochrony budynku przed działaniem wody. 
-    Łączymy wieloletnie doświadczenie z nowoczesnymi technologiami iniekcyjnymi, dbając o bezpieczeństwo konstrukcji naszych partnerów.
-  </p>
+  <h2>O firmie</h2>
+  <div class="about-content">
+    <p>
+      <strong>Hydrokoma</strong> to zespół zajmujący się profesjonalnym zabezpieczaniem obiektów budowlanych przed działaniem wody. Specjalizujemy się w wykonywaniu hydroizolacji struktur podziemnych, ze szczególnym uwzględnieniem technologii białej wanny oraz systemów iniekcyjnych.
+    </p>
+    <p style="font-size: 0.95em; color: #888;">
+      Pracujemy na terenie województwa śląskiego oraz małopolskiego. Dzięki wieloletniej obecności na budowach, oferujemy sprawdzone rozwiązania, które gwarantują szczelność fundamentów, garaży podziemnych i konstrukcji inżynieryjnych. Nasze doświadczenie opieramy na rzetelnym podejściu do każdego zadania.
+    </p>
+  </div>
   
   <div class="stats-grid">
     <div class="stat-box">
+      <i class="fas fa-shield-alt"></i>
       <h3>150+</h3>
-      <p>Zrealizowanych inwestycji</p>
+      <p>Realizacji</p>
     </div>
     <div class="stat-box">
+      <i class="fas fa-tint-slash"></i>
       <h3>10k</h3>
-      <p>m² uszczelnionej powierzchni</p>
+      <p>m² izolacji</p>
     </div>
     <div class="stat-box">
+      <i class="fas fa-clock"></i>
       <h3>24h</h3>
-      <p>Czas reakcji serwisu</p>
+      <p>Kontakt</p>
     </div>
     <div class="stat-box">
+      <i class="fas fa-hard-hat"></i>
       <h3>100%</h3>
-      <p>Skuteczności technologii</p>
+      <p>Rzetelności</p>
     </div>
   </div>
 </section>
 
 <section id="projekty" style="background: #050505; padding: 60px 0;">
-  <h2 style="text-align: center; font-weight: 300; margin-bottom: 40px; letter-spacing: 2px;">WYBRANE REALIZACJE</h2>
+  <h2 style="text-align: center; font-weight: 300; margin-bottom: 40px; letter-spacing: 2px; text-transform: uppercase;">Ostatnie Realizacje</h2>
   <div class="projects-wrapper">
     <a href="realizacja-matecznik.html" class="project-card">
-      <div class="view-more-tag">ZOBACZ <i class="fas fa-arrow-right"></i></div>
-      <div class="project-btn">Sprawdź szczegóły</div>
+      <div class="project-btn">Szczegóły</div>
       <div class="project-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3637.jpg');"></div>
       <div style="position: absolute; bottom: 20px; left: 20px; z-index: 5;">
         <h4 style="margin:0;">Osiedle Mateczniq | Kraków</h4>
@@ -190,8 +197,7 @@
       </div>
     </a>
     <a href="realizacja-tychy.html" class="project-card">
-      <div class="view-more-tag">ZOBACZ <i class="fas fa-arrow-right"></i></div>
-      <div class="project-btn">Sprawdź szczegóły</div>
+      <div class="project-btn">Szczegóły</div>
       <div class="project-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/fit%20tychy.jpg');"></div>
       <div style="position: absolute; bottom: 20px; left: 20px; z-index: 5;">
         <h4 style="margin:0;">Osiedle Fit | Tychy</h4>
@@ -199,8 +205,7 @@
       </div>
     </a>
     <a href="realizacje-okam.html" class="project-card">
-      <div class="view-more-tag">ZOBACZ <i class="fas fa-arrow-right"></i></div>
-      <div class="project-btn">Sprawdź szczegóły</div>
+      <div class="project-btn">Szczegóły</div>
       <div class="project-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Okam%20main.jpeg');"></div>
       <div style="position: absolute; bottom: 20px; left: 20px; z-index: 5;">
         <h4 style="margin:0;">Osiedle OKAM | Katowice</h4>
@@ -208,8 +213,7 @@
       </div>
     </a>
     <a href="realizacje-Gliwice.html" class="project-card">
-      <div class="view-more-tag">ZOBACZ <i class="fas fa-arrow-right"></i></div>
-      <div class="project-btn">Sprawdź szczegóły</div>
+      <div class="project-btn">Szczegóły</div>
       <div class="project-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Szafirowe%20main.jpg');"></div>
       <div style="position: absolute; bottom: 20px; left: 20px; z-index: 5;">
         <h4 style="margin:0;">Osiedle Szafirowe | Gliwice</h4>
@@ -240,6 +244,7 @@
       <h2 style="font-weight: 300;">KONTAKT</h2>
       <p style="font-size: 1.4em; font-weight: 300;">+48 512 308 538</p>
       <p style="color: #666;">biuro@hydrokoma.com</p>
+      <p style="color: #333; font-size: 0.8em; margin-top: 20px; text-transform: uppercase;">Śląsk | Małopolska</p>
     </div>
     <form class="contact-form" action="https://formspree.io/f/mlgwzwzy" method="POST">
       <input type="text" name="name" placeholder="Firma / Nazwisko" required>
@@ -251,17 +256,39 @@
 </section>
 
 <footer>
-  <p>© 2025 Hydrokoma Sp. z o.o. | Katowice</p>
+  <div class="footer-links">
+    <a href="polityka-prywatnosci.html">Polityka Prywatności</a>
+    <a href="polityka-prywatnosci.html#cookies">Pliki Cookies</a>
+  </div>
+  <p>© 2026 Hydrokoma Sp. z o.o. | Katowice</p>
 </footer>
+
+<div id="cookie-banner">
+  Nasza strona korzysta z plików cookies w celu zapewnienia poprawnego działania. 
+  <a href="polityka-prywatnosci.html" style="color: #fff; text-decoration: underline;">Dowiedz się więcej</a>.
+  <button onclick="acceptCookies()">Akceptuję</button>
+</div>
 
 <button onclick="topFunction()" id="toTopBtn"><i class="fas fa-chevron-up"></i></button>
 
 <script>
+  // Przycisk powrotu na górę
   const topBtn = document.getElementById("toTopBtn");
   window.onscroll = function() { topBtn.style.display = (window.scrollY > 400) ? "block" : "none"; };
   function topFunction() { window.scrollTo({top: 0, behavior: 'smooth'}); }
+
+  // Obsługa Ciasteczek
+  function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  window.onload = function() {
+    if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  };
 </script>
 
 </body>
 </html>
- 
