@@ -9,21 +9,6 @@
   <style>
     body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; margin: 0; padding: 0; line-height: 1.6; }
     
-    /* Baner na samej górze */
-    .construction-banner {
-      background: #ffcc00;
-      color: #000;
-      text-align: center;
-      padding: 12px 10px;
-      font-size: 0.75em;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      position: sticky;
-      top: 0;
-      z-index: 2000;
-    }
-
     .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
     
     .back-btn { 
@@ -67,9 +52,13 @@
 
     .description { color: #ccc; font-size: 1.1em; margin-bottom: 60px; }
     
-    @media (max-width: 600px) {
-      .gallery { grid-template-columns: 1fr; }
-      .stat-value { font-size: 1.8em; }
+    /* Guzik kolejnej realizacji */
+    .next-project-section {
+      padding: 80px 20px;
+      text-align: center;
+      background: #050505;
+      border-top: 1px solid #111;
+      margin-top: 60px;
     }
     .next-project-btn {
       display: inline-block;
@@ -88,11 +77,10 @@
       color: #000;
     }
     
-    @media (max-width: 480px) {
-      .next-project-btn {
-        width: 100%; /* Na telefonie guzik zajmie całą szerokość */
-        padding: 18px 10px;
-      }
+    @media (max-width: 600px) {
+      .gallery { grid-template-columns: 1fr; }
+      .stat-value { font-size: 1.8em; }
+      .next-project-btn { width: 100%; padding: 18px 10px; }
     }
   </style>
 </head>
@@ -119,39 +107,39 @@
     <div class="stat-item">
       <i class="fas fa-ruler-combined"></i>
       <span class="stat-value">160<span class="stat-unit">mb</span></span>
-      <span class="stat-label">Przerw roboczowych płyty fundamentowej</span>
+      <span class="stat-label">Przerw roboczych</span>
     </div>
     <div class="stat-item">
       <i class="fas fa-fill-drip"></i>
       <span class="stat-value">3600<span class="stat-unit">m2</span></span>
-      <span class="stat-label">Powierzchni płyty fundamentowej</span>
+      <span class="stat-label">Płyty fundamentowej</span>
     </div>
-     <div class="stat-item">
-      <i class="fas fa-fill-drip"></i>
+    <div class="stat-item">
+      <i class="fas fa-expand-arrows-alt"></i>
       <span class="stat-value">1200<span class="stat-unit">m2</span></span>
-      <span class="stat-label">Powierzchni izolacji stropu</span>
+      <span class="stat-label">Izolacji stropu</span>
     </div>
-     <div class="stat-item">
-      <i class="fas fa-fill-drip"></i>
+    <div class="stat-item">
+      <i class="fas fa-shield-alt"></i>
       <span class="stat-value">100<span class="stat-unit">%</span></span>
-      <span class="stat-label">Gwarancji szczelności</span>
+      <span class="stat-label">Gwarancji</span>
     </div>
-    
- <div style="text-align: center; border-top: 1px solid #222; padding-top: 40px; margin-bottom: 80px;">
+  </div> <div style="text-align: center; border-top: 1px solid #222; padding-top: 40px;">
     <p style="color: #666; font-size: 0.9em;">Potrzebujesz profesjonalnej hydroizolacji?</p>
     <a href="index.html#contact" style="color: #fff; text-decoration: none; font-weight: bold; border-bottom: 2px solid #fff;">NAPISZ DO NAS</a>
   </div>
 </div>
 
-
-    
-<section style="padding: 60px 20px; text-align: center; background: #000; border-top: 1px solid #111;">
+<section class="next-project-section">
   <p style="color: #666; font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Następny projekt</p>
   <a href="realizacja-tychy.html" class="next-project-btn">
     Osiedle Fit | Tychy <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
   </a>
 </section>
 
+<footer style="padding: 40px 20px; text-align: center; font-size: 0.8em; color: #444; background: #000;">
+  <p>© 2025 Hydrokoma Sp. z o.o.</p>
+</footer>
 
 </body>
 </html>
