@@ -71,6 +71,29 @@
       .gallery { grid-template-columns: 1fr; }
       .stat-value { font-size: 1.8em; }
     }
+    .next-project-btn {
+      display: inline-block;
+      padding: 20px 40px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8em;
+      transition: 0.4s;
+    }
+    .next-project-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+    
+    @media (max-width: 480px) {
+      .next-project-btn {
+        width: 100%; /* Na telefonie guzik zajmie całą szerokość */
+        padding: 18px 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -118,6 +141,14 @@
       <span class="stat-label">Gwarancji szczelności</span>
     </div>
     
+<section style="padding: 60px 20px; text-align: center; background: #000; border-top: 1px solid #111;">
+  <p style="color: #666; font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Następny projekt</p>
+  <a href="realizacja-tychy.html" class="next-project-btn">
+    Osiedle Fit | Tychy <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+  </a>
+</section>
+
+
   <div style="text-align: center; border-top: 1px solid #222; padding-top: 40px; margin-bottom: 80px;">
     <p style="color: #666; font-size: 0.9em;">Potrzebujesz profesjonalnej hydroizolacji?</p>
     <a href="index.html#contact" style="color: #fff; text-decoration: none; font-weight: bold; border-bottom: 2px solid #fff;">NAPISZ DO NAS</a>
