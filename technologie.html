@@ -1,110 +1,173 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Technologie - Hydrokoma</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Technologie | Hydrokoma Sp. z o.o.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
   <style>
-    body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; margin: 0; padding: 40px 20px; line-height: 1.6; }
-    .container { max-width: 800px; margin: 0 auto; }
+    * { box-sizing: border-box; }
+    html, body { 
+      margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
+      font-family: 'Roboto', sans-serif; background-color: #000; color: #fff; scroll-behavior: smooth;
+    }
+
+    /* NAWIGACJA */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      background-color: rgba(0,0,0,0.98); padding: 10px 20px;
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; 
+      border-bottom: 1px solid #222; height: 80px;
+    }
+    .nav-left img { height: 60px; width: auto; }
+    .nav-right ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+    .nav-right ul li a { color: #ccc; text-decoration: none; font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; }
+    body { padding-top: 80px; }
+
+    /* HEADER */
+    .tech-header {
+      padding: 100px 20px; text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice12.jpeg') center/cover;
+    }
+    .tech-header h1 { font-weight: 300; font-size: 2.5em; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
+    .tech-header p { color: #aaa; text-transform: uppercase; letter-spacing: 2px; margin-top: 15px; font-size: 0.9em; }
+
+    /* SEKCJE TECHNOLOGII */
+    .tech-container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
     
-    .back-btn { 
-      display: inline-block; 
-      margin-bottom: 30px; 
-      color: #fff; 
-      text-decoration: none; 
-      font-size: 0.8em; 
-      border: 1px solid #444; 
-      padding: 10px 20px; 
-      border-radius: 4px; 
-      transition: 0.3s; 
-    }
-    .back-btn:hover { background: #fff; color: #000; }
+    .tech-item { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 100px; align-items: start; }
+    .tech-item:nth-child(even) { direction: rtl; }
+    .tech-item:nth-child(even) .tech-desc { direction: ltr; }
+
+    .tech-img { width: 100%; height: 450px; background-size: cover; background-position: center; border: 1px solid #222; border-radius: 4px; }
     
-    h1 { font-weight: 300; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
-
-    /* POPRAWKA GRAFIKI */
-    .main-img-container {
-      width: 100%;
-      height: 350px;
-      margin-bottom: 30px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #333;
-      background: #111; /* Kolor zastępczy, gdyby obrazek się nie wczytał */
-    }
-
-    .main-img-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* To sprawi, że obrazek wypełni ramkę bez zniekształceń */
-      filter: grayscale(100%) brightness(0.6) contrast(1.1);
-      display: block;
-    }
-
-    .tech-card { 
-      background: #111; 
-      padding: 25px; 
-      border-radius: 8px; 
-      margin-bottom: 20px; 
-      border-left: 3px solid #fff; 
-    }
+    .tech-desc h2 { font-weight: 400; font-size: 1.6em; margin-bottom: 20px; color: #fff; border-left: 3px solid #fff; padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    .tech-desc p { color: #999; line-height: 1.7; font-size: 1em; margin-bottom: 25px; }
     
-    h2 { font-weight: 400; color: #fff; margin-top: 0; font-size: 1.3em; }
-    p { color: #ccc; }
+    .tech-list { list-style: none; padding: 0; margin: 0; }
+    .tech-list li { margin-bottom: 15px; background: #0a0a0a; padding: 15px; border: 1px solid #151515; }
+    .tech-list li strong { display: block; color: #fff; margin-bottom: 5px; font-size: 0.9em; text-transform: uppercase; }
+    .tech-list li span { color: #777; font-size: 0.85em; line-height: 1.5; display: block; }
 
-    .next-step-box { 
-      margin-top: 60px; 
-      padding: 40px 0; 
-      border-top: 1px solid #222; 
-      display: flex; 
-      justify-content: flex-end; 
+    .service-link {
+      display: inline-block; margin-top: 30px; padding: 12px 25px; border: 1px solid #fff; color: #fff;
+      text-decoration: none; font-size: 0.75em; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
     }
-    
-    .next-step-link { text-decoration: none; color: #fff; text-align: right; transition: 0.3s; }
-    .next-step-link:hover { opacity: 0.7; }
-    .next-step-link span { display: block; font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 5px; }
-    .next-step-link .title { font-size: 1.4em; font-weight: 300; }
+    .service-link:hover { background: #fff; color: #000; }
 
-    @media (max-width: 600px) {
-      .main-img-container { height: 200px; }
+    footer { padding: 40px 20px; border-top: 1px solid #111; text-align: center; font-size: 0.8em; color: #444; }
+
+    @media (max-width: 850px) {
+      .tech-item { grid-template-columns: 1fr; gap: 30px; }
+      .tech-img { height: 300px; }
+      .tech-header h1 { font-size: 1.8em; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="index.html" class="back-btn">← POWRÓT DO STRONY GŁÓWNEJ</a>
-    
-    <h1>Baza Technologii</h1>
-    
-    <div class="main-img-container">
-      <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/wiazanie.jpeg" alt="Detale technologiczne Hydrokoma">
-    </div>
 
-    <p style="font-size: 1.1em; margin-bottom: 40px;">W Hydrokoma dobieramy technologie do specyfiki obiektu. Nie stosujemy półśrodków – liczy się trwały efekt i bezpieczeństwo konstrukcji.</p>
-    
-    <div class="tech-card">
-      <h2>Biała Wanna</h2>
-      <p>System konstrukcji szczelnej, gdzie sam beton pełni rolę izolacji wodnej. Sukces zależy od precyzyjnego uszczelnienia przerw roboczych, dylatacji oraz przejść szczelnych przy użyciu profesjonalnych taśm i węży iniekcyjnych.</p>
-    </div>
+<nav>
+  <div class="nav-left">
+    <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9752.jpeg" alt="Logo"></a>
+  </div>
+  <div class="nav-right">
+    <ul>
+      <li><a href="index.html">Strona Główna</a></li>
+      <li><a href="index.html#contact">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <div class="tech-card">
-      <h2>Powłoki Bitumiczne (KMB)</h2>
-      <p>Nowoczesne, grubowarstwowe masy polimerowo-bitumiczne. Tworzą elastyczną, mostkującą rysy powłokę, która trwale odcina fundament od naporu wody gruntowej.</p>
-    </div>
+<header class="tech-header">
+  <h1>Rozwiązania Inżynieryjne</h1>
+  <p>Hydroizolacje konstrukcyjne i systemowe</p>
+</header>
 
-    <div class="tech-card">
-      <h2>Iniekcje Strukturalne</h2>
-      <p>Zaawansowana metoda naprawcza. Wprowadzamy specjalistyczne żywice wewnątrz struktury betonu, co pozwala na uszczelnienie przecieków bez konieczności kosztownego i uciążliwego odkopywania fundamentów.</p>
-    </div>
+<div class="tech-container">
 
-    <div class="next-step-box">
-      <a href="wspolpraca.html" class="next-step-link">
-        <span>Kolejny krok</span>
-        <div class="title">Standardy współpracy B2B →</div>
-      </a>
+  <div class="tech-item">
+    <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice12.jpeg');"></div>
+    <div class="tech-desc">
+      <h2>Biała Wanna i Nadzór</h2>
+      <p>System bezpowłokowy to nie tylko beton – to rygorystyczny reżim technologiczny. Zapewniamy pełną kontrolę nad szczelnością bryły obiektu żelbetowego.</p>
+      <ul class="tech-list">
+        <li>
+          <strong>Obecność przy betonowaniu</strong>
+          <span>Nasz zespół nadzoruje proces układania mieszanki betonowej, dbając o jej właściwe zagęszczenie w strefach o gęstym zbrojeniu.</span>
+        </li>
+        <li>
+          <strong>Uszczelnienia przerw roboczych</strong>
+          <span>Stosujemy systemowe blachy uszczelniające montowane w styku płyta-ściana oraz ściana-ściana.</span>
+        </li>
+        <li>
+          <strong>Elementy poza obrysem płyty</strong>
+          <span>Skutecznie zabezpieczamy trudne detale, jak stopy fundamentowe pod żurawie wieżowe czy uskoki w płycie dennej.</span>
+        </li>
+      </ul>
     </div>
   </div>
+
+  <div class="tech-item">
+    <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Szafirowe%20main.jpg');"></div>
+    <div class="tech-desc">
+      <h2>Windy i Dylatacje</h2>
+      <p>Szyby windowe to najniższe punkty obiektu, najbardziej narażone na wodę gruntową. Z kolei dylatacje to miejsca, gdzie budynek "pracuje" i wymaga elastycznej bariery.</p>
+      
+      <ul class="tech-list">
+        <li>
+          <strong>Taśmy PVC (wewnętrzne i zewnętrzne)</strong>
+          <span>Profesjonalny montaż taśm PVC w dylatacjach i przerwach roboczych, zapewniający trwałą barierę przy ruchach konstrukcyjnych.</span>
+        </li>
+        <li>
+          <strong>Izolacja podszybi windowych</strong>
+          <span>Dedykowane systemy uszczelniające dna i ściany szybów, gwarantujące suchą eksploatację mechanizmów windy.</span>
+        </li>
+        <li>
+          <strong>Przejścia szczelne</strong>
+          <span>Zabezpieczenie magistral instalacyjnych i przepustów rur przechodzących przez ściany fundamentowe.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tech-item">
+    <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Okam%20main.jpeg');"></div>
+    <div class="tech-desc">
+      <h2>Stolarka, Tarasy i Balkony</h2>
+      <p>Woda opadowa w strefie elewacyjnej to częsta przyczyna zniszczeń warstw wykończeniowych. Izolujemy budynek tam, gdzie beton łączy się z innymi elementami.</p>
+      <ul class="tech-list">
+        <li>
+          <strong>Uszczelnianie stolarki okiennej</strong>
+          <span>Montaż fartuchów EPDM oraz taśm uszczelniających progi okienne i drzwiowe (szczególnie w systemach HS/balkonowych).</span>
+        </li>
+        <li>
+          <strong>Izolacja tarasów i balkonów</strong>
+          <span>Wykonywanie szczelnych warstw podposadzkowych, chroniących płytę żelbetową przed korozją i przeciekami do pomieszczeń poniżej.</span>
+        </li>
+        <li>
+          <strong>Strefa cokołowa</strong>
+          <span>Zabezpieczenie połączenia izolacji fundamentowej z elewacyjną, eliminujące podciąganie kapilarne wilgoci.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tech-item" style="margin-bottom: 0;">
+    <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice4.jpeg');"></div>
+    <div class="tech-desc">
+      <h2>Serwis i Naprawy Iniekcyjne</h2>
+      <p>Jeśli w gotowej konstrukcji pojawi się zarysowanie lub nieszczelność, usuwamy ją metodą iniekcji ciśnieniowej żywicami poliuretanowymi bez konieczności odkopania ścian.</p>
+      <a href="serwis.html" class="service-link">Przejdź do sekcji napraw →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Hydrokoma Sp. z o.o. | Katowice | Kraków</p>
+</footer>
+
 </body>
 </html>
