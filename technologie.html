@@ -30,7 +30,7 @@
       padding: 0 5%; position: fixed; top: 0; width: 100%; z-index: 1000; 
       border-bottom: 1px solid var(--border-color); height: 80px;
     }
-    .nav-left img { height: 45px; filter: brightness(1.1); }
+    .nav-left img { height: 50px; filter: brightness(1.1); }
     .nav-right ul { list-style: none; display: flex; gap: 25px; }
     .nav-right a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     .nav-right a:hover { color: var(--accent-blue); }
@@ -56,15 +56,13 @@
     .tech-item:nth-child(even) { direction: rtl; }
     .tech-item:nth-child(even) .tech-desc { direction: ltr; }
 
-    /* Zdjęcie z obramowaniem */
     .tech-img { 
-      width: 100%; min-height: 450px; border-radius: 4px;
+      width: 100%; min-height: 480px; border-radius: 4px;
       background-size: cover; background-position: center;
       border: 1px solid var(--border-color);
       position: relative;
     }
     
-    /* Overlay na zdjęcie dodający głębi */
     .tech-img::after {
         content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
         background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), transparent);
@@ -73,26 +71,25 @@
     .tech-desc { display: flex; flex-direction: column; justify-content: center; }
 
     .tech-desc h2 { 
-      font-family: 'Montserrat', sans-serif; font-size: 1.8rem; margin-bottom: 20px; 
+      font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin-bottom: 20px; 
       color: #fff; border-left: 4px solid var(--accent-blue); padding-left: 20px;
+      text-transform: uppercase;
     }
 
     .tech-desc p { color: var(--text-gray); font-size: 1.05rem; margin-bottom: 30px; }
 
-    /* Stylowa lista kafelkowa */
     .tech-list { list-style: none; padding: 0; margin: 0; }
     .tech-list li { 
-      background: var(--card-bg); padding: 20px; margin-bottom: 12px;
+      background: var(--card-bg); padding: 18px; margin-bottom: 12px;
       border: 1px solid var(--border-color); border-radius: 2px;
     }
-    .tech-list li strong { display: block; color: var(--accent-blue); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 5px; }
+    .tech-list li strong { display: block; color: var(--accent-blue); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px; }
     .tech-list li span { color: #ccc; font-size: 0.9rem; }
 
-    /* Przycisk akcji */
     .service-link {
       display: inline-block; margin-top: 20px; padding: 14px 30px; 
       border: 1px solid var(--accent-blue); color: #fff;
-      text-decoration: none; font-size: 0.8rem; font-weight: 600; 
+      text-decoration: none; font-size: 0.75rem; font-weight: 600; 
       text-transform: uppercase; letter-spacing: 2px;
     }
     .service-link:hover { background: var(--accent-blue); color: #fff; transform: translateY(-2px); }
@@ -102,12 +99,10 @@
       text-align: center; color: #444; font-size: 0.8rem; 
     }
 
-    /* RWD */
     @media (max-width: 900px) {
       .tech-item { grid-template-columns: 1fr; gap: 30px; }
       .tech-item:nth-child(even) { direction: ltr; }
       .tech-img { min-height: 300px; }
-      .nav-right { display: none; }
     }
   </style>
 </head>
@@ -126,8 +121,8 @@
 </nav>
 
 <header class="tech-header">
-  <h1>Technologie</h1>
-  <p>Inżynieria uszczelnień i betonu</p>
+  <h1>Rozwiązania Techniczne</h1>
+  <p>Wykonawstwo i Specjalistyczny Nadzór</p>
 </header>
 
 <div class="tech-container">
@@ -135,16 +130,16 @@
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/184d92e8-35aa-4c26-a791-1afccdf575a9.jpeg');"></div>
     <div class="tech-desc">
-      <h2>Biała Wanna i Nadzór</h2>
-      <p>System bezpowłokowy to najwyższy standard ochrony fundamentów. Eliminujemy ryzyko przecieków poprzez precyzyjne sterowanie procesem betonowania.</p>
+      <h2>Biała Wanna i Obrys Płyty</h2>
+      <p>Skuteczna hydroizolacja bezpowłokowa opiera się na naszej stałej obecności podczas kluczowych etapów budowy.</p>
       <ul class="tech-list">
         <li>
-          <strong>Ciągły nadzór inżynierski</strong>
-          <span>Opieka nad procesem układania mieszanki betonowej i montażem uszczelnień.</span>
+          <strong>Nadzór nad betonowaniem</strong>
+          <span>Koordynujemy proces układania i wibrowania mieszanki, eliminując ryzyko powstania raków i nieszczelności.</span>
         </li>
         <li>
-          <strong>Izolacja aktywna</strong>
-          <span>Montaż blach i węży iniekcyjnych w kluczowych przerwach technologicznych.</span>
+          <strong>Części poza obrysem płyty</strong>
+          <span>Szczelne zabezpieczenie fundamentów pod żurawie, uskoków dennych oraz wszelkich wypustów konstrukcyjnych.</span>
         </li>
       </ul>
     </div>
@@ -153,16 +148,34 @@
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Szafirowe%20main.jpg');"></div>
     <div class="tech-desc">
-      <h2>Szyby i Dylatacje</h2>
-      <p>Miejsca o największym narażeniu na wodę gruntową wymagają dedykowanych rozwiązań systemowych i elastyczności.</p>
+      <h2>Szyby i Systemy PVC</h2>
+      <p>Zabezpieczamy najniższe i najbardziej pracujące punkty obiektu, stosując profesjonalne systemy uszczelnień mechanicznych.</p>
       <ul class="tech-list">
         <li>
-          <strong>Systemy PVC</strong>
-          <span>Profesjonalny montaż taśm dylatacyjnych przenoszących ruchy obiektu.</span>
+          <strong>Szyby windowe</strong>
+          <span>Kompleksowa izolacja podszybi narażonych na stałe ciśnienie wody gruntowej.</span>
         </li>
         <li>
-          <strong>Szczelne przejścia</strong>
-          <span>Gwarancja szczelności dla wszystkich przepustów rurowych i instalacyjnych.</span>
+          <strong>Taśmy PVC i Dylatacje</strong>
+          <span>Montaż taśm PVC (zewnętrznych i wewnętrznych) w przerwach roboczych i dylatacjach konstrukcyjnych.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tech-item">
+    <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Okam%20main.jpeg');"></div>
+    <div class="tech-desc">
+      <h2>Stolarka i Tarasy</h2>
+      <p>Izolujemy strefy przejściowe, chroniąc wnętrza budynków przed wodą opadową i podciąganiem wilgoci.</p>
+      <ul class="tech-list">
+        <li>
+          <strong>Stolarka okienna</strong>
+          <span>Szczelne połączenia progowe (HS, balkonowe) z wykorzystaniem systemowych membran i fartuchów.</span>
+        </li>
+        <li>
+          <strong>Tarasy i Balkony</strong>
+          <span>Wykonywanie trwałych izolacji podposadzkowych zapobiegających degradacji żelbetu.</span>
         </li>
       </ul>
     </div>
@@ -171,19 +184,23 @@
   <div class="tech-item" style="margin-bottom: 0;">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3712.jpeg');"></div>
     <div class="tech-desc">
-      <h2>Iniekcje i Serwis</h2>
-      <p>Nieinwazyjne usuwanie przecieków w istniejących konstrukcjach. Ratujemy garaże podziemne i piwnice bez konieczności odkopywania ścian.</p>
-      <a href="serwis.html" class="service-link">Dowiedz się więcej o iniekcji →</a>
+      <h2>Iniekcje Naprawcze</h2>
+      <p>Dla istniejących obiektów oferujemy serwis naprawczy, który zatrzymuje wodę bez ingerencji w strukturę terenu wokół budynku.</p>
+      <ul class="tech-list">
+        <li>
+          <strong>Uszczelnienia ciśnieniowe</strong>
+          <span>Likwidacja przecieków w garażach podziemnych za pomocą żywic poliuretanowych.</span>
+        </li>
+      </ul>
+      <a href="serwis.html" class="service-link">Szczegóły serwisu →</a>
     </div>
   </div>
 
 </div>
 
 <footer>
-  <p>© 2026 Hydrokoma Sp. z o.o.
+  <p>© 2026 Hydrokoma Sp. z o.o. | Katowice | Kraków</p>
 </footer>
 
 </body>
 </html>
-
-
