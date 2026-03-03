@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Technologie | Hydrokoma Sp. z o.o.</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
   <style>
     :root {
@@ -31,7 +32,7 @@
       border-bottom: 1px solid var(--border-color); height: 80px;
     }
     .nav-left img { height: 50px; filter: brightness(1.1); }
-    .nav-right ul { list-style: none; display: flex; gap: 25px; }
+    .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     .nav-right a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     .nav-right a:hover { color: var(--accent-blue); }
 
@@ -47,62 +48,109 @@
     /* KONTENER */
     .tech-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 
-    /* ELEMENTY TECHNOLOGII */
+    /* ELEMENTY TECHNOLOGII - KARTY */
     .tech-item { 
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; 
-      margin-bottom: 120px; align-items: stretch; 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 0; 
+      margin-bottom: 80px; 
+      background: var(--card-bg);
+      border: 1px solid var(--border-color); 
+      overflow: hidden;
+      border-radius: 8px;
+      position: relative;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     }
     
+    .tech-item:hover {
+      border-color: var(--accent-blue);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15);
+    }
+
+    /* Reset direction dla mobile i spójności */
     .tech-item:nth-child(even) { direction: rtl; }
     .tech-item:nth-child(even) .tech-desc { direction: ltr; }
 
     .tech-img { 
-      width: 100%; min-height: 480px; border-radius: 4px;
-      background-size: cover; background-position: center;
-      border: 1px solid var(--border-color);
+      width: 100%; 
+      min-height: 480px; 
+      background-size: cover; 
+      background-position: center;
       position: relative;
+      transition: filter 0.3s ease;
     }
     
-    .tech-img::after {
-        content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), transparent);
+    .tech-item:hover .tech-img {
+      filter: brightness(1.1);
     }
 
-    .tech-desc { display: flex; flex-direction: column; justify-content: center; }
+    .tech-desc { 
+      padding: 50px;
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+    }
 
     .tech-desc h2 { 
-      font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin-bottom: 20px; 
-      color: #fff; border-left: 4px solid var(--accent-blue); padding-left: 20px;
+      font-family: 'Montserrat', sans-serif; 
+      font-size: 1.6rem; 
+      margin-top: 0;
+      margin-bottom: 20px; 
+      color: #fff; 
+      border-left: 4px solid var(--accent-blue); 
+      padding-left: 20px;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .tech-desc p { color: var(--text-gray); font-size: 1.05rem; margin-bottom: 30px; }
 
     .tech-list { list-style: none; padding: 0; margin: 0; }
     .tech-list li { 
-      background: var(--card-bg); padding: 18px; margin-bottom: 12px;
-      border: 1px solid var(--border-color); border-radius: 2px;
+      background: rgba(255,255,255,0.03); 
+      padding: 18px; 
+      margin-bottom: 12px;
+      border: 1px solid var(--border-color); 
+      border-radius: 4px;
     }
     .tech-list li strong { display: block; color: var(--accent-blue); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px; }
-    .tech-list li span { color: #ccc; font-size: 0.9rem; }
+    .tech-list li span { color: #ccc; font-size: 0.9rem; line-height: 1.5; }
 
     .service-link {
-      display: inline-block; margin-top: 20px; padding: 14px 30px; 
-      border: 1px solid var(--accent-blue); color: #fff;
-      text-decoration: none; font-size: 0.75rem; font-weight: 600; 
-      text-transform: uppercase; letter-spacing: 2px;
+      display: inline-block; 
+      margin-top: 20px; 
+      padding: 14px 30px; 
+      border: 1px solid var(--accent-blue); 
+      color: #fff;
+      text-decoration: none; 
+      font-size: 0.75rem; 
+      font-weight: 600; 
+      text-transform: uppercase; 
+      letter-spacing: 2px;
+      align-self: flex-start;
     }
-    .service-link:hover { background: var(--accent-blue); color: #fff; transform: translateY(-2px); }
+    .service-link:hover { background: var(--accent-blue); color: #fff; }
 
     footer { 
-      padding: 50px; border-top: 1px solid var(--border-color); 
-      text-align: center; color: #444; font-size: 0.8rem; 
+      padding: 50px; 
+      border-top: 1px solid var(--border-color); 
+      text-align: center; 
+      color: #444; 
+      font-size: 0.8rem; 
     }
 
+    /* RWD - KLUCZOWE POPRAWKI DLA MOBILE */
     @media (max-width: 900px) {
-      .tech-item { grid-template-columns: 1fr; gap: 30px; }
-      .tech-item:nth-child(even) { direction: ltr; }
-      .tech-img { min-height: 300px; }
+      .tech-item, .tech-item:nth-child(even) { 
+        grid-template-columns: 1fr; 
+        direction: ltr;
+        margin-bottom: 40px;
+      }
+      .tech-desc { direction: ltr; padding: 30px 20px; }
+      .tech-img { min-height: 280px; border-bottom: 1px solid var(--border-color); }
+      .tech-header { padding: 140px 20px 60px; }
+      .nav-right { display: none; } /* Opcjonalnie ukrywamy menu na mobile dla czystości */
     }
   </style>
 </head>
@@ -164,7 +212,7 @@
   </div>
 
   <div class="tech-item">
-    <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Okam%20main.jpeg');"></div>
+    <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice4.jpeg');"></div>
     <div class="tech-desc">
       <h2>Stolarka i Tarasy</h2>
       <p>Izolujemy strefy przejściowe, chroniąc wnętrza budynków przed wodą opadową i podciąganiem wilgoci.</p>
