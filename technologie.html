@@ -48,109 +48,68 @@
     /* KONTENER */
     .tech-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 
-    /* ELEMENTY TECHNOLOGII - KARTY */
+    /* ELEMENTY TECHNOLOGII */
     .tech-item { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
-      gap: 0; 
       margin-bottom: 80px; 
       background: var(--card-bg);
       border: 1px solid var(--border-color); 
-      overflow: hidden;
       border-radius: 8px;
-      position: relative;
-      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
     }
     
-    .tech-item:hover {
-      border-color: var(--accent-blue);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15);
-    }
-
-    /* Reset direction dla mobile i spójności */
+    .tech-item:hover { border-color: var(--accent-blue); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15); }
     .tech-item:nth-child(even) { direction: rtl; }
     .tech-item:nth-child(even) .tech-desc { direction: ltr; }
 
-    .tech-img { 
-      width: 100%; 
-      min-height: 480px; 
-      background-size: cover; 
-      background-position: center;
-      position: relative;
-      transition: filter 0.3s ease;
-    }
-    
-    .tech-item:hover .tech-img {
-      filter: brightness(1.1);
-    }
+    .tech-img { width: 100%; min-height: 480px; background-size: cover; background-position: center; }
 
-    .tech-desc { 
-      padding: 50px;
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-    }
-
+    .tech-desc { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
     .tech-desc h2 { 
-      font-family: 'Montserrat', sans-serif; 
-      font-size: 1.6rem; 
-      margin-top: 0;
-      margin-bottom: 20px; 
-      color: #fff; 
-      border-left: 4px solid var(--accent-blue); 
-      padding-left: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin: 0 0 20px; 
+      border-left: 4px solid var(--accent-blue); padding-left: 20px; text-transform: uppercase;
     }
-
     .tech-desc p { color: var(--text-gray); font-size: 1.05rem; margin-bottom: 30px; }
 
     .tech-list { list-style: none; padding: 0; margin: 0; }
     .tech-list li { 
-      background: rgba(255,255,255,0.03); 
-      padding: 18px; 
-      margin-bottom: 12px;
-      border: 1px solid var(--border-color); 
-      border-radius: 4px;
+      background: rgba(255,255,255,0.03); padding: 18px; margin-bottom: 12px;
+      border: 1px solid var(--border-color); border-radius: 4px;
     }
     .tech-list li strong { display: block; color: var(--accent-blue); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px; }
-    .tech-list li span { color: #ccc; font-size: 0.9rem; line-height: 1.5; }
+    .tech-list li span { color: #ccc; font-size: 0.9rem; }
 
     .service-link {
-      display: inline-block; 
-      margin-top: 20px; 
-      padding: 14px 30px; 
-      border: 1px solid var(--accent-blue); 
-      color: #fff;
-      text-decoration: none; 
-      font-size: 0.75rem; 
-      font-weight: 600; 
-      text-transform: uppercase; 
-      letter-spacing: 2px;
-      align-self: flex-start;
+      display: inline-block; margin-top: 20px; padding: 14px 30px; 
+      border: 1px solid var(--accent-blue); color: #fff; text-decoration: none; 
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
     }
-    .service-link:hover { background: var(--accent-blue); color: #fff; }
+    .service-link:hover { background: var(--accent-blue); }
 
-    footer { 
-      padding: 50px; 
-      border-top: 1px solid var(--border-color); 
-      text-align: center; 
-      color: #444; 
-      font-size: 0.8rem; 
-    }
+    /* SEKCJA PARTNERÓW TECHNOLOGICZNYCH */
+    .tech-partners { text-align: center; padding: 60px 20px; background: #080808; border-top: 1px solid var(--border-color); }
+    .tech-partners h3 { font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; }
+    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: center; opacity: 0.6; filter: grayscale(1); }
+    .partners-logos img { height: 30px; }
 
-    /* RWD - KLUCZOWE POPRAWKI DLA MOBILE */
+    /* FAQ */
+    .faq-container { max-width: 900px; margin: 100px auto; padding: 0 20px; }
+    .faq-header { text-align: center; margin-bottom: 50px; }
+    .faq-header h2 { font-family: 'Montserrat'; font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent-blue); }
+    .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 4px; overflow: hidden; }
+    .faq-question { padding: 25px 30px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #fff; }
+    .faq-question:hover { background: #1a1a1a; }
+    .faq-question i { color: var(--accent-blue); transition: 0.3s; }
+    .faq-answer { padding: 0 30px; max-height: 0; overflow: hidden; transition: 0.3s; color: var(--text-gray); font-size: 0.95rem; }
+    .faq-item.active .faq-answer { padding: 0 30px 30px; max-height: 500px; }
+    .faq-item.active .faq-question i { transform: rotate(180deg); }
+
     @media (max-width: 900px) {
-      .tech-item, .tech-item:nth-child(even) { 
-        grid-template-columns: 1fr; 
-        direction: ltr;
-        margin-bottom: 40px;
-      }
-      .tech-desc { direction: ltr; padding: 30px 20px; }
-      .tech-img { min-height: 280px; border-bottom: 1px solid var(--border-color); }
-      .tech-header { padding: 140px 20px 60px; }
-      .nav-right { display: none; } /* Opcjonalnie ukrywamy menu na mobile dla czystości */
+      .tech-item, .tech-item:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
+      .tech-desc { padding: 30px 20px; }
+      .tech-img { min-height: 280px; }
+      .nav-right { display: none; }
     }
   </style>
 </head>
@@ -174,21 +133,14 @@
 </header>
 
 <div class="tech-container">
-
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/184d92e8-35aa-4c26-a791-1afccdf575a9.jpeg');"></div>
     <div class="tech-desc">
       <h2>Biała Wanna</h2>
       <p>Skuteczna hydroizolacja bezpowłokowa opiera się na naszej stałej obecności podczas kluczowych etapów budowy.</p>
       <ul class="tech-list">
-        <li>
-          <strong>Nadzór nad betonowaniem</strong>
-          <span>Koordynujemy proces układania i wibrowania mieszanki, eliminując ryzyko powstania raków i nieszczelności.</span>
-        </li>
-        <li>
-          <strong>Części poza obrysem płyty</strong>
-          <span>Szczelne zabezpieczenie fundamentów pod żurawie, uskoków dennych oraz wszelkich wypustów konstrukcyjnych.</span>
-        </li>
+        <li><strong>Nadzór nad betonowaniem</strong><span>Koordynujemy proces układania mieszanki, eliminując ryzyko powstania nieszczelności.</span></li>
+        <li><strong>Elementy trudne</strong><span>Szczelne zabezpieczenie fundamentów pod żurawie i uskoków dennych.</span></li>
       </ul>
     </div>
   </div>
@@ -196,17 +148,11 @@
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/matecz4.jpeg');"></div>
     <div class="tech-desc">
-      <h2>Szyby windowe i systemy PVC</h2>
-      <p>Zabezpieczamy najniższe i najbardziej pracujące punkty obiektu, stosując profesjonalne systemy uszczelnień mechanicznych.</p>
+      <h2>Podszybia i PVC</h2>
+      <p>Zabezpieczamy najbardziej pracujące punkty obiektu, stosując profesjonalne systemy uszczelnień mechanicznych.</p>
       <ul class="tech-list">
-        <li>
-          <strong>Szyby windowe</strong>
-          <span>Kompleksowa izolacja podszybi narażonych na stałe ciśnienie wody gruntowej.</span>
-        </li>
-        <li>
-          <strong>Taśmy PVC i Dylatacje</strong>
-          <span>Montaż taśm PVC (zewnętrznych i wewnętrznych) w przerwach roboczych i dylatacjach konstrukcyjnych.</span>
-        </li>
+        <li><strong>Szyby windowe</strong><span>Izolacja podszybi narażonych na stałe ciśnienie wody gruntowej.</span></li>
+        <li><strong>Taśmy PVC</strong><span>Montaż systemowych taśm w dylatacjach konstrukcyjnych.</span></li>
       </ul>
     </div>
   </div>
@@ -214,17 +160,11 @@
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice4.jpeg');"></div>
     <div class="tech-desc">
-      <h2>Izolacja stolarki okiennej i tarasów</h2>
-      <p>Izolujemy strefy przejściowe, chroniąc wnętrza budynków przed wodą opadową i podciąganiem wilgoci.</p>
+      <h2>Okna i Tarasy</h2>
+      <p>Izolujemy strefy przejściowe, chroniąc wnętrza budynków przed wodą opadową.</p>
       <ul class="tech-list">
-        <li>
-          <strong>Stolarka okienna</strong>
-          <span>Szczelne połączenia progowe (HS, balkonowe) z wykorzystaniem systemowych membran i fartuchów.</span>
-        </li>
-        <li>
-          <strong>Tarasy i Balkony</strong>
-          <span>Wykonywanie trwałych izolacji podposadzkowych zapobiegających degradacji żelbetu.</span>
-        </li>
+        <li><strong>Stolarka okienna</strong><span>Szczelne połączenia progowe z wykorzystaniem membran EPDM/PVC.</span></li>
+        <li><strong>Tarasy</strong><span>Trwałe izolacje podposadzkowe zapobiegające degradacji żelbetu.</span></li>
       </ul>
     </div>
   </div>
@@ -233,22 +173,69 @@
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3712.jpeg');"></div>
     <div class="tech-desc">
       <h2>Iniekcje Naprawcze</h2>
-      <p>Dla istniejących obiektów oferujemy serwis naprawczy, który zatrzymuje wodę bez ingerencji w strukturę terenu wokół budynku.</p>
+      <p>Dla istniejących obiektów oferujemy serwis naprawczy, który zatrzymuje wodę bez wykopów.</p>
       <ul class="tech-list">
-        <li>
-          <strong>Uszczelnienia ciśnieniowe</strong>
-          <span>Likwidacja przecieków w garażach podziemnych za pomocą żywic poliuretanowych.</span>
-        </li>
+        <li><strong>Uszczelnienia ciśnieniowe</strong><span>Likwidacja przecieków w garażach żywicami poliuretanowymi.</span></li>
       </ul>
       <a href="serwis.html" class="service-link">Szczegóły serwisu →</a>
     </div>
   </div>
+</div>
 
+<section class="tech-partners">
+  <h3>Pracujemy na systemach</h3>
+  <div class="partners-logos">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Sika_AG_logo.svg" alt="Sika">
+    <span style="color:#fff; font-weight:bold; letter-spacing:2px;">MC-BAUCHEMIE</span>
+    <span style="color:#fff; font-weight:bold; letter-spacing:2px;">WEBAC</span>
+    <span style="color:#fff; font-weight:bold; letter-spacing:2px;">Drizoro</span>
+    <span style="color:#fff; font-weight:bold; letter-spacing:2px;">Tricosal</span>
+  </div>
+</section>
+
+<div class="faq-container">
+  <div class="faq-header">
+    <h2>Baza Wiedzy / FAQ</h2>
+    <p style="font-size: 1.5rem; font-weight: 300; margin-top: 10px;">Masz pytania? Mamy odpowiedzi.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Czy technologia białej wanny jest droższa od tradycyjnych izolacji? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">Wbrew pozorom koszt jest porównywalny. Oszczędzamy na braku konieczności nakładania powłok bitumicznych i krótszym czasie pracy na budowie.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Jak długo trwa proces iniekcji ciśnieniowej? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">Większość standardowych napraw rys w garażach podziemnych wykonujemy w ciągu 1-2 dni roboczych, bez zakłócania ruchu w obiekcie.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Na jakim obszarze świadczycie usługi? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">Głównie Śląsk (Katowice, Gliwice, Tychy) oraz Małopolska (Kraków). Przy większych inwestycjach działamy na terenie całego kraju.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Czy wystawiacie gwarancję na wykonane prace? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">Tak, na każdą realizację wystawiamy pisemną gwarancję obiektową (standardowo od 5 do 10 lat dla systemów białej wanny).</div>
+  </div>
+
+  <div class="faq-footer">
+    Nie znalazłeś odpowiedzi? <a href="index.html#contact" style="color: var(--accent-blue); text-decoration: none;">Zadaj pytanie bezpośrednio →</a>
+  </div>
 </div>
 
 <footer>
   <p>© 2026 Hydrokoma Sp. z o.o. | Katowice | Kraków</p>
 </footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>
 
 </body>
 </html>
