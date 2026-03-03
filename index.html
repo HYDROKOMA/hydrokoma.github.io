@@ -31,14 +31,28 @@
       display: flex; align-items: center; justify-content: space-between;
       background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px);
       padding: 0 5%; position: fixed; top: 0; left: 0; width: 100%; 
-      z-index: 9999; border-bottom: 1px solid var(--border-color); height: 80px;
+      z-index: 9999; border-bottom: 1px solid var(--border-color); height: 100px; /* Zwiększona wysokość paska */
     }
-    .nav-left img { height: 50px; filter: brightness(1.1); display: block; }
+    .nav-left img { 
+      height: 75px; /* Znacznie większe logo */
+      width: auto;
+      filter: brightness(1.1); 
+      display: block; 
+    }
+    
+    /* Ikona menu mobilnego */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
     .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     .nav-right ul li a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     .nav-right ul li a:hover { color: var(--accent-blue); }
 
-    body { padding-top: 80px; }
+    body { padding-top: 100px; }
 
     /* HERO */
     .hero {
@@ -125,8 +139,33 @@
 
     #toTopBtn { position: fixed; bottom: 85px; right: 20px; z-index: 99; background: var(--accent-blue); color: #fff; border: none; width: 40px; height: 40px; border-radius: 4px; cursor: pointer; display: none; }
 
+    /* POPRAWKA MOBILNA - MENU I LOGO */
     @media (max-width: 768px) {
-      .nav-right { display: none; }
+      nav { height: 80px; padding: 0 20px; }
+      .nav-left img { height: 55px; } /* Optymalna wielkość logo na mobile */
+      body { padding-top: 80px; }
+      
+      .menu-toggle { display: block; } /* Pokazuje hamburgera */
+      
+      .nav-right {
+        display: none; /* Domyślnie ukryte */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.98);
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px 0;
+      }
+      
+      .nav-right.active { display: block; } /* Pokazuje po kliknięciu */
+      
+      .nav-right ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
       .hero-content h1 { font-size: 2.2rem; }
       .hub-container { margin-top: -40px; }
     }
@@ -138,12 +177,17 @@
   <div class="nav-left">
     <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9752.jpeg" alt="Logo"></a>
   </div>
-  <div class="nav-right">
+  
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="nav-right" id="mainMenu">
     <ul>
-      <li><a href="#about">O nas</a></li>
+      <li><a href="#about" onclick="toggleMenu()">O nas</a></li>
       <li><a href="technologie.html">Technologie</a></li>
-      <li><a href="#projekty">Realizacje</a></li>
-      <li><a href="#contact">Kontakt</a></li>
+      <li><a href="#projekty" onclick="toggleMenu()">Realizacje</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Kontakt</a></li>
     </ul>
   </div>
 </nav>
@@ -272,6 +316,14 @@
 <button onclick="topFunction()" id="toTopBtn"><i class="fas fa-chevron-up"></i></button>
 
 <script>
+  // Funkcja rozwijania menu mobilnego
+  function toggleMenu() {
+    const menu = document.getElementById("mainMenu");
+    if (window.innerWidth <= 768) {
+      menu.classList.toggle("active");
+    }
+  }
+
   const topBtn = document.getElementById("toTopBtn");
   window.onscroll = function() { topBtn.style.display = (window.scrollY > 400) ? "block" : "none"; };
   function topFunction() { window.scrollTo({top: 0, behavior: 'smooth'}); }
