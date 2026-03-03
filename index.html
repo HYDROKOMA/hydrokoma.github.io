@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
   <title>Hydrokoma Sp. z o.o. | Specjalistyczne Hydroizolacje Budowlane</title>
-  <meta name="description" content="Hydrokoma - profesjonalne hydroizolacje fundamentów, technologia białej wanny i iniekcje ciśnieniowe. Działamy na terenie Śląska i Małopolski.">
+  <meta name="description" content="Hydrokoma - profesjonalne hydroizolacje fundamentów, technologia białej wanny i iniekcje ciśnieniowe.">
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -33,7 +33,6 @@
       padding: 0 5%; position: fixed; top: 0; left: 0; width: 100%; 
       z-index: 9999; border-bottom: 1px solid var(--border-color); height: 80px;
     }
-
     .nav-left img { height: 50px; filter: brightness(1.1); display: block; }
     .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     .nav-right ul li a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
@@ -61,17 +60,17 @@
       border-radius: 4px; display: flex; flex-direction: column; text-decoration: none; color: inherit; 
     }
     .hub-card:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
-    .hub-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.2em; margin-bottom: 15px; text-transform: uppercase; color: #fff; }
+    .hub-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.2em; margin-bottom: 15px; text-transform: uppercase; }
     .hub-card p { color: var(--text-gray); font-size: 0.95em; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
-    .hub-link { color: var(--accent-blue); font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; align-self: flex-start; border-bottom: 1px solid transparent; }
-    .hub-card:hover .hub-link { border-bottom-color: var(--accent-blue); }
+    .hub-link { color: var(--accent-blue); font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
 
     /* O NAS */
     .about-section { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
     .about-content { border-left: 4px solid var(--accent-blue); padding-left: 30px; text-align: left; margin-bottom: 60px; }
     .about-section h2 { font-family: 'Montserrat', sans-serif; letter-spacing: 4px; margin-bottom: 20px; text-transform: uppercase; font-size: 0.9em; color: var(--accent-blue); }
     .about-section p { color: #ccc; line-height: 1.8; font-size: 1.05em; }
-    
+
+    /* STATYSTYKI */
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
     .stat-box { background: var(--card-bg); padding: 30px 15px; border: 1px solid var(--border-color); text-align: center; }
     .stat-box i { display: block; margin-bottom: 10px; font-size: 1.3em; color: var(--accent-blue); }
@@ -96,29 +95,33 @@
     .project-info h4 { font-family: 'Montserrat', sans-serif; margin: 0; font-size: 1em; text-transform: uppercase; }
     .project-info p { color: var(--accent-blue); font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-weight: 600; }
 
+    /* KARUZELA PARTNERÓW */
+    .partners-section { padding: 60px 0; background: #000; overflow: hidden; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    .partners-slider { display: flex; gap: 80px; align-items: center; width: max-content; animation: scrollPartner 30s linear infinite; }
+    .partners-slider img { height: 35px; filter: grayscale(100%) brightness(0.7); flex-shrink: 0; }
+    @keyframes scrollPartner { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
     /* KONTAKT */
     .contact-section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
     .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
-    .contact-form input, .contact-form textarea { padding: 15px; background: var(--card-bg); border: 1px solid var(--border-color); color: #fff; width: 100%; margin-bottom: 12px; font-family: inherit; font-size: 0.9em; }
+    .contact-form input, .contact-form textarea { padding: 15px; background: var(--card-bg); border: 1px solid var(--border-color); color: #fff; width: 100%; margin-bottom: 12px; font-family: inherit; }
     .contact-form button { padding: 18px; background: var(--accent-blue); color: #fff; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; width: 100%; letter-spacing: 2px; }
-
-    .rodo-box { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px; font-size: 0.7rem; color: #666; line-height: 1.4; text-align: left; }
+    .rodo-box { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px; font-size: 0.7rem; color: #666; line-height: 1.4; }
     .rodo-box input { width: auto; margin-top: 3px; }
+
+    /* STOPKA */
+    footer { padding: 60px 20px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.75rem; color: #444; }
+    .footer-data { margin-bottom: 25px; line-height: 1.8; }
+    .footer-links { margin-bottom: 15px; }
+    .footer-links a { color: #555; text-decoration: none; margin: 0 10px; }
+    .footer-links a:hover { color: var(--accent-blue); }
 
     /* COOKIE BANNER */
     #cookie-banner {
       position: fixed; bottom: 0; left: 0; width: 100%; background: #111; border-top: 1px solid #333;
       padding: 20px; z-index: 10000; display: none; text-align: center; font-size: 0.8em; color: #ccc;
     }
-    #cookie-banner button {
-      background: var(--accent-blue); color: #fff; border: none; padding: 8px 20px; margin-left: 15px;
-      cursor: pointer; font-weight: bold; text-transform: uppercase; font-size: 0.8em; border-radius: 2px;
-    }
-
-    footer { padding: 60px 20px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.75rem; color: #444; }
-    .footer-data { margin-bottom: 25px; line-height: 1.8; }
-    .footer-links a { color: #555; text-decoration: none; margin: 0 10px; }
-    .footer-links a:hover { color: var(--accent-blue); }
+    #cookie-banner button { background: var(--accent-blue); color: #fff; border: none; padding: 8px 20px; margin-left: 15px; cursor: pointer; font-weight: bold; text-transform: uppercase; border-radius: 2px; }
 
     #toTopBtn { position: fixed; bottom: 85px; right: 20px; z-index: 99; background: var(--accent-blue); color: #fff; border: none; width: 40px; height: 40px; border-radius: 4px; cursor: pointer; display: none; }
 
@@ -182,89 +185,67 @@
   </div>
   
   <div class="stats-grid">
-    <div class="stat-box">
-      <i class="fas fa-shield-alt"></i>
-      <h3>150+</h3>
-      <p>Realizacji</p>
-    </div>
-    <div class="stat-box">
-      <i class="fas fa-tint-slash"></i>
-      <h3>10k</h3>
-      <p>m² izolacji</p>
-    </div>
-    <div class="stat-box">
-      <i class="fas fa-clock"></i>
-      <h3>24h</h3>
-      <p>Kontakt</p>
-    </div>
-    <div class="stat-box">
-      <i class="fas fa-hard-hat"></i>
-      <h3>100%</h3>
-      <p>Rzetelności</p>
-    </div>
+    <div class="stat-box"><i class="fas fa-shield-alt"></i><h3>150+</h3><p>Realizacji</p></div>
+    <div class="stat-box"><i class="fas fa-tint-slash"></i><h3>10k</h3><p>m² izolacji</p></div>
+    <div class="stat-box"><i class="fas fa-clock"></i><h3>24h</h3><p>Kontakt</p></div>
+    <div class="stat-box"><i class="fas fa-hard-hat"></i><h3>100%</h3><p>Rzetelności</p></div>
   </div>
 </section>
 
 <section id="projekty" style="background: #050505; padding: 80px 0;">
   <h2 style="text-align: center; font-family: 'Montserrat', sans-serif; font-size: 0.9em; margin-bottom: 40px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent-blue);">Najnowsze realizacje</h2>
-  
   <div class="projects-wrapper">
     <a href="realizacja-matecznik.html" class="project-card">
       <div class="project-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3637.jpg');"></div>
       <div class="project-btn">Szczegóły</div>
-      <div class="project-info">
-        <h4>Osiedle Mateczniq</h4>
-        <p>Kraków | Małopolska</p>
-      </div>
+      <div class="project-info"><h4>Osiedle Mateczniq</h4><p>Kraków</p></div>
     </a>
-
     <a href="realizacja-tychy.html" class="project-card">
       <div class="project-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/fit%20tychy.jpg');"></div>
       <div class="project-btn">Szczegóły</div>
-      <div class="project-info">
-        <h4>Osiedle Fit</h4>
-        <p>Tychy</p>
-      </div>
+      <div class="project-info"><h4>Osiedle Fit</h4><p>Tychy</p></div>
     </a>
-
     <a href="realizacje-okam.html" class="project-card">
       <div class="project-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Okam%20main.jpeg');"></div>
       <div class="project-btn">Szczegóły</div>
-      <div class="project-info">
-        <h4>Osiedle OKAM</h4>
-        <p>Katowice | Śląsk</p>
-      </div>
+      <div class="project-info"><h4>Osiedle OKAM</h4><p>Katowice</p></div>
     </a>
-
     <a href="realizacje-Gliwice.html" class="project-card">
       <div class="project-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Szafirowe%20main.jpg');"></div>
       <div class="project-btn">Szczegóły</div>
-      <div class="project-info">
-        <h4>Osiedle Szafirowe</h4>
-        <p>Gliwice</p>
-      </div>
+      <div class="project-info"><h4>Osiedle Szafirowe</h4><p>Gliwice</p></div>
     </a>
+  </div>
+</section>
+
+<section class="partners-section">
+  <div class="partners-slider">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/MUR.WA_BIG.png" alt="Partner">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/a1fdd290-bf83-4140-9243-afb6e145b466.png" alt="Partner">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/9f8935dc-e6d5-4804-a198-5029be30a128.png" alt="Partner">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/186cce4b-c802-411c-be76-736c8c926a89.png" alt="Partner">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/3c6eb1e0-5e60-41e0-a0d3-403f07153da7.png" alt="Partner">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/MUR.WA_BIG.png" alt="Partner">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/a1fdd290-bf83-4140-9243-afb6e145b466.png" alt="Partner">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/9f8935dc-e6d5-4804-a198-5029be30a128.png" alt="Partner">
   </div>
 </section>
 
 <section id="contact" class="contact-section">
   <div class="contact-grid">
     <div>
-      <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--accent-blue); letter-spacing: 2px;">KONTAKT</h2>
+      <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--accent-blue);">KONTAKT</h2>
       <p style="font-size: 1.8em; font-weight: 300; margin: 15px 0;">+48 512 308 538</p>
       <p style="color: var(--text-gray);">biuro@hydrokoma.com</p>
-      <p style="color: #444; font-size: 0.7em; margin-top: 40px; text-transform: uppercase; letter-spacing: 2px;">Śląsk | Małopolska</p>
     </div>
     <form class="contact-form" action="https://formspree.io/f/mlgwzwzy" method="POST">
       <input type="text" name="name" placeholder="Firma / Nazwisko" required>
       <input type="tel" name="phone" placeholder="Telefon" required>
       <textarea name="msg" rows="4" placeholder="Wiadomość..." required></textarea>
-      
       <div class="rodo-box">
         <input type="checkbox" name="consent" id="consent" required>
-        <label for="consent">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na zapytanie. <a href="polityka-prywatnosci.html" style="color: #888;">Pełna informacja RODO</a></label>
+        <label for="consent">Wyrażam zgodę na przetwarzanie danych. <a href="polityka-prywatnosci.html" style="color: #888;">Polityka Prywatności</a></label>
       </div>
-      
       <button type="submit">Wyślij wiadomość</button>
     </form>
   </div>
@@ -284,8 +265,7 @@
 </footer>
 
 <div id="cookie-banner">
-  Nasza strona korzysta z plików cookies. 
-  <a href="polityka-prywatnosci.html" style="color: #fff; text-decoration: underline;">Dowiedz się więcej</a>.
+  Strona korzysta z plików cookies. <a href="polityka-prywatnosci.html" style="color: #fff;">Więcej</a>.
   <button onclick="acceptCookies()">Akceptuję</button>
 </div>
 
@@ -295,17 +275,8 @@
   const topBtn = document.getElementById("toTopBtn");
   window.onscroll = function() { topBtn.style.display = (window.scrollY > 400) ? "block" : "none"; };
   function topFunction() { window.scrollTo({top: 0, behavior: 'smooth'}); }
-
-  function acceptCookies() {
-    localStorage.setItem('cookiesAccepted', 'true');
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
-
-  window.onload = function() {
-    if (!localStorage.getItem('cookiesAccepted')) {
-      document.getElementById('cookie-banner').style.display = 'block';
-    }
-  };
+  function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookie-banner').style.display = 'none'; }
+  window.onload = function() { if (!localStorage.getItem('cookiesAccepted')) { document.getElementById('cookie-banner').style.display = 'block'; } };
 </script>
 
 </body>
