@@ -60,8 +60,6 @@
     }
     
     .tech-item:hover { border-color: var(--accent-blue); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15); }
-    
-    /* Naprzemienny układ */
     .tech-item:nth-child(even) { direction: rtl; }
     .tech-item:nth-child(even) .tech-desc { direction: ltr; }
 
@@ -90,12 +88,10 @@
     .service-link:hover { background: var(--accent-blue); }
 
     /* SEKCJA PARTNERÓW */
-    .tech-partners { text-align: center; padding: 80px 20px; background: #080808; border-top: 1px solid var(--border-color); }
+    .tech-partners { text-align: center; padding: 60px 20px; background: #080808; border-top: 1px solid var(--border-color); }
     .tech-partners h3 { font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; }
-    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; align-items: center; }
-    .partners-logos img { height: 35px; filter: grayscale(1) brightness(0.8); transition: 0.4s; }
-    .partners-logos img:hover { filter: grayscale(0) brightness(1.1); }
-    .partner-name { color: #444; font-weight: 700; letter-spacing: 2px; font-size: 1.1rem; }
+    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: center; }
+    .partner-name { color: #fff; font-weight: 700; letter-spacing: 2px; font-size: 1rem; opacity: 0.7; }
 
     /* FAQ */
     .faq-container { max-width: 900px; margin: 100px auto; padding: 0 20px; }
@@ -109,12 +105,7 @@
     .faq-item.active .faq-answer { padding: 0 30px 30px; max-height: 500px; }
     .faq-item.active .faq-question i { transform: rotate(180deg); }
 
-    footer { 
-      padding: 60px 20px; background: #050505; border-top: 1px solid var(--border-color); 
-      text-align: center; color: var(--text-gray); font-size: 0.8rem; 
-    }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-    .footer-locations { letter-spacing: 2px; text-transform: uppercase; color: #555; }
+    footer { padding: 50px; border-top: 1px solid var(--border-color); text-align: center; color: #444; font-size: 0.8rem; }
 
     @media (max-width: 900px) {
       .tech-item, .tech-item:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
@@ -132,9 +123,8 @@
   </div>
   <div class="nav-right">
     <ul>
-      <li><a href="index.html">Start</a></li>
+      <li><a href="index.html">Strona Główna</a></li>
       <li><a href="wspolpraca.html">Współpraca</a></li>
-      <li><a href="serwis.html">Serwis</a></li>
       <li><a href="index.html#contact">Kontakt</a></li>
     </ul>
   </div>
@@ -142,19 +132,19 @@
 
 <header class="tech-header">
   <h1>Rozwiązania Techniczne</h1>
-  <p>Wykonawstwo i Specjalistyczny Nadzór Inżynierski</p>
+  <p>Wykonawstwo i Specjalistyczny Nadzór</p>
 </header>
 
 <div class="tech-container">
-  
+
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/184d92e8-35aa-4c26-a791-1afccdf575a9.jpeg');"></div>
     <div class="tech-desc">
       <h2>Biała Wanna</h2>
-      <p>System konstrukcji żelbetowej, w której sam beton pełni rolę izolacji wodnej. Kluczem jest rygor technologiczny.</p>
+      <p>Skuteczna hydroizolacja bezpowłokowa opiera się na naszej stałej obecności podczas kluczowych etapów budowy.</p>
       <ul class="tech-list">
-        <li><strong>Nadzór nad betonowaniem</strong><span>Aktywna obecność przy układaniu mieszanki, by wyeliminować raki i kawerny.</span></li>
-        <li><strong>Strefy Krytyczne</strong><span>Zabezpieczenie fundamentów pod żurawie, uskoków i dylatacji.</span></li>
+        <li><strong>Nadzór nad betonowaniem</strong><span>Koordynujemy proces układania mieszanki, eliminując ryzyko powstania nieszczelności.</span></li>
+        <li><strong>Elementy trudne</strong><span>Szczelne zabezpieczenie fundamentów pod żurawie i uskoków dennych.</span></li>
       </ul>
     </div>
   </div>
@@ -163,10 +153,10 @@
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3743.jpeg');"></div>
     <div class="tech-desc">
       <h2>Węże Iniekcyjne</h2>
-      <p>Prewencyjny system uszczelniania przerw roboczych. Bezpieczeństwo zaplanowane na etapie zbrojenia.</p>
+      <p>Prewencyjne zabezpieczenie przerw roboczych, umożliwiające wtórne uszczelnienie styku beton-beton.</p>
       <ul class="tech-list">
-        <li><strong>Montaż systemowy</strong><span>Instalacja węży w miejscach o utrudnionym dostępie, gotowych do późniejszego tłoczenia chemii.</span></li>
-        <li><strong>Iniekcja wtórna</strong><span>Możliwość uszczelnienia styku beton-beton w dowolnym momencie życia obiektu.</span></li>
+        <li><strong>Montaż systemowy</strong><span>Instalacja węży w miejscach o utrudnionym dostępie tuż przed betonowaniem.</span></li>
+        <li><strong>Iniekcja wtórna</strong><span>Możliwość tłoczenia żywic w dowolnym momencie życia obiektu.</span></li>
       </ul>
     </div>
   </div>
@@ -174,46 +164,47 @@
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/matecz4.jpeg');"></div>
     <div class="tech-desc">
-      <h2>Szyby windowe i PVC</h2>
-      <p>Kompleksowa izolacja najniższych punktów obiektu narażonych na napór wody gruntowej.</p>
+      <h2>Podszybia i PVC</h2>
+      <p>Zabezpieczamy najbardziej pracujące punkty obiektu profesjonalnymi systemami uszczelnień mechanicznych.</p>
       <ul class="tech-list">
-        <li><strong>Taśmy PVC</strong><span>Zgrzewane systemy taśm zewnętrznych i wewnętrznych w dylatacjach.</span></li>
-        <li><strong>Systemy podszybia</strong><span>Gwarancja szczelności w strefach mechanizmów dźwigowych.</span></li>
+        <li><strong>Szyby windowe</strong><span>Izolacja podszybi narażonych na stałe ciśnienie wody gruntowej.</span></li>
+        <li><strong>Taśmy PVC</strong><span>Montaż systemowych taśm w dylatacjach konstrukcyjnych.</span></li>
       </ul>
     </div>
   </div>
 
-  <div class="tech-item">
+  <div class="tech-item" style="margin-bottom: 0;">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3712.jpeg');"></div>
     <div class="tech-desc">
-      <h2>Iniekcje Ciśnieniowe</h2>
-      <p>Ratunkowe zatrzymanie przecieków w istniejących obiektach bez kosztownych wykopów.</p>
+      <h2>Iniekcje Naprawcze</h2>
+      <p>Dla istniejących obiektów oferujemy serwis naprawczy, który zatrzymuje wodę bez wykopów.</p>
       <ul class="tech-list">
-        <li><strong>Żywice Poliuretanowe</strong><span>Zamykanie rys i pęknięć pod wysokim ciśnieniem.</span></li>
-        <li><strong>Iniekcja Kurtynowa</strong><span>Odtwarzanie izolacji pionowej ściany od wewnątrz budynku.</span></li>
+        <li><strong>Uszczelnienia ciśnieniowe</strong><span>Likwidacja przecieków w garażach żywicami poliuretanowymi.</span></li>
       </ul>
-      <a href="serwis.html" class="service-link">Zobacz ofertę serwisu →</a>
+      <a href="serwis.html" class="service-link">Szczegóły serwisu →</a>
     </div>
   </div>
+</div>
 
-</div> <section class="tech-partners">
-  <h3>Autoryzowane systemy materiałowe</h3>
+<section class="tech-partners">
+  <h3>Pracujemy na systemach</h3>
   <div class="partners-logos">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Sika_AG_logo.svg" alt="Sika">
-    <div class="partner-name">MC-BAUCHEMIE</div>
-    <div class="partner-name">WEBAC</div>
-    <div class="partner-name">DRIZORO</div>
-    <div class="partner-name">TRICOSAL</div>
+    <div class="partner-name">SIKA</div>
+    
   </div>
 </section>
 
 <div class="faq-container">
   <div class="faq-header">
-    <h2>Wiedza Techniczna / FAQ</h2>
-    <p style="font-size: 1.2rem; font-weight: 300; margin-top: 10px; color: #888;">Poznaj odpowiedzi na techniczne aspekty izolacji.</p>
+    <h2>Baza Wiedzy / FAQ</h2>
+    <p style="font-size: 1.5rem; font-weight: 300; margin-top: 10px;">Masz pytania? Mamy odpowiedzi.</p>
   </div>
 
   <div class="faq-item">
+    <div class="faq-question">Czy technologia białej wanny jest droższa od tradycyjnych izolacji? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">Wbrew pozorom koszt jest porównywalny. Oszczędzamy na braku konieczności nakładania powłok bitumicznych i krótszym czasie pracy na budowie.</div>
+ 
+  </div><div class="faq-item">
     <div class="faq-question">Czy Biała Wanna wymaga dodatkowych powłok? <i class="fas fa-chevron-down"></i></div>
     <div class="faq-answer">W klasycznym systemie nie. Prawidłowo zaprojektowany i wykonany beton szczelny jest barierą samą w sobie, co znacząco obniża koszty inwestycji i przyspiesza zasypywanie fundamentów.</div>
   </div>
@@ -224,21 +215,27 @@
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">Jaką gwarancję dajecie na iniekcje? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">Standardowo udzielamy 5 lat gwarancji na skuteczność uszczelnienia naprawczego, pod warunkiem zachowania ciągłości strukturalnej obiektu.</div>
+    <div class="faq-question">Jak długo trwa proces iniekcji ciśnieniowej? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">Większość standardowych napraw rys w garażach podziemnych wykonujemy w ciągu 1-2 dni roboczych, bez zakłócania ruchu w obiekcie.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Na jakim obszarze świadczycie usługi? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">Głównie Śląsk oraz Małopolska</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Czy wystawiacie gwarancję na wykonane prace? <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">Tak, na każdą realizację wystawiamy pisemną gwarancję obiektową (standardowo od 5 do 10 lat dla systemów białej wanny).</div>
   </div>
 
   <div class="faq-footer">
-    Brakuje Ci informacji? <a href="index.html#contact" style="color: var(--accent-blue); text-decoration: none; border-bottom: 1px solid;">Napisz do naszego inżyniera →</a>
+    Nie znalazłeś odpowiedzi? <a href="index.html#contact" style="color: var(--accent-blue); text-decoration: none;">Zadaj pytanie bezpośrednio →</a>
   </div>
 </div>
 
 <footer>
-  <div class="footer-content">
-    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/logo_hydrokoma_white_clear.png" alt="Hydrokoma" style="height: 50px; margin: 0 auto; opacity: 0.5;">
-    <div class="footer-locations">Katowice | Gliwice | Kraków | Tychy</div>
-    <p>© 2026 Hydrokoma Sp. z o.o. | Specjalistyczne Hydroizolacje Inżynieryjne</p>
-  </div>
+  <p>© 2026 Hydrokoma Sp. z o.o. | Katowice | Kraków | Gliwice</p>
 </footer>
 
 <script>
