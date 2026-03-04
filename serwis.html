@@ -28,7 +28,7 @@
       line-height: 1.6; 
     }
 
-    /* Nawigacja (taka sama jak na głównej) */
+    /* UJEDNOLICONA NAWIGACJA */
     nav {
       display: flex; align-items: center; justify-content: space-between;
       background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px);
@@ -40,7 +40,7 @@
     .nav-right a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     .nav-right a:hover { color: var(--accent-blue); }
 
-    /* NOWY NAGŁÓWEK SEKCYJNY (PRZYDYMIONY) */
+    /* HEADER */
     .section-header {
       padding: 180px 20px 100px;
       text-align: center;
@@ -81,28 +81,26 @@
 
     .service-desc { color: var(--text-gray); font-size: 1.1rem; margin-bottom: 40px; }
 
-    /* Lista technologii naprawczych */
+    /* LISTA SPECJALIZACJI */
     h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1px; color: #fff; margin-top: 50px; }
     
     ul { list-style: none; padding: 0; }
     ul li { 
       background: var(--card-bg); 
-      margin-bottom: 10px; 
-      padding: 20px; 
+      margin-bottom: 12px; 
+      padding: 22px; 
       border-radius: 4px; 
       border: 1px solid var(--border-color);
       display: flex;
       align-items: center;
     }
-    ul li::before { 
-      content: "\f058"; 
-      font-family: "Font Awesome 5 Free"; 
-      font-weight: 900; 
+    ul li i { 
       color: var(--accent-blue); 
-      margin-right: 15px; 
+      margin-right: 20px; 
+      font-size: 1.2rem;
     }
 
-    /* Alert Box */
+    /* KONTAKT BOX */
     .alert-box { 
       background: var(--card-bg); 
       color: #fff; 
@@ -114,19 +112,19 @@
       box-shadow: 0 10px 30px rgba(52, 152, 219, 0.1);
     }
     .alert-box h3 { margin-top: 0; color: var(--accent-blue); text-transform: uppercase; }
-    .alert-box p { color: var(--text-gray); }
+    .alert-box p { color: var(--text-gray); margin-bottom: 5px; }
     .alert-box a { 
       color: #fff; 
       font-weight: 700; 
       text-decoration: none; 
-      font-size: 1.8rem; 
+      font-size: 2rem; 
       display: block;
       margin-top: 10px;
       font-family: 'Montserrat', sans-serif;
     }
     .alert-box a:hover { color: var(--accent-blue); }
     
-    /* Sekcja "Następny Krok" */
+    /* NASTĘPNY KROK */
     .next-step-box { 
       margin-top: 80px; 
       padding: 40px 0; 
@@ -156,6 +154,9 @@
     }
     .next-step-link:hover .title { color: var(--accent-blue); }
 
+    /* STOPKA */
+    footer { padding: 50px; border-top: 1px solid var(--border-color); text-align: center; color: #444; font-size: 0.8rem; }
+
     @media (max-width: 600px) {
       .nav-right { display: none; }
       .alert-box a { font-size: 1.4rem; }
@@ -175,6 +176,7 @@
         <li><a href="index.html">Strona Główna</a></li>
         <li><a href="technologie.html">Technologie</a></li>
         <li><a href="wspolpraca.html">Współpraca</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
       </ul>
     </div>
   </nav>
@@ -187,33 +189,35 @@
   <div class="container">
     <a href="index.html" class="back-btn">← POWRÓT DO STRONY GŁÓWNEJ</a>
     
-    <p class="service-desc">Naprawiamy to, co inni skazali na porażkę. Twoja piwnica lub garaż znów będą suche.</p>
+    <p class="service-desc">Naprawiamy to, co inni skazali na porażkę. Skutecznie eliminujemy przecieki w istniejących obiektach, przywracając im pełną funkcjonalność bez konieczności kosztownych wykopów.</p>
     
     <h3>Nasze specjalizacje serwisowe:</h3>
     <ul>
-      <li>Uszczelnianie rys i pęknięć metodą iniekcji ciśnieniowej.</li>
-      <li>Naprawa przeciekających dylatacji i przerw roboczych.</li>
-      <li>Odtwarzanie izolacji pionowej i poziomej bez wykopów.</li>
-      <li>Tamowanie aktywnych wycieków pod dużym ciśnieniem.</li>
+      <li><i class="fas fa-check-circle"></i> Uszczelnianie rys i pęknięć metodą iniekcji ciśnieniowej.</li>
+      <li><i class="fas fa-check-circle"></i> Naprawa przeciekających dylatacji i przerw roboczych.</li>
+      <li><i class="fas fa-check-circle"></i> Odtwarzanie izolacji pionowej i poziomej bez wykopów (iniekcja kurtynowa).</li>
+      <li><i class="fas fa-check-circle"></i> Tamowanie aktywnych wycieków pod dużym ciśnieniem wody.</li>
     </ul>
+
+    
 
     <div class="alert-box">
       <h3>POTRZEBNA EKSPERTYZA?</h3>
-      <p>Zadzwoń do nas:</p>
+      <p>Skontaktuj się z nami:</p>
       <a href="tel:+48512308538">+48 512 308 538</a>
     </div>
 
     <div class="next-step-box">
-      <a href="index.html#projekty" class="next-step-link">
-        <span>Chcesz zobaczyć efekty?</span>
-        <div class="title">Zobacz nasze realizacje →</div>
+      <a href="technologie.html" class="next-step-link">
+        <span>Interesują Cię systemy prewencyjne?</span>
+        <div class="title">Poznaj nasze technologie →</div>
       </a>
     </div>
 
   </div>
 
-  <footer style="text-align: center; padding: 40px; color: #444; font-size: 0.8rem; border-top: 1px solid var(--border-color);">
-    © 2026 Hydrokoma Sp. z o.o.
+  <footer>
+    <p>© 2026 Hydrokoma Sp. z o.o. | Katowice | Kraków | Gliwice </p>
   </footer>
 
 </body>
