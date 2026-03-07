@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
   <title>Hydrokoma Sp. z o.o. | Specjalistyczne Hydroizolacje Budowlane</title>
+  <meta name="description" content="Hydrokoma - profesjonalne hydroizolacje fundamentów, technologia białej wanny i iniekcje ciśnieniowe.">
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -25,24 +26,27 @@
       font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: #fff; scroll-behavior: smooth;
     }
 
-    /* NAWIGACJA Z POPRAWIONYM LOGO */
+    /* NAWIGACJA */
     nav {
       display: flex; align-items: center; justify-content: space-between;
       background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px);
       padding: 0 5%; position: fixed; top: 0; left: 0; width: 100%; 
-      z-index: 9999; border-bottom: 1px solid var(--border-color); height: 100px;
+      z-index: 9999; border-bottom: 1px solid var(--border-color); height: 100px; /* Zwiększona wysokość paska */
     }
     .nav-left img { 
-      height: 90px; 
-      width: auto; 
-      display: block;
-      /* WZMOCNIENIE LOGO (BOLD EFFECT) */
-      filter: brightness(1.2) drop-shadow(0 0 1px rgba(255,255,255,0.8));
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
+      height: 90px; /* Znacznie większe logo */
+      width: auto;
+      filter: brightness(1.1); 
+      display: block; 
     }
     
-    .menu-toggle { display: none; font-size: 1.8rem; color: #fff; cursor: pointer; padding: 10px; }
+    /* Ikona menu mobilnego */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+    }
 
     .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     .nav-right ul li a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
@@ -81,10 +85,10 @@
     .about-section p { color: #ccc; line-height: 1.8; font-size: 1.05em; }
 
     /* STATYSTYKI */
-    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
     .stat-box { background: var(--card-bg); padding: 30px 15px; border: 1px solid var(--border-color); text-align: center; }
     .stat-box i { display: block; margin-bottom: 10px; font-size: 1.3em; color: var(--accent-blue); }
-    .stat-box h3 { font-family: 'Montserrat', sans-serif; font-size: 2rem; margin: 0; color: #fff; }
+    .stat-box h3 { font-family: 'Montserrat', sans-serif; font-size: 2.2em; margin: 0; color: #fff; }
     .stat-box p { font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; color: var(--text-gray); margin-top: 5px; }
 
     /* REALIZACJE */
@@ -94,7 +98,7 @@
       flex: 0 0 320px; height: 420px; position: relative; border-radius: 4px; 
       overflow: hidden; border: 1px solid var(--border-color); text-decoration: none; color: #fff;
     }
-    .project-img { position: absolute; width:100%; height:100%; background-size: cover; background-position: center; filter: brightness(40%); transition: 0.5s; }
+    .project-img { position: absolute; width:100%; height:100%; background-size: cover; background-position: center; filter: brightness(40%); }
     .project-card:hover .project-img { filter: brightness(60%); transform: scale(1.05); }
     .project-btn {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -105,7 +109,7 @@
     .project-info h4 { font-family: 'Montserrat', sans-serif; margin: 0; font-size: 1em; text-transform: uppercase; }
     .project-info p { color: var(--accent-blue); font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-weight: 600; }
 
-    /* KARUZELA KLIENTÓW */
+    /* KARUZELA PARTNERÓW */
     .partners-section { padding: 60px 0; background: #000; overflow: hidden; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
     .partners-slider { display: flex; gap: 80px; align-items: center; width: max-content; animation: scrollPartner 30s linear infinite; }
     .partners-slider img { height: 35px; filter: grayscale(100%) brightness(0.7); flex-shrink: 0; }
@@ -114,34 +118,57 @@
     /* KONTAKT */
     .contact-section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
     .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
-    .contact-form input, .contact-form textarea { padding: 15px; background: var(--card-bg); border: 1px solid var(--border-color); color: #fff; width: 100%; margin-bottom: 12px; font-family: inherit; outline: none; }
+    .contact-form input, .contact-form textarea { padding: 15px; background: var(--card-bg); border: 1px solid var(--border-color); color: #fff; width: 100%; margin-bottom: 12px; font-family: inherit; }
     .contact-form button { padding: 18px; background: var(--accent-blue); color: #fff; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; width: 100%; letter-spacing: 2px; }
-    .rodo-box { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px; font-size: 0.7rem; color: #666; line-height: 1.4; text-align: left; }
+    .rodo-box { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px; font-size: 0.7rem; color: #666; line-height: 1.4; }
+    .rodo-box input { width: auto; margin-top: 3px; }
 
     /* STOPKA */
     footer { padding: 60px 20px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.75rem; color: #444; }
     .footer-data { margin-bottom: 25px; line-height: 1.8; }
     .footer-links { margin-bottom: 15px; }
     .footer-links a { color: #555; text-decoration: none; margin: 0 10px; }
+    .footer-links a:hover { color: var(--accent-blue); }
 
-    /* MOBILE */
-    @media (max-width: 768px) {
-      nav { height: 80px; }
-      .nav-left img { height: 60px; filter: brightness(1.2) drop-shadow(0 0 1px rgba(255,255,255,0.9)); }
-      .menu-toggle { display: block; }
-      .nav-right {
-        display: none; position: absolute; top: 80px; left: 0; width: 100%; 
-        background: rgba(10, 10, 10, 0.98); border-bottom: 1px solid var(--border-color); padding: 30px 0;
-      }
-      .nav-right.active { display: block; }
-      .nav-right ul { flex-direction: column; align-items: center; gap: 20px; }
-      .stats-grid { grid-template-columns: 1fr; max-width: 300px; }
-      .hero-content h1 { font-size: 2.2rem; }
+    /* COOKIE BANNER */
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; width: 100%; background: #111; border-top: 1px solid #333;
+      padding: 20px; z-index: 10000; display: none; text-align: center; font-size: 0.8em; color: #ccc;
     }
+    #cookie-banner button { background: var(--accent-blue); color: #fff; border: none; padding: 8px 20px; margin-left: 15px; cursor: pointer; font-weight: bold; text-transform: uppercase; border-radius: 2px; }
 
-    #cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: #111; border-top: 1px solid #333; padding: 20px; z-index: 10000; display: none; text-align: center; font-size: 0.8em; color: #ccc; }
-    #cookie-banner button { background: var(--accent-blue); color: #fff; border: none; padding: 8px 20px; margin-left: 15px; cursor: pointer; font-weight: bold; }
-    #toTopBtn { position: fixed; bottom: 20px; right: 20px; z-index: 99; background: var(--accent-blue); color: #fff; border: none; width: 40px; height: 40px; border-radius: 4px; cursor: pointer; display: none; }
+    #toTopBtn { position: fixed; bottom: 85px; right: 20px; z-index: 99; background: var(--accent-blue); color: #fff; border: none; width: 40px; height: 40px; border-radius: 4px; cursor: pointer; display: none; }
+
+    /* POPRAWKA MOBILNA - MENU I LOGO */
+    @media (max-width: 768px) {
+      nav { height: 80px; padding: 0 20px; }
+      .nav-left img { height: 55px; } /* Optymalna wielkość logo na mobile */
+      body { padding-top: 80px; }
+      
+      .menu-toggle { display: block; } /* Pokazuje hamburgera */
+      
+      .nav-right {
+        display: none; /* Domyślnie ukryte */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.98);
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px 0;
+      }
+      
+      .nav-right.active { display: block; } /* Pokazuje po kliknięciu */
+      
+      .nav-right ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .hero-content h1 { font-size: 2.2rem; }
+      .hub-container { margin-top: -40px; }
+    }
   </style>
 </head>
 <body>
@@ -151,18 +178,18 @@
     <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/logo_hydrokoma_white_clear.png" alt="Logo"></a>
   </div>
   
-  <div class="menu-toggle" id="menuToggle">
+  <div class="menu-toggle" onclick="toggleMenu()">
     <i class="fas fa-bars"></i>
   </div>
 
   <div class="nav-right" id="mainMenu">
     <ul>
-      <li><a href="#about">O nas</a></li>
+      <li><a href="#about" onclick="toggleMenu()">O nas</a></li>
       <li><a href="technologie.html">Technologie</a></li>
-      <li><a href="wspolpraca.html">Współpraca</a></li>
-      <li><a href="#projekty">Realizacje</a></li>
-      <li><a href="serwis.html">Serwis</a></li>
-      <li><a href="#contact">Kontakt</a></li>
+        <li><a href="#wspolpraca" onclick="toggleMenu()">Oferta</a></li
+      <li><a href="#projekty" onclick="toggleMenu()">Realizacje</a></li>
+      <li><a href="#serwis" onclick="toggleMenu()">Serwis</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Kontakt</a></li>
     </ul>
   </div>
 </nav>
@@ -198,13 +225,16 @@
     <p>
       <strong>Hydrokoma</strong> to zespół zajmujący się profesjonalnym zabezpieczaniem obiektów budowlanych przed działaniem wody. Specjalizujemy się w wykonywaniu hydroizolacji struktur podziemnych, ze szczególnym uwzględnieniem technologii białej wanny oraz systemów iniekcyjnych.
     </p>
+    <p style="font-size: 0.95em; color: var(--text-gray);">
+      Pracujemy na terenie województwa śląskiego oraz małopolskiego. Dzięki wieloletniej obecności na budowach, oferujemy sprawdzone rozwiązania, które gwarantują szczelność fundamentów, garaży podziemnych i konstrukcji inżynieryjnych. Nasze doświadczenie opieramy na rzetelnym podejściu do każdego zadania.
+    </p>
   </div>
   
   <div class="stats-grid">
     <div class="stat-box"><i class="fas fa-shield-alt"></i><h3>150+</h3><p>Realizacji</p></div>
     <div class="stat-box"><i class="fas fa-tint-slash"></i><h3>10k</h3><p>m² izolacji</p></div>
-    <div class="stat-box"><i class="fas fa-hard-hat"></i><h3>BHP</h3><p>Standardy Pro</p></div>
-    <div class="stat-box"><i class="fas fa-award"></i><h3>100%</h3><p>Gwarancji</p></div>
+    <div class="stat-box"><i class="fas fa-clock"></i><h3>24h</h3><p>Kontakt</p></div>
+    <div class="stat-box"><i class="fas fa-hard-hat"></i><h3>100%</h3><p>Rzetelności</p></div>
   </div>
 </section>
 
@@ -243,6 +273,7 @@
     <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/3c6eb1e0-5e60-41e0-a0d3-403f07153da7.png" alt="Partner">
     <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/MUR.WA_BIG.png" alt="Partner">
     <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/a1fdd290-bf83-4140-9243-afb6e145b466.png" alt="Partner">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/9f8935dc-e6d5-4804-a198-5029be30a128.png" alt="Partner">
   </div>
 </section>
 
@@ -280,30 +311,20 @@
 </footer>
 
 <div id="cookie-banner">
-  Strona korzysta z plików cookies. <button onclick="acceptCookies()">Akceptuję</button>
+  Strona korzysta z plików cookies. <a href="polityka-prywatnosci.html" style="color: #fff;">Więcej</a>.
+  <button onclick="acceptCookies()">Akceptuję</button>
 </div>
 
 <button onclick="topFunction()" id="toTopBtn"><i class="fas fa-chevron-up"></i></button>
 
 <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const mainMenu = document.getElementById('mainMenu');
-
-  menuToggle.addEventListener('click', () => {
-    mainMenu.classList.toggle('active');
-    const icon = menuToggle.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
-  });
-
-  document.querySelectorAll('.nav-right a').forEach(link => {
-    link.addEventListener('click', () => {
-      mainMenu.classList.remove('active');
-      const icon = menuToggle.querySelector('i');
-      icon.classList.add('fa-bars');
-      icon.classList.remove('fa-times');
-    });
-  });
+  // Funkcja rozwijania menu mobilnego
+  function toggleMenu() {
+    const menu = document.getElementById("mainMenu");
+    if (window.innerWidth <= 768) {
+      menu.classList.toggle("active");
+    }
+  }
 
   const topBtn = document.getElementById("toTopBtn");
   window.onscroll = function() { topBtn.style.display = (window.scrollY > 400) ? "block" : "none"; };
