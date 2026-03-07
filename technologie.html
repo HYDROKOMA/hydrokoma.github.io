@@ -24,38 +24,46 @@
       line-height: 1.6; overflow-x: hidden;
     }
 
-    /* NAWIGACJA GŁÓWNA Z LOGO */
+    /* NAWIGACJA */
     nav {
       display: flex; align-items: center; justify-content: space-between;
       background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px);
       padding: 0 5%; position: fixed; top: 0; width: 100%; z-index: 1000; 
       border-bottom: 1px solid var(--border-color); height: 110px;
     }
-    .nav-left img { height: 100px; filter: brightness(1.1); }
+    .nav-left { display: flex; align-items: center; gap: 20px; }
+    .nav-left img { height: 100px; filter: brightness(1.1); } /* POWIĘKSZONE LOGO */
+    
+    /* MAŁA STRZAŁKA POWROTU */
+    .back-arrow {
+      color: #fff; text-decoration: none; font-size: 1.2rem;
+      padding: 10px; border: 1px solid var(--border-color);
+      border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    }
+    .back-arrow:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+
     .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     .nav-right a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     .nav-right a:hover { color: var(--accent-blue); }
 
-    /* PANEL STRZAŁEK NAWIGACYJNYCH (PONIŻEJ LOGO) */
-    .action-nav {
-      position: fixed; top: 130px; left: 0; width: 100%; z-index: 999;
-      display: flex; justify-content: space-between; padding: 0 5%; pointer-events: none;
+    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: #fff; }
+
+    @media (max-width: 900px) {
+      nav { height: 85px; padding: 0 4%; }
+      .nav-left img { height: 70px; }
+      .nav-right {
+        display: none; position: fixed; top: 85px; left: 0; width: 100%; 
+        background: var(--bg-dark); padding: 30px; border-bottom: 1px solid var(--border-color);
+      }
+      .nav-right.active { display: block; }
+      .nav-right ul { flex-direction: column; gap: 20px; text-align: center; }
+      .nav-right a { font-size: 1rem; }
+      .hamburger { display: block; }
     }
-    .action-group { display: flex; flex-direction: column; gap: 10px; pointer-events: auto; }
-    
-    .arrow-btn {
-      background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(8px);
-      border: 1px solid var(--border-color); color: #fff;
-      text-decoration: none; padding: 12px 18px; border-radius: 4px;
-      display: flex; align-items: center; gap: 12px;
-      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-    }
-    .arrow-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); background: #000; }
-    .arrow-btn i { color: var(--accent-blue); font-size: 0.9rem; }
 
     /* HEADER */
     .tech-header {
-      padding: 220px 20px 100px; text-align: center;
+      padding: 200px 20px 100px; text-align: center;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(10,10,10,1)), 
                   url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Zbrojenie-betonowanie-technologie .jpg') center/cover;
     }
@@ -70,7 +78,7 @@
       background: var(--card-bg); border: 1px solid var(--border-color); 
       border-radius: 8px; overflow: hidden;
     }
-    .tech-item:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
+    .tech-item:hover { border-color: var(--accent-blue); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15); }
     .tech-item:nth-child(even) { direction: rtl; }
     .tech-item:nth-child(even) .tech-desc { direction: ltr; }
     .tech-img { width: 100%; min-height: 480px; background-size: cover; background-position: center; }
@@ -82,6 +90,7 @@
     .tech-list { list-style: none; padding: 0; margin: 0; }
     .tech-list li { background: rgba(255,255,255,0.03); padding: 18px; margin-bottom: 12px; border: 1px solid var(--border-color); border-radius: 4px; }
     .tech-list li strong { display: block; color: var(--accent-blue); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px; }
+    .tech-list li span { color: #ccc; font-size: 0.9rem; }
 
     .service-link {
       display: inline-block; margin-top: 20px; padding: 14px 30px; 
@@ -90,29 +99,29 @@
     }
     .service-link:hover { background: var(--accent-blue); }
 
-    /* PARTNERZY */
+    /* SEKCJA PARTNERÓW */
     .tech-partners { text-align: center; padding: 60px 20px; background: #080808; border-top: 1px solid var(--border-color); }
-    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 20px; }
-    .partner-name { color: #fff; font-weight: 700; letter-spacing: 2px; font-size: 1.1rem; opacity: 0.7; }
+    .tech-partners h3 { font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; }
+    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: center; }
+    .partner-name { color: #fff; font-weight: 700; letter-spacing: 2px; font-size: 1rem; opacity: 0.7; }
 
     /* FAQ */
     .faq-container { max-width: 900px; margin: 100px auto; padding: 0 20px; }
     .faq-header { text-align: center; margin-bottom: 50px; }
+    .faq-header h2 { font-family: 'Montserrat'; font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent-blue); }
     .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 4px; overflow: hidden; }
     .faq-question { padding: 25px 30px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #fff; }
-    .faq-answer { padding: 0 30px; max-height: 0; overflow: hidden; transition: 0.3s; color: var(--text-gray); }
+    .faq-question:hover { background: #1a1a1a; }
+    .faq-answer { padding: 0 30px; max-height: 0; overflow: hidden; transition: 0.3s; color: var(--text-gray); font-size: 0.95rem; }
     .faq-item.active .faq-answer { padding: 0 30px 30px; max-height: 500px; }
-    .faq-footer { text-align: center; margin-top: 30px; }
+    .faq-item.active .faq-question i { transform: rotate(180deg); }
 
     footer { padding: 50px; border-top: 1px solid var(--border-color); text-align: center; color: #444; font-size: 0.8rem; }
 
     @media (max-width: 900px) {
       .tech-item, .tech-item:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
-      nav { height: 80px; }
-      .nav-left img { height: 60px; }
-      .action-nav { top: 90px; padding: 0 10px; }
-      .arrow-btn span { display: none; } /* Same ikonki na mobile, żeby nie zasłaniały treści */
-      .nav-right { display: none; }
+      .tech-desc { padding: 30px 20px; }
+      .tech-img { min-height: 280px; }
     }
   </style>
 </head>
@@ -120,32 +129,25 @@
 
 <nav>
   <div class="nav-left">
+    <a href="index.html" class="back-arrow" title="Powrót do strony głównej"><i class="fas fa-chevron-left"></i></a>
     <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/logo_hydrokoma_white_clear.png" alt="Logo"></a>
   </div>
-  <div class="nav-right">
+  
+  <div class="hamburger" id="hamburger-btn">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="nav-right" id="mobile-menu">
     <ul>
       <li><a href="index.html">Strona Główna</a></li>
       <li><a href="wspolpraca.html">Współpraca</a></li>
+      <li><a href="serwis.html">Serwis</a></li>
+      <li><a href="index.html#projects">Realizacje</a></li>
+      <li><a href="polityka-prywatnosci.html">Polityka Prywatności</a></li>
       <li><a href="index.html#contact">Kontakt</a></li>
     </ul>
   </div>
 </nav>
-
-<div class="action-nav">
-  <div class="action-group">
-    <a href="index.html" class="arrow-btn">
-      <i class="fas fa-chevron-left"></i> <span>Powrót do strony głównej</span>
-    </a>
-  </div>
-  <div class="action-group">
-    <a href="wspolpraca.html" class="arrow-btn">
-      <span>Oferta Współpracy</span> <i class="fas fa-chevron-right"></i>
-    </a>
-    <a href="serwis.html" class="arrow-btn">
-      <span>Serwis i Naprawy</span> <i class="fas fa-chevron-right"></i>
-    </a>
-  </div>
-</div>
 
 <header class="tech-header">
   <h1>Rozwiązania Techniczne</h1>
@@ -164,8 +166,6 @@
       </ul>
     </div>
   </div>
-
-  
 
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3743.jpeg');"></div>
@@ -217,7 +217,7 @@
 
 <div class="faq-container">
   <div class="faq-header">
-    <h2 style="font-family: 'Montserrat'; text-transform: uppercase; color: var(--accent-blue); letter-spacing: 2px;">Baza Wiedzy / FAQ</h2>
+    <h2>Baza Wiedzy / FAQ</h2>
     <p style="font-size: 1.5rem; font-weight: 300; margin-top: 10px;">Masz pytania? Mamy odpowiedzi.</p>
   </div>
 
@@ -228,21 +228,21 @@
 
   <div class="faq-item">
     <div class="faq-question">Czy Biała Wanna wymaga dodatkowych powłok? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">W klasycznym systemie nie. Prawidłowo zaprojektowany i wykonany beton szczelny jest barierą samą w sobie, co znacząco obniża koszty inwestycji.</div>
+    <div class="faq-answer">W klasycznym systemie nie. Prawidłowo zaprojektowany i wykonany beton szczelny jest barierą samą w sobie.</div>
   </div>
 
   <div class="faq-item">
     <div class="faq-question">Kiedy najlepiej montować węże iniekcyjne? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">Węże montuje się na etapie zbrojenia, tuż przed betonowaniem przerw roboczych. Jest to "bezpiecznik" na przyszłość.</div>
+    <div class="faq-answer">Węże montuje się na etapie zbrojenia, tuż przed betonowaniem przerw roboczych.</div>
   </div>
 
   <div class="faq-item">
     <div class="faq-question">Na jakim obszarze świadczycie usługi? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">Głównie Śląsk oraz Małopolska. Przy większych projektach działamy w całej Polsce.</div>
+    <div class="faq-answer">Głównie Śląsk oraz Małopolska.</div>
   </div>
 
-  <div class="faq-footer">
-    Nie znalazłeś odpowiedzi? <a href="index.html#contact" style="color: var(--accent-blue); text-decoration: none;">Zadaj pytanie bezpośrednio →</a>
+  <div class="faq-footer" style="text-align: center; margin-top: 30px;">
+    Nie znalazłeś odpowiedzi? <a href="index.html#contact" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">Zadaj pytanie bezpośrednio →</a>
   </div>
 </div>
 
@@ -251,11 +251,22 @@
 </footer>
 
 <script>
+  // FAQ toggle
   document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
       const item = question.parentElement;
       item.classList.toggle('active');
     });
+  });
+
+  // Mobile Menu toggle
+  const btn = document.getElementById('hamburger-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    const icon = btn.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
   });
 </script>
 
