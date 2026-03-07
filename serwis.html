@@ -7,6 +7,7 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   
   <style>
     :root {
@@ -26,6 +27,7 @@
       margin: 0; 
       padding: 0; 
       line-height: 1.6; 
+      overflow-x: hidden;
     }
 
     /* UJEDNOLICONA NAWIGACJA */
@@ -33,38 +35,40 @@
       display: flex; align-items: center; justify-content: space-between;
       background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px);
       padding: 0 5%; position: fixed; top: 0; width: 100%; z-index: 1000; 
-      border-bottom: 1px solid var(--border-color); height: 80px;
+      border-bottom: 1px solid var(--border-color); height: 110px;
     }
-    .nav-left img { height: 75px; filter: brightness(1.1); }
+    .nav-left img { height: 100px; filter: brightness(1.1); vertical-align: middle; }
+    
     .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     .nav-right a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     .nav-right a:hover { color: var(--accent-blue); }
 
-    /* HEADER */
+    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: #fff; }
+
+    /* Nagłówek Hero */
     .section-header {
-      padding: 180px 20px 100px;
+      padding: 220px 20px 100px;
       text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(10,10,10,1)), 
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(10,10,10,1)), 
                   url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3712.jpeg') center/cover;
     }
     .section-header h1 { 
       font-family: 'Montserrat', sans-serif; 
-      font-size: clamp(2rem, 5vw, 3.5rem); 
+      font-size: clamp(1.8rem, 5vw, 3.2rem); 
       text-transform: uppercase; 
-      letter-spacing: 5px; 
+      letter-spacing: 4px; 
       margin: 0;
-      color: #fff;
     }
     .section-header p { 
       color: var(--accent-blue); 
-      letter-spacing: 3px; 
+      letter-spacing: 2px; 
       font-weight: 300; 
-      margin-top: 20px; 
+      margin-top: 15px; 
       text-transform: uppercase; 
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
-    .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+    .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
 
     .back-btn { 
       display: inline-block; 
@@ -79,89 +83,66 @@
     }
     .back-btn:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
 
-    .service-desc { color: var(--text-gray); font-size: 1.1rem; margin-bottom: 40px; }
+    h2 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin-top: 60px; margin-bottom: 30px; border-left: 3px solid var(--accent-blue); padding-left: 15px; }
 
-    /* LISTA SPECJALIZACJI */
-    h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1px; color: #fff; margin-top: 50px; }
-    
-    ul { list-style: none; padding: 0; }
-    ul li { 
-      background: var(--card-bg); 
-      margin-bottom: 12px; 
-      padding: 22px; 
-      border-radius: 4px; 
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-    }
-    ul li i { 
-      color: var(--accent-blue); 
-      margin-right: 20px; 
-      font-size: 1.2rem;
-    }
+    /* MAPA */
+    #map { height: 450px; width: 100%; border-radius: 4px; border: 1px solid var(--border-color); margin-bottom: 15px; }
+    .location-info { text-align: center; color: var(--text-gray); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 60px; }
 
-    /* KONTAKT BOX */
+    /* GRID USŁUG I SPRZĘTU */
+    .grid-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 40px; }
+    .feature-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        padding: 40px;
+        border-radius: 4px;
+    }
+    .feature-card h3 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent-blue); margin-bottom: 25px; }
+    .feature-list { list-style: none; padding: 0; margin: 0; }
+    .feature-list li { padding: 12px 0; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #eee; display: flex; align-items: center; }
+    .feature-list li i { color: var(--accent-blue); margin-right: 12px; font-size: 0.9rem; width: 20px; text-align: center; }
+
+    /* KROKI */
+    .steps-container { margin: 60px 0; }
+    .step { display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start; }
+    .step-num { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 700; color: #1a1a1a; line-height: 1; min-width: 60px; }
+    .step-content h3 { font-family: 'Montserrat', sans-serif; margin: 0 0 10px; text-transform: uppercase; font-size: 1.1rem; color: var(--accent-blue); }
+    .step-content p { color: #ccc; margin: 0; font-size: 0.95rem; }
+
+    /* ALERT BOX */
     .alert-box { 
-      background: var(--card-bg); 
-      color: #fff; 
-      padding: 50px; 
-      border-radius: 4px; 
-      margin-top: 60px; 
-      text-align: center; 
-      border: 1px solid var(--accent-blue);
-      box-shadow: 0 10px 30px rgba(52, 152, 219, 0.1);
+      background: var(--card-bg); color: #fff; padding: 60px 20px; border-radius: 4px; 
+      margin-top: 80px; text-align: center; border: 1px solid var(--accent-blue);
     }
-    .alert-box h3 { margin-top: 0; color: var(--accent-blue); text-transform: uppercase; }
-    .alert-box p { color: var(--text-gray); margin-bottom: 5px; }
-    .alert-box a { 
-      color: #fff; 
-      font-weight: 700; 
-      text-decoration: none; 
-      font-size: 2rem; 
-      display: block;
-      margin-top: 10px;
-      font-family: 'Montserrat', sans-serif;
-    }
+    .alert-box h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px; color: var(--accent-blue); }
+    .alert-box a { color: #fff; font-weight: 700; text-decoration: none; font-size: 2.2rem; display: block; margin-top: 15px; font-family: 'Montserrat', sans-serif; }
     .alert-box a:hover { color: var(--accent-blue); }
-    
-    /* NASTĘPNY KROK */
+
+    /* Następny Krok */
     .next-step-box { 
-      margin-top: 80px; 
-      padding: 40px 0; 
-      border-top: 1px solid var(--border-color); 
-      display: flex; 
-      justify-content: flex-end; 
+      margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--border-color); 
+      display: flex; justify-content: flex-end; 
     }
-    .next-step-link { 
-      text-decoration: none; 
-      color: #fff; 
-      text-align: right; 
-    }
-    .next-step-link span { 
-      display: block; 
-      font-size: 0.75rem; 
-      text-transform: uppercase; 
-      letter-spacing: 2px; 
-      color: var(--text-gray); 
-      margin-bottom: 8px;
-    }
-    .next-step-link .title { 
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.4rem; 
-      font-weight: 700; 
-      color: #fff;
-      text-transform: uppercase;
-    }
+    .next-step-link { text-decoration: none; color: #fff; text-align: right; }
+    .next-step-link span { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-gray); margin-bottom: 8px; }
+    .next-step-link .title { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 700; text-transform: uppercase; }
     .next-step-link:hover .title { color: var(--accent-blue); }
 
-    /* STOPKA */
     footer { padding: 50px; border-top: 1px solid var(--border-color); text-align: center; color: #444; font-size: 0.8rem; }
 
-    @media (max-width: 600px) {
-      .nav-right { display: none; }
-      .alert-box a { font-size: 1.4rem; }
-      .section-header { padding-top: 140px; }
-      .section-header h1 { font-size: 1.8rem; }
+    @media (max-width: 900px) {
+      nav { height: 90px; }
+      .nav-left img { height: 75px; }
+      .nav-right {
+        display: none; position: fixed; top: 90px; left: 0; width: 100%; 
+        background: var(--bg-dark); padding: 30px; border-bottom: 1px solid var(--border-color);
+      }
+      .nav-right.active { display: block; }
+      .nav-right ul { flex-direction: column; gap: 20px; text-align: center; }
+      .hamburger { display: block; }
+      .section-header { padding-top: 160px; }
+      .step { flex-direction: column; gap: 10px; }
+      .alert-box a { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -171,11 +152,18 @@
     <div class="nav-left">
       <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/logo_hydrokoma_white_clear.png" alt="Logo"></a>
     </div>
-    <div class="nav-right">
+    
+    <div class="hamburger" id="hamburger-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="nav-right" id="mobile-menu">
       <ul>
         <li><a href="index.html">Strona Główna</a></li>
         <li><a href="technologie.html">Technologie</a></li>
         <li><a href="wspolpraca.html">Współpraca</a></li>
+        <li><a href="index.html#projekty">Projekty</a></li>
+        <li><a href="polityka-prywatnosci.html">Polityka Prywatności</a></li>
         <li><a href="index.html#contact">Kontakt</a></li>
       </ul>
     </div>
@@ -183,33 +171,78 @@
 
   <header class="section-header">
     <h1>Serwis i Naprawy</h1>
-    <p>Hydroizolacyjne rozwiązania naprawcze</p>
+    <p>Mobilne pogotowie hydroizolacyjne</p>
   </header>
 
   <div class="container">
     <a href="index.html" class="back-btn">← POWRÓT DO STRONY GŁÓWNEJ</a>
     
-    <p class="service-desc">Naprawiamy to, co inni skazali na porażkę. Skutecznie eliminujemy przecieki w istniejących obiektach, przywracając im pełną funkcjonalność bez konieczności kosztownych wykopów.</p>
-    
-    <h3>Nasze specjalizacje serwisowe:</h3>
-    <ul>
-      <li><i class="fas fa-check-circle"></i> Uszczelnianie rys i pęknięć metodą iniekcji ciśnieniowej.</li>
-      <li><i class="fas fa-check-circle"></i> Naprawa przeciekających dylatacji i przerw roboczych.</li>
-      <li><i class="fas fa-check-circle"></i> Odtwarzanie izolacji pionowej i poziomej bez wykopów (iniekcja kurtynowa).</li>
-      <li><i class="fas fa-check-circle"></i> Tamowanie aktywnych wycieków pod dużym ciśnieniem wody.</li>
-    </ul>
+    <p style="font-size: 1.2rem; font-weight: 300; color: #ccc; margin-bottom: 40px;">
+        Specjalizujemy się w naprawach konstrukcji żelbetowych i murowych. Eliminujemy przecieki tam, gdzie tradycyjne metody zawodzą, działając precyzyjnie i bez zbędnych wykopów.
+    </p>
 
-    
+    <h2>Obszar Działania</h2>
+    <div id="map"></div>
+    <p class="location-info">Śląsk • Małopolska • Katowice, Kraków, Gliwice, Sosnowiec i okolice</p>
+
+    <h2>Gdzie szukać przyczyn?</h2>
+    <div class="grid-section">
+        <div class="feature-card">
+            <h3>Typowe Usterki</h3>
+            <ul class="feature-list">
+                <li><i class="fas fa-droplet"></i> Przecieki na przerwach roboczych</li>
+                <li><i class="fas fa-bolt"></i> Nieszczelne dylatacje garażowe</li>
+                <li><i class="fas fa-faucet"></i> Wycieki przy przepustach rur</li>
+                <li><i class="fas fa-crutch"></i> Pęknięcia osiadające ścian</li>
+                <li><i class="fas fa-water"></i> Aktywne przebicia pod ciśnieniem</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h3>Technologia Serwisowa</h3>
+            <ul class="feature-list">
+                <li><i class="fas fa-vial"></i> Żywice poliuretanowe i akrylowe</li>
+                <li><i class="fas fa-cog"></i> Pompy iniekcyjne wysokociśnieniowe</li>
+                <li><i class="fas fa-wind"></i> Przemysłowe pompy osuszające</li>
+                <li><i class="fas fa-tachometer-alt"></i> Mierniki wilgotności podłoża</li>
+                <li><i class="fas fa-shield-alt"></i> Certyfikowana chemia budowlana</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Proces realizacji</h2>
+    <div class="steps-container">
+        <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+                <h3>Bezpłatna diagnostyka</h3>
+                <p>Analizujemy dokumentację zdjęciową lub przeprowadzamy wizję lokalną, aby określić źródło problemu bez żadnych kosztów wstępnych.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+                <h3>Darmowa wycena i dobór metody</h3>
+                <p>Przygotowujemy precyzyjny kosztorys naprawy, dobierając technologię (iniekcja, osuszanie, izolacja strukturalna) do budżetu i wymagań obiektu.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+                <h3>Szybka interwencja</h3>
+                <p>Przystępujemy do prac naprawczych. Dzięki własnemu zapleczu sprzętowemu jesteśmy w stanie zareagować w krótkim czasie na terenie całego regionu.</p>
+            </div>
+        </div>
+    </div>
 
     <div class="alert-box">
-      <h3>POTRZEBNA EKSPERTYZA?</h3>
-      <p>Skontaktuj się z nami:</p>
-      <a href="tel:+48512308538">+48 512 308 538</a>
+        <h3>MASZ PROBLEM Z WODĄ?</h3>
+        <p>Zadzwoń po darmową wycenę i pomoc techniczną:</p>
+        <a href="tel:+48512308538">+48 512 308 538</a>
     </div>
 
     <div class="next-step-box">
       <a href="technologie.html" class="next-step-link">
-        <span>Interesują Cię systemy prewencyjne?</span>
+        <span>Ciekawy jak to robimy?</span>
         <div class="title">Poznaj nasze technologie →</div>
       </a>
     </div>
@@ -217,8 +250,39 @@
   </div>
 
   <footer>
-    <p>© 2026 Hydrokoma Sp. z o.o. | Katowice | Kraków | Gliwice </p>
+    <p>© 2026 Hydrokoma Sp. z o.o. | Katowice | Kraków | Gliwice</p>
   </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Menu
+    const btn = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      const icon = btn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Mapa
+    const map = L.map('map', { scrollWheelZoom: false }).setView([50.15, 19.15], 9);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+
+    const locations = [
+      { name: "Katowice", lat: 50.2649, lng: 19.0238 }, { name: "Sosnowiec", lat: 50.2863, lng: 19.1046 },
+      { name: "Gliwice", lat: 50.2945, lng: 18.6714 }, { name: "Zabrze", lat: 50.3081, lng: 18.7857 },
+      { name: "Chorzów", lat: 50.2977, lng: 18.9542 }, { name: "Tychy", lat: 50.1233, lng: 18.9918 },
+      { name: "Siewierz", lat: 50.4744, lng: 19.2341 }, { name: "Bielsko-Biała", lat: 49.8225, lng: 19.0444 },
+      { name: "Kraków", lat: 50.0647, lng: 19.9450 }, { name: "Wieliczka", lat: 49.9871, lng: 20.0647 }
+    ];
+
+    locations.forEach(loc => {
+      L.circleMarker([loc.lat, loc.lng], {
+        color: '#3498db', fillColor: '#3498db', fillOpacity: 0.8, radius: 6
+      }).addTo(map).bindPopup(loc.name);
+    });
+  </script>
 
 </body>
 </html>
