@@ -24,17 +24,25 @@
       line-height: 1.6; overflow-x: hidden;
     }
 
-    /* NAWIGACJA */
-    nav {
-      display: flex; align-items: center; justify-content: space-between;
-      background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px);
-      padding: 0 5%; position: fixed; top: 0; width: 100%; z-index: 1000; 
-      border-bottom: 1px solid var(--border-color); height: 80px;
+    /* NAWIGACJA STRZAŁKOWA */
+    .smart-nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 2000;
+      padding: 20px 5%; display: flex; justify-content: space-between;
+      pointer-events: none;
     }
-    .nav-left img { height: 75px; filter: brightness(1.1); }
-    .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
-    .nav-right a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-    .nav-right a:hover { color: var(--accent-blue); }
+
+    .nav-group { display: flex; flex-direction: column; gap: 12px; pointer-events: auto; }
+
+    .nav-arrow-btn {
+      background: rgba(20, 20, 20, 0.9); backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color); color: #fff;
+      text-decoration: none; padding: 12px 20px; border-radius: 4px;
+      display: flex; align-items: center; gap: 15px;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    .nav-arrow-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); transform: translateX(5px); }
+    .nav-arrow-btn.back:hover { transform: translateX(-5px); }
 
     /* HEADER */
     .tech-header {
@@ -50,35 +58,22 @@
 
     /* ELEMENTY TECHNOLOGII */
     .tech-item { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      margin-bottom: 80px; 
-      background: var(--card-bg);
-      border: 1px solid var(--border-color); 
-      border-radius: 8px;
-      overflow: hidden;
+      display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 80px; 
+      background: var(--card-bg); border: 1px solid var(--border-color); 
+      border-radius: 8px; overflow: hidden;
     }
-    
-    .tech-item:hover { border-color: var(--accent-blue); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15); }
+    .tech-item:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
     .tech-item:nth-child(even) { direction: rtl; }
     .tech-item:nth-child(even) .tech-desc { direction: ltr; }
 
     .tech-img { width: 100%; min-height: 480px; background-size: cover; background-position: center; }
-
     .tech-desc { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
-    .tech-desc h2 { 
-      font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin: 0 0 20px; 
-      border-left: 4px solid var(--accent-blue); padding-left: 20px; text-transform: uppercase;
-    }
+    .tech-desc h2 { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin: 0 0 20px; border-left: 4px solid var(--accent-blue); padding-left: 20px; text-transform: uppercase; }
     .tech-desc p { color: var(--text-gray); font-size: 1.05rem; margin-bottom: 30px; }
 
     .tech-list { list-style: none; padding: 0; margin: 0; }
-    .tech-list li { 
-      background: rgba(255,255,255,0.03); padding: 18px; margin-bottom: 12px;
-      border: 1px solid var(--border-color); border-radius: 4px;
-    }
+    .tech-list li { background: rgba(255,255,255,0.03); padding: 18px; margin-bottom: 12px; border: 1px solid var(--border-color); border-radius: 4px; }
     .tech-list li strong { display: block; color: var(--accent-blue); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px; }
-    .tech-list li span { color: #ccc; font-size: 0.9rem; }
 
     .service-link {
       display: inline-block; margin-top: 20px; padding: 14px 30px; 
@@ -87,48 +82,49 @@
     }
     .service-link:hover { background: var(--accent-blue); }
 
-    /* SEKCJA PARTNERÓW */
-    .tech-partners { text-align: center; padding: 60px 20px; background: #080808; border-top: 1px solid var(--border-color); }
+    /* PARTNERZY */
+    .tech-partners { text-align: center; padding: 80px 20px; background: #080808; border-top: 1px solid var(--border-color); }
     .tech-partners h3 { font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; }
-    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: center; }
-    .partner-name { color: #fff; font-weight: 700; letter-spacing: 2px; font-size: 1rem; opacity: 0.7; }
+    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+    .partner-name { color: #fff; font-weight: 700; letter-spacing: 2px; font-size: 1.1rem; opacity: 0.7; }
 
     /* FAQ */
     .faq-container { max-width: 900px; margin: 100px auto; padding: 0 20px; }
     .faq-header { text-align: center; margin-bottom: 50px; }
-    .faq-header h2 { font-family: 'Montserrat'; font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent-blue); }
     .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 4px; overflow: hidden; }
     .faq-question { padding: 25px 30px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #fff; }
     .faq-question:hover { background: #1a1a1a; }
-    .faq-question i { color: var(--accent-blue); transition: 0.3s; }
     .faq-answer { padding: 0 30px; max-height: 0; overflow: hidden; transition: 0.3s; color: var(--text-gray); font-size: 0.95rem; }
     .faq-item.active .faq-answer { padding: 0 30px 30px; max-height: 500px; }
-    .faq-item.active .faq-question i { transform: rotate(180deg); }
+    .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--accent-blue); }
 
     footer { padding: 50px; border-top: 1px solid var(--border-color); text-align: center; color: #444; font-size: 0.8rem; }
 
     @media (max-width: 900px) {
       .tech-item, .tech-item:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
-      .tech-desc { padding: 30px 20px; }
-      .tech-img { min-height: 280px; }
-      .nav-right { display: none; }
+      .nav-arrow-btn span { display: none; }
+      .nav-arrow-btn { padding: 15px; border-radius: 50%; }
+      .smart-nav { padding: 10px; }
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-left">
-    <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/logo_hydrokoma_white_clear.png" alt="Logo"></a>
+<div class="smart-nav">
+  <div class="nav-group">
+    <a href="index.html" class="nav-arrow-btn back">
+      <i class="fas fa-arrow-left"></i> <span>Główna</span>
+    </a>
   </div>
-  <div class="nav-right">
-    <ul>
-      <li><a href="index.html">Strona Główna</a></li>
-      <li><a href="wspolpraca.html">Współpraca</a></li>
-      <li><a href="index.html#contact">Kontakt</a></li>
-    </ul>
+  <div class="nav-group">
+    <a href="wspolpraca.html" class="nav-arrow-btn">
+      <span>Współpraca</span> <i class="fas fa-arrow-right"></i>
+    </a>
+    <a href="serwis.html" class="nav-arrow-btn">
+      <span>Serwis i Usługi</span> <i class="fas fa-arrow-right"></i>
+    </a>
   </div>
-</nav>
+</div>
 
 <header class="tech-header">
   <h1>Rozwiązania Techniczne</h1>
@@ -190,21 +186,25 @@
   <h3>Pracujemy na systemach</h3>
   <div class="partners-logos">
     <div class="partner-name">SIKA</div>
-    
+    <div class="partner-name">MC-BAUCHEMIE</div>
+    <div class="partner-name">WEBAC</div>
+    <div class="partner-name">DRIZORO</div>
+    <div class="partner-name">TRICOSAL</div>
   </div>
 </section>
 
 <div class="faq-container">
   <div class="faq-header">
-    <h2>Baza Wiedzy / FAQ</h2>
-    <p style="font-size: 1.5rem; font-weight: 300; margin-top: 10px;">Masz pytania? Mamy odpowiedzi.</p>
+    <h2 style="font-family: 'Montserrat'; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-blue);">Baza Wiedzy / FAQ</h2>
+    <p>Odpowiedzi na najczęstsze pytania techniczne</p>
   </div>
 
   <div class="faq-item">
     <div class="faq-question">Czy technologia białej wanny jest droższa od tradycyjnych izolacji? <i class="fas fa-chevron-down"></i></div>
     <div class="faq-answer">Wbrew pozorom koszt jest porównywalny. Oszczędzamy na braku konieczności nakładania powłok bitumicznych i krótszym czasie pracy na budowie.</div>
- 
-  </div><div class="faq-item">
+  </div>
+
+  <div class="faq-item">
     <div class="faq-question">Czy Biała Wanna wymaga dodatkowych powłok? <i class="fas fa-chevron-down"></i></div>
     <div class="faq-answer">W klasycznym systemie nie. Prawidłowo zaprojektowany i wykonany beton szczelny jest barierą samą w sobie, co znacząco obniża koszty inwestycji i przyspiesza zasypywanie fundamentów.</div>
   </div>
@@ -221,16 +221,12 @@
 
   <div class="faq-item">
     <div class="faq-question">Na jakim obszarze świadczycie usługi? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">Głównie Śląsk oraz Małopolska</div>
+    <div class="faq-answer">Głównie Śląsk (Katowice, Gliwice, Tychy) oraz Małopolska (Kraków). Przy większych inwestycjach działamy na terenie całego kraju.</div>
   </div>
 
   <div class="faq-item">
     <div class="faq-question">Czy wystawiacie gwarancję na wykonane prace? <i class="fas fa-chevron-down"></i></div>
     <div class="faq-answer">Tak, na każdą realizację wystawiamy pisemną gwarancję obiektową (standardowo od 5 do 10 lat dla systemów białej wanny).</div>
-  </div>
-
-  <div class="faq-footer">
-    Nie znalazłeś odpowiedzi? <a href="index.html#contact" style="color: var(--accent-blue); text-decoration: none;">Zadaj pytanie bezpośrednio →</a>
   </div>
 </div>
 
@@ -242,7 +238,13 @@
   document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
       const item = question.parentElement;
-      item.classList.toggle('active');
+      const wasActive = item.classList.contains('active');
+      
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      
+      if (!wasActive) {
+        item.classList.add('active');
+      }
     });
   });
 </script>
