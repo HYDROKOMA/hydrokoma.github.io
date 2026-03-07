@@ -24,46 +24,38 @@
       line-height: 1.6; overflow-x: hidden;
     }
 
-    /* NAWIGACJA */
+    /* UJEDNOLICONA NAWIGACJA */
     nav {
       display: flex; align-items: center; justify-content: space-between;
       background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px);
       padding: 0 5%; position: fixed; top: 0; width: 100%; z-index: 1000; 
-      border-bottom: 1px solid var(--border-color); height: 110px;
+      border-bottom: 1px solid var(--border-color); height: 110px; /* Większe dla logo */
     }
-    .nav-left { display: flex; align-items: center; gap: 20px; }
-    .nav-left img { height: 100px; filter: brightness(1.1); } /* POWIĘKSZONE LOGO */
+    .nav-left img { height: 100px; filter: brightness(1.1); vertical-align: middle; }
     
-    /* MAŁA STRZAŁKA POWROTU */
-    .back-arrow {
-      color: #fff; text-decoration: none; font-size: 1.2rem;
-      padding: 10px; border: 1px solid var(--border-color);
-      border-radius: 4px; display: flex; align-items: center; justify-content: center;
-    }
-    .back-arrow:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
-
     .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     .nav-right a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     .nav-right a:hover { color: var(--accent-blue); }
 
     .hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: #fff; }
 
-    @media (max-width: 900px) {
-      nav { height: 85px; padding: 0 4%; }
-      .nav-left img { height: 70px; }
-      .nav-right {
-        display: none; position: fixed; top: 85px; left: 0; width: 100%; 
-        background: var(--bg-dark); padding: 30px; border-bottom: 1px solid var(--border-color);
-      }
-      .nav-right.active { display: block; }
-      .nav-right ul { flex-direction: column; gap: 20px; text-align: center; }
-      .nav-right a { font-size: 1rem; }
-      .hamburger { display: block; }
+    /* MAŁA STRZAŁKA POWROTU (JAK W SERWISIE) */
+    .back-btn { 
+      display: inline-block; 
+      margin-bottom: 30px; 
+      color: var(--text-gray); 
+      text-decoration: none; 
+      font-size: 0.75rem; 
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--border-color); 
+      padding-bottom: 5px; 
     }
+    .back-btn:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
 
     /* HEADER */
     .tech-header {
-      padding: 200px 20px 100px; text-align: center;
+      padding: 220px 20px 100px; text-align: center;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(10,10,10,1)), 
                   url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Zbrojenie-betonowanie-technologie .jpg') center/cover;
     }
@@ -90,7 +82,6 @@
     .tech-list { list-style: none; padding: 0; margin: 0; }
     .tech-list li { background: rgba(255,255,255,0.03); padding: 18px; margin-bottom: 12px; border: 1px solid var(--border-color); border-radius: 4px; }
     .tech-list li strong { display: block; color: var(--accent-blue); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px; }
-    .tech-list li span { color: #ccc; font-size: 0.9rem; }
 
     .service-link {
       display: inline-block; margin-top: 20px; padding: 14px 30px; 
@@ -99,7 +90,7 @@
     }
     .service-link:hover { background: var(--accent-blue); }
 
-    /* SEKCJA PARTNERÓW */
+    /* PARTNERZY */
     .tech-partners { text-align: center; padding: 60px 20px; background: #080808; border-top: 1px solid var(--border-color); }
     .tech-partners h3 { font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; }
     .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: center; }
@@ -119,6 +110,15 @@
     footer { padding: 50px; border-top: 1px solid var(--border-color); text-align: center; color: #444; font-size: 0.8rem; }
 
     @media (max-width: 900px) {
+      nav { height: 90px; }
+      .nav-left img { height: 75px; }
+      .nav-right {
+        display: none; position: fixed; top: 90px; left: 0; width: 100%; 
+        background: var(--bg-dark); padding: 30px; border-bottom: 1px solid var(--border-color);
+      }
+      .nav-right.active { display: block; }
+      .nav-right ul { flex-direction: column; gap: 20px; text-align: center; }
+      .hamburger { display: block; }
       .tech-item, .tech-item:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
       .tech-desc { padding: 30px 20px; }
       .tech-img { min-height: 280px; }
@@ -129,7 +129,6 @@
 
 <nav>
   <div class="nav-left">
-    <a href="index.html" class="back-arrow" title="Powrót do strony głównej"><i class="fas fa-chevron-left"></i></a>
     <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/logo_hydrokoma_white_clear.png" alt="Logo"></a>
   </div>
   
@@ -142,7 +141,7 @@
       <li><a href="index.html">Strona Główna</a></li>
       <li><a href="wspolpraca.html">Współpraca</a></li>
       <li><a href="serwis.html">Serwis</a></li>
-      <li><a href="index.html#projects">Realizacje</a></li>
+      <li><a href="index.html#projekty">Realizacje</a></li>
       <li><a href="polityka-prywatnosci.html">Polityka Prywatności</a></li>
       <li><a href="index.html#contact">Kontakt</a></li>
     </ul>
@@ -155,6 +154,8 @@
 </header>
 
 <div class="tech-container">
+  <a href="index.html" class="back-btn">← POWRÓT DO STRONY GŁÓWNEJ</a>
+
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/184d92e8-35aa-4c26-a791-1afccdf575a9.jpeg');"></div>
     <div class="tech-desc">
