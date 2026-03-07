@@ -29,21 +29,24 @@
       overflow-x: hidden;
     }
 
-    /* Nawigacja */
+    /* UJEDNOLICONA NAWIGACJA */
     nav {
       display: flex; align-items: center; justify-content: space-between;
       background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px);
       padding: 0 5%; position: fixed; top: 0; width: 100%; z-index: 1000; 
-      border-bottom: 1px solid var(--border-color); height: 80px;
+      border-bottom: 1px solid var(--border-color); height: 110px;
     }
-    .nav-left img { height: 75px; filter: brightness(1.1); }
+    .nav-left img { height: 100px; filter: brightness(1.1); vertical-align: middle; }
+    
     .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     .nav-right a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     .nav-right a:hover { color: var(--accent-blue); }
 
+    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: #fff; }
+
     /* Nagłówek Hero */
     .section-header {
-      padding: 180px 20px 100px;
+      padding: 220px 20px 100px;
       text-align: center;
       background: linear-gradient(rgba(0,0,0,0.8), rgba(10,10,10,1)), 
                   url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_9496.jpeg') center/cover;
@@ -66,10 +69,17 @@
 
     .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
 
+    /* STRZAŁKA POWROTU (UJEDNOLICONA) */
     .back-btn { 
-      display: inline-block; margin-bottom: 30px; color: var(--text-gray); 
-      text-decoration: none; font-size: 0.75rem; font-weight: 600;
-      letter-spacing: 1px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; 
+      display: inline-block; 
+      margin-bottom: 30px; 
+      color: var(--text-gray); 
+      text-decoration: none; 
+      font-size: 0.75rem; 
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--border-color); 
+      padding-bottom: 5px; 
     }
     .back-btn:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
 
@@ -80,7 +90,7 @@
     .step h3 { font-family: 'Montserrat', sans-serif; margin: 0 0 10px; text-transform: uppercase; font-size: 1.1rem; color: var(--accent-blue); }
     .step p { color: #ccc; margin: 0; font-size: 0.95rem; }
 
-    /* Nowa Sekcja: Dla kogo i Zakres (Kafelki) */
+    /* Kafelki */
     .grid-section { 
         display: grid; 
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -115,7 +125,7 @@
     }
     .feature-list li i { color: var(--accent-blue); margin-right: 12px; font-size: 0.8rem; }
 
-    /* Dlaczego My - Ikony */
+    /* Dlaczego My */
     .why-us { background: #050505; padding: 80px 20px; margin: 80px -20px; text-align: center; }
     .why-grid { 
         display: grid; 
@@ -142,10 +152,20 @@
     .next-step-link .title { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 700; text-transform: uppercase; }
     .next-step-link:hover .title { color: var(--accent-blue); }
 
-    @media (max-width: 768px) {
-      .nav-right { display: none; }
+    footer { padding: 50px; border-top: 1px solid var(--border-color); text-align: center; color: #444; font-size: 0.8rem; }
+
+    @media (max-width: 900px) {
+      nav { height: 90px; }
+      .nav-left img { height: 75px; }
+      .nav-right {
+        display: none; position: fixed; top: 90px; left: 0; width: 100%; 
+        background: var(--bg-dark); padding: 30px; border-bottom: 1px solid var(--border-color);
+      }
+      .nav-right.active { display: block; }
+      .nav-right ul { flex-direction: column; gap: 20px; text-align: center; }
+      .hamburger { display: block; }
+      .section-header { padding-top: 160px; }
       .step { flex-direction: column; gap: 10px; }
-      .section-header { padding-top: 140px; }
     }
   </style>
 </head>
@@ -155,11 +175,19 @@
     <div class="nav-left">
       <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/logo_hydrokoma_white_clear.png" alt="Logo"></a>
     </div>
-    <div class="nav-right">
+    
+    <div class="hamburger" id="hamburger-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="nav-right" id="mobile-menu">
       <ul>
         <li><a href="index.html">Strona Główna</a></li>
         <li><a href="technologie.html">Technologie</a></li>
         <li><a href="serwis.html">Serwis</a></li>
+        <li><a href="index.html#projekty">Realizacje</a></li>
+        <li><a href="polityka-prywatnosci.html">Polityka Prywatności</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
       </ul>
     </div>
   </nav>
@@ -170,7 +198,7 @@
   </header>
 
   <div class="container">
-    <a href="index.html" class="back-btn">← POWRÓT</a>
+    <a href="index.html" class="back-btn">← POWRÓT DO STRONY GŁÓWNEJ</a>
     
     <p style="font-size: 1.2rem; font-weight: 300; color: #ccc; margin-bottom: 60px;">
         Hydrokoma to nie tylko wykonawca, to <strong>partner techniczny</strong> na każdym etapie budowy. Dostarczamy rozwiązania tam, gdzie liczy się bezwzględna szczelność.
@@ -247,9 +275,21 @@
 
   </div>
 
-  <footer style="text-align: center; padding: 40px; color: #444; font-size: 0.8rem; border-top: 1px solid var(--border-color);">
-    © 2026 Hydrokoma Sp. z o.o.
+  <footer>
+    <p>© 2026 Hydrokoma Sp. z o.o. | Katowice | Kraków | Gliwice</p>
   </footer>
+
+  <script>
+    // Mobile Menu toggle
+    const btn = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      const icon = btn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
 
 </body>
 </html>
