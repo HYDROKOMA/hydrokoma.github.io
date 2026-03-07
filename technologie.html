@@ -24,29 +24,38 @@
       line-height: 1.6; overflow-x: hidden;
     }
 
-    /* NAWIGACJA STRZAŁKOWA */
-    .smart-nav {
-      position: fixed; top: 0; left: 0; width: 100%; z-index: 2000;
-      padding: 20px 5%; display: flex; justify-content: space-between;
-      pointer-events: none;
+    /* NAWIGACJA GŁÓWNA Z LOGO */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px);
+      padding: 0 5%; position: fixed; top: 0; width: 100%; z-index: 1000; 
+      border-bottom: 1px solid var(--border-color); height: 110px;
     }
+    .nav-left img { height: 100px; filter: brightness(1.1); }
+    .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+    .nav-right a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .nav-right a:hover { color: var(--accent-blue); }
 
-    .nav-group { display: flex; flex-direction: column; gap: 12px; pointer-events: auto; }
-
-    .nav-arrow-btn {
-      background: rgba(20, 20, 20, 0.9); backdrop-filter: blur(10px);
+    /* PANEL STRZAŁEK NAWIGACYJNYCH (PONIŻEJ LOGO) */
+    .action-nav {
+      position: fixed; top: 130px; left: 0; width: 100%; z-index: 999;
+      display: flex; justify-content: space-between; padding: 0 5%; pointer-events: none;
+    }
+    .action-group { display: flex; flex-direction: column; gap: 10px; pointer-events: auto; }
+    
+    .arrow-btn {
+      background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(8px);
       border: 1px solid var(--border-color); color: #fff;
-      text-decoration: none; padding: 12px 20px; border-radius: 4px;
-      display: flex; align-items: center; gap: 15px;
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      text-decoration: none; padding: 12px 18px; border-radius: 4px;
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
     }
-
-    .nav-arrow-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); transform: translateX(5px); }
-    .nav-arrow-btn.back:hover { transform: translateX(-5px); }
+    .arrow-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); background: #000; }
+    .arrow-btn i { color: var(--accent-blue); font-size: 0.9rem; }
 
     /* HEADER */
     .tech-header {
-      padding: 180px 20px 100px; text-align: center;
+      padding: 220px 20px 100px; text-align: center;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(10,10,10,1)), 
                   url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Zbrojenie-betonowanie-technologie .jpg') center/cover;
     }
@@ -56,7 +65,6 @@
     /* KONTENER */
     .tech-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 
-    /* ELEMENTY TECHNOLOGII */
     .tech-item { 
       display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 80px; 
       background: var(--card-bg); border: 1px solid var(--border-color); 
@@ -65,8 +73,8 @@
     .tech-item:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
     .tech-item:nth-child(even) { direction: rtl; }
     .tech-item:nth-child(even) .tech-desc { direction: ltr; }
-
     .tech-img { width: 100%; min-height: 480px; background-size: cover; background-position: center; }
+
     .tech-desc { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
     .tech-desc h2 { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin: 0 0 20px; border-left: 4px solid var(--accent-blue); padding-left: 20px; text-transform: uppercase; }
     .tech-desc p { color: var(--text-gray); font-size: 1.05rem; margin-bottom: 30px; }
@@ -83,9 +91,8 @@
     .service-link:hover { background: var(--accent-blue); }
 
     /* PARTNERZY */
-    .tech-partners { text-align: center; padding: 80px 20px; background: #080808; border-top: 1px solid var(--border-color); }
-    .tech-partners h3 { font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; }
-    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+    .tech-partners { text-align: center; padding: 60px 20px; background: #080808; border-top: 1px solid var(--border-color); }
+    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 20px; }
     .partner-name { color: #fff; font-weight: 700; letter-spacing: 2px; font-size: 1.1rem; opacity: 0.7; }
 
     /* FAQ */
@@ -93,35 +100,49 @@
     .faq-header { text-align: center; margin-bottom: 50px; }
     .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 4px; overflow: hidden; }
     .faq-question { padding: 25px 30px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #fff; }
-    .faq-question:hover { background: #1a1a1a; }
-    .faq-answer { padding: 0 30px; max-height: 0; overflow: hidden; transition: 0.3s; color: var(--text-gray); font-size: 0.95rem; }
+    .faq-answer { padding: 0 30px; max-height: 0; overflow: hidden; transition: 0.3s; color: var(--text-gray); }
     .faq-item.active .faq-answer { padding: 0 30px 30px; max-height: 500px; }
-    .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--accent-blue); }
+    .faq-footer { text-align: center; margin-top: 30px; }
 
     footer { padding: 50px; border-top: 1px solid var(--border-color); text-align: center; color: #444; font-size: 0.8rem; }
 
     @media (max-width: 900px) {
       .tech-item, .tech-item:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
-      .nav-arrow-btn span { display: none; }
-      .nav-arrow-btn { padding: 15px; border-radius: 50%; }
-      .smart-nav { padding: 10px; }
+      nav { height: 80px; }
+      .nav-left img { height: 60px; }
+      .action-nav { top: 90px; padding: 0 10px; }
+      .arrow-btn span { display: none; } /* Same ikonki na mobile, żeby nie zasłaniały treści */
+      .nav-right { display: none; }
     }
   </style>
 </head>
 <body>
 
-<div class="smart-nav">
-  <div class="nav-group">
-    <a href="index.html" class="nav-arrow-btn back">
-      <i class="fas fa-arrow-left"></i> <span>Główna</span>
+<nav>
+  <div class="nav-left">
+    <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/logo_hydrokoma_white_clear.png" alt="Logo"></a>
+  </div>
+  <div class="nav-right">
+    <ul>
+      <li><a href="index.html">Strona Główna</a></li>
+      <li><a href="wspolpraca.html">Współpraca</a></li>
+      <li><a href="index.html#contact">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="action-nav">
+  <div class="action-group">
+    <a href="index.html" class="arrow-btn">
+      <i class="fas fa-chevron-left"></i> <span>Powrót do strony głównej</span>
     </a>
   </div>
-  <div class="nav-group">
-    <a href="wspolpraca.html" class="nav-arrow-btn">
-      <span>Współpraca</span> <i class="fas fa-arrow-right"></i>
+  <div class="action-group">
+    <a href="wspolpraca.html" class="arrow-btn">
+      <span>Oferta Współpracy</span> <i class="fas fa-chevron-right"></i>
     </a>
-    <a href="serwis.html" class="nav-arrow-btn">
-      <span>Serwis i Usługi</span> <i class="fas fa-arrow-right"></i>
+    <a href="serwis.html" class="arrow-btn">
+      <span>Serwis i Naprawy</span> <i class="fas fa-chevron-right"></i>
     </a>
   </div>
 </div>
@@ -132,7 +153,6 @@
 </header>
 
 <div class="tech-container">
-
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/184d92e8-35aa-4c26-a791-1afccdf575a9.jpeg');"></div>
     <div class="tech-desc">
@@ -144,6 +164,8 @@
       </ul>
     </div>
   </div>
+
+  
 
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3743.jpeg');"></div>
@@ -195,8 +217,8 @@
 
 <div class="faq-container">
   <div class="faq-header">
-    <h2 style="font-family: 'Montserrat'; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-blue);">Baza Wiedzy / FAQ</h2>
-    <p>Odpowiedzi na najczęstsze pytania techniczne</p>
+    <h2 style="font-family: 'Montserrat'; text-transform: uppercase; color: var(--accent-blue); letter-spacing: 2px;">Baza Wiedzy / FAQ</h2>
+    <p style="font-size: 1.5rem; font-weight: 300; margin-top: 10px;">Masz pytania? Mamy odpowiedzi.</p>
   </div>
 
   <div class="faq-item">
@@ -206,27 +228,21 @@
 
   <div class="faq-item">
     <div class="faq-question">Czy Biała Wanna wymaga dodatkowych powłok? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">W klasycznym systemie nie. Prawidłowo zaprojektowany i wykonany beton szczelny jest barierą samą w sobie, co znacząco obniża koszty inwestycji i przyspiesza zasypywanie fundamentów.</div>
+    <div class="faq-answer">W klasycznym systemie nie. Prawidłowo zaprojektowany i wykonany beton szczelny jest barierą samą w sobie, co znacząco obniża koszty inwestycji.</div>
   </div>
 
   <div class="faq-item">
     <div class="faq-question">Kiedy najlepiej montować węże iniekcyjne? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">Węże montuje się na etapie zbrojenia, tuż przed betonowaniem przerw roboczych. Jest to "bezpiecznik", który pozwala na tanią naprawę ewentualnego przecieku w przyszłości.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">Jak długo trwa proces iniekcji ciśnieniowej? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">Większość standardowych napraw rys w garażach podziemnych wykonujemy w ciągu 1-2 dni roboczych, bez zakłócania ruchu w obiekcie.</div>
+    <div class="faq-answer">Węże montuje się na etapie zbrojenia, tuż przed betonowaniem przerw roboczych. Jest to "bezpiecznik" na przyszłość.</div>
   </div>
 
   <div class="faq-item">
     <div class="faq-question">Na jakim obszarze świadczycie usługi? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">Głównie Śląsk (Katowice, Gliwice, Tychy) oraz Małopolska (Kraków). Przy większych inwestycjach działamy na terenie całego kraju.</div>
+    <div class="faq-answer">Głównie Śląsk oraz Małopolska. Przy większych projektach działamy w całej Polsce.</div>
   </div>
 
-  <div class="faq-item">
-    <div class="faq-question">Czy wystawiacie gwarancję na wykonane prace? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">Tak, na każdą realizację wystawiamy pisemną gwarancję obiektową (standardowo od 5 do 10 lat dla systemów białej wanny).</div>
+  <div class="faq-footer">
+    Nie znalazłeś odpowiedzi? <a href="index.html#contact" style="color: var(--accent-blue); text-decoration: none;">Zadaj pytanie bezpośrednio →</a>
   </div>
 </div>
 
@@ -238,13 +254,7 @@
   document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
       const item = question.parentElement;
-      const wasActive = item.classList.contains('active');
-      
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!wasActive) {
-        item.classList.add('active');
-      }
+      item.classList.toggle('active');
     });
   });
 </script>
