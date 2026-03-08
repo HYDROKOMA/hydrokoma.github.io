@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realizacja - Murapol Apartamenty na Wzgórzu - Hydrokoma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    
+    .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    
+    .back-btn { 
+      display: inline-block; 
+      margin-bottom: 30px; 
+      color: #fff; 
+      text-decoration: none; 
+      font-size: 0.8em; 
+      border: 1px solid #444; 
+      padding: 10px 20px; 
+      border-radius: 4px; 
+      transition: 0.3s; 
+      text-transform: uppercase;
+    }
+    .back-btn:hover { background: #fff; color: #000; }
+    
+    h1 { font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; margin-top: 0; }
+    .sub-title { color: #666; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8em; margin-bottom: 40px; }
+
+    /* Galeria obrazków */
+    .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 40px; }
+    .gallery img { 
+      width: 100%; 
+      height: 300px; 
+      object-fit: cover; 
+      border-radius: 8px; 
+      border: 1px solid #222; 
+      filter: brightness(0.7); 
+      transition: 0.4s ease; 
+    }
+    .gallery img:hover { filter: brightness(1); transform: scale(1.02); }
+
+    /* Statystyki */
+    .stats-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 20px; 
+      margin: 40px 0;
+      padding: 30px;
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 12px;
+    }
+    .stat-item { text-align: center; }
+    .stat-value { font-size: 2.2em; font-weight: 700; color: #fff; display: block; }
+    .stat-unit { color: #fff; font-size: 0.5em; margin-left: 5px; vertical-align: middle; }
+    .stat-label { color: #666; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; display: block; }
+    .stat-item i { color: #444; margin-bottom: 10px; font-size: 1.2em; }
+
+    .description { color: #ccc; font-size: 1.1em; margin-bottom: 60px; }
+    
+    /* Sekcja następnego projektu */
+    .next-project-section {
+      padding: 80px 20px;
+      text-align: center;
+      background: #050505;
+      border-top: 1px solid #111;
+    }
+    .next-project-btn {
+      display: inline-block;
+      padding: 20px 40px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8em;
+      transition: 0.4s;
+    }
+    .next-project-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+    
+    @media (max-width: 600px) {
+      .gallery { grid-template-columns: 1fr; }
+      .stat-value { font-size: 1.8em; }
+      .next-project-btn { width: 100%; padding: 18px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <a href="index.html#projekty" class="back-btn">← POWRÓT DO REALIZACJI</a>
+  
+  <h1>Murapol Apartamenty na Wzgórzu</h1>
+  <div class="sub-title">Bielsko Biała | Rok 2023</div>
+
+  <div class="gallery">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/muszlowa.jpeg" alt="Realizacja 1">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/muszlowa2.jpeg" alt="Realizacja 2">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/muszlowa3.jpeg" alt="Realizacja 3">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/muszlowa4.jpeg" alt="Realizacja 4">
+    <img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/muszlowa5.jpeg" alt="Realizacja 5">
+  
+  </div>
+
+  <div class="description">
+    <p>Dla tej inwestycji wykonaliśmy kompleksowe zabezpieczenie części podziemnych w systemie <strong>Białej Wanny</strong>. Zakres prac obejmował uszczelnienie wszystkich przerw roboczych, dylatacji konstrukcyjnych oraz zabezpieczenie szybów windowych przed naporem wód gruntowych.</p>
+  </div>
+
+   <div class="stats-grid">
+    <div class="stat-item">
+      <i class="fas fa-city"></i>
+      <span class="stat-value">4</span>
+      <span class="stat-label">Budynki</span>
+    </div>
+  
+  <div class="stats-grid">
+    <div class="stat-item">
+      <i class="fas fa-fill-drip"></i>
+      <span class="stat-value">x<span class="stat-unit">m2</span></span>
+      <span class="stat-label">Płyty fundamentowej</span>
+    </div>
+  
+    <div class="stat-item">
+      <i class="fas fa-border-all"></i>
+      <span class="stat-value">x<span class="stat-unit">m2</span></span>
+      <span class="stat-label">Ścian fundamentowych</span>
+    </div>
+ 
+    <div class="stat-item">
+      <i class="fas fa-check-double"></i>
+      <span class="stat-value">100<span class="stat-unit">%</span></span>
+      <span class="stat-label">Gwarancji szczelności</span>
+    </div>
+  </div>
+
+  <div style="text-align: center; border-top: 1px solid #222; padding-top: 40px; margin-bottom: 40px;">
+    <p style="color: #666; font-size: 0.9em;">Chcesz uzyskać podobny efekt na swojej budowie?</p>
+    <a href="index.html#contact" style="color: #fff; text-decoration: none; font-weight: bold; border-bottom: 2px solid #fff;">SKONTAKTUJ SIĘ Z NAMI</a>
+  </div>
+</div>
+
+<section class="next-project-section">
+  <p style="color: #666; font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Następny projekt</p>
+  <a href="realizacja-matecznik.html" class="next-project-btn">
+    Osiedle Mateczniq | Kraków <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+  </a>
+</section>
+
+<footer style="padding: 40px 20px; text-align: center; font-size: 0.8em; color: #444; background: #000;">
+  <p>© 2025 Hydrokoma Sp. z o.o.</p>
+</footer>
+
+</body>
+</html>
