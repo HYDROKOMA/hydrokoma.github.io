@@ -24,80 +24,76 @@
       line-height: 1.6; overflow-x: hidden;
     }
 
-    /* UJEDNOLICONA NAWIGACJA */
+    /* NAWIGACJA */
     nav {
       display: flex; align-items: center; justify-content: space-between;
       background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px);
       padding: 0 5%; position: fixed; top: 0; width: 100%; z-index: 1000; 
-      border-bottom: 1px solid var(--border-color); height: 110px; /* Większe dla logo */
+      border-bottom: 1px solid var(--border-color); height: 110px;
     }
     .nav-left img { height: 100px; filter: brightness(1.1); vertical-align: middle; }
-    
     .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     .nav-right a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     .nav-right a:hover { color: var(--accent-blue); }
-
     .hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: #fff; }
-
-    /* MAŁA STRZAŁKA POWROTU (JAK W SERWISIE) */
-    .back-btn { 
-      display: inline-block; 
-      margin-bottom: 30px; 
-      color: var(--text-gray); 
-      text-decoration: none; 
-      font-size: 0.75rem; 
-      font-weight: 600;
-      letter-spacing: 1px;
-      border-bottom: 1px solid var(--border-color); 
-      padding-bottom: 5px; 
-    }
-    .back-btn:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
 
     /* HEADER */
     .tech-header {
       padding: 220px 20px 100px; text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(10,10,10,1)), 
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(10,10,10,1)), 
                   url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Zbrojenie-betonowanie-technologie .jpg') center/cover;
     }
     .tech-header h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); text-transform: uppercase; letter-spacing: 4px; margin: 0; }
     .tech-header p { color: var(--accent-blue); letter-spacing: 3px; font-weight: 300; margin-top: 15px; text-transform: uppercase; }
 
     /* KONTENER */
-    .tech-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+    .tech-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+    .back-btn { 
+      display: inline-block; margin-bottom: 40px; color: var(--text-gray); 
+      text-decoration: none; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px;
+      border-bottom: 1px solid var(--border-color); padding-bottom: 5px; 
+    }
+    .back-btn:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
+
+    .section-divider { text-align: center; margin: 60px 0 40px; }
+    .section-divider h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 3px; margin: 0; }
+    .section-divider::after { content: ""; display: block; width: 60px; height: 2px; background: var(--accent-blue); margin: 15px auto; }
 
     .tech-item { 
-      display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 80px; 
+      display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 60px; 
       background: var(--card-bg); border: 1px solid var(--border-color); 
       border-radius: 8px; overflow: hidden;
     }
-    .tech-item:hover { border-color: var(--accent-blue); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15); }
+    .tech-item:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
     .tech-item:nth-child(even) { direction: rtl; }
     .tech-item:nth-child(even) .tech-desc { direction: ltr; }
-    .tech-img { width: 100%; min-height: 480px; background-size: cover; background-position: center; }
 
-    .tech-desc { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
-    .tech-desc h2 { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin: 0 0 20px; border-left: 4px solid var(--accent-blue); padding-left: 20px; text-transform: uppercase; }
-    .tech-desc p { color: var(--text-gray); font-size: 1.05rem; margin-bottom: 30px; }
+    .tech-img { width: 100%; min-height: 450px; background-size: cover; background-position: center; }
 
+    .tech-desc { padding: 45px; display: flex; flex-direction: column; justify-content: center; }
+    .tech-desc h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; margin-bottom: 20px; text-transform: uppercase; color: #fff; }
+    
     .tech-list { list-style: none; padding: 0; margin: 0; }
-    .tech-list li { background: rgba(255,255,255,0.03); padding: 18px; margin-bottom: 12px; border: 1px solid var(--border-color); border-radius: 4px; }
-    .tech-list li strong { display: block; color: var(--accent-blue); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 5px; }
+    .tech-list li { background: rgba(255,255,255,0.02); padding: 15px 20px; margin-bottom: 10px; border: 1px solid var(--border-color); border-radius: 4px; }
+    .tech-list li strong { display: block; color: var(--accent-blue); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px; }
+    .tech-list li span { color: var(--text-gray); font-size: 0.95rem; }
 
     .service-link {
-      display: inline-block; margin-top: 20px; padding: 14px 30px; 
+      display: inline-block; margin-top: 25px; padding: 12px 25px; 
       border: 1px solid var(--accent-blue); color: #fff; text-decoration: none; 
       font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
     }
     .service-link:hover { background: var(--accent-blue); }
 
     /* PARTNERZY */
-    .tech-partners { text-align: center; padding: 60px 20px; background: #080808; border-top: 1px solid var(--border-color); }
+    .tech-partners { text-align: center; padding: 80px 20px; background: #080808; border-top: 1px solid var(--border-color); }
     .tech-partners h3 { font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; }
-    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: center; }
-    .partner-name { color: #fff; font-weight: 700; letter-spacing: 2px; font-size: 1rem; opacity: 0.7; }
+    .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; align-items: center; }
+    .partner-name { color: #fff; font-weight: 700; letter-spacing: 2px; font-size: 1.1rem; opacity: 0.6; }
 
-    /* FAQ */
-    .faq-container { max-width: 900px; margin: 100px auto; padding: 0 20px; }
+    /* FAQ SECTION */
+    .faq-container { max-width: 900px; margin: 80px auto; padding: 0 20px; }
     .faq-header { text-align: center; margin-bottom: 50px; }
     .faq-header h2 { font-family: 'Montserrat'; font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent-blue); }
     .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 4px; overflow: hidden; }
@@ -112,10 +108,7 @@
     @media (max-width: 900px) {
       nav { height: 90px; }
       .nav-left img { height: 75px; }
-      .nav-right {
-        display: none; position: fixed; top: 90px; left: 0; width: 100%; 
-        background: var(--bg-dark); padding: 30px; border-bottom: 1px solid var(--border-color);
-      }
+      .nav-right { display: none; position: fixed; top: 90px; left: 0; width: 100%; background: var(--bg-dark); padding: 30px; border-bottom: 1px solid var(--border-color); }
       .nav-right.active { display: block; }
       .nav-right ul { flex-direction: column; gap: 20px; text-align: center; }
       .hamburger { display: block; }
@@ -142,7 +135,6 @@
       <li><a href="wspolpraca.html">Współpraca</a></li>
       <li><a href="serwis.html">Serwis</a></li>
       <li><a href="index.html#projekty">Realizacje</a></li>
-      <li><a href="polityka-prywatnosci.html">Polityka Prywatności</a></li>
       <li><a href="index.html#contact">Kontakt</a></li>
     </ul>
   </div>
@@ -150,57 +142,59 @@
 
 <header class="tech-header">
   <h1>Rozwiązania Techniczne</h1>
-  <p>Wykonawstwo i Specjalistyczny Nadzór</p>
+  <p>Wykonawstwo i Nadzór Specjalistyczny</p>
 </header>
 
 <div class="tech-container">
   <a href="index.html" class="back-btn">← POWRÓT DO STRONY GŁÓWNEJ</a>
 
+  <div class="section-divider">
+    <h2>Izolacje Bezpowłokowe</h2>
+  </div>
+
   <div class="tech-item">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/184d92e8-35aa-4c26-a791-1afccdf575a9.jpeg');"></div>
     <div class="tech-desc">
-      <h2>Biała Wanna</h2>
-      <p>Skuteczna hydroizolacja bezpowłokowa opiera się na naszej stałej obecności podczas kluczowych etapów budowy.</p>
+      <h3>Biała Wanna</h3>
       <ul class="tech-list">
-        <li><strong>Nadzór nad betonowaniem</strong><span>Koordynujemy proces układania mieszanki, eliminując ryzyko powstania nieszczelności.</span></li>
-        <li><strong>Elementy trudne</strong><span>Szczelne zabezpieczenie fundamentów pod żurawie i uskoków dennych.</span></li>
+        <li><strong>Przerwy robocze i dylatacje</strong><span>Montaż systemowych taśm PVC oraz blach w newralgicznych stykach konstrukcyjnych.</span></li>
+        <li><strong>Elementy trudne</strong><span>Instalacja węży iniekcyjnych oraz taśm pęczniejących pod fundamenty żurawi wieżowych i w uskokach dennych.</span></li>
+        <li><strong>Prewencja iniekcyjna</strong><span>Zabezpieczenie przerw roboczych umożliwiające wtórne, ciśnieniowe uszczelnienie obiektu.</span></li>
+        <li><strong>Nadzór nad betonowaniem</strong><span>Pełna koordynacja procesu układania mieszanki dla wyeliminowania ryzyka nieszczelności.</span></li>
       </ul>
     </div>
+  </div>
+
+  <div class="section-divider">
+    <h2>Izolacje Powłokowe</h2>
   </div>
 
   <div class="tech-item">
-    <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3743.jpeg');"></div>
+    <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/Gliwice4.jpeg');"></div>
     <div class="tech-desc">
-      <h2>Węże Iniekcyjne</h2>
-      <p>Prewencyjne zabezpieczenie przerw roboczych, umożliwiające wtórne uszczelnienie styku beton-beton.</p>
+      <h3>Ochrona Powierzchniowa</h3>
       <ul class="tech-list">
-        <li><strong>Montaż systemowy</strong><span>Instalacja węży w miejscach o utrudnionym dostępie tuż przed betonowaniem.</span></li>
-        <li><strong>Iniekcja wtórna</strong><span>Możliwość tłoczenia żywic w dowolnym momencie życia obiektu.</span></li>
+        <li><strong>Izolacje bitumiczne</strong><span>Zabezpieczenie ścian fundamentowych przed naporem wody i wilgocią.</span></li>
+        <li><strong>Izolacje polimerowe</strong><span>Wysokospecjalistyczne uszczelnienia zbiorników wodnych i stref mokrych.</span></li>
+        <li><strong>Stropy i stolarka</strong><span>Izolacja powłokowa stropów oraz szczelne bariery na styku z profilami okiennymi.</span></li>
       </ul>
     </div>
+  </div>
+
+  <div class="section-divider">
+    <h2>Naprawy i Serwis</h2>
   </div>
 
   <div class="tech-item">
-    <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/matecz4.jpeg');"></div>
-    <div class="tech-desc">
-      <h2>Podszybia i PVC</h2>
-      <p>Zabezpieczamy najbardziej pracujące punkty obiektu profesjonalnymi systemami uszczelnień mechanicznych.</p>
-      <ul class="tech-list">
-        <li><strong>Szyby windowe</strong><span>Izolacja podszybi narażonych na stałe ciśnienie wody gruntowej.</span></li>
-        <li><strong>Taśmy PVC</strong><span>Montaż systemowych taśm w dylatacjach konstrukcyjnych.</span></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="tech-item" style="margin-bottom: 0;">
     <div class="tech-img" style="background-image: url('https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/IMG_3712.jpeg');"></div>
     <div class="tech-desc">
-      <h2>Iniekcje Naprawcze</h2>
-      <p>Dla istniejących obiektów oferujemy serwis naprawczy, który zatrzymuje wodę bez wykopów.</p>
+      <h3>Iniekcje Naprawcze</h3>
+      <p>Przywracanie szczelności w istniejących obiektach bez konieczności prowadzenia prac ziemnych.</p>
       <ul class="tech-list">
-        <li><strong>Uszczelnienia ciśnieniowe</strong><span>Likwidacja przecieków w garażach żywicami poliuretanowymi.</span></li>
+        <li><strong>Uszczelnienia ciśnieniowe</strong><span>Likwidacja przecieków w garażach podziemnych przy użyciu żywic poliuretanowych.</span></li>
+        <li><strong>Dylatacje konstrukcyjne</strong><span>Uszczelnianie pracujących dylatacji metodą iniekcji żelu akrylowego.</span></li>
       </ul>
-      <a href="serwis.html" class="service-link">Szczegóły serwisu →</a>
+      <a href="serwis.html" class="service-link">Pełna oferta napraw →</a>
     </div>
   </div>
 </div>
@@ -208,11 +202,12 @@
 <section class="tech-partners">
   <h3>Pracujemy na systemach</h3>
   <div class="partners-logos">
-    <div class="partner-name">SIKA</div>
-    <div class="partner-name">MC-BAUCHEMIE</div>
-    <div class="partner-name">WEBAC</div>
-    <div class="partner-name">DRIZORO</div>
-    <div class="partner-name">TRICOSAL</div>
+    <div class="partner-name">SOPRO</div>
+    <div class="partner-name">SOPREMA</div>
+    <div class="partner-name">KUNEX</div>
+    <div class="partner-name">PENTAFLEX</div>
+    <div class="partner-name">KOESTER</div>
+    <div class="partner-name">DE NEEF</div>
   </div>
 </section>
 
@@ -230,11 +225,6 @@
   <div class="faq-item">
     <div class="faq-question">Czy Biała Wanna wymaga dodatkowych powłok? <i class="fas fa-chevron-down"></i></div>
     <div class="faq-answer">W klasycznym systemie nie. Prawidłowo zaprojektowany i wykonany beton szczelny jest barierą samą w sobie.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">Kiedy najlepiej montować węże iniekcyjne? <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">Węże montuje się na etapie zbrojenia, tuż przed betonowaniem przerw roboczych.</div>
   </div>
 
   <div class="faq-item">
