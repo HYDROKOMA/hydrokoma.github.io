@@ -36,8 +36,7 @@
     }
     .nav-left img { height: 90px; width: auto; filter: brightness(1.1); display: block; }
     
-    /* HAMBURGER - PRZYWRÓCONY */
-    .menu-toggle { display: none; font-size: 1.8rem; color: #fff; cursor: pointer; z-index: 10001; }
+    .menu-toggle { display: none; font-size: 1.8rem; color: #fff; cursor: pointer; }
 
     .nav-right ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
     .nav-right ul li a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
@@ -69,12 +68,13 @@
     .hub-card p { color: var(--text-gray); font-size: 0.95em; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
     .hub-link { color: var(--accent-blue); font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
 
-    /* O NAS & 6 STATYSTYK - PRZYWRÓCONE */
+    /* O NAS */
     .about-section { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
     .about-content { border-left: 4px solid var(--accent-blue); padding-left: 30px; text-align: left; margin-bottom: 60px; }
     .about-section h2 { font-family: 'Montserrat', sans-serif; letter-spacing: 4px; margin-bottom: 20px; text-transform: uppercase; font-size: 0.9em; color: var(--accent-blue); }
     .about-section p { color: #ccc; line-height: 1.8; font-size: 1.05em; }
 
+    /* STATYSTYKI - WSZYSTKIE 6 PRZYWRÓCONE */
     .stats-grid { 
       display: grid; 
       grid-template-columns: repeat(3, 1fr);
@@ -83,9 +83,8 @@
     }
     .stat-box { 
       background: var(--card-bg); padding: 35px 15px; border: 1px solid var(--border-color); 
-      border-radius: 4px; text-align: center; transition: all 0.3s ease;
+      border-radius: 4px; text-align: center; 
     }
-    .stat-box:hover { transform: translateY(-5px); border-color: var(--accent-blue); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
     .stat-box i { display: block; margin-bottom: 15px; font-size: 1.5em; color: var(--accent-blue); }
     .stat-box h3 { font-family: 'Montserrat', sans-serif; font-size: 1.4em; margin: 0; color: #fff; text-transform: uppercase; }
     .stat-box p { font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; color: var(--text-gray); margin-top: 10px; }
@@ -103,43 +102,32 @@
     .project-info h4 { font-family: 'Montserrat', sans-serif; margin: 0; font-size: 1em; text-transform: uppercase; }
     .project-info p { color: var(--accent-blue); font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-weight: 600; }
 
-    /* KARUZELA PARTNERÓW - NAPRAWIONA RESPONSYWNIE */
-    .partners-section { 
-      padding: 60px 0; background: #000; overflow: hidden; 
-      border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
-    }
-    .partners-slider { 
-      display: flex; gap: 80px; align-items: center; width: max-content; 
-      animation: scrollPartner 30s linear infinite; 
-    }
-    .partners-slider img { height: 40px; filter: grayscale(100%) brightness(0.6); transition: 0.3s; }
-    .partners-slider img:hover { filter: grayscale(0%) brightness(1); }
-
-    @keyframes scrollPartner { 
-      0% { transform: translateX(0); } 
-      100% { transform: translateX(-50%); } 
-    }
+    /* KARUZELA PARTNERÓW */
+    .partners-section { padding: 60px 0; background: #000; overflow: hidden; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    .partners-slider { display: flex; gap: 80px; align-items: center; width: max-content; animation: scrollPartner 40s linear infinite; }
+    .partners-slider img { height: 40px; filter: grayscale(100%) brightness(0.6); }
+    @keyframes scrollPartner { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
     /* KONTAKT */
     .contact-section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
     .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
     .contact-form input, .contact-form textarea { padding: 15px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 2px; color: #fff; width: 100%; margin-bottom: 12px; }
     .contact-form button { padding: 18px; background: var(--accent-blue); color: #fff; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; width: 100%; letter-spacing: 2px; }
+    
+    /* CHECKBOX RODO - PRZYWRÓCONY */
+    .rodo-box { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px; font-size: 0.7rem; color: #666; line-height: 1.4; }
+    .rodo-box input { width: auto; margin-top: 3px; cursor: pointer; }
 
-    /* STOPKA */
+    /* STOPKA - PEŁNE DANE PRZYWRÓCONE */
     footer { padding: 60px 20px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.75rem; color: #444; }
+    .footer-data { margin-bottom: 25px; line-height: 1.8; }
 
-    /* MOBILE SETUP */
     @media (max-width: 768px) {
       .menu-toggle { display: block; }
-      .nav-right { 
-        display: none; position: absolute; top: 100px; left: 0; width: 100%; 
-        background: rgba(10, 10, 10, 0.98); padding: 40px 0; border-bottom: 1px solid var(--border-color);
-      }
+      .nav-right { display: none; position: absolute; top: 100px; left: 0; width: 100%; background: rgba(10,10,10,0.98); padding: 30px 0; }
       .nav-right.active { display: block !important; }
-      .nav-right ul { flex-direction: column; align-items: center; gap: 30px; }
+      .nav-right ul { flex-direction: column; align-items: center; gap: 25px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-content h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -147,7 +135,7 @@
 
 <nav>
   <div class="nav-left">
-    <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/logo_hydrokoma_white_clear.png" alt="Logo Hydrokoma"></a>
+    <a href="index.html"><img src="https://raw.githubusercontent.com/HYDROKOMA/hydrokoma.github.io/main/logo_hydrokoma_white_clear.png" alt="Hydrokoma Logo"></a>
   </div>
   <div class="menu-toggle" id="hamburger"><i class="fas fa-bars"></i></div>
   <div class="nav-right" id="mainMenu">
@@ -172,17 +160,17 @@
 <div class="hub-container">
   <a href="technologie.html" class="hub-card">
     <h3>Nasze technologie</h3>
-    <p>Systemy białej wanny i uszczelnienia przerw roboczych.</p>
+    <p>Systemy białej wanny, uszczelnienia przerw roboczych oraz profesjonalne iniekcje.</p>
     <div class="hub-link">Technologie →</div>
   </a>
   <a href="wspolpraca.html" class="hub-card">
     <h3>Współpraca</h3>
-    <p>Wsparcie wykonawcze dla inwestycji budowlanych.</p>
+    <p>Zapewniamy wsparcie wykonawcze i serwisowe dla inwestycji budowlanych.</p>
     <div class="hub-link">Oferta →</div>
   </a>
   <a href="serwis.html" class="hub-card">
     <h3>Serwis i Naprawy</h3>
-    <p>Naprawa nieszczelności i iniekcje w gotowych obiektach.</p>
+    <p>Naprawa nieszczelności i przeglądy systemów izolacyjnych w gotowych obiektach.</p>
     <div class="hub-link">Zakres prac →</div>
   </a>
 </div>
@@ -190,7 +178,8 @@
 <section id="about" class="about-section">
   <h2>O firmie</h2>
   <div class="about-content">
-    <p><strong>Hydrokoma</strong> to zespół zajmujący się profesjonalnym zabezpieczaniem obiektów budowlanych przed działaniem wody. Specjalistyczne podejście do hydroizolacji pozwala nam na skuteczną ochronę fundamentów i garaży.</p>
+    <p><strong>Hydrokoma</strong> to zespół zajmujący się profesjonalnym zabezpieczaniem obiektów budowlanych przed działaniem wody. Specjalistyczne podejście do hydroizolacji struktur podziemnych pozwala nam na skuteczną ochronę fundamentów i garaży.</p>
+    <p style="font-size: 0.95em; color: var(--text-gray);">Pracujemy na terenie województwa śląskiego oraz małopolskiego. Dzięki wieloletniej obecności na budowach, oferujemy sprawdzone rozwiązania, które gwarantują szczelność fundamentów i konstrukcji inżynieryjnych.</p>
   </div>
   
   <div class="stats-grid">
@@ -238,29 +227,30 @@
       <input type="text" name="name" placeholder="Firma / Nazwisko" required>
       <input type="tel" name="phone" placeholder="Telefon" required>
       <textarea name="msg" rows="4" placeholder="Wiadomość..." required></textarea>
+      <div class="rodo-box">
+        <input type="checkbox" name="consent" id="consent" required>
+        <label for="consent">Wyrażam zgodę na przetwarzanie danych. <a href="polityka-prywatnosci.html" style="color: #888;">Polityka Prywatności</a></label>
+      </div>
       <button type="submit">Wyślij wiadomość</button>
     </form>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Hydrokoma Sp. z o.o. | Katowice</p>
+  <div class="footer-data">
+    <strong>Hydrokoma Sp. z o.o.</strong><br>
+    ul. Porzeczkowa 16, 40-750 Katowice<br>
+    NIP: 9542836314 | REGON: 521187558 | KRS: 0000951919
+  </div>
+  <p>© 2026 Hydrokoma Sp. z o.o. | Katowice | Silesia</p>
 </footer>
 
 <script>
-  // HAMBURGER LOGIC - PRZYWRÓCONY I NAPRAWIONY
   const hamburger = document.getElementById('hamburger');
   const menu = document.getElementById('mainMenu');
-  
-  hamburger.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  });
-
-  // Zamykanie menu po kliknięciu w link na mobile
+  hamburger.addEventListener('click', () => { menu.classList.toggle('active'); });
   document.querySelectorAll('.nav-right a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('active');
-    });
+    link.addEventListener('click', () => { menu.classList.remove('active'); });
   });
 </script>
 
