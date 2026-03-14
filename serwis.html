@@ -112,7 +112,7 @@
         100% { transform: scale(3); opacity: 0; }
     }
 
-    /* SEKCJA INŻYNIERYJNA ZE ZDJĘCIEM */
+    /* SEKCJA INŻYNIERYJNA */
     .engineering-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -182,7 +182,16 @@
       .alert-box a { font-size: 1.6rem; }
       
       .engineering-section { grid-template-columns: 1fr; }
-      .engineering-photo { height: 400px; order: 2; }
+      .engineering-photo { 
+        height: auto; /* Pozwala zdjęciu na naturalną wysokość */
+        order: 2; 
+        max-width: 100%;
+      }
+      .engineering-photo img {
+        height: auto; /* Zapobiega ucinaniu postaci */
+        object-fit: contain; /* Gwarantuje widoczność całej sylwetki */
+        opacity: 0.8;
+      }
     }
   </style>
 </head>
