@@ -2,6 +2,21 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y73S6JLM67"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // Domyślnie blokujemy śledzenie przed uzyskaniem zgody
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied'
+    });
+
+    gtag('js', new Date());
+    gtag('config', 'G-Y73S6JLM67');
+  </script>
+
   <meta name="google-site-verification" content="3Q8Nv_o9lXyUTGdOciFIwtHXSuwlW2cc-vSTENWqbk4" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
@@ -68,12 +83,28 @@
     .rodo-box input { width: auto; margin-top: 3px; cursor: pointer; }
     footer { padding: 60px 20px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.75rem; color: #444; }
     .footer-data { margin-bottom: 25px; line-height: 1.8; }
+
+    /* --- STYL BANERA COOKIES --- */
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; width: 100%; background: var(--card-bg);
+      border-top: 1px solid var(--accent-blue); padding: 20px 5%; z-index: 10000;
+      display: none; box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
+    }
+    .cookie-content { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .cookie-text { font-size: 0.8rem; color: #ccc; line-height: 1.5; }
+    .cookie-text a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
+    .cookie-btns { display: flex; gap: 10px; }
+    .btn-cookie { padding: 10px 20px; border-radius: 2px; cursor: pointer; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border: none; letter-spacing: 1px; }
+    .btn-acc { background: var(--accent-blue); color: #fff; }
+    .btn-dec { background: #222; color: #888; border: 1px solid var(--border-color); }
+
     @media (max-width: 768px) {
       .menu-toggle { display: block; }
       .nav-right { display: none; position: absolute; top: 100px; left: 0; width: 100%; background: rgba(10,10,10,0.98); padding: 30px 0; }
       .nav-right.active { display: block !important; }
       .nav-right ul { flex-direction: column; align-items: center; gap: 25px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .cookie-content { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -237,12 +268,48 @@
   <p>© 2026 Hydrokoma Sp. z o.o. | Lider Hydroizolacji na Śląsku i w Małopolsce</p>
 </footer>
 
+<div id="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      Strona Hydrokoma wykorzystuje pliki cookies do analizy ruchu. Możesz zaakceptować śledzenie lub przeglądać stronę bez zbierania danych. Szczegóły: <a href="polityka-prywatnosci.html">Polityka Prywatności</a>.
+    </div>
+    <div class="cookie-btns">
+      <button class="btn-cookie btn-dec" onclick="setConsent(false)">Nie, dziękuję</button>
+      <button class="btn-cookie btn-acc" onclick="setConsent(true)">Akceptuję</button>
+    </div>
+  </div>
+</div>
+
 <script>
+  // Nawigacja mobilna
   const hamburger = document.getElementById('hamburger');
   const menu = document.getElementById('mainMenu');
   hamburger.addEventListener('click', () => { menu.classList.toggle('active'); });
   document.querySelectorAll('.nav-right a').forEach(link => {
     link.addEventListener('click', () => { menu.classList.remove('active'); });
+  });
+
+  // LOGIKA COOKIES & GOOGLE ANALYTICS
+  function setConsent(agreed) {
+    if (agreed) {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      localStorage.setItem('cookieConsent', 'accepted');
+    } else {
+      localStorage.setItem('cookieConsent', 'declined');
+      // W przypadku odmowy GA pozostaje w trybie 'denied' zadeklarowanym w head
+    }
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  window.addEventListener('load', function() {
+    const consent = localStorage.getItem('cookieConsent');
+    if (!consent) {
+      // Jeśli użytkownik jeszcze nie wybrał - pokaż baner
+      document.getElementById('cookie-banner').style.display = 'block';
+    } else if (consent === 'accepted') {
+      // Jeśli wcześniej zaakceptował - zaktualizuj zgodę od razu
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
   });
 </script>
 
