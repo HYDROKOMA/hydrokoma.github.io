@@ -2,7 +2,6 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y73S6JLM67"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -257,7 +256,7 @@
       <textarea name="msg" rows="4" placeholder="Opisz potrzeby (np. projekt białej wanny, iniekcje ciśnieniowe)..." required></textarea>
       <div class="rodo-box">
         <input type="checkbox" name="consent" id="consent" required>
-        <label for="consent">Wyrażam zgodę na przetwarzanie moich danych w celu przygotowania oferty. <a href="polityka-prywatnosci.html" style="color: #888;">Polityka Prywatności</a></label>
+        <label for="consent">Wyrażam zgodę na przetwarzanie moich danych w celu przygotowania oferty. <a href="polityka-prywatnosci.html" style="color: #888;">Polityka Privateności</a></label>
       </div>
       <button type="submit">Wyślij zapytanie</button>
     </form>
@@ -286,6 +285,10 @@
   </div>
 </div>
 
+<div id="cookie-banner-trigger" onclick="showCookieBanner()" style="position: fixed; bottom: 15px; left: 15px; background: #141414; border: 1px solid #3498db; padding: 8px 12px; border-radius: 4px; z-index: 9999; cursor: pointer; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; display: none;">
+  <i class="fas fa-cookie-bite" style="color: #3498db; margin-right: 5px;"></i> Cookies
+</div>
+
 <script>
   // Nawigacja mobilna
   const hamburger = document.getElementById('hamburger');
@@ -295,26 +298,45 @@
     link.addEventListener('click', () => { menu.classList.remove('active'); });
   });
 
+  // FUNKCJA BEZPIECZNIE ŁADUJĄCA GOOGLE ANALYTICS TYLKO PO ZGODZIE
+  function loadGoogleAnalytics() {
+    if (!document.getElementById('ga-script')) {
+      const script = document.createElement('script');
+      script.id = 'ga-script';
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-Y73S6JLM67";
+      document.head.appendChild(script);
+    }
+  }
+
+  function showCookieBanner() {
+    document.getElementById('cookie-banner').style.display = 'block';
+    document.getElementById('cookie-banner-trigger').style.display = 'none';
+  }
+
   // LOGIKA COOKIES & GOOGLE ANALYTICS
   function setConsent(agreed) {
     if (agreed) {
       gtag('consent', 'update', { 'analytics_storage': 'granted' });
       localStorage.setItem('cookieConsent', 'accepted');
+      loadGoogleAnalytics();
     } else {
       localStorage.setItem('cookieConsent', 'declined');
-      // W przypadku odmowy GA pozostaje w trybie 'denied' zadeklarowanym w head
     }
     document.getElementById('cookie-banner').style.display = 'none';
+    document.getElementById('cookie-banner-trigger').style.display = 'block';
   }
 
   window.addEventListener('load', function() {
     const consent = localStorage.getItem('cookieConsent');
     if (!consent) {
-      // Jeśli użytkownik jeszcze nie wybrał - pokaż baner
-      document.getElementById('cookie-banner').style.display = 'block';
+      showCookieBanner();
     } else if (consent === 'accepted') {
-      // Jeśli wcześniej zaakceptował - zaktualizuj zgodę od razu
       gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      loadGoogleAnalytics();
+      document.getElementById('cookie-banner-trigger').style.display = 'block';
+    } else {
+      document.getElementById('cookie-banner-trigger').style.display = 'block';
     }
   });
 </script>
